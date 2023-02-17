@@ -1,0 +1,72 @@
+<% content_for :meta_title, raw(@problem.title) %>
+<% content_for :meta_desc, raw(@problem.meta_description) %>
+
+<div class="Section Section--white">
+  <div class="container">
+    <div class="ProblemShow">
+      <div class="ProblemShow-image"
+        style="background-image: url('<%= url_for(problem_cover_image(@problem, [600, 600])) %>');"
+      >
+      </div>
+      <div class="ProblemShow-content">
+        <div class="ProblemShow-stickers">
+          <div class="ProblemShow-content--sticker ProblemShow-content--sticker--domain">
+            <%= human_enum_name(@problem, :domain) %>
+          </div>
+          <div class="ProblemShow-content--sticker ProblemShow-content--sticker--action">
+            <%= human_enum_name(@problem, :action_lever) %>
+          </div>
+        </div>
+        <h2 class="Base-title Base-title--3"><%= @problem.title %></h2>
+        <div class="ProblemShow-description">
+          <%= simple_format(@problem.description) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="BackToProblems">
+      <%= link_to problems_path, class: "BackToProblems-link" do %>
+        <p class="Button Button--blue">
+          <%= raw t('problem.show.link_back').upcase %>
+          <i class="material-icons">arrow_forward</i>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="ProjectList">
+      <h2 class="Base-title Base-title--2">
+        <%= raw t('problem.show.subtitle') %>
+        <em> <%= @problem.title %></em>
+      </h2>
+
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 ProjectList-cardContainer">
+          <%= link_to @external_links.innovation_proposal_form,
+            target: "_blank",
+            class: "ProjectsCard ProjectsCard--last" do %>
+            <p class="ProjectsCard-text"><%= raw t('problem.show.last_card_text') %></p>
+            <p class="Button Base-subtitle--bold">
+              <%= raw t('problem.show.last_card_link_1').upcase %><br>
+              <%= raw t('problem.show.last_card_link_2').upcase %>
+            </p>
+            <i class="material-icons">arrow_forward</i>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--lightGrey">
+  <div class="container">
+    <div class="offset-md-1 col-md-7">
+      <h2 class="Base-title Base-title--2">
+        <%= raw t('problem.show.long_text_title') %>
+      </h2>
+      <div><%= @problem.full_content.html_safe %></div>
+    </div>
+  </div>
+</div>
+
+<%= render "prefooter" %>

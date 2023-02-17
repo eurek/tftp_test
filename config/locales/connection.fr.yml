@@ -1,0 +1,16 @@
+---
+fr:
+  connection:
+    title: "Où souhaitez-vous allez ?"
+    private_space:
+      title: "L’espace actionnaire"
+      description: "Gérez la visibilité de votre profil actionnaire sur le site internet de Time for the Planet :
+        personnalisez votre page actionnaire, consultez vos badges, créez votre page de parrainage,
+        associez votre entreprise."
+      cta: "Aller sur mon compte"
+    galaxy:
+      title: "La galaxie"
+      description: "Agissez collectivement au sein de la communauté Time for the Planet : Évaluez les innovations
+        reçues, intégrez un groupe d'actionnaires par compétences ou localisation, lancez des actions,
+        suivez l'actualité et les statistiques du mouvement en temps réel."
+      cta: "Rejoindre la galaxie"

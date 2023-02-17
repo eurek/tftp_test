@@ -1,0 +1,39 @@
+<div class="CompletionPanel">
+  <div>
+    <div class="CompletionPanel-text">
+      <%= raw t('private_space.dashboard.completion_panel.title') %>
+    </div>
+    <div class="CompletionPanel-shareholder">
+      <div class="CompletionPanel-text CompletionPanel-text--fontMedium CompletionPanel-text--margin-top">
+        <%= I18n.t("private_space.dashboard.completion_panel.shareholder_profile") %>
+      </div>
+      <div class="CompletionPanel-rate">
+        <%= (individual.completion_rate * 100).to_i %> %
+      </div>
+      <%= link_to user_profile_path, class: "CompletionPanel-link" do %>
+        <i class="material-icons">create</i>&nbsp;
+        <span class="Button Button--underlined">
+          <%= I18n.t("private_space.dashboard.completion_panel.edit_profile") %>
+          <i class="material-icons">arrow_forward</i>
+        </span>
+      <% end %>
+      <br>
+      <%= link_to shareholder_individual_show_path(individual), class: "Button Button--underlined CompletionPanel-link" do %>
+        <%= I18n.t("private_space.dashboard.completion_panel.see_shareholder_profile") %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="CompletionPanel-situation">
+    <div class="CompletionPanel-text CompletionPanel-text--red CompletionPanel-text--fontMedium">
+      <%= raw(I18n.t("private_space.dashboard.completion_panel.time_planet_situation")) %>
+    </div>
+    <%= link_to roadmap_tasks_path do %>
+      <span class="Button Button--underlined">
+        <%= I18n.t("private_space.dashboard.completion_panel.roadmap_button") %>
+        <i class="material-icons">arrow_forward</i>
+      </span>
+    <% end %>
+  </div>
+</div>

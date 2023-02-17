@@ -1,0 +1,41 @@
+<% modifier_class = "" if local_assigns[:modifier_class].nil? %>
+
+<section class="Section Section--lagoon RecentShareholdersSection <%= modifier_class %>">
+  <div class="container RecentShareholdersSection-container">
+    <div class="RecentShareholdersSection-list">
+      <h3 class="Base-title--2 RecentShareholdersSection-title"><%= title %></h3>
+      <% recent_shareholders.each do |shareholder| %>
+        <div class="RecentShareholdersSection-shareholder">
+          <h4 class="Base-title--4">
+            <%= shareholder_display_name(shareholder) %>
+        </h4>
+          <div class="RecentShareholdersSection-shareholderInfos">
+            <p class="RecentShareholdersSection-sharesNumber"><%= raw t('become_shareholder.list.shares_number',
+                  nb_parts: number_with_delimiter(shareholder.shares_total)) %>
+            </p>
+            <p class="RecentShareholdersSection-sharesDate"><%= raw t('common.time_ago',
+                  time: time_ago_in_words(shareholder.shareholder_since)) %>.
+            </p>
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to shareholders_path, class: "Button RecentShareholdersSection-link" do %>
+        <%= t('become_shareholder.list.cta',
+          total_associates: number_with_delimiter(current_situation.total_shareholders)) %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+    <div class="RecentShareholdersSection-mountains">
+      <%= embedded_svg image, class: "RecentShareholdersSection-svg" %>
+
+      <% %w(first second third).each do |number| %>
+        <%= render partial: "shareholders_top", locals: {
+          title: local_assigns["#{number}_top".to_sym][:title],
+          top: local_assigns["#{number}_top".to_sym][:value],
+          top_class: "RecentShareholdersSection-top--#{number}"
+        } %>
+      <% end  %>
+    </div>
+  </div>
+</section>

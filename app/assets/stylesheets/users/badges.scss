@@ -1,0 +1,40 @@
+.users-badges {
+
+  .RolesList {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1.5rem;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .PrivateSpace-title {
+    margin-bottom: 2rem;
+  }
+
+  .PrivateSpace-summaryContent {
+    display: flex;
+    flex-direction: column;
+
+    .Button:first-of-type {
+      margin-bottom: 8rem;
+      border-color: $grey-300;
+      align-self: flex-end;
+      font-size: 0.8rem;
+
+      &:hover {
+        border-color: $lagoon-500;
+      }
+    }
+  }
+}

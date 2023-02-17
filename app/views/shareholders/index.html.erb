@@ -1,0 +1,48 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<%= render partial: "shared/secondary_navbar", locals: {
+  color: "darkRainforest",
+  title: raw(t("shareholder.index.title")),
+  links: [
+    { anchor: raw(t("shareholder.secondary_navbar.list_view")), url: shareholders_path },
+    { anchor: raw(t("shareholder.secondary_navbar.map_view")), url: shareholders_map_path }
+    ],
+  cta: {
+    anchor: t("common.become_shareholder.cta"),
+    url: buy_shares_choice_path,
+    target: "_self"
+  }
+} %>
+
+<section class="Section Section--white FirstSection">
+  <div class="container">
+    <%= form_tag shareholders_path, method: :get, class: "SearchBar" do |f| %>
+      <%= text_field_tag 'search', params[:search], placeholder: raw(t("shareholder.index.search.placeholder")) %>
+      <%= submit_tag raw(t("shareholder.index.search.submit")) %>
+    <% end %>
+  </div>
+
+  <%= render "filters", badges: @badges %>
+</section>
+
+
+
+<section class="Section Section--white UpdatableElement" id="ShareholdersContent">
+  <div class="container">
+    <p class="Base-text Base-text--lighter SearchBar-textLight" id="ShareholdersCount">
+      <span class="SearchBar-textLight SearchBar-textLight--emphased">
+        <%= "#{number_with_delimiter(@total_accounts)} #{raw(t("shareholder.index.counter_emphased"))}" %>
+      </span>
+    </p>
+    <div class="ShareholdersList">
+      <% @shareholders.each do |shareholder| %>
+        <%= render "shared/shareholder_card", shareholder: shareholder %>
+      <% end %>
+    </div>
+
+    <div>
+      <%= paginate @shareholders, class: 'pagination' %>
+    </div>
+  </div>
+</section>
+

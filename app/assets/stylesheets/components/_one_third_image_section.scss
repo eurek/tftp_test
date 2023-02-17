@@ -1,0 +1,123 @@
+.OneThirdImageSection {
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-column {
+    width: 100%;
+    display: inline-block;
+
+    &--content {
+      @media (min-width: $breakpoint-lg) {
+        width: 55%;
+      }
+    }
+
+    &--image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: $breakpoint-lg) {
+        align-self: stretch;
+        width: 35%;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .Button {
+        flex-grow: 0;
+      }
+    }
+
+    &--withBackgroundImage {
+      display: none;
+      width: unset;
+
+      @media (min-width: $breakpoint-lg) {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 57%;
+        background-size: cover;
+      }
+    }
+  }
+
+  &-text {
+    font-family: $headers-font;
+    font-size: 1.2rem;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.5rem;
+    }
+
+    &--green {
+      color: $lagoon-200;
+    }
+
+    &--purple {
+      color: $purple-200;
+    }
+  }
+
+  &-textContainer p {
+    font-family: $headers-font;
+    font-size: 1.2rem;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &-title {
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 3rem;
+      font-size: 2rem;
+    }
+  }
+
+  &-image {
+    height: 4rem;
+    width: 4rem;
+
+    @media (min-width: $breakpoint-sm) {
+      height: 16rem;
+      width: 16rem;
+    }
+  }
+
+  &-svg {
+    padding: 1rem 0;
+  }
+
+  &-cta {
+    margin-top: 2rem;
+  }
+
+  &--imageLeft {
+
+    .OneThirdImageSection {
+
+      &-container {
+        @media (min-width: $breakpoint-lg) {
+          flex-direction: row-reverse;
+        }
+      }
+
+      &-column--withBackgroundImage {
+        @media (min-width: $breakpoint-lg) {
+          left: 0;
+          right: 57%;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}

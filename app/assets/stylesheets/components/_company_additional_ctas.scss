@@ -1,0 +1,29 @@
+.CompanyAdditionalCtas {
+  &-item {
+    display: flex;
+    align-items: start;
+    margin-top: 1.5rem;
+
+    i {
+      color: $purple-400;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-logo {
+    width: 24px;
+    height: auto;
+    margin-right: 0.5rem;
+  }
+
+  &-link {
+    color: $white;
+    text-decoration: underline;
+    text-transform: none;
+    font-family: $body-font;
+
+    &:hover {
+      color: $purple-400;
+    }
+  }
+}

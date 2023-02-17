@@ -1,0 +1,15 @@
+<div class="TimeTable">
+  <h3 class="Base-subtitle Base-subtitle--smaller TimeTable-day"><%= t("date.day_names")[day_index].capitalize %></h3>
+  <table class="TimeTable-table">
+    <tbody>
+    <% t("zevent.time_table.#{day_name}").each do |time_slot| %>
+      <tr class="TimeTable-row">
+        <td class="Base-subtitle Base-subtitle--smaller TimeTable-timeSlot"><%= time_slot[:time_slot] %></td>
+        <td class="Base-title Base-title--5 TimeTable-content TimeTable-content--<%= time_slot[:type] %>">
+          <%= time_slot[:content] %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

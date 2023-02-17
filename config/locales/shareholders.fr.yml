@@ -1,0 +1,60 @@
+---
+fr:
+  shareholder:
+    index:
+      title: "Les actionnaires"
+      search:
+        placeholder: "Recherche par prénom ou nom"
+        submit: "Rechercher"
+      counter_emphased: "profils"
+      counter_light: "sur un total de %{total_shareholders} actionnaires"
+      ordering_name: "Actionnaire"
+      filters:
+        title: "Filtrer"
+        clear: "Enlever les filtres"
+        badges: "badges"
+        roles: "roles"
+        types: "types"
+        type_individual: "Personne"
+        type_company: "Entreprise"
+        countries: Pays
+        count:
+          one: "%{count} résultat"
+          other: "%{count} résultats"
+      company_stickers:
+        sticker_1: "Actionnaire"
+        sticker_2: "Entreprise"
+    user_show:
+      infos:
+        emphased: "Actionnaire depuis le"
+        years: "ans"
+        company: "Son entreprise"
+        employees:
+          one: "collaborateur·ice actionnaire"
+          other: "collaborateur·ices actionnaires"
+      back_to_index: "Revenir a la liste des actionnaires"
+      subtitle_1: "Badges"
+      subtitle_2: "Fonctions"
+      section_2:
+        title: "Pourquoi j’ai choisi de devenir actionnaire de Time for the Planet<span class='brand'>®</span>"
+    prefooter:
+      title_user: "Vous voulez rejoindre %{shareholder_name} et lutter à grande échelle contre le changement climatique&nbsp;?"
+      title_shareholder_company: "Et si comme %{shareholder_name} vous luttiez à grande échelle contre le changement climatique&nbsp;?"
+      title_company: "%{shareholder_name} n’est pas encore actionnaire de Time for the Planet<span class='brand'>®</span>... 
+        Aidez-nous à faire associer votre entreprise&nbsp;!"
+      link_shareholder: "Devenez actionnaire"
+      link_company: "Je peux organiser un rendez vous avec l'entreprise"
+    company_show:
+      links:
+        website: "Site web"
+        facebook: "Facebook"
+        linkedin: "linkedin"
+      section_2:
+        description_title: "Présentation"
+        actions_title: "Comment %{shareholder_name} réduit en interne ses émissions de CO2"
+      section_employees:
+        title: "Collaborateur·ices de %{shareholder_name} actionnaires de Time for the Planet<span class='brand'>®</span>"
+      not_yet_shareholder: "Pas encore actionnaire"
+    secondary_navbar:
+      list_view: "Vue liste"
+      map_view: "Vue carte"

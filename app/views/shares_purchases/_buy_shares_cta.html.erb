@@ -1,0 +1,11 @@
+<% class_name = '' if local_assigns[:class_name].nil? %>
+<% cta_data_attribute = '' if local_assigns[:cta_data_attribute].nil? %>
+<% with_arrow = false if local_assigns[:with_arrow].nil? %>
+
+<%= link_to link, class:"BuySharesCta BuySharesCta--#{color} Button Button--box #{class_name}", target: "_blank",
+  data: cta_data_attribute do %>
+  <%= cta_text %>
+  <% if with_arrow %>
+    <i class="material-icons">arrow_forward</i>
+  <% end %>
+<% end %>

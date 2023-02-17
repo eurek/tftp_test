@@ -1,0 +1,149 @@
+.ClimateDividends {
+  color: $white;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  &-content {
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &-definition {
+    display: flex;
+    font-family: $headers-font;
+    font-weight: bold;
+    align-items: baseline;
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 55%;
+    }
+  }
+
+  &-number {
+    font-size: 6rem;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 8rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 10rem;
+    }
+
+    &--withGradient {
+      background-image: linear-gradient(180deg, $rainforest-400 0%, $rainforest-900 90%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+    }
+  }
+
+  &-logo {
+    width: auto;
+    height: 4rem;
+
+    @media (min-width: $breakpoint-sm) {
+      height: 6rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      height: 8rem;
+    }
+  }
+
+  &-equivalent {
+    width: 12rem;
+    align-self: center;
+    font-size: 1rem;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-description {
+    @media (min-width: $breakpoint-lg) {
+      width: 40%;
+    }
+
+    .Button {
+      margin-top: 3rem;
+    }
+  }
+
+  &-text a {
+    text-transform: none;
+    text-decoration: underline;
+    font-family: $body-font;
+  }
+
+  &--rainforest {
+    background-color: $rainforest-900;
+
+    em {
+      color: $lagoon-400;
+    }
+
+    .ClimateDividends {
+      &-summary {
+        color: $lagoon-400;
+      }
+
+      &-number--withGradient {
+        background-image: linear-gradient(180deg, $rainforest-400 0%, $rainforest-900 90%);
+      }
+    }
+  }
+
+  &--grey {
+    background-color: $grey-900;
+
+    em {
+      color: $purple-400;
+    }
+
+    .ClimateDividends {
+      &-summary {
+        color: $purple-400;
+      }
+
+      &-number--withGradient {
+        background-image: linear-gradient(180deg, $purple-400 0%, $grey-900 80%);
+      }
+    }
+  }
+
+  &--purple {
+    background-color: $purple-900;
+
+    em {
+      color: $purple-400;
+    }
+
+    .ClimateDividends {
+      &-summary {
+        color: $purple-400;
+      }
+
+      &-number--withGradient {
+        background-image: linear-gradient(180deg, $purple-400 0%, $purple-900 80%);
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="Co2Counter Base-title Base-title--1 Base-title--lagoon">
+  <div class="Co2Counter-numbers">
+    <% number_with_delimiter(total_co2, locale: params[:locale]).rjust(11, '0').split("").each do |character| %>
+      <% if character =~ /^\d+$/ %>
+        <div class="Co2Counter-number">
+          <%= character %>
+        </div>
+      <% else %>
+        <div class="Co2Counter-space">
+          <%= character %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <span>Kg</span>
+  <p class="Base-subtitle Base-subtitle--verySmall Base-subtitle--grey300 Co2Counter-units">
+    <%= raw t("co2_counter.counter_section.unit") %>
+  </p>
+</div>

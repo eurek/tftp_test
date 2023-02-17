@@ -1,0 +1,17 @@
+.DeviseLinks {
+  margin-top: 2rem;
+  color: $rainforest-200;
+  font-family: $body-font;
+  text-transform: none;
+
+  &-link {
+    font-family: $body-font;
+    text-transform: none;
+    text-decoration: underline;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

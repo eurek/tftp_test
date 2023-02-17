@@ -1,0 +1,218 @@
+<% content_for :purple_footer, true %>
+<% content_for :page_js_controller, "home-animations" %>
+
+<section class="Section Section--black Hero Hero--companies" data-action="scroll@window->home-animations#animateOnScroll">
+  <div class="container Hero-content">
+    <%= link_to root_path, class: "Hero-personaSwitchButton" do %>
+      <i class="material-icons Button Button--secondaryPurple">
+        cached
+      </i>
+      <span><%= raw t('company_home.hero.switch_persona') %></span>
+    <% end %>
+    <div class="Hero-animatedText">
+      <p class="Base-subtitle Base-subtitle--smaller Hero-pretitle"><%= raw t('company_home.hero.pretitle') %></p>
+      <h1 class="Base-title Base-title--1">
+        <span class="Hero-title"><%= raw t('company_home.hero.title.part_1') %></span>
+        <span class="Hero-title Hero-title--part2"><%= raw t('company_home.hero.title.part_2') %></span>
+      </h1>
+    </div>
+    <%= link_to raw(t('home.hero.cta')), "#companies-logos-section",
+      class: "Button Button--box Button--purpleBox",
+      "data-turbolinks": "false" %>
+  </div>
+  <div class="Hero-overlay"></div>
+</section>
+
+<section class="Section Section--black Section--morePadding CompaniesLogos" id="companies-logos-section">
+  <div class="container">
+    <h2 class="CompaniesLogos-title"><%= raw(t(
+        'company_home.shareholder_companies_title',
+        count: number_with_delimiter(@shareholder_companies_count, locale: params[:locale])
+      )) %></h2>
+    <div class="CompaniesLogos-container">
+      <% %w(ldlc duval ol visiativ evolem piper bouygues businessfrance).each do |company_name| %>
+        <%= image_tag "#{company_name}-home-logo.png", class: "CompaniesLogos-logo" %>
+      <% end %>
+    </div>
+    <div class="CompaniesLogos-link">
+      <%= link_to shareholders_path(filter: { type: "company "}),
+                  class: "Button Button--underlined",
+                  target: "_blank" do %>
+        <%= t('company_home.shareholder_companies_link') %> <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render "mission_section", title: raw(t('company_home.mission.title')) do %>
+  <div class="MissionSection-incentive">
+    <%= image_tag('icones/neutrality_certificate.svg', class: "MissionSection-incentiveIcon") %>
+    <p><%= raw t("company_home.mission.incentive") %></p>
+    <%= link_to(
+      raw(t('home.global_cta.become_associate')),
+      become_shareholder_company_path,
+      class: "Button Button--box Button--lightPurpleBox"
+    ) %>
+  </div>
+<% end %>
+
+<%= render partial: "sections/funded_innovation_section", locals: {
+  funded_innovations: @funded_innovations,
+  title: raw(t('home.funded_innovations.title')) } %>
+
+<section class="Section Section--grey900 CompaniesMission">
+  <div class="container">
+    <h2 class="Base-title Base-title--3 CompaniesMission-title">
+      <%= raw t('company_home.companies_mission.title') %>
+    </h2>
+    <div class="CompaniesMission-columns">
+      <div class="CompaniesMission-column">
+        <%= image_tag "companies-mission-scope-1-2.svg", class: "CompaniesMission-illustration" %>
+        <p><%= raw t('company_home.companies_mission.paragraph_1') %></p>
+        <p><%= raw t('company_home.companies_mission.paragraph_2') %></p>
+        <span class="CompaniesMission-scope CompaniesMission-scope--1">
+          <%= t('company_home.companies_mission.scope') %> 1
+        </span>
+        <span class="CompaniesMission-scope CompaniesMission-scope--2">
+          <%= t('company_home.companies_mission.scope') %> 2
+        </span>
+      </div>
+      <div class="CompaniesMission-column">
+        <%= image_tag "companies-mission-scope-3.svg", class: "CompaniesMission-illustration" %>
+        <p><%= raw t('company_home.companies_mission.paragraph_3') %></p>
+        <p><%= raw t('company_home.companies_mission.paragraph_4') %></p>
+        <span class="CompaniesMission-scope CompaniesMission-scope--3">
+          <%= t('company_home.companies_mission.scope') %> 3
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="Section StepsSection StepsSection--companies" data-home-animations-target="stepsSection">
+  <div class="container">
+    <h2 class="Base-title Base-title--2"><%= raw t('company_home.steps.title') %></h2>
+    <div class="StepsSection-container">
+      <div class="StepsSection-step" data-home-animations-target="step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('company_home.steps.step_1.title') %></h3>
+          <p><%= raw t('company_home.steps.step_1.paragraph_1') %></p>
+          <%= link_to raw(t('company_home.steps.step_1.cta')), become_shareholder_company_path, class: "Button Button--box Button--purpleBox" %>
+          <p><b><%= raw t('company_home.steps.step_1.more_info') %></b></p>
+          <%= render "shared/company_additional_ctas" %>
+        </div>
+        <div class="StepsSection-number">1</div>
+      </div>
+      <div class="StepsSection-step" data-home-animations-target="step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('company_home.steps.step_2.title') %></h3>
+          <p><%= raw t('home.steps.step_2.funding') %></p>
+          <p><%= raw t('home.steps.step_2.costs') %></p>
+          <p>
+            <%= raw t('home.steps.step_2.public') %>
+            <%= link_to t('home.steps.step_2.cta'), @annual_accounts_link, class: "StepsSection-link", target: "_blank" %>
+          </p>
+        </div>
+        <div class="StepsSection-number">2</div>
+      </div>
+      <div class="StepsSection-step" data-home-animations-target="step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('company_home.steps.step_3.title') %></h3>
+          <p><%= raw t('company_home.steps.step_3.paragraph_1') %></p>
+          <p><%= raw t('company_home.steps.step_3.paragraph_2') %></p>
+
+          <div class="CompanyAdditionalCtas-item">
+            <%= image_tag "climate-dividends-logo-purple.svg", class: "CompanyAdditionalCtas-logo" %>
+            <%= link_to raw(t('company_home.steps.step_3.climate_dividends')), "#", class: "CompanyAdditionalCtas-link" %>
+          </div>
+        </div>
+        <div class="StepsSection-number">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="Section Section--black">
+  <div class="container">
+    <h2 class="Base-title Base-title--2"><%= raw t('company_home.reasons_to_invest.title') %></h2>
+    <% %w(carbon_neutrality differentiating_asset federate solution).each do |reason| %>
+      <div class="ReasonToInvest">
+        <div class="ReasonToInvest-title">
+          <i class="material-icons">
+            check_circle
+          </i>
+          <h3 class="Base-title Base-title--5"><%= raw t("company_home.reasons_to_invest.#{reason}.title") %></h3>
+        </div>
+        <p class="ReasonToInvest-text"><%= raw t("company_home.reasons_to_invest.#{reason}.text") %></p>
+        <p><b><%= raw t("company_home.reasons_to_invest.#{reason}.highlight") %></b></p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<%= render partial: "sections/company_cta_section", locals: {
+  title: raw(t('company_home.cta_section.title')),
+  cta: raw(t('home.global_cta.become_associate'))
+} %>
+
+<%= render partial: "sections/future_fundings_section", locals: {
+  current_episode: @current_episode,
+  total_raised: @total_raised,
+  future_fundings: @future_fundings,
+  color: "purple",
+  link: become_shareholder_company_path
+} %>
+
+<%= render partial: "sections/climate_dividends_section", locals: {
+  color: "grey",
+  title: raw(t( "company_home.climate_dividends.title")),
+  description: raw(t( "company_home.climate_dividends.description")),
+  highlighted_description: raw(t( "company_home.climate_dividends.summary"))
+}  %>
+
+<section class="Section Section--black Section--morePadding ClimateDividendsGovernance">
+  <div class="container ClimateDividendsGovernance-container">
+    <h2 class="Base-title Base-title--2 Base-title--noMarginTop"><%= raw t('company_home.climate_dividends_governance.title') %></h2>
+    <div class="ClimateDividendsGovernance-logos">
+      <% %w(carbon-4 kmpg ademe sweep tftp gold-standard united-nations european-investment-bank net-zero-initiative)
+           .each do |organization| %>
+        <%= image_tag "#{organization}-logo.png", class: "ClimateDividendsGovernance-image" %>
+      <% end %>
+    </div>
+    <div class="ClimateDividendsGovernance-link">
+      <%= link_to "https://www.climate-dividends.com/",
+                  class: "Button Button--underlined ",
+                  target: "_blank" do %>
+        <%= t('company_home.climate_dividends_governance.cta') %> <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "map_section", locals: {
+  pre_title: raw(t('company_home.open_source.paragraph1')),
+  title: raw(t('company_home.open_source.paragraph2')),
+  text: raw(t('company_home.open_source.paragraph3')),
+  color: "purple",
+  marker_color: "purple"
+} %>
+
+<section class="Section Section--black Section--morePadding LearnMore">
+  <div class="container">
+    <h2 class="Base-title Base-title--2 Base-title--white Base-title--noMarginTop"><%= raw(t( "company_home.learn_more.title")) %></h2>
+    <div class="LearnMore-linksContainer">
+      <% %i(investment_brief press_kit open_source greenwashing climate_dividends founders
+         supervisory_board scientific_commitee).each do |link| %>
+        <%= link_to raw(t( "company_home.learn_more.links.#{link}")),
+                    @links[link], target: "_blank", class: "LearnMore-link Base-subtitle Base-subtitle--verySmall" %>
+      <% end %>
+    </div>
+
+  </div>
+</section>
+
+<% if params[:locale] == "fr" %>
+  <%= render partial: "press_section", locals: {color: "black"} %>
+<% end %>
+
+

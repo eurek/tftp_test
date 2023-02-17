@@ -1,0 +1,16 @@
+---
+fr:
+  error_pages:
+    back_cta: "Revenir sur la page précédente"
+    status:
+      internal_error: "Erreur 500"
+      not_found: "Erreur 404"
+      unacceptable: "Erreur 422"
+    status_description:
+      internal_error: "Erreur interne"
+      not_found: "Page non trouvée"
+      unacceptable: "Erreur interne"
+      coming_soon: "La page que vous cherchez arrive bientôt"
+    contact: "Pour nous signaler cette erreur vous pouvez nous contacter<br>à <b>admin@time-planet.com</b>"
+    home_cta: "Aller sur la page d'accueil"
+

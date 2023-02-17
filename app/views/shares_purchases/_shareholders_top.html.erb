@@ -1,0 +1,20 @@
+<div class="RecentShareholdersSection-top <%= top_class %>">
+  <span class="RecentShareholdersSection-topTitle RecentShareholdersSection-topTitle--colored">
+    <%= title %>
+  </span>
+  <% if top.nil? %>
+    <span class="RecentShareholdersSection-topTitle">
+      <%= raw t('become_shareholder.tops.no_top_found') %>
+    </span>
+  <% else %>
+    <span class="RecentShareholdersSection-topTitle">
+      <%= top.buyer_display_name unless top.blank? %>
+    </span>
+    <span class="RecentShareholdersSection-topText">
+      <%= raw t('become_shareholder.list.shares_number', nb_parts: number_with_delimiter(top.amount)) unless top.blank? %>
+    </span>
+    <span class="RecentShareholdersSection-topText">
+      <%= I18n.l(top.completed_at.to_date, format: :long) unless top.blank? %>
+    </span>
+  <% end %>
+</div>

@@ -1,0 +1,83 @@
+<% content_for :meta_title, strip_tags(t('roadmap.head_text.title')) %>
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<div class="Section Section--black">
+  <div class="container Hero">
+    <div class="Hero-column Hero-column--1" aria-hidden="true"></div>
+    <div class="Hero-column Hero-column--2" aria-hidden="true"></div>
+    <div class="Hero-column Hero-column--3" aria-hidden="true"></div>
+    <div class="Hero-column Hero-column--4" aria-hidden="true"></div>
+    <h1 class="Base-title Hero-title">
+      <%= raw t('roadmap.head_text.title') %>
+    </h1>
+    <p class="Base-subtitle Hero-subtitle"><%= raw t('roadmap.head_text.paragraph') %></p>
+    <i class="Base-scrollArrow Hero-arrow material-icons">arrow_downward</i>
+  </div>
+</div>
+
+<div class="Section Section--black" data-controller="roadmap">
+  <div class="container">
+    <div class="row">
+      <!-- Roadmap task details "modal" -->
+      <div class="col-12 DetailsContainer">
+        <div class="DetailsContainer-stickyPanel DetailsContainer-panel Details">
+          <%= render partial: "/shared/current_situation", locals: {
+            total_raised: @total_raised,
+            current_situation: @current_situation,
+            fundraising_goal: @current_episode.fundraising_goal,
+            funded_innovations: @funded_innovations,
+            last_done_task: @last_done_task,
+            external_link: "false"
+          } %>
+          <%= link_to buy_shares_choice_path, class: "Details-cta" do %>
+            <%= raw(t("roadmap.current_situation.cta")) %>
+            <span class="Button Button--underlined"><%= raw(t("common.act")) %><i class="material-icons">arrow_forward</i></span>
+          <% end %>
+          <div data-roadmap-target="detailsPlaceholder"
+               class="DetailsContainer-detailsPlaceholder DetailsContainer-panel">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-7">
+        <h2 class="Base-title Base-title--2 TaskListTitle"><%= raw(t("roadmap.tasks.title")) %></h2>
+        <%= render "task_list",
+            done_tasks: @done_short_tasks,
+            to_be_done_tasks: @short_tasks,
+            title: raw(t("roadmap.tasks.short_term")),
+            time_range: "(2020 - 2022)" %>
+        <%= render "task_list",
+            done_tasks: @done_medium_tasks,
+            to_be_done_tasks: @medium_tasks,
+            title: raw(t("roadmap.tasks.medium_term")),
+            time_range: "(2023 - 2025)" %>
+        <%= render "task_list",
+            done_tasks: @done_long_tasks,
+            to_be_done_tasks: @long_tasks,
+            title: raw(t("roadmap.tasks.long_term")),
+            time_range: "(2026 - 2030)" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--lagoon GoalSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <p class="Base-title Base-title--2">
+          <%= raw t('common.prefooter_text') %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <%= link_to buy_shares_choice_path, class: "Button Button--underlinedDark" do %>
+          <%= raw t('roadmap.pre_footer.link').upcase %>
+          <i class="material-icons">arrow_forward</i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

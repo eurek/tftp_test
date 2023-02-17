@@ -1,0 +1,8 @@
+<%= link_to raw(t( "become_shareholder.hero.cta")),
+            @external_links.shares_purchase_form,
+            class: "Button Button--box",
+            target: "_blank",
+            data: { "controller": "plausible",
+                    "action": "click->plausible#sendGoal",
+                    "plausible-event-name-value": "Click Typeform Become Shareholder Citizen" }
+  %>

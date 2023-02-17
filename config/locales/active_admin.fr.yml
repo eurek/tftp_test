@@ -1,0 +1,14 @@
+fr:
+  activerecord:
+    models:
+      roadmap_task: "Tasks"
+      translation: "Static Contents"
+  active_admin:
+    batch_actions:
+      labels:
+        highlight_reasons_to_join: "Afficher sur la page devenir-actionnaire"
+        mask_reasons_to_join: "Ne plus afficher sur la page devenir-actionnaire"
+  activeadmin:
+    contents:
+      notices:
+        duplicated: "Dupliqué avec succès, vous avez été redirigé sur le nouvel élément. Merci de changer le slug avant de sauvegarder"

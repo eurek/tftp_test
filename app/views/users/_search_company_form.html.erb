@@ -1,0 +1,13 @@
+<div  data-companies-search-target="searchForm" class="<%= "hidden" if hidden %>">
+  <%= f.label :company_name, label: t('private_space.choose_company.company_name') %>
+  <div class="Form--inline">
+    <%= f.input :company_name, label: false, input_html: { value: "", "data-companies-search-target": "query" } %>
+    <%= f.submit t('private_space.choose_company.cta'), class: "Button Button--inline Button--box",
+      "data-action": "click->companies-search#findResults" %>
+  </div>
+  <%= f.input :exact, label: t('private_space.choose_company.exact_checkbox'), as: :boolean,
+    input_html: { checked: false, "data-companies-search-target": "isExact" } %>
+
+  <div data-companies-search-target="resultsContainer">
+  </div>
+</div>

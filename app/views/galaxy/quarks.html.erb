@@ -1,0 +1,46 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<%= render "galaxy/shared/galaxy_navbar" %>
+
+<div class="Section GalaxyHero">
+  <div class="container GalaxyHero-container">
+    <div class="GalaxyHero-content">
+      <div class="GalaxyHero-text">
+        <h1><%= t("galaxy.quarks.title") %></h1>
+        <h2 class="Base-title--lagoon"><%= raw(t("galaxy.quarks.purposes.title")) %></h2>
+        <p class="Base-title Base-title--4"><%= t("galaxy.quarks.purposes.subtitle") %></p>
+      </div>
+      <%= image_tag 'galaxy/quarks.svg', class: "GalaxyHero-image" %>
+    </div>
+    <i class="Base-scrollArrow material-icons">arrow_downward</i>
+  </div>
+</div>
+
+<div class="HalfSection">
+  <div class="HalfSection-column HalfSection-column--left">
+    <div class="HalfSection-container">
+      <h2 class="Base-title--3 GalaxyDetails-title"><%= t("galaxy.quarks.roles.title") %></h2>
+      <% t("galaxy.quarks.roles.items").each do |item|%>
+        <p class="Base-subtitle Base-subtitle--smaller"><%= raw(item) %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="HalfSection-column HalfSection-column--right">
+    <div class="HalfSection-container">
+      <p class="Base-title Base-title--4"><%= raw t('galaxy.quarks.roles.how') %></p>
+      <div class="GalaxyDetails-separator"></div>
+      <div class="GalaxyDetails-duration">
+        <i class="material-icons">schedule</i>
+        <p class="Base-title Base-title--4"><%= raw t("galaxy.quarks.roles.duration") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--black GalaxyGroupDefinition">
+  <div class="container">
+    <% t("galaxy.quarks.definitions").each do |definition| %>
+      <p class="Base-title Base-title--3"><%= definition %></p>
+    <% end %>
+  </div>
+</div>

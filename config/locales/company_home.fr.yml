@@ -1,0 +1,114 @@
+---
+fr:
+  company_home:
+    hero:
+      switch_persona: "Aller vers la page citoyen·ne"
+      pretitle: "Grandes entreprises, PME, startups, fonds d’investissement..."
+      title:
+        part_1: "Votre entreprise peut agir<br>à l’échelle mondiale<br>contre le dérèglement climatique."
+        part_2: "Maintenant."
+    shareholder_companies_title: "Rejoignez <em>%{count} entreprises</em> comme la vôtre et luttez à l’échelle mondiale 
+      contre les émissions de gaz à effet de serre."
+    shareholder_companies_link: "Voir toutes les entreprises actionnaires"
+    mission:
+      title: "Time for the Planet est une société d‘investissement citoyenne ayant pour mission de détecter et déployer 
+        <em>100 innovations mondiales</em> qui luttent contre les <em>gaz à effet de serre.</em>"
+      incentive: "<em>Investissez</em> et recevez <em>chaque année une preuve certifiée</em> de votre contribution à la neutralité carbone."
+    companies_mission:
+      title: "La lutte pour la planète ne se gagnera pas <em>sans les entreprises.</em>"
+      scope: "scope"
+      paragraph_1: "<em>Le constat :</em> Pour rester sous la barre des 2 °C nous devons réduire les émissions de gaz
+        à effet de serre rapidement et à l’échelle mondiale."
+      paragraph_2: "La première étape est de <em>mettre en place des actions</em> pour réduire les émissions de gaz à
+        effet de serre <em>liées aux activités de votre entreprise.</em>"
+      paragraph_3: "Malheureusement, <em>certaines émissions sont incompressibles</em>, et une grande partie de 
+        vos émissions ne dépend pas de vous (scope 3)."
+      paragraph_4: "Nous avons donc besoin d’<em>agir à un niveau systémique</em>, en développant et démocratisant 
+        des biens et services décarbonnés."
+    steps:
+      title: "Devenez acteur <em>de la décarbonation</em>"
+      step_1:
+        title: "Votre entreprise investit dans Time for the Planet"
+        paragraph_1: "<b>Achetez des actions de Time for the Planet</b>, ou offrez en à vos salarié·es pour les embarquer dans l’aventure."
+        cta: "J'investis"
+        more_info: "Besoin de plus d’informations ?"
+        presentation: "Télécharger la présentation entreprise."
+        simulator: "Calculer combien investir, en fonction de la taille de votre entreprise"
+        appointment: "Prendre rendez-vous pour une présentation."
+      step_2:
+        title: "Cet investissement finance les biens et services décarbonés de demain"
+      step_3:
+        title: "Recevez des Dividendes Climat certifiés, chaque année"
+        paragraph_1: "Nous ne versons aucun dividende financier aux actionnaires. 
+          Tous les bénéfices issus des innovations financées sont <b>ré-investi dans  de nouvelles innovations.</b>"
+        paragraph_2: "Vous recevrez un suivi précis de la <b>quantité de gaz à effet de serre non émis ou captés</b> 
+          grâce à votre investissement. Ce suivi est matérialisé par des <b>Dividendes Climat</b>, qui apparaissent 
+          dans votre communication extra-financière."
+        climate_dividends: "En savoir plus sur les Dividendes Climat"
+    reasons_to_invest:
+      title: "Investir dans Time for the Planet, <em>pour une entreprise c’est...</em>"
+      carbon_neutrality:
+        title: "Mesurer précisément votre contribution à la neutralité carbone mondiale"
+        text: "Vous obtenez chaque année des Dividendes Climat, qui correspondent aux tonnes eq CO2 réduites ou 
+          captées grâce à votre investissement. C'est une information extra-financière certifiée grâce à une 
+          méthodologie robuste, transparente et reconnue par plusieurs standards mondiaux majeurs. 
+          Cet outil vous permet ainsi de piloter extrêmement efficacement votre stratégie d'investissement bas carbone."
+        highlight: "Ce reporting précis peut être intégré à vos documents de performance extra-financière."
+      differentiating_asset:
+        title: "Faire de votre investissement un atout différenciant"
+        text: "Investir dans Time for the planet c’est vous positionner en entreprise visionnaire et audacieuse. 
+          Cela devient un avantage comparatif que vous pouvez mettre en avant, dans les appels d’offres, 
+          auprès de vos clients, vos prestataires, vos partenaires et salarié·es."
+        highlight: "Votre page dédiée sur le site de Time for the Planet est une vitrine pour expliquer cet engagement. 
+          Vous pouvez l’intégrer à vos outils digitaux propres (site internet, documents en ligne, etc)."
+      federate:
+        title: "Fédérer autour d’un projet d’entreprise tourné vers l’avenir"
+        text: "De plus en plus de citioyen·nes sont concerné·es par la question du dérèglement climatique et vos 
+          salarié·es en font parti. Lorsque votre entreprise devient actionnaire de Time for the Planet, 
+          nous vous proposons d’offrir également des actions à vos salarié·es, de leur proposer de rejoindre 
+          l’écosystème de Time. Ils peuvent par exemple devenir évaluateurs ou contributeurs bénévoles 
+          et faire ainsi grandir le projet."
+        highlight: "Bénéficiez de tous nos outils de communication, nos événements grands publics et nos contenus 
+          toute l’année pour sensibiliser et fédérer vos équipes."
+      solution:
+        title: "Être au coeur de la solution"
+        text: "Nous sommes convaincus que les entreprises seront vecteurs de changements rapides et mondiaux. 
+          Rejoindre Time for the Planet, c’est prendre part à un projet concret, tourné vers l’action. 
+          Face à l’urgence climatique, chaque entreprise, quelque soit sa taille ou son secteur, peut investir. 
+          Vous participez à votre échelle à un effort collectif mondial pour décarboner l’économie 
+          et agir ainsi de façon systémique."
+        highlight: "En communiquant votre investissement dans Time for the Planet, vous incitez tout votre écosystème 
+          à agir dans la lutte contre le dérèglement climatique et participez à créer une 
+          communauté d'investisseurs engagés."
+    cta_section:
+      title: "Ça vous parle ?"
+      investment_amount:
+        cta: "Combien investir ?"
+        description: "En fonction de la taille de votre entreprise, calculez le montant plancher d'investissement."
+    climate_dividends:
+      title: "Les Dividendes Climat, <em>ou comment comptabiliser l’impact de votre investissement</em>"
+      description: "<p>Chaque année, vous recevrez le nombre de Dividendes Climats générés par votre investissement 
+        dans Time for the Planet.</p><p>Vous recevrez des Dididendes Climat chaque année, même si vous n’avez 
+        investi qu’une fois.</p>"
+      summary: "Ces Dividendes Climats peuvent être utilisés dans votre communication extra-financière."
+    climate_dividends_governance:
+      title: "La gouvernance des <em>Dividendes Climat</em>"
+      cta: "Consulter le site des Dividendes Climat"
+    open_source:
+      paragraph1: "Une des particularités de Time for the Planet<span class='brand'>®</span>"
+      paragraph2: "L'impact exponentiel de votre investissement grâce au modèle open source"
+      paragraph3: "Ainsi, ces innovations se diffusent encore plus largement, et sont disponibles pour toute 
+            l’humanité. L’impact de votre investissement et donc vos Dividendes Climat en sont multipliés."
+    learn_more:
+      title: "Envie d'en savoir <em>encore plus ?</em>"
+      links:
+        investment_brief: "Notre dossier d’investissement"
+        press_kit: "Notre dossier de presse"
+        open_source: "Notre dossier sur l’open source"
+        greenwashing: "Notre dossier “Greenwashing et lobying”"
+        climate_dividends: "Le site des Dividendes Climat"
+        founders: "Les cofondateurs"
+        supervisory_board: "Le conseil de surveillance"
+        scientific_commitee: "Le comité scientifique"
+
+

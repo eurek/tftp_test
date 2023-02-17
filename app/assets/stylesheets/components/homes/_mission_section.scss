@@ -1,0 +1,42 @@
+.MissionSection {
+  min-height: 90vh;
+  background-image: linear-gradient(180deg, #000000 36.78%, rgba(0, 0, 0, 0) 100%), image_url('icebergs.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-content {
+    text-align: center;
+  }
+
+  &-videoButton {
+    background-color: $rainforest-400;
+    color: $white;
+    display: flex;
+    margin: 4rem auto 0 auto;
+    text-transform: none;
+    padding: 0.5rem 1.2rem 0.5rem 0.7rem;
+    border-radius: 50px;
+
+    &:hover {
+      background-color: $rainforest-600;
+    }
+
+    span {
+      text-align: left;
+    }
+
+    i {
+      margin-right: 0.5rem;
+      margin-left: 0;
+      font-size: 3rem;
+    }
+  }
+}

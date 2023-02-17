@@ -1,0 +1,13 @@
+pl:
+  routes:
+    sponsorship-campaign: kampania-sponsorzy
+    new: nowosc
+    create: utworz
+    dashboard: dashboard
+    about: dowiedz-sie-wiecej
+    add-picture: dodaj-zdjecie
+    offer-shares: oferta-akcje
+    offer-shares-company: oferta-akcje-firma
+    become-shareholder-company: zostan-wpolnikiem-firma
+    become-shareholder: zostan-wpolnikiem
+    buy-shares-choice: kup-akcje-wybor

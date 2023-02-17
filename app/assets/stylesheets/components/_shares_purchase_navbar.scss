@@ -1,0 +1,68 @@
+.SharesPurchaseNavbar {
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .Form-field {
+    margin: 0 0.5rem 1.5rem 0;
+  }
+
+  span {
+    margin-bottom: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .choices, .choices__inner {
+    font-size: inherit;
+    background-color: transparent;
+    padding-right: 1px;
+  }
+
+  .choices[data-type*="select-one"]::after {
+    border-width: 7px;
+    border-color: $white transparent transparent;
+  }
+
+  .choices[data-type*="select-one"].is-open::after {
+    border-color: transparent transparent $white;
+  }
+
+  .choices__inner {
+    box-sizing: border-box;
+    border: 1px solid $grey-500;
+    border-radius: 0;
+    margin: 1px;
+  }
+
+  .choices.is-focused {
+    .choices__inner {
+      border: 2px solid $lagoon-500;
+      margin: 0;
+    }
+  }
+
+  .is-open .choices__inner  {
+    border-radius: 0;
+  }
+
+  .choices__list.choices__list--dropdown {
+    background-color: $black;
+    color: $white;
+  }
+
+  .choices__list {
+    border-radius: 0;
+  }
+
+  .choices__list--single {
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+  }
+
+  .choices__list.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: $grey-800;
+    border-radius: 0;
+  }
+}

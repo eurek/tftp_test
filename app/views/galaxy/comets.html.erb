@@ -1,0 +1,81 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<%= render "galaxy/shared/galaxy_navbar" %>
+
+<div class="Section GalaxyHero" data-controller="arrows-animation" data-action="scroll@window->arrows-animation#animateArrows">
+  <div class="container GalaxyHero-container">
+    <div class="GalaxyHero-content">
+      <div class="GalaxyHero-text">
+        <h1><%= t("galaxy.comets.title") %></h1>
+        <h2 class="Base-title--lagoon"><%= t("galaxy.comets.subtitle") %></h2>
+        <% t("galaxy.comets.purposes").each do |purpose| %>
+          <div class="GalaxyHero-paragraph">
+            <p class="Base-text--lighter Base-subtitle--lightLagoon"><%= raw(purpose) %></p>
+          </div>
+        <% end %>
+      </div>
+      <%= image_tag 'galaxy/galaxy-group-comets.svg', class: "GalaxyHero-image" %>
+    </div>
+    <i class="Base-scrollArrow material-icons">arrow_downward</i>
+  </div>
+</div>
+
+<div class="HalfSection">
+  <div class="HalfSection-column HalfSection-column--left">
+    <div class="HalfSection-container">
+      <h2 class="Base-title--3 GalaxyDetails-title"><%= t("galaxy.comets.roles.title") %></h2>
+      <% t("galaxy.comets.roles.items").each do |item|%>
+        <div class="GalaxyDetails-item">
+          <i class="material-icons">check_circle</i>
+          <p class="Base-text--lighter"><%= raw(item) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="HalfSection-column HalfSection-column--right" >
+    <div class="HalfSection-container">
+      <p class="Base-title Base-title--4"><%= raw(t("galaxy.comets.roles.how")) %></p>
+      <div class="GalaxyDetails-separator"></div>
+      <div class="GalaxyDetails-duration">
+        <i class="material-icons">schedule</i>
+        <p class="Base-title Base-title--4"><%= t("galaxy.comets.roles.duration") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--black">
+  <div class="container">
+    <h2 class="Base-title--3 GalaxyLifecycle-title"><%= t("galaxy.comets.life_cycle.title") %></h2>
+    <div class="GalaxyLifecycle-bloc">
+      <h3 class="Base-subtitle Base-subtitle--bold GalaxyLifecycle-subtitle">
+        1. <%= t("galaxy.comets.life_cycle.bloc_1.subtitle") %>
+      </h3>
+      <ul class="GalaxyLifecycle-list">
+        <% t("galaxy.comets.life_cycle.bloc_1.list_items").each do |list_item| %>
+          <li><%= list_item %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="GalaxyLifecycle-bloc">
+      <h3 class="Base-subtitle Base-subtitle--bold GalaxyLifecycle-subtitle">
+        2. <%= t("galaxy.comets.life_cycle.bloc_2.subtitle") %>
+      </h3>
+      <p class="GalaxyLifecycle-text"><%= t("galaxy.comets.life_cycle.bloc_2.text") %></p>
+    </div>
+
+    <div class="GalaxyLifecycle-bloc">
+      <h3 class="Base-subtitle Base-subtitle--bold GalaxyLifecycle-subtitle">
+        3. <%= t("galaxy.comets.life_cycle.bloc_3.subtitle") %>
+      </h3>
+      <p class="GalaxyLifecycle-text"><%= t("galaxy.comets.life_cycle.bloc_3.intro") %></p>
+      <ul class="GalaxyLifecycle-list">
+        <% t("galaxy.comets.life_cycle.bloc_3.list_items").each do |list_item| %>
+          <li><%= list_item %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

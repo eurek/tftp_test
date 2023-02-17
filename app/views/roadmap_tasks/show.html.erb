@@ -1,0 +1,37 @@
+<% if @no_index %>
+  <meta name="robots" content="noindex, nofollow"/>
+<% end %>
+
+<div class="Details-row">
+  <div class="Tag Tag--<%= task_color(@roadmap_task) %>">
+    <%= human_enum_name(@roadmap_task, :category) %>
+  </div>
+  <button type="button"
+          class="Button"
+          autofocus="false"
+          aria-label="Fermer la fenêtre"
+          data-action="roadmap#closeTask">
+        <span aria-hidden="true" class="Button">
+          <%= raw(t("common.close")).upcase %> <i class="material-icons">closes</i>
+        </span>
+  </button>
+</div>
+<h2 class="Base-title Base-title--3 Details-title Details-title--withoutMargin"><%= raw(@roadmap_task.title) %></h2>
+<div class="Details-subtitle Details-subtitle--<%= task_color(@roadmap_task) %>">
+  <%= status_display(@roadmap_task) %>
+</div>
+<div class="Details-text Details-text--moreMargin CmsContent"><%= @roadmap_task.text&.html_safe %></div>
+
+
+<% if @roadmap_task.prerequisite_tasks.present? %>
+  <div>
+    <h3 class="Details-subtitle"><%= I18n.t("activerecord.attributes.roadmap_task.prerequisities") %></h3>
+    <% @roadmap_task.prerequisite_tasks.each do |prerequisite| %>
+      <div class="Details-lastDone">
+    <!--    change the class-->
+        <i class="material-icons"><%= prerequisite.status_done? ? "done" : "closes" %></i>
+        <%= prerequisite.title %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

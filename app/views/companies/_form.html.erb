@@ -1,0 +1,38 @@
+<% is_employer_step = false if local_assigns[:is_employer_step].nil? %>
+
+<%= simple_form_for company, url: path, html: { 'data-controller': 'form' } do |f| %>
+  <%= f.input :is_displayed, required: false,
+              label: raw(t('private_space.edit_company.is_displayed_label')),
+              wrapper_html: { class: 'Form-checkbox Onboarding-infoBox Onboarding-formSeparator' } %>
+
+  <%= f.input :name, required: true, pattern: ".*[^ ].*",
+              input_html: { 'data-action': 'blur->form#validate' } %>
+  <%= f.input :address, required: false,
+      input_html: { class: 'Form-text' } %>
+
+  <%= render "shared/file_input",
+      f: f,
+      object: company,
+      delete_path: company.id && company_delete_logo_path(id: company.id),
+      attribute_name: :logo,
+      hint_text: t("common.images_format_accepted") %>
+  <%= f.input :description, as: :string, required: false %>
+  <%= f.input :co2_emissions_reduction_actions, required: false,
+      placeholder: raw(t('private_space.edit_company.reduction_actions_placeholder')),
+      input_html: { class: 'Form-text' } %>
+
+  <%= f.input :website, required: false %>
+  <%= f.input :facebook, required: false %>
+  <%= f.input :linkedin, required: false %>
+  <%= f.input :shares_purchase_id, as: :fake, input_html: {value: @shares_purchase_id, type: "hidden"}, label: false %>
+  <%= f.input :from_companies_index, required: false,
+                                     input_html: {value: params[:from_companies_index],
+                                     type: "hidden"},
+                                     label: false %>
+
+
+  <div class="Form-actions Onboarding-form">
+    <%= f.button :submit, raw(t('private_space.edit_company.cta')), class: 'Button--box Button--fullWidth' %>
+  </div>
+<% end %>
+

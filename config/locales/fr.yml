@@ -1,0 +1,94 @@
+---
+fr:
+  live_popup_overlay:
+    notification: "<b>%{name}</b> vient d'acquérir %{count} actions !"
+  activerecord:
+    models:
+      event: "Evènement"
+      user: "Utilisateur·rice"
+      innovation: "Innovation"
+      individual: "Individu"
+    attributes:
+      innovation:
+        status: "Statut"
+        statuses:
+          received: "Reçue"
+          submitted_to_evaluations: "Soumise à évaluations"
+          submitted_to_scientific_comity: "Soumise au comité scientifique"
+          submitted_to_economical_tests: "Soumise aux tests économiques"
+          submitted_to_general_assembly: "Soumise à l'assemblée générale"
+          star: "Etoile"
+          selecting: "En sélection"
+        submitted_at: "Date de soumission"
+        long_description: "Le projet en détails"
+        founders: Fondateurs
+      funded_innovation:
+        funded_at: "Financement réalisé le"
+        company_created_at: "Entreprise créé le"
+        amount_invested: "Montant investi"
+      event:
+        categories:
+          conference: "Conférence"
+          workshop: "Atelier"
+          videoconference: "Visio-conférence"
+          course: "Formation"
+      roadmap_task:
+        category: "Catégorie"
+        done_at: "Terminée le"
+        categories:
+          community: "Communauté"
+          structure: "Structuration de Time"
+          funding: "Financement"
+          enterprise_creation: "Création d'entreprise"
+        status: "Statut"
+        statuses:
+          to_do: "A faire"
+          in_progress: "En cours"
+          done: "Terminée"
+        prerequisities: "Prérequis"
+      problem:
+        action_levers:
+          zero_emission: "Zéro émission"
+          energetical_efficacy: "Efficacité énergétique"
+          sobriety: "Sobriété"
+          captation: "Captation"
+        domains:
+          energy: "Energie"
+          industry: "Industrie"
+          transport: "Transport"
+          agriculture: "Agriculture"
+          building: "Bâtiment"
+      associate:
+        email: "votre email"
+      badge:
+        categories:
+          year: "millésime"
+          financial: "financier"
+          community: "communautaire"
+          action: "action"
+          honorific: "honorifique"
+          event: "évènement"
+          special: "spécial"
+          role_actions: "Actions de rôles"
+          individual_sponsor: "Parrains & Marraines"
+          help_comet: "Coups de main/Comètes"
+          community_planet: "Communautés/Planètes"
+    errors:
+      messages:
+        invalid_json: "Invalid JSON format"
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: "Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe"
+          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
+        picture_error_message: "%{attribute} doit être au format jpg, jpeg ou png"
+        document_error_message: "%{attribute} doit être au format pdf"
+  errors:
+    messages:
+      blank: Merci d'indiquer %{attribute}
+      invalid: "%{attribute} est incorrect(e)"
+      not_a_number: "%{attribute} n'est pas un nombre"
+      cannot_be_deleted: "%{model} ne peut pas être supprimé(e)"
+  date:
+    formats:
+      medium: "%d/%m/%Y"
+

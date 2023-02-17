@@ -1,0 +1,105 @@
+<% content_for :meta_title, raw(t('vision.header.title')) %>
+
+<div class="Section Section--lightGrey Header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="Base-title Base-title--1"><%= raw t('vision.header.title') %></h1>
+        <p>
+          <%= raw t('vision.header.description') %>
+        </p>
+      </div>
+    </div>
+    <div class="Header-image"></div>
+    <i class="Header-scrollArrow material-icons">arrow_downward</i>
+  </div>
+</div>
+
+<div class="Section Section--white">
+  <div class="container">
+    <div class="row">
+      <% t('vision.engagement').each do |block| %>
+      <div class="col-md-6">
+        <h2 class="Base-title Base-title--2">
+          <%= raw block[:title] %>
+        </h2>
+        <p>
+          <strong>
+            <%= raw block[:subtitle] %>
+          </strong><br>
+          <%= raw block[:description] %>
+        </p>
+      </div>
+      <% end %>
+    </div>
+    <div class="row Banner">
+      <div class="col-md-6">
+        <p class="Base-subtitle Base-subtitle--bold Base-subtitle--smaller">
+          <%= raw t('vision.banner.title') %>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p><strong><%= raw t('vision.banner.subtitle') %></strong></p>
+        <ul class="Banner-list">
+          <% t('vision.banner.bullet_points').each do |text| %>
+          <li class="Banner-listItem">
+            <%= raw text %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <% t('vision.values1').each do |block| %>
+      <div class="col-md-6">
+        <h2 class="Base-title Base-title--2">
+          <%= raw block[:title] %>
+        </h2>
+        <p>
+          <strong>
+            <%= raw block[:subtitle] %>
+          </strong><br>
+          <%= raw block[:description] %>
+        </p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--lightGrey">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="Base-title Base-title--2"><%= raw t('vision.values2.title') %></h2>
+      </div>
+      <div class="col-md-8">
+        <% t('vision.values2.paragraphs').each do |text| %>
+        <p>
+          <%= raw text %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--white">
+  <div class="container">
+    <div class="row">
+      <% t('vision.values3').each do |block| %>
+      <div class="col-md-6">
+        <h2 class="Base-title Base-title--2">
+          <%= raw block[:title] %>
+        </h2>
+        <p>
+          <strong>
+            <%= raw block[:subtitle] %>
+          </strong><br>
+          <%= raw block[:description] %>
+        </p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

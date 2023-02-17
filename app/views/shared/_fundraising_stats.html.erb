@@ -1,0 +1,28 @@
+<% size = "large" if local_assigns[:size].nil? %>
+
+<div class="FundraisingStats <%= "FundraisingStats--smaller" if size == "small" %>">
+  <div class="ProgressRing">
+    <%= render partial: "shared/progress_ring", locals: { percent: fundraising_percentage(current_episode.fundraising_goal, total_raised), size: size } %>
+  </div>
+  <div class="FundraisingStats-totalRaised">
+    <p class="FundraisingStats-number FundraisingStats-number--rainforest">
+      <em><%= number_to_currency(total_raised, locale: params[:locale], precision: 0, unit: "€") %></em>
+    </p>
+    <span class="Base-subtitle FundraisingStats-legend"><%= raw t('home.future_fundings.already_raised') %>*</span>
+    <span class="FundraisingStats-smallMention"><%= raw t("common.funds_raised_amf_mention") %></span>
+  </div>
+  <div class="FundraisingStats-goal">
+    <p class="FundraisingStats-number FundraisingStats-number--red">
+      <%= raw t('home.future_fundings.goal', amount: number_to_currency(
+        current_episode.fundraising_goal,
+        locale: params[:locale],
+        precision: 0,
+        unit: "€")) %>
+    </p>
+    <span class="Base-subtitle FundraisingStats-legend">
+      <%= raw t('home.future_fundings.time_left', time: distance_of_time_in_words(
+        Date.today,
+        current_episode.finished_at)) %>
+    </span>
+  </div>
+</div>

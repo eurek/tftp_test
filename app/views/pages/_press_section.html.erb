@@ -1,0 +1,18 @@
+<section class="Section Section--<%= color %>> PressSection">
+  <div class="container">
+    <div class="row PressSection-container">
+      <div class="col-md">
+        <h1 class="Base-title Base-title--1 Base-title--white"><%= raw t('home.press.title') %></h1>
+      </div>
+      <div class="col-md">
+        <%= link_to contents_path(category: @press_category.slug) do %>
+          <div class="row PressSection-logosContainer">
+            <% [:les_echos, :cfnews, :forbes, :le_figaro, :paris_match, :bfm, :afp, :le_progres, :la_tribune].each do |name| %>
+              <%= embedded_svg "press/#{name}_logo.svg", class: "PressSection-logo" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

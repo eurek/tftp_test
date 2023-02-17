@@ -1,0 +1,76 @@
+{
+  "api_version": "0.4",
+  "results": {
+    "companies": [
+      {
+        "company": {
+          "name": "514 MEDIA LTD",
+          "company_number": "10716436",
+          "jurisdiction_code": "gb",
+          "incorporation_date": "2017-04-08",
+          "dissolution_date": null,
+          "company_type": "Private Limited Company",
+          "registry_url": "https://beta.companieshouse.gov.uk/company/10716441",
+          "branch": null,
+          "branch_status": null,
+          "inactive": false,
+          "current_status": "Active",
+          "created_at": "2017-04-08T09:05:21+00:00",
+          "updated_at": "2022-09-25T01:56:40+00:00",
+          "retrieved_at": "2022-09-25T01:56:40+00:00",
+          "opencorporates_url": "https://opencorporates.com/companies/gb/10716441",
+          "previous_names": [],
+          "source": {
+            "publisher": "UK Companies House",
+            "url": "http://xmlgw.companieshouse.gov.uk/",
+            "terms": "UK Crown Copyright",
+            "retrieved_at": "2022-09-25T01:56:40+00:00"
+          },
+          "registered_address": {
+            "street_address": "C/O Diverset Ltd Ferrari House\n258 Field End Road",
+            "locality": "Ruislip",
+            "region": null,
+            "postal_code": "HA4 9UU",
+            "country": "United Kingdom"
+          },
+          "registered_address_in_full": "C/O Diverset Ltd Ferrari House\n258 Field End Road, Ruislip, HA4 9UU",
+          "industry_codes": [
+            {
+              "industry_code": {
+                "code": "82.99",
+                "description": "Other business support service activities n.e.c.",
+                "code_scheme_id": "uk_sic_2007",
+                "code_scheme_name": "UK SIC Classification 2007",
+                "uid": "uk_sic_2007-8299"
+              }
+            },
+            {
+              "industry_code": {
+                "code": "82.99",
+                "description": "Other business support service activities n.e.c.",
+                "code_scheme_id": "eu_nace_2",
+                "code_scheme_name": "European Community NACE Rev 2",
+                "uid": "eu_nace_2-8299"
+              }
+            },
+            {
+              "industry_code": {
+                "code": "8299",
+                "description": "Other business support service activities n.e.c.",
+                "code_scheme_id": "isic_4",
+                "code_scheme_name": "UN ISIC Rev 4",
+                "uid": "isic_4-8299"
+              }
+            }
+          ],
+          "restricted_for_marketing": null,
+          "native_company_number": null
+        }
+      }
+    ],
+    "page": 1,
+    "per_page": 20,
+    "total_pages": 1,
+    "total_count": 1
+  }
+}

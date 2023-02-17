@@ -1,0 +1,67 @@
+.pages-connection {
+  background-color: $black;
+
+  .Logo {
+    margin: 3rem auto 0 auto;
+    display: block;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-top: 0;
+    }
+
+    &--small {
+      width: 2rem;
+    }
+
+    &--large {
+      width: 10rem;
+    }
+  }
+
+  .LanguageSwitcher {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .Base-title--3 {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .Base-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .ConnectionChoices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+    }
+
+    &-column {
+      width: 100%;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 40%;
+      }
+    }
+  }
+
+  .Button--box {
+    color: $black;
+    margin-bottom: 4rem;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .Base-subtitle {
+    color: $lagoon-200;
+    margin-bottom: 2rem;
+  }
+}

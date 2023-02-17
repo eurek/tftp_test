@@ -1,0 +1,13 @@
+<div class="StarScale">
+  <% rating.round_to_half.floor.times do %>
+    <i class="material-icons">star</i>
+  <% end %>
+
+  <% if rating.round_to_half.modulo(1) == 0.5 %>
+    <i class="material-icons">star_half</i>
+  <% end %>
+
+  <% (5 - rating).floor.times do %>
+    <i class="material-icons">star_border</i>
+  <% end %>
+</div>

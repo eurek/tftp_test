@@ -1,0 +1,20 @@
+.registrations-edit, .registrations-update {
+
+  .PrivateSpace-title {
+    margin-bottom: 2rem;
+  }
+
+  .PrivateSpace-text {
+    margin-top: 5rem;
+  }
+
+  .CancelLink {
+    text-transform: none;
+    text-decoration: underline;
+    color: $red-300;
+
+    &:hover {
+      color: $red-500;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<%= render partial: "shared/back_nav", locals: {
+  path: events_path,
+  anchor: raw(t("events.show.back")),
+  modifier: "black"
+} %>
+
+<section class="EventHeader">
+  <div class="EventHeader-content">
+    <h1>
+      <%= raw(@event.title.upcase_first) %>
+    </h1>
+    <p class="EventHeader-language">
+      <%= raw t('events.show.event_language', language: t('common.language', locale: @event.locale)) %>
+    </p>
+    <table class="EventHeader-table">
+      <tr>
+        <td class="EventHeader-questions">
+          <%= raw t("events.show.when") %>
+        </td>
+        <td class="EventHeader-answers">
+          <%= @event.date_display %>
+        </td>
+      </tr>
+      <% if @event.venue.present? %>
+      <tr>
+        <td class="EventHeader-questions">
+          <%= raw t("events.show.where") %>
+        </td>
+        <td class="EventHeader-answers">
+          <%= @event.venue.upcase_first %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="EventHeader-image<%= @event.picture.attached? ? "" : " EventHeader-image--default" %>"
+    style="background-image: url('<%= image_path event_cover_image(@event, [800, 400]) %>')"
+    alt="<%= @event.title %>">
+  </div>
+</section>
+
+<section class="Section Section--lagoon">
+  <div class="container EventLink">
+    <%= link_to @event.registration_link, target: "_blank", class: "Button Button--underlined" do %>
+      <%= raw t("events.show.registration") %>
+      <i class="material-icons">arrow_forward</i>
+    <% end %>
+  </div>
+</section>
+
+<section class="Section Section--rainforest">
+  <div class="container">
+    <h2>
+      <%= raw t("events.show.description") %>
+    </h2>
+    <p class="EventDescription">
+      <%= raw(@event.description) if @event.description.present? %>
+    </p>
+  </div>
+</section>

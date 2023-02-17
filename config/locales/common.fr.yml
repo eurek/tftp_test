@@ -1,0 +1,63 @@
+---
+fr:
+  common:
+    test:
+      - Lorem
+      - Ipsum
+    innovations: "Les innovations"
+    about: "Tout savoir"
+    how_to_act: "Agir"
+    act: "Acheter des actions"
+    up: "Retour"
+    slogan: "L'entrepreneuriat au service de l'urgence climatique."
+    language: "français"
+    flag: "france"
+    login: "Connexion"
+    my_account: "Mon Compte"
+    choices_hint: "Choisir"
+    application_download: "Télécharger l’application Time for the Planet"
+    galaxy_application: "Rejoignez l’espace galaxie"
+    contact: "Contact"
+    characters: "caractères"
+    uploaded_file: "Fichier choisi"
+    choose_file: "Choisis un fichier"
+    edit: "Modifier"
+    images_format_accepted: "(fichier .jpg ou .png acceptés)"
+    delete: "Supprimer"
+    file_deleted: "Votre fichier a bien été supprimé."
+    cant_delete_file: "Tu ne peux pas supprimer ce fichier."
+    time_ago: "il y a %{time}"
+    temporary:
+      headline: "Vous souhaitez vous impliquer plus intensément pour le climat ?"
+      title: "Postulez pour devenir CEO des prochaines entreprises Time for the Planet !"
+      link: "Postuler"
+    become_shareholder:
+      cta: "Je deviens actionnaire"
+    become_shareholder_company:
+      cta: "J’investis avec mon entreprise"
+    become_shareholder_navbar:
+      form_mobile_toggle: "Je cherche"
+      shareholder_type_placeholder: "Je suis"
+      individual: "Je suis un particulier"
+      company: "Je suis une entreprise"
+      transaction_type_placeholder: "Je souhaite"
+      buy: "Je souhaite acheter des actions"
+      offer: "Je souhaite offrir des actions"
+      coupon: "Je souhaite utiliser mon code cadeau"
+      transaction_type_prompt: "à vous de choisir"
+    close: "fermer"
+    cookies_management: "Gérer les cookies"
+    empty_field_error: "Veuillez remplir ce champ"
+    badge_counter:
+      zero: "Il y a actuellement %{count} actionnaire qui le détient."
+      one: "Il y a actuellement %{count} actionnaire qui le détient."
+      other: "Il y a actuellement %{count} actionnaires qui le détiennent."
+    filters:
+      remove_filter: "Enlever ce filtre"
+    prefooter_text: "Vous voulez nous aider à avancer ?<br>Rejoignez-nous !"
+    know_more: En savoir plus
+    see_more: "Voir plus"
+    see_less: "Voir moins"
+    loading: "Ca charge..."
+    thank_you: "Merci !"
+    funds_raised_amf_mention: "* Capital + CA HT cumulé de la société depuis sa création"

@@ -1,0 +1,33 @@
+<section class="container Section Section--black">
+  <%= render "shared/language_switcher" %>
+  <%= image_tag 'logo-time-planet.svg', class: "Logo Logo--small" %>
+  <h1 class="Base-title Base-title--3">
+    <%= raw t('connection.title') %>
+  </h1>
+  <div class="ConnectionChoices">
+    <div class="ConnectionChoices-column">
+      <%= image_tag 'private-space-connection.svg', class: "Logo Logo--large" %>
+      <h2 class="Base-title Base-title--4">
+        <%= raw t('connection.private_space.title') %>
+      </h2>
+      <p class="Base-subtitle">
+        <%= raw t('connection.private_space.description') %>
+      </p>
+      <%= link_to raw(t('connection.private_space.cta')), login_link, class: "Button Button--box" %>
+    </div>
+
+    <div class="ConnectionChoices-column">
+      <%= image_tag 'galaxy-connection.svg', class: "Logo Logo--large" %>
+      <h2 class="Base-title Base-title--4">
+        <%= raw t('connection.galaxy.title') %>
+      </h2>
+      <p class="Base-subtitle">
+        <%= raw t('connection.galaxy.description') %>
+      </p>
+      <%= link_to raw(t('connection.galaxy.cta')),
+        @external_links.galaxy_app,
+        class: "Button Button--box" %>
+    </div>
+  </div>
+</section>
+

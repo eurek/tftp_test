@@ -1,0 +1,30 @@
+.DataTab {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  color: $grey-300;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+
+  @media (min-width: $breakpoint-md) {
+    height: 4rem;
+  }
+
+  &-container {
+    height: auto;
+  }
+
+  &-number {
+    margin-right: 0.3rem;
+    margin-bottom: 0;
+  }
+
+  &--active {
+    color: $white;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}

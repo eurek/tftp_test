@@ -1,0 +1,32 @@
+body.admin_translations {
+
+  #active_admin_content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #sidebar {
+    position: unset;
+    width: 100%;
+
+    @media (min-width: 992px) {
+
+      .filter_form {
+        display: flex;
+        flex-wrap: wrap;
+
+        .filter_form_field {
+          width: 47%;
+        }
+
+        #q_value_input {
+          margin-left: 6%;
+        }
+
+        .buttons {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

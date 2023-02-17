@@ -1,0 +1,91 @@
+<nav class="Navbar <%= yield(:navbar_classes) %>"
+     data-controller="navbar"
+     data-action="resize@window->navbar#closeMenuOnLargeBreakpoint click@window->navbar#hideMenusWhenClickOutside
+      keyup@document->navbar#hideMenusWhenKeyupEscape">
+  <div class="container Navbar-container">
+    <button class="Navbar-hamburger Navbar-link"
+            type="button"
+            aria-label="Menu"
+            aria-controls="navigation"
+            data-navbar-target="hamburger"
+            data-action="navbar#toggleMenu">
+      <i class="material-icons"></i>
+    </button>
+
+    <%= link_to root_path_choice, class: 'Navbar-logoContainer' do %>
+      <%= embedded_svg 'logo-time-planet.svg', class: "Navbar-logo", alt: "Time for the Planet Logo" %>
+      TFTP
+    <% end %>
+
+    <div class="Navbar-links">
+
+      <button class="Button Navbar-link Navbar-linkDesktop Navbar-linkDesktop--menuTrigger"
+              data-action="navbar#toggleInnovationsMenu">
+        <span> <%= t("common.innovations") %> </span>
+        <span class="Navbar-arrowDown hidden" data-navbar-target="innovationsArrow"></span>
+      </button>
+
+      <button class="Button Navbar-link Navbar-linkDesktop Navbar-linkDesktop--menuTrigger"
+              data-action="navbar#toggleActingMenu">
+        <span> <%= t("common.how_to_act") %> </span>
+        <span class="Navbar-arrowDown hidden" data-navbar-target="actingArrow"></span>
+      </button>
+
+      <button class="Button Navbar-link Navbar-linkDesktop Navbar-linkDesktop--menuTrigger"
+              data-action="navbar#toggleAboutMenu">
+        <%= t("common.about") %>
+        <span class="Navbar-arrowDown hidden" data-navbar-target="aboutArrow"></span>
+      </button>
+      <% unless is_a_buying_shares_path?(request.path) %>
+        <%= link_to buy_shares_choice_path, class: 'Navbar-cta Button Button--underlined' do %>
+          <%= t('common.act') %> <i class="material-icons">arrow_forward</i>
+        <% end %>
+      <% end %>
+
+      <%= render 'shared/language_switcher', class_name: 'Navbar-link Navbar-linkDesktop' %>
+
+      <%= link_to connection_path, class: "Button Navbar-link Navbar-signinLink Navbar-linkDesktop", "aria-label": t("common.login"), target: "_blank" do %>
+        <i class="material-icons">login</i><span><%= t("common.login") %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render "shared/navbar_menus", hidden: !request.path.include?(t("routes.about")) %>
+
+  <div class="Navbar-mobileMenu">
+    <div class="container">
+      <ul class="Navbar-mobileLinks">
+        <li>
+          <div class="Navbar-mobileHeader">
+            <%= link_to login_link, class: "Button Navbar-link Navbar-signinLink", "aria-label": t("common.login") do %>
+              <i class="material-icons">login</i><span><%= t("common.login") %></span>
+            <% end %>
+
+            <%= render 'shared/language_switcher', class_name: "Navbar-link Navbar-link--language" %>
+          </div>
+        </li>
+        <li>
+          <button class="Button Navbar-link Navbar-linkMobile"
+                  data-action="navbar#toggleInnovationsMenu">
+            <%= t('common.innovations') %>
+            <i class="material-icons">arrow_forward</i>
+          </button>
+        </li>
+        <li>
+          <button class="Button Navbar-link Navbar-linkMobile"
+                  data-action="navbar#toggleActingMenu">
+            <%= t('common.how_to_act') %>
+            <i class="material-icons">arrow_forward</i>
+          </button>
+        </li>
+        <li>
+          <button class="Button Navbar-link Navbar-linkMobile"
+                  data-action="navbar#toggleAboutMenu">
+            <%= t('common.about') %>
+            <i class="material-icons">arrow_forward</i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

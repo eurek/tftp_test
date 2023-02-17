@@ -1,0 +1,32 @@
+<% is_company_editable = false if local_assigns[:is_company_editable].nil? %>
+
+<div id="company-card">
+  <p class="Form-label">
+    <%= raw t('private_space.profile.current_company') %>
+  </p>
+
+  <div class="CompanyInfoCard" data-company-id=<%= company.id %>>
+    <div class="CompanyInfoCard-info">
+      <h2 class="Base-title Base-title--4"><%= company.name %></h2>
+      <%=  simple_format(company.address, class: "CompanyInfoCard-address") %>
+    </div>
+
+    <div class="CompanyInfoCard-actions">
+      <%= link_to remove_employer_path, class: "CompanyInfoCard-action",
+        data: {action: "click->companies-search#removeEmployer"} do %>
+        <i class="material-icons PrivateSpace-icon">
+          delete
+        </i>
+        <%= raw t('private_space.profile.remove_employer') %>
+      <% end %>
+
+        <%= button_tag class: "CompanyInfoCard-action #{"hidden" unless is_company_editable}",
+          data: {action: "click->companies-search#editCompany"}, id: "edit-company-button" do %>
+          <i class="material-icons PrivateSpace-icon">
+            edit
+          </i>
+          <%= raw t('private_space.profile.edit_employer') %>
+        <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<h1 class="PrivateSpace-title PrivateSpace-title--purple">
+  <%= raw(t('private_space.edit_account.title')) %>
+</h1>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.simple_fields_for :individual do |individual| %>
+      <%= individual.input :email, required: true, pattern: ".*[^ ].*", autofocus: true %>
+    <% end %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password,
+                hint: t('private_space.edit_account.password_hint'),
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                hint: t('private_space.edit_account.password_hint'),
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :current_password,
+                hint: t('private_space.edit_account.current_password_hint'),
+                required: true,
+                pattern: ".*[^ ].*",
+                input_html: { autocomplete: "current-password" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('private_space.edit_account.cta'), class: 'Button--box Button--fullWidth' %>
+  </div>
+<% end %>
+
+<p class="PrivateSpace-text">
+  <%= raw(t('private_space.edit_account.delete_question')) %>
+  <%= link_to t('private_space.edit_account.cancel_cta'),
+    destroy_registration_path,
+    data: { confirm: t('private_space.edit_account.cancel_confirmation') }, method: :delete, class: "CancelLink" %>
+</p>
+

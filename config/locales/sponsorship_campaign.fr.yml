@@ -1,0 +1,39 @@
+---
+fr:
+  sponsorship_campaign:
+    dashboard:
+      title: "Embarque tes proches dans l’aventure de Time !"
+      subtitle: "Si nous sommes aujourd’hui %{total_shareholders} actionnaires et demain des millions, c’est grâce aux
+        actionnaires de Time qui parlent de l’aventure à leur réseau ! En partageant ton lien d’ambassadeur·rice,
+        tu peux suivre combien de visites sur le site de Time for the Planet<span class='brand'>®</span> ont été 
+        générées par ton action."
+      link_title: "Ton lien de parrainage"
+      link_cta: "Copier le lien"
+      actions_title: "Comment partager ton lien d'ambassadeur·rice"
+      right_content:
+        generated_visits: "visites sur le site grâce à ton lien d’ambassadeur·rice"
+      actions:
+        linkedin: "Embarque ton réseau dans l’aventure avec LINKEDIN."
+        facebook: "Amplifie ton action en partageant sur FACEBOOK."
+        twitter: "Annonce à ton audience TWITTER qu’ils peuvent aider."
+        email: "Envoie un E-MAIL à tes proches."
+        email_modal:
+          description: "Modale contenant un modèle d'email à envoyer pour partager sa page de parrainage."
+          title: "Contacte les futurs actionnaires de Time par email"
+          subtitle: "Pour t'aider, nous avons préparé ce modèle d'email, que tu peux copier et modifier à ta guise !"
+          content: "Hello, j’espère que tu vas bien ? \n\nJe t'envoie ce petit message car je me suis engagé·e
+        avec Time for the Planet afin de lutter à grande échelle contre le dérèglement climatique.\n\n
+        Tu en as peut-être entendu parler, c’est un mouvement non lucratif et mondial, qui utilise l’entrepreneuriat
+        pour déployer des innovations contre les gaz à effet de serre partout sur la planète,
+        grâce à l’open source notamment.\n\n
+        Tout le monde peut rejoindre l’aventure, au même titre que moi, en 1 minute. Ça ne demande aucun effort
+        ou engagement particulier.\n\n
+        J’ai pensé que cela pourrait te plaire :)\n\n
+        Pour aller plus loin dans mon implication pour ce projet, j’ai créé mon propre parrainage.
+        Ça me permet de faire grandir Time for the Planet directement via mon réseau, car je sais que beaucoup de gens
+        autour de moi sont sensibles à la cause.\n\n
+        Si cela t’intéresse, voici le lien : %{sponsorship_campaign_url}\n\n
+        Je te joins également celui du site Time for the Planet, qui explique en détail ce que nous
+        faisons tous ensemble : https://time-planet.com\n\n
+        Au plaisir d’en discuter avec toi,"
+          cta: "Copier le texte"

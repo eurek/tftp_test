@@ -1,0 +1,74 @@
+<% content_for :navbar_classes, 'Navbar--notSticky Navbar--lightPurple Navbar--darkLinks' %>
+
+<%= render 'become_shareholder_navbar', color: "lightPurple", animation: "BecomeShareholderNavbar--slide" do %>
+  <%= render partial: "buy_shares_cta",
+    locals: {
+      color: "lightPurple",
+      cta_text: raw(t('offer_shares.cta')),
+      link: @external_links.company_offer_shares_form
+    }
+  %>
+<% end %>
+
+<%= render partial: "sections/become_shareholder_header_section", locals: {
+  background_color: "lightPurple",
+  icon_path: 'cadeau-time-violet.svg',
+  title: raw(t('offer_shares_company.summary.title')),
+  subtitle_1: "",
+  subtitle_2: raw(t('offer_shares_company.summary.subtitle')),
+  cta_color: "lightPurple",
+  cta_text: raw(t('offer_shares.cta')),
+  cta_link: @external_links.company_offer_shares_form,
+  total_raised: @total_raised,
+  shares_purchases_statistics: @shares_purchases_statistics,
+  current_situation: @current_situation,
+  fundraising_goal: @current_episode.fundraising_goal,
+  marker_path: asset_path("marker-purple.svg"),
+  goal_marker_path: asset_path("marker-purple-light.svg"),
+  line_color: "#714EFF",
+  gradient_rgba_code: "178,159,255",
+  indicators_color: "purple",
+  goal_indicator_color: "darkPurple"} %>
+
+<%= render partial: "offer_shares_benefits", locals: {
+  color: "purple",
+  title: raw(t('offer_shares_company.benefits.title')),
+  benefit_1: raw(t('offer_shares_company.benefits.first')),
+  benefit_2: raw(t('offer_shares_company.benefits.second')),
+  benefit_3: raw(t('offer_shares_company.benefits.third'))
+} %>
+
+<%= render partial: "illustration_section", locals: {
+  image: "certificat-sourire.svg",
+  color: "purple",
+  title: raw(t('offer_shares.gift_package.title')),
+  paragraph_1: raw(t('offer_shares.gift_package.text1')),
+  paragraph_2: raw(t('offer_shares.gift_package.text2'))
+} %>
+
+<section class="Section Section--black Section--morePadding OneThirdImageSection">
+  <div class="container OneThirdImageSection-container">
+    <div class="OneThirdImageSection-column OneThirdImageSection-column--content">
+      <h2 class="OneThirdImageSection-title">
+        <%= raw t('offer_shares_company.cta_banner.title') %>
+      </h2>
+      <p class="OneThirdImageSection-text OneThirdImageSection-text--purple">
+        <%= raw t('offer_shares_company.cta_banner.text') %>
+      </p>
+    </div>
+
+    <%= link_to @external_links.company_offer_shares_form, target: "_blank",
+      class: "OneThirdImageSection-column OneThirdImageSection-column--image" do
+    %>
+      <div>
+        <%= image_tag 'gift-company-street.svg', class: "OneThirdImageSection-image" %>
+      </div>
+      <span class="Button Button--white Button--underlinedPurple OneThirdImageSection-cta">
+        <%= raw t('become_shareholder.options.gift.cta') %>
+        <i class="material-icons">arrow_forward</i>
+      </span>
+    <% end %>
+  </div>
+</section>
+
+<%= render "sections/amf_documentation", color: "whiteAndPurple" %>

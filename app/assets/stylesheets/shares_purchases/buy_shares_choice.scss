@@ -1,0 +1,88 @@
+.shares_purchases-buy_shares_choice {
+  .Section--black {
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $breakpoint-md) {
+      min-height: calc(100vh - 4.5rem);
+    }
+  }
+
+  .BuySharesChoice {
+    &-container {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    &-image {
+      width: 5rem;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 7rem;
+      }
+    }
+
+    &-rightBlock {
+      flex-grow: 1;
+
+      @media (min-width: $breakpoint-md) {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  .Base-title {
+    @media (min-width: $breakpoint-md) {
+      margin-top: 0;
+    }
+  }
+
+  .BecomeShareholderNavbar {
+    position: relative;
+    background-color: unset;
+
+    .container {
+      padding: 0;
+    }
+
+    &-form {
+      flex-basis: unset;
+      width: 100%;
+      flex-direction: column;
+      max-height: none;
+      align-items: center;
+      padding: 0;
+      overflow: visible;
+
+      @media (min-width: $breakpoint-lg) {
+        flex-direction: row;
+      }
+
+      .Form-field {
+        width: 100%;
+
+        @media (min-width: $breakpoint-lg) {
+          width: 50%;
+        }
+      }
+
+      .Button--box {
+        margin-top: 2rem;
+
+        @media (min-width: $breakpoint-lg) {
+          margin-top: 0
+        }
+      }
+    }
+
+    &-toggle.Button {
+      display: none;
+    }
+  }
+}

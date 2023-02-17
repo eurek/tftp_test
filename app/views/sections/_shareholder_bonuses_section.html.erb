@@ -1,0 +1,14 @@
+<section class="Section Section--black Section--morePadding ShareholderBonusesSection ShareholderBonusesSection--<%= modifier %>">
+  <div class="container">
+    <h2 class="Base-title Base-title--3"><%= raw t( "become_shareholder.bonus.title") %></h2>
+    <div class="ShareholderBonusesSection-container">
+      <% %w(profile galaxy evaluator).each do |bonus| %>
+        <div class="ShareholderBonusesSection-item">
+          <%= embedded_svg "bonuses-#{bonus}-icon.svg", class: "ShareholderBonusesSection-image" %>
+          <h3><%= raw t( "become_shareholder.bonus.#{bonus}.title") %></h3>
+          <p class="ShareholderBonusesSection-description"><%= binding.local_variable_get("#{bonus}_text") %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

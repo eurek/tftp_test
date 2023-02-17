@@ -1,0 +1,129 @@
+.ShareholderCard {
+  background-color: $rainforest-900;
+  height: 12.3rem;
+  display: flex;
+  text-transform: none;
+
+  &:hover {
+    background-color: $rainforest-700;
+  }
+
+  &-stickers {
+    position: relative;
+    float: right;
+    right: -1.5rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .Sticker {
+    margin-bottom: 0.25rem;
+  }
+
+  &-title {
+    text-transform: none;
+    color: $white;
+    margin: 0 0 0.3rem 0;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &-job {
+    color: $white;
+    font-weight: lighter;
+    font-size: 1rem;
+  }
+
+  &-body {
+    padding: 1rem;
+    width: 75%;
+    position: relative;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &-id {
+    color: $lagoon-500;
+  }
+
+  &-badges {
+    display: flex;
+  }
+
+  &-badge {
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem 0.5rem 0 0;
+
+    &--last {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: $black;
+      background-color: $lagoon-500;
+      border-radius: 50%;
+      font-family: $headers-font;
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-top: 0.6rem;
+    }
+  }
+
+  &-picture {
+    padding: 1rem;
+    width: 25%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--company {
+    background-color: $purple-900;
+
+    &:hover {
+      background-color: $purple-600;
+    }
+
+    .ShareholderCard {
+
+      &-body {
+        width: 60%;
+      }
+
+      &-picture{
+        background-color: $grey-300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+
+        img {
+          max-height: 100%;
+        }
+      }
+    }
+
+    .Sticker {
+      background-color: $purple-700;
+      color: $white;
+    }
+  }
+
+  .Base-text--bigger {
+    font-weight: bold;
+  }
+
+  &-texts {
+    position: absolute;
+    bottom: 1rem;
+  }
+}
+

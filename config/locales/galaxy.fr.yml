@@ -1,0 +1,188 @@
+---
+fr:
+  galaxy:
+    back_button: "Revenir vers la Galaxie"
+    galaxy_navbar:
+      tagline: "La Galaxie"
+      about: "Qu'est-ce que la Galaxie ?"
+      cta: "Je rejoins la Galaxie"
+    discover:
+      quote: "“L'Intelligence collective désigne la capacité d'une communauté à faire converger compétences et connaissances pour avancer vers un but commun.
+        Elle résulte de la qualité des interactions entre ses membres”"
+      title: "Comment est organisé Time for the Planet<span class='brand'>®</span> ?"
+      subtitle: "Nous avons pensé notre organisation pour que des millions de personnes à travers le monde puissent 
+        agir ensemble pour faire grandir Time for the Planet<span class='brand'>®</span> en répondant à ses besoins."
+      cta: "Découvrir la Galaxie"
+    groups_section:
+      title: "Les groupes"
+      subtitle: "Nous avons pensé notre organisation pour que des millions de personnes à travers le monde puissent 
+        agir ensemble pour faire grandir Time for the Planet<span class='brand'>®</span> en répondant à ses besoins."
+      cta: "En savoir plus"
+      planets:
+        title: "Les planètes"
+        description: "Viviers de personnes pouvant apporter des connaissances ou des compétences."
+      comets:
+        title: "Les comètes"
+        description: "Équipes mettant en place des actions pour répondre aux deux besoins de Time."
+      stars:
+        title: "Les étoiles"
+        description: "Entreprises créées par Time for the Planet<span class='brand'>®</span> pour lutter contre 
+          le changement climatique."
+    people_section:
+      presentation:
+        title: "Les personnes"
+        subtitle: "Chaque actionnaire peut avoir un rôle au sein de Time for the Planet<span class='brand'>®</span>."
+      cta: "En savoir plus"
+      people_type:
+        quarks:
+          title: "Quarks"
+          description: "Une personne devient Quark quand elle a agi au sein de la galaxie."
+        gluons:
+          title: "Gluons"
+          description: "Chargés d’accueillir et de mettre en relation des besoins et des compétences."
+        planet_leaders:
+          title: "Planet-Leaders"
+          description: "Animent et veillent au bon développement d’une planète."
+        comet_leaders:
+          title: "Comet-Leaders"
+          description: "Pilotent une comète et s’assurent de la bonne exécution de son action."
+        keepers:
+          title: "Keepers"
+          description: "Donnent l’orientation générale de la galaxie et garantissent la bonne exécution de la vision 
+            de Time for the Planet<span class='brand'>®</span>."
+    planets:
+      title: "Les Planètes"
+      subtitle: "Une planète a deux raisons d’être."
+      purposes:
+        - "La première est la constitution d’un réseau de personnes qui se rassemblent naturellement.
+          Cela peut-être vis-à-vis d’une compétence partagée comme pour la Planète photographe, d’une situation géographique comme la Planète Lille ou bien l’appartenance à une organisation commune  comme dans la Planète Université de Lyon"
+        - "La seconde raison est de faciliter la créations de Comètes qui mettront en place des actions répondant aux 
+          besoins de Time for the Planet<span class='brand'>®</span>."
+      roles:
+        title: "4 Rôles sont nécéssaires pour créer une planète"
+        items:
+          - "Un rôle de Planète-Leader : il est garant de l’exécution des deux raisons d’être de la planète. 
+            Il doit l’animer pour la faire vivre et grandir. Il doit favoriser l’apparition de comètes."
+          - "Un rôle de représentant de Time for the Planet<span class='brand'>®</span>, issu des ambassadeurs ou keepers"
+          - "Un rôle de Gluon : en charge d’accueillir, de mettre en lien des besoins et des compétences, et de 
+            remercier les quarks pour les actions mises en place."
+          - "Un rôle mémoire : en charge de retranscrire les actions entreprises au sein de la planète"
+        how: "Pour apparaître dans la Galaxie de Time for the Planet<span class='brand'>®</span> une Planète 
+          doit être créée par un Planet-Leader, rôle nécessitant une formation spécifique."
+        duration: "Une Planète est stable et a donc vocation à être permanente."
+    stars:
+      title: "Les Étoiles"
+      subtitle: "Une Étoile a deux raisons d’être."
+      purposes:
+        - "Développer une activité commerciale économiquement viable, contribuant directement à réduire les gaz à effet de serre"
+        - "Partager son innovation en open source"
+      roles:
+        title: "Pour apparaître dans la Galaxie de Time for the Planet<span class='brand'>®</span> une Étoile doit :"
+        items:
+          - "Regrouper un ou plusieurs scientifiques à l’origine d’une innovation technique high tech, low tech ou de service."
+          - "Posséder suffisamment de fonds apportés par Time for the Planet<span class='brand'>®</span>"
+          - "Avoir au moins un.e entrepreneur.e ayant déjà réussi plusieurs création d’entreprises de grande taille."
+        duration: "Une étoile est vivante. Elle devra briller le plus longtemps possible mais il est impossible de prévoir sa durée de vie."
+    comets:
+      title: "Les Comètes"
+      subtitle: "Une Comète n’a qu’une raison d’être."
+      purposes:
+        - "Elle est conçue pour réaliser une action qui répond à un besoin de Time for the Planet<span class='brand'>®</span>."
+      roles:
+        title: "3 rôles sont nécessaires pour créer une comète"
+        items:
+          - "Un rôle de Comète leader : il est garant de la raison d’être de la comète et de l’exécution de l’action entreprise."
+          - "Un rôle de Gluon : en charge d’accueillir, de mettre en lien des besoins et des compétences, et de remercier pour les actions mises en place."
+          - "Un rôle Mémoire : en charge de retranscrire les actions entreprises au sein de la comète."
+        how: "Pour apparaître dans la Galaxie de Time for the Planet<span class='brand'>®</span> une Comète doit être 
+          créée par un Comète-Leader, rôle nécessitant une formation spécifique."
+        duration: "Une Comète est en mouvement et a donc vocation à être éphémère une fois sa mission accomplie."
+      life_cycle:
+        title: "La vie d’une Comète se déroule en trois phases"
+        bloc_1:
+          subtitle: "L’apparition"
+          list_items:
+            - "on définit l’action à réaliser"
+            - "on distribue les rôles"
+            - "on allume le feu de l’égrégore"
+        bloc_2:
+          subtitle: "La vie"
+          text: "En fonction de nouveaux besoins qui apparaissent, la comète va créer et distribuer de nouveaux rôles."
+        bloc_3:
+          subtitle: "La disparition"
+          intro: "Les bonnes choses ont une fin et c’est une super occasion de se rassembler pour :"
+          list_items:
+            - "se féliciter"
+            - "présenter la réalisation à TP et ses membres"
+            - "se dire au revoir"
+    quarks:
+      title: "Les Quarks"
+      purposes:
+        title: "Au sein de Time for the Planet<span class='brand'>®</span>, nous mettons l’action au cœur du projet."
+        subtitle: "Nous considérons que dans un contexte d’urgence, lorsque l’on connaît si bien l’origine d’un problème, il faut privilégier celle-ci par rapport aux discours de type “y a qu’à - faut qu’on - j’aurais pas fait comme ça”."
+      roles:
+        title: "Comment devient-on Quark ?"
+        items:
+          - "Lorsque qu’un.e actionnaire de Time for the Planet<span class='brand'>®</span> réalise une action 
+            pour répondre à un besoin déclaré (que ce soit par Time, par une Planète ou par une Comète), il devient un Quark."
+          - "Il constitue la base de l’existence de Time for the Planet<span class='brand'>®</span>."
+          - "Les milliers d’actionnaires de Time for the Planet<span class='brand'>®</span> regorgent de compétences 
+            pouvant être utiles à un moment ou à un autre. Reste à savoir quand activer ces compétences…"
+        how: "FORMATION SPÉCIFIQUE&nbsp;:<br>Il n’y a pas besoin d’être formé pour pouvoir devenir Quark."
+        duration: "DURÉE DE L’INVESTISSEMENT PERSONNEL&nbsp;:<br>Le temps dépend du besoin pour lequel il est sollicité."
+      definitions:
+        - "En physique, un quark désigne la plus petite particule élémentaire de la matière."
+        - "En d’autres termes, le quark est à la base de l’existence physique de tout l’Univers."
+    planet_leaders:
+      title: "Les Planète-Leaders"
+      subtitle: "Le Planète-Leader consacre son temps à animer une Planète."
+      roles:
+        title: "Ils ont 2 raisons d’être"
+        items:
+          - "Faire grandir la planète en rassemblant des membres de Time for the Planet<span class='brand'>®</span> s’y identifiant."
+          - "Favoriser l’émergence de Comètes."
+      how: "FORMATION SPÉCIFIQUE&nbsp;:<br>Une formation spécifique est nécessaire pour devenir Planète-Leader."
+      duration: "DURÉE DE L’INVESTISSEMENT PERSONNEL&nbsp;:<br>Environ 10 heures/semaine."
+    comet_leaders:
+      title: "Les Comète-Leader"
+      subtitle: "Le Comète-Leader consacre son temps à piloter une comète."
+      purposes:
+        title: "Ils ont 1 raison d’être"
+        item: "Garantir l’exécution de l’action mise en place par la Comète."
+      roles:
+        titles:
+          - "Le Comète-Leader a la responsabilité de porter l’exécution de la Comète."
+          - "Il récupère par défaut les rôles non pourvus."
+        how: "FORMATION SPÉCIFIQUE&nbsp;:<br>Une formation spécifique est nécessaire pour devenir Comète-Leader."
+        duration: "DURÉE DE L’INVESTISSEMENT PERSONNEL&nbsp;:<br>Environ 10 heures/semaine."
+    gluons:
+      title: "Les Gluons"
+      purposes:
+        title: "Au sein de Time for the Planet<span class='brand'>®</span>, nous plaçons le lien humain comme 
+          fondement des interactions entre ses membres. "
+        subtitle: "Nous considérons qu’à la question “Comment puis-je aider ?”, la meilleure réponse possible soit  “En mettant en relation des personnes qui ont des besoins avec des personnes qui ont des compétences pour y répondre”."
+      roles:
+        title: "Les Gluons ont 3 raisons d’être"
+        items:
+          - " Accueillir et mettre à l’aise des personnes arrivant dans Time for the Planet<span class='brand'>®</span>,
+            au sein d’une planète ou d’une comète. Que ce soit à distance ou physiquement lors d’un événement."
+          - "Trouver des quarks compétents pour répondre à des besoins de Time, d’une Planète ou d’une Comète"
+          - "Remercier les quarks s’étant mobilisés."
+        how: "FORMATION SPÉCIFIQUE&nbsp;:<br>Une formation spécifique est nécessaire pour devenir Gluon."
+        duration: "DURÉE DE L’INVESTISSEMENT PERSONNEL&nbsp;:<br>environ 5&nbsp;heures/semaine."
+      definitions:
+        - "En physique, les Gluons sont à la base de la plus puissante des interactions de l’Univers : l’interaction forte."
+        - "Les gluons lient les quarks entre eux et permettent la constitution de la matière."
+    keepers:
+      title: "Les Keepers"
+      subtitle: "Ils ont 3 raisons d’être."
+      purposes:
+        - "Garantir l'exécution de la vision de Time for the Planet."
+        - "Garantir les valeurs au sein de la galaxie Time for the Planet."
+        - "Arbitrer l’ensemble des discussions de fond et de forme qui concernent Time for the Planet."
+      roles:
+        title: "Quel rôles pour les Keepers ?"
+        items:
+          - "Le Keeper est représentant juridique de Time for the Planet."
+          - "Les Keepers sont à l’origine de la création de time for the Planet."
+        duration: "DURÉE DE L’INVESTISSEMENT PERSONNEL&nbsp;:<br>Environ 40 heures par semaine"

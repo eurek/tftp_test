@@ -1,0 +1,181 @@
+---
+fr:
+  become_shareholder:
+    summary:
+      warning: " Cet investissement est à but non lucratif donc sans dividende. Il comporte des risques de perte de
+        l'intégralité du capital investi, une forte dilution (actions émises à la valeur nominale)
+        et une faible liquidité."
+      counters:
+        amount: "collectés"
+        total_associates: "actionnaires"
+        elapsed_time: "jours depuis le début"
+    cta: "Je deviens actionnaire"
+    engagements:
+      -
+        title: "Agir en grand"
+        description: "S’investir dans un projet capable de changer la face du monde."
+      -
+        title: "Efficacité"
+        description: "Votre argent est le moyen pour Time for the Planet<span class='brand'>®</span> de créer des 
+          entreprises qui travaillent au sauvetage de la planète."
+      -
+        title: "Une mission pour&nbsp;le monde"
+        description: "Le seul objectif de Time for the Planet est la sauvegarde de la planète. Nos bénéfices servent 
+          exclusivement cette cause. Nous ne rémunérons aucun actionnaire."
+      -
+        title: "Transparence"
+        description: "Tous nos comptes sont publics. Tous nos brevets sont mis à disposition de toutes et tous sans contrepartie."
+    how_to:
+      title2: "Etre associé·e me donne quels droits&nbsp;?"
+      bullet_points:
+        -
+          title: "Droit de vote"
+          description: "Vous pouvez voter chaque investissement de Time for the Planet en participant à l'assemblée 
+            générale, sur le principe 1 action = 1 voix"
+        -
+          title: "Participation"
+          description: "Vous pouvez apporter vos compétences en rejoignant la grande galaxie de l'action de 
+          Time for the Planet<span class='brand'>®</span>. Des milliers de citoyens actifs vous y attendent !"
+        -
+          title: "Time for the Planet, c’est vous"
+          description: "Restez informé en temps réél grâce aux vidéos, reportings et en téléchargeant l'application 
+            interne de Time for the Planet<span class='brand'>®</span>"
+    badges:
+      title: Découvrez la multitude de badges à collectionner.
+      subtitle: "Toutes les actions que vous accomplissez pour Time for the Planet déclenchent l'attribution d'un 
+        badge sur votre profil Time for the Planet<span class='brand'>®</span> (sauf si vous préférez rester anonyme)"
+    roadmap:
+      title: Le plan d’action
+      subtitle: Gardez un oeil sur l’avancement du projet. Étapes par étapes, tout y est renseigné.
+      cta: Voir le plan d'action
+    list:
+      title: "Les derniers actionnaires"
+      template1: "<b>%{name}</b> s'est engagé·e à acquérir <b>%{nb_parts}</b> actions"
+      shares_number: "%{nb_parts} actions"
+      shares_purchased_at: "il y a %{time}"
+      cta: "Voir les %{total_associates} autres actionnaires"
+    tops:
+      year: "Record %{year}"
+      week: "Record de la semaine"
+      day: "Record du jour"
+      anonymous: "Anonyme"
+      anonymous_company: "Entreprise anonyme"
+      no_top_found: "Soyez le premier !"
+    go_forward:
+      title: Envie d’aller plus loin ?
+      subtitle: Faites un pas de plus et devenez un véritable acteur de la réussite de Time for the Planet.
+      skills: "Apportez votre savoir à Time for the Planet<span class='brand'>®</span>.<br>Devenez évaluateur 
+      d'innovations, réseauteur, accueillant, planet angel ...<br>Nous avons besoin des forces de chacun."
+      moneypot: "Emmenez vos proches dans l'aventure Time for the Planet<span class='brand'>®</span>&nbsp;:<br>
+      Créez votre page personnelle sur le site de Time et parrainez de nouveau actionnaires !"
+    convincing:
+      title: Convaincu·e ?
+      subtitle: Devenez actionnaire Time for the Planet<span class="brand">®</span> !
+      cta: Je deviens actionnaire
+    options:
+      company:
+        title: Vous êtes entrepreneur et souhaitez investir via votre société&nbsp;?
+        cta: Acheter des parts avec votre&nbspentreprise
+      gift:
+        title: Vous souhaitez faire un cadeau qui a du sens&nbsp;?
+        cta: Offrir des actions
+    hero:
+      title: "Acheter des actions de Time for the Planet<span class='brand'>®</span>"
+      price: "1 action = 1€"
+      quantity: "Vous pouvez acheter autant d’actions que vous le souhaitez."
+      payment_info:
+        time: "En 5 min"
+        credit_card: "Payement CB sécurisé"
+        wire: "ou par virement"
+      cta: "J’achète mes actions"
+      counter:
+        citizens: "<b>%{count} citoyen·nes</b> ont acheté des actions la semaine dernière"
+      statistics:
+        title: Objectif
+      amf:
+        paragraph1: "<b>Cet investissement n’a pas vocation à avoir un retour financier à moyen terme.</b>
+          Il comporte des risques de perte de l'intégralité du capital investi, une forte dilution
+          (actions émises à la valeur nominale) et une faible liquidité."
+        paragraph2: "<b>En clair,</b>  vous ne récupérerez pas votre investissement, celui ci sera entièrement dédié à
+          financer des innovations luttant contre les gaz à effet de serre. Par contre, il n’y a aucun risque de
+          perdre plus d’argent que celui investi !"
+        link: "Voir tous les risques"
+    shareholder_status:
+      title: "Le statut d’actionnaire de Time for the Planet<span class='brand'>®</span>"
+      rights:
+        title: "Vos droits"
+        description: "En tant qu’actionnaire de Time for the Planet<span class='brand'>®</span> vous avez le pouvoir de décision !
+          Toutes les grandes décisions, comme le choix des innovations à financer, sont votées en Assemblée Générale."
+      duties:
+        title: "Pas d’obligation"
+        description: "Devenir actionnaire de Time for the Planet<span class='brand'>®</span> ne vous engage à rien, 
+        et n’est lié à aucune obligation légale. Bon, on aimerait bien que vous parliez de nous autour de vous, 
+        mais ça aussi, c’est seulement si vous en avez envie !"
+      return:
+        title: "Ca rapporte quoi ?"
+        description: "Financièrement ? Rien dans l’immédiat ! Tout l’argent généré par les innovations de 
+        Time for the Planet<span class='brand'>®</span> est ré-investi dans les innovations. Par contre, vous 
+        toucherez des Dividendes Climat, qui matérialisent les émissions de gaz à effet de serre évités grâce à votre 
+        investissement."
+    money_journey:
+      title: "Le parcours <em>de votre argent</em>"
+      steps:
+        step1: "Vous pouvez devenir actionnaire <b>en investissant le montant de votre choix,</b> en ligne, sur ce site."
+        step2: "<b>90% minimum</b> sera investi dans des innovations permettant de lutter massivement contre les
+          gaz à effet de serre.<br>(Les 10% restant servent aux frais de fonctionnement)"
+        step3: "Chaque innovation financée est déployé sous forme d’une structure (entreprise ou autre),
+          qui doit être rentable grâce à un modèle économique solide, et ainsi <b>multiplier votre argent.</b>"
+        step4: "La plus value générée par l’ensemble des innovations est <b>systématiquement ré-investie</b> dans
+        des innovations."
+      transparency:
+        title: "Nous sommes 100% transparent."
+        description: "<a href='https://time-planet.com/fr/tout-savoir/documents-legaux/comptes-annuels' target='_blank'>
+          Tous nos comptes sont publics</a>, et toutes les grandes décisions, comme le choix des innovations
+          financées, se prennent en assemblée générale avec les actionnaires."
+    climate_dividends:
+      title: "Les Dividendes Climats, ou comment mettre notre modèle économique <em>au service de la planète</em>"
+      description1: "Vous l’aurez compris, en devenant actionnaire de Time for the Planet<span class='brand'>®</span>,
+        vous ne gagnerez pas d’argent. En revanche, vous recevrez chaque année des Dividendes Climat,
+        qui comptabilisent le nombre de tonnes de gaz à effet de serre évitées ou stockées
+        grâce à votre investissement."
+      description2: "Ces Dividendes Climat nous permettent de mesurer précisémment le résultat de nos actions,
+        et tout notre mouvement est dédié à les maximiser."
+      co2_equivalent: "tonne d'équivalent CO2 non-émise ou séquestrée"
+    small_investment:
+      title: "Et si je ne peux investir qu’une petite somme ?"
+      description: "<b>Le nombre fait la force !</b> Devenir actionnaire, c’est donner au mouvement le pouvoir d’agir.
+        Plus nous sommes nombreux, plus nous sommes capables de convaincre des banques, grandes entreprises,
+        fonds d’investissement ou même des états de nous rejoindre."
+      join_us: "Chaque personne compte, rejoins-nous aujourd’hui !"
+    bonus:
+      title: "Les bonus, à la carte, <em>selon vos envies</em>"
+      profile:
+        title: "Votre profil actionnaire"
+        description: "Envie <span class='strike'>de frimer un peu</span> de montrer l’exemple ? Franchement, vous le méritez !
+          Complétez votre profil d’actionnaire pour avoir votre page dédiée sur le site de Time et montrer votre
+          engagement. Bon, vous pouvez aussi rester anonyme, vous faites bien comme vous voulez !"
+      galaxy:
+        title: "La Galaxie de l’Action"
+        description: "Il s’agit de la communauté des actionnaires de Time, organisée autour de l’action et de la
+          bienveillance. Rejoignez notre serveur Discord (un outil de forum), et vous trouverez forcément des
+          actionnaires qui partagent vos intérêts. Des fans de baleines aux pros du marketing,
+          il y en a pour tous les goûts."
+      evaluator:
+        title: "Les évaluateur·ices"
+        description: "Envie de donner un petit coup de main et de découvrir en avant-première toutes les
+          innovations soumises à Time ? Devenez évaluateur·ice citoyen·ne, et évaluez les innovations reçues
+          par Time. Pas besoin d’avoir fait un bac scientifique, on vous forme à la méthode
+          et vous donne une grille d”évaluation !"
+    testimonials:
+      title: "Pourquoi ont-ils rejoint <em>l’aventure ?</em>"
+    navbar:
+      persona:
+        label: "Je suis "
+        individual: "un particulier"
+        company: "une entreprise"
+      action:
+        label: "et je veux "
+        buy: "acheter des actions"
+        offer: "offrir des actions"
+        coupon: "utiliser mon code cadeau"
+

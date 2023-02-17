@@ -1,0 +1,16 @@
+<div class="Form-card hidden" data-companies-search-target="companyForm">
+  <h2 class="PrivateSpace-subtitle PrivateSpace-subtitle--noMarginTop">
+    <%= raw t('private_space.profile.add_employer') %>
+  </h2>
+  <%= f.simple_fields_for :employer do |employer| %>
+    <%= employer.input :name, required: true, pattern: ".*[^ ].*", input_html: { 'data-action': 'blur->form#validate' } %>
+    <%= employer.input :address, required: false, input_html: { class: 'Form-text' } %>
+    <%= employer.input :id, required: false, as: :hidden %>
+    <div class="Form-inlineGroup">
+      <%= button_tag "Valider", class: "Button Button--box", type: "button",
+        data: { action: 'click->companies-search#createOrUpdateCompany' } %>
+      <%= button_tag "Annuler", class: "Button Button--secondaryLagoon", type: "button",
+        data: { action: 'click->companies-search#cancelCreateCompany' } %>
+    </div>
+  <% end %>
+</div>

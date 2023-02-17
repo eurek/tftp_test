@@ -1,0 +1,42 @@
+<% is_file_attached = object.public_send(attribute_name).attached? %>
+
+<%= f.input attribute_name,
+  required: false,
+  label: false,
+  wrapper_html: {class: "FileInput", "data-controller": "file-uploader"} do %>
+  <%= f.label attribute_name %>
+  <%= f.hint hint_text %>
+
+  <% if is_file_attached %>
+    <%= link_to "#{t("common.uploaded_file")} : #{filename_short(object.public_send(attribute_name).filename.to_s)}",
+      url_for(object.public_send(attribute_name)),
+      target: :_blank,
+      "data-file-uploader-target": "filename",
+      class: "FileInput-label Form-input--valid FileInput-label--uploadedFile" %>
+  <% end %>
+
+  <%= f.label attribute_name,
+    required: false,
+    class: "FileInput-label#{" FileInput-label--hidden" if is_file_attached}",
+    "data-file-uploader-target": "label" do %>
+    <i class="material-icons">get_app</i> <%= t("common.choose_file") %>
+  <% end %>
+  <div class="FileInput-editsContainer">
+    <%= f.label(attribute_name,
+      required: false,
+      "data-file-uploader-target": "editButton",
+      class: "FileInput-editButton #{" FileInput-editButton--hidden" unless is_file_attached}") do %>
+      <i class="material-icons">create</i> <%= t("common.edit") %>
+    <% end %>
+    <%= link_to delete_path,
+      method: :delete,
+      class: "FileInput-editButton FileInput-deleteButton #{" FileInput-editButton--hidden" unless is_file_attached}" do %>
+        <i class="material-icons">delete</i> <%= t("common.delete") %>
+    <% end %>
+  </div>
+
+  <%= f.file_field attribute_name,
+    accept: "image/*",
+    class: "FileInput-input",
+    "data-action": "change->file-uploader#displayFileName" %>
+<% end %>

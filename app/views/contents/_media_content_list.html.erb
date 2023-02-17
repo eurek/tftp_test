@@ -1,0 +1,37 @@
+<% contents.each do |content| %>
+  <div class="MediaCard">
+    <div class="MediaCard-imageContainer">
+      <% if content.cover_image.attached? && content.youtube_video_id.blank? %>
+        <%= image_tag url_for(content.cover_image), alt: content.cover_image_alt, class: "MediaCard-image" %>
+      <% elsif content.cover_image.attached? && content.youtube_video_id.present? %>
+        <%= image_tag url_for(content.cover_image), alt: content.cover_image_alt, class: "MediaCard-image" %>
+          <button class="MediaCard-videoButton Button"
+           data-action="click->video-modal#openModalAndPlay"
+           data-video-modal-target="contentVideoId"
+           data-video-src="<%= content.youtube_video_id %>">
+          <i class="material-icons">play_circle_filled</i>
+          </button>
+      <% else %>
+        <%= image_tag 'climatisation-sans-electricite.jpg', class: "MediaCard-image", alt: "Time for the Planet Logo" %>
+        <button class="MediaCard-videoButton Button"
+           data-action="click->video-modal#openModalAndPlay"
+           data-video-modal-target="contentVideoId"
+           data-video-src="<%= content.youtube_video_id %>">
+          <i class="material-icons">play_circle_filled</i>
+        </button>
+      <% end %>
+    </div>
+    <%= link_to custom_content_path(content) do %>
+      <h2 class="MediaCard-title"><%= content.short_title.present? ? raw(content.short_title) : raw(content.title) %></h2>
+      <p class="MediaCard-link Button Button--underlined">
+        <%= raw t('contents.list.cta') %>
+        <i class="material-icons">arrow_forward</i>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+<%= render "shared/modal",
+    modal_id: "videoModal",
+    description: t('contents.modal.description') do %>
+    <div id="youtube-player" class="VideoModal-video"></div>
+<% end %>

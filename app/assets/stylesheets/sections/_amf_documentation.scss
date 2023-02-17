@@ -1,0 +1,86 @@
+.AmfDocumentation {
+
+  &--black {
+    background-color: $black;
+    color: $white;
+
+    .AmfDocumentation-link {
+      color: $purple-400;
+      text-transform: none;
+
+      &:hover {
+        color: $purple-300;
+      }
+    }
+  }
+
+  &--whiteAndGreen {
+    background-color: $white;
+    color: $black;
+
+    .AmfDocumentation-link {
+      color: $rainforest-600;
+      text-transform: none;
+
+      &:hover {
+        color: $rainforest-400;
+      }
+    }
+  }
+
+  &--whiteAndPurple {
+    background-color: $white;
+    color: $black;
+
+    .AmfDocumentation-link {
+      color: $purple-700;
+      text-transform: none;
+
+      &:hover {
+        color: $purple-600;
+      }
+    }
+  }
+
+  &--darkGreen {
+    background-color: $rainforest-900;
+    color: $white;
+
+    .AmfDocumentation-link {
+      color: $lagoon-500;
+      text-transform: none;
+
+      &:hover {
+        color: $lagoon-300;
+      }
+    }
+  }
+
+  &--darkPurple {
+    background-color: $purple-900;
+    color: $white;
+
+    .AmfDocumentation-link {
+      color: $purple-400;
+      text-transform: none;
+
+      &:hover {
+        color: $purple-300;
+      }
+    }
+  }
+
+  &--greyAndLagoon {
+    background-color: $grey-800;
+    color: $white;
+
+    .AmfDocumentation-link {
+      color: $lagoon-500;
+      text-transform: none;
+
+      &:hover {
+        color: $lagoon-300;
+      }
+    }
+  }
+}

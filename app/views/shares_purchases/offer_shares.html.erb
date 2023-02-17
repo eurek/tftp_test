@@ -1,0 +1,84 @@
+<%= render partial: "sections/become_shareholder_hero", locals: {
+  color: "darkGreenGradient",
+  image: "space-image-offer-shares-individual.jpg",
+  selected_shareholder_type: "individual",
+  selected_transaction_type: "offer",
+  shares_quantity_explanation: t( "offer_shares.hero.quantity"),
+  social_proof_counter: t("become_shareholder.hero.counter.citizens",
+                          count: number_with_delimiter(@shares_purchases_by_citizens_last_week, locale: params[:locale])),
+  cta: "offer_shares_cta",
+  secondary_cta_modifier: "secondaryWhite"
+} %>
+
+<section class="Section Section--grey800 OfferSharesBenefits--grey" id="shareholder-status">
+  <div class="container">
+    <h2 class="OfferSharesBenefits-title">
+      "<%= raw(t('offer_shares.benefits.title')) %>
+    </h2>
+    <div class="OfferSharesBenefits-row">
+      <div class="OfferSharesBenefits-column">
+        <i class="material-icons OfferSharesBenefits-icon">
+          how_to_vote
+        </i>
+        <p class="OfferSharesBenefits-description">
+          <%= raw(t('offer_shares.benefits.first')) %>
+        </p>
+      </div>
+      <div class="OfferSharesBenefits-column">
+        <i class="material-icons OfferSharesBenefits-icon">
+          notification_important
+        </i>
+        <p class="OfferSharesBenefits-description">
+          <%= raw(t('offer_shares.benefits.second')) %>
+        </p>
+      </div>
+      <div class="OfferSharesBenefits-column">
+        <i class="material-icons OfferSharesBenefits-icon">
+          person_outline
+        </i>
+        <p class="OfferSharesBenefits-description">
+          <%= raw(t('offer_shares.benefits.third')) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "illustration_section", locals: {
+  image: "certificat-coeur.svg",
+  color: "greenGradient",
+  title: raw(t('offer_shares.gift_package.title')),
+  paragraph_1: raw(t('offer_shares.gift_package.text1')),
+  paragraph_2: raw(t('offer_shares.gift_package.text2'))
+} %>
+
+<section class="Section Section--black Section--morePadding OneThirdImageSection">
+  <div class="container OneThirdImageSection-container">
+    <div class="OneThirdImageSection-column OneThirdImageSection-column--content">
+      <h2 class="OneThirdImageSection-title">
+        <%= raw t('offer_shares.cta_banner.title') %>
+      </h2>
+      <p class="OneThirdImageSection-text OneThirdImageSection-text--green">
+        <%= raw t('offer_shares.cta_banner.text') %>
+      </p>
+    </div>
+
+    <%= link_to @external_links.offer_shares_form, target: "_blank",
+                class: "OneThirdImageSection-column OneThirdImageSection-column--image GiftAnimation" do
+    %>
+      <div class="GiftAnimation-gift">
+        <%= image_tag 'cadeau-time.svg' %>
+      </div>
+      <span class="Button Button--white Button--underlinedLagoon">
+        <%= raw t('become_shareholder.options.gift.cta') %>
+        <i class="material-icons">arrow_forward</i>
+      </span>
+    <% end %>
+  </div>
+</section>
+
+<%= render "sections/amf_documentation", color: "greyAndLagoon" %>
+
+<%= render "sections/amf_risks", color: "lagoon" %>
+
+

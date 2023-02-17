@@ -1,0 +1,194 @@
+.InnovationCard {
+  text-transform: none;
+
+  &--fullImage {
+    height: 18rem;
+    position: relative;
+
+    .InnovationCard {
+      &-image {
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+        z-index: 2;
+      }
+
+      &-tag {
+        z-index: 3;
+      }
+
+      &-whiteBackground {
+        position: absolute;
+        bottom: -3px;
+        right: 0;
+        left: 0;
+        top: 0;
+        background-color: $white;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+      }
+    }
+  }
+
+  &-image {
+    background-color: $grey-500;
+    height: 8rem;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-tag {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $headers-font;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    position: absolute;
+    top: 0.5rem;
+    left: -0.5rem;
+  }
+
+  &-content {
+    color: $rainforest-900;
+    background-color: $grey-200;
+    padding: 1rem;
+    height: 20rem;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+  }
+
+  &-starContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-title {
+    margin-top: 0;
+    z-index: 2;
+    position: relative;
+  }
+
+  &-noRating {
+    margin: 0.8rem 0;
+    display: block;
+  }
+
+  &-noRating, &-scaleHelp {
+    color: $rainforest-600;
+  }
+
+  .StarScale {
+    margin-top: 0.5rem;
+    z-index: 2;
+  }
+
+  &-scaleHelp {
+    cursor: help;
+  }
+
+  &-description {
+    font-family: $headers-font;
+    font-size: 1rem;
+    z-index: 2;
+    position: relative;
+    margin-top: 0.5rem;
+  }
+
+  &--lagoon500 {
+    .InnovationCard {
+      &-content {
+        background: linear-gradient(134.86deg, $lagoon-400 23.28%, $lagoon-200 72.18%, $lagoon-400 90.49%);
+      }
+
+      &-tag {
+        background-color: $lagoon-500;
+        color: $black;
+      }
+    }
+  }
+
+  &--lagoon100 {
+    .InnovationCard {
+      &-content {
+        background-color: $lagoon-100;
+      }
+
+      &-tag {
+        background-color: $lagoon-100;
+        color: $black;
+      }
+    }
+  }
+
+  &--rainforest600 {
+
+    .InnovationCard {
+      &-content {
+        color: $white;
+        background-color: $white;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 3px;
+          right: 3px;
+          bottom: 3px;
+          background: linear-gradient(134.86deg, $rainforest-900 23.28%, $rainforest-600 72.18%, $rainforest-900 90.49%);
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+        }
+      }
+
+      &-tag {
+        background-color: $rainforest-600;
+        color: $white;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: -5px;;
+          bottom: -5px;
+          left: -1.2rem;
+          background: asset-url('icones/star-icon.svg');
+          width: 3rem;
+          z-index: -1;
+          background-size: contain;
+          background-position-y: center;
+          background-position-x: left;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &-image {
+        border-top: 3px $white solid;
+        border-right: 3px $white solid;
+        border-left: 3px $white solid;
+      }
+    }
+  }
+
+  &--rainforest400 {
+    .InnovationCard {
+      &-content {
+        background: linear-gradient(134.86deg, $rainforest-600 23.28%, $rainforest-400 72.18%, $rainforest-600 90.49%);
+        color: $white;
+      }
+
+      &-noRating, &-scaleHelp {
+        color: $grey-200;
+      }
+
+      &-description {
+        color: $grey-50;
+      }
+
+      &-tag {
+        background-color: $rainforest-400;
+        color: $white;
+      }
+    }
+  }
+}

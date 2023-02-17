@@ -1,0 +1,15 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<section class="secion Section--black">
+  <div class="container BuySharesChoice-container">
+    <%=image_tag "boussole.svg", class: "BuySharesChoice-image" %>
+    <div class="BuySharesChoice-rightBlock">
+      <h1 class="Base-title Base-title--2">
+        <%= raw t("buy_shares_choice.title_part_1") %>
+        <br>
+        <%= raw t("buy_shares_choice.title_part_2") %>
+      </h1>
+      <%= render 'become_shareholder_navbar', color: "black", button_present: true %>
+    </div>
+  </div>
+</section>

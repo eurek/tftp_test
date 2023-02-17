@@ -1,0 +1,13 @@
+<section class="CompanyCtaSection Section">
+  <div class="container">
+    <p class="Base-title Base-title--2 Base-title--white"><%= title %></p>
+    <div class="CompanyCtaSection-container">
+      <%= link_to(
+            cta,
+            become_shareholder_company_path,
+            class: "Button Button--box Button--lightPurpleBox"
+          ) %>
+      <%= render "shared/company_additional_ctas" %>
+    </div>
+  </div>
+</section>

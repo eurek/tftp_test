@@ -1,0 +1,117 @@
+{
+  "api_version": "0.4",
+  "results": {
+    "company": {
+      "name": "AOL",
+      "company_number": "512855594",
+      "jurisdiction_code": "fr",
+      "incorporation_date": "2009-06-02",
+      "dissolution_date": null,
+      "company_type": "Société civile immobilière",
+      "registry_url": null,
+      "branch": null,
+      "branch_status": null,
+      "inactive": false,
+      "current_status": "Actif",
+      "created_at": "2017-02-23T01:34:53+00:00",
+      "updated_at": "2020-03-26T16:28:56+00:00",
+      "retrieved_at": "2020-03-01T05:11:01+00:00",
+      "opencorporates_url": "https://opencorporates.com/companies/fr/512855594",
+      "source": {
+        "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+        "url": "https://www.sirene.fr",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+        "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+      },
+      "agent_name": null,
+      "agent_address": null,
+      "alternative_names": [],
+      "previous_names": [],
+      "number_of_employees": "0",
+      "native_company_number": null,
+      "alternate_registration_entities": [],
+      "previous_registration_entities": [],
+      "subsequent_registration_entities": [],
+      "registered_address_in_full": "49 RUE VOLTAIRE, LEVALLOIS-PERRET, HAUTS-DE-SEINE, 92300",
+      "industry_codes": [
+        {
+          "industry_code": {
+            "code": "68.20B",
+            "description": "Location de terrains et d'autres biens immobiliers",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-6820B"
+          }
+        },
+        {
+          "industry_code": {
+            "code": "68.20",
+            "description": "Renting and operating of own or leased real estate",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-6820"
+          }
+        },
+        {
+          "industry_code": {
+            "code": "6810",
+            "description": "Real estate activities with own or leased property",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-6810"
+          }
+        }
+      ],
+      "identifiers": [],
+      "trademark_registrations": [],
+      "registered_address": {
+        "street_address": "49 RUE VOLTAIRE",
+        "locality": "LEVALLOIS-PERRET",
+        "region": "HAUTS-DE-SEINE",
+        "postal_code": "92300",
+        "country": "FRANCE"
+      },
+      "corporate_groupings": [],
+      "data": {
+        "most_recent": [
+          {
+            "datum": {
+              "data_type": "CompanyAddress",
+              "description": "1 St James's Square, London SW1Y 4PD, GB",
+              "id": 9788778,
+              "opencorporates_url": "https://opencorporates.com/data/9788778",
+              "title": "Company Address"
+            }
+          },
+          {
+            "datum": {
+              "data_type": "Website",
+              "description": "http://www.example.com/",
+              "id": 8474113,
+              "opencorporates_url": "https://opencorporates.com/data/8474113",
+              "title": "Website"
+            }
+          },
+          {
+            "datum": {
+              "data_type": "OfficialRegisterEntry",
+              "description": "register id: 313807",
+              "id": 2452824,
+              "opencorporates_url": "https://opencorporates.com/data/2452824",
+              "title": "SEC Edgar entry"
+            }
+          }
+        ],
+        "total_count": 125,
+        "url": "https://opencorporates.com/companies/gb/00102498/data"
+      },
+      "financial_summary": null,
+      "home_company": null,
+      "controlling_entity": null,
+      "ultimate_beneficial_owners": [],
+      "filings": [],
+      "officers": []
+    }
+  }
+}

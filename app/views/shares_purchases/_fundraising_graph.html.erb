@@ -1,0 +1,40 @@
+<div class="FundraisingGraph">
+  <canvas data-controller="fundraising-graph"
+    data-fundraising-graph-funds-value="<%= shares_purchases_statistics.to_json %>"
+    data-fundraising-graph-marker-light-value="<%= marker_path %>"
+    data-fundraising-graph-marker-dark-value="<%= goal_marker_path %>"
+    data-fundraising-graph-line-color-value="<%= line_color %>"
+    data-fundraising-graph-gradient-rgba-code-value="<%= gradient_rgba_code %>">
+  </canvas>
+
+  <div class="FundraisingGraph-indicators">
+    <p class="Base-title Base-title--3 Base-title--<%= indicators_color %> Base-title--noMarginTop">
+      <%= number_to_currency(total_raised, locale: params[:locale], precision: 0, unit: "€") %>
+    </p>
+    <p class="Base-text Base-text--smallMarginTop">
+      <%= raw t('become_shareholder.summary.counters.amount') %>
+    </p>
+
+    <p class="Base-title Base-title--3 Base-title--<%= indicators_color %> Base-title--noMarginTop">
+      <%= number_with_delimiter(current_situation.total_shareholders, locale: params[:locale]) %>
+    </p>
+    <p class="Base-text Base-text--smallMarginTop">
+      <%= raw t('become_shareholder.summary.counters.total_associates') %>
+    </p>
+
+    <p class="Base-title Base-title--3 Base-title--<%= indicators_color %> Base-title--noMarginTop">
+      <%= fundraising_duration %>
+    </p>
+    <p class="Base-text Base-text--smallMarginTop">
+      <%= raw t('become_shareholder.summary.counters.elapsed_time') %>
+    </p>
+  </div>
+
+  <div class="FundraisingGraph-indicators--right">
+    <p class="Base-title Base-title--3 Base-title--<%= goal_indicator_color %> Base-title--noMarginTop">
+      <%= number_to_currency(fundraising_goal, locale: params[:locale], precision: 0, unit: "€") %>
+    </p>
+  </div>
+</div>
+
+

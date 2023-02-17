@@ -1,0 +1,27 @@
+<div class="Login">
+  <div class="Login-picture"
+    style="background-image: url(<%= image_path "space.jpg" %>);">
+    <div class="Login-overlay">
+    </div>
+    <div class="Login-welcomeMessage">
+      <p class="Login-welcomeTitle">
+        <%= yield(:welcome_title) %>
+      </p>
+      <p class="Login-welcomeContent">
+        <%= yield(:welcome_content) %>
+      </p>
+    </div>
+  </div>
+  <div class="Login-content">
+    <div class="Login-form">
+      <%= embedded_svg 'logo-time-planet.svg', class: "Login-logo", alt: "Time for the Planet Logo" %>
+      <h2 class="Login-title">
+        <%= yield(:title) %>
+      </h2>
+      <%= yield %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<% parent_layout "application" %>

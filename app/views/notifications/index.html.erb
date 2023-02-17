@@ -1,0 +1,146 @@
+<section class="Section Section--grey900 Live">
+  <div class="container Live-container">
+    <div class="Live-notificationsColumn">
+      <div class="Live-header">
+        <%= image_tag "icones/notifications.svg", class: "Live-icon", alt: "Notification icon" %>
+        <div>
+          <h1 class="Base-title Base-title--1"><%= t("notifications.live.title") %></h1>
+          <p class="Base-subtitle Base-subtitle--smaller"><%= raw(t("notifications.live.subtitle")) %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="Live-statisticsColumn">
+      <span class="Base-subtitle Base-subtitle--grey300 Live-statisticsTitle">
+        <%= t("notifications.live.statistics.title") %>
+      </span>
+      <div class="StatisticsPanel"
+           data-controller="carousel"
+           data-carousel-initial-position-value="0"
+           data-carousel-carousel-class="StatisticsPanel-carousel"
+           data-carousel-active-button-class="StatisticsPanel-button--active"
+           data-carousel-active-indicator-class="StatisticsPanel-panelIndicator--active">
+        <span class="Base-subtitle Base-subtitle--grey300 StatisticsPanel-title"><%= t("notifications.live.statistics.total") %></span>
+        <div class="StatisticsPanel-row StatisticsPanel-row--total">
+          <div>
+            <p class="Base-title Base-title--3 Base-title--white StatisticsPanel-value">
+              <%= number_to_currency(@total_raised, locale: params[:locale], precision: 0, unit: "€") %>
+            </p>
+            <p class="Base-subtitle Base-subtitle--verySmall StatisticsPanel-legend">
+              <%= raw t('become_shareholder.summary.counters.amount') %>
+            </p>
+          </div>
+          <div>
+            <p class="Base-title Base-title--3 Base-title--white StatisticsPanel-value">
+              <%= number_with_delimiter(@total_shareholders, locale: params[:locale]) %>
+            </p>
+            <p class="Base-subtitle Base-subtitle--verySmall StatisticsPanel-legend">
+              <%= raw t('become_shareholder.summary.counters.total_associates') %>
+            </p>
+          </div>
+        </div>
+        <div class="StatisticsPanel-separator"></div>
+        <div class="StatisticsPanel-row StatisticsPanel-row--periods">
+          <button class="Button StatisticsPanel-button StatisticsPanel-button--active"
+                  data-action="carousel#showPanel"
+                  data-carousel-target="button"
+                  data-panel-index="0"><%= t("notifications.live.statistics.today") %></button>
+          <button class="Button StatisticsPanel-button"
+                  data-action="carousel#showPanel"
+                  data-carousel-target="button"
+                  data-panel-index="1"><%= t("notifications.live.statistics.current_week") %></button>
+          <button class="Button StatisticsPanel-button"
+                  data-action="carousel#showPanel"
+                  data-carousel-target="button"
+                  data-panel-index="2"><%= t("notifications.live.statistics.current_month") %></button>
+        </div>
+        <div class="StatisticsPanel-carousel StatisticsPanel-carousel--0" data-carousel-target="carousel">
+          <% [:today, :week, :month].each do |period| %>
+            <div class="StatisticsPanel-panel">
+              <% [:raised, :new_shareholders].each do |value| %>
+                <div class="StatisticsPanel-row StatisticsPanel-row--alignTop">
+                  <div>
+                    <p class="Base-title Base-title--3 Base-title--white StatisticsPanel-value">
+                      +
+                      <% if value == :raised %>
+                        <%= number_to_currency(@statistics[period][value], locale: params[:locale], precision: 0, unit: "€") %>
+                      <% else %>
+                        <%= number_with_delimiter(@statistics[period][value], locale: params[:locale]) %>
+                      <% end %>
+                    </p>
+                    <% if value == :new_shareholders %>
+                      <p class="Base-subtitle Base-subtitle--verySmall StatisticsPanel-legend"><%= raw t('become_shareholder.summary.counters.total_associates') %></p>
+                    <% end %>
+                  </div>
+                  <div class="StatisticsPanel-variation">
+                    <span class="Base-title Base-title--4 StatisticsPanel-variationValue">
+                      <% trend_direction = variation_direction(@statistics[period][:"#{value}_variation"]) %>
+                      <i class="material-icons StatisticsPanel-trendIcon--<%= trend_direction %>">
+                        trending_<%= trend_direction %>
+                      </i>
+                      <% unless @statistics[period][:"#{value}_variation"].blank? %>
+                        <%= variation_symbol(@statistics[period][:"#{value}_variation"]) %>
+                        <%= number_with_delimiter(@statistics[period][:"#{value}_variation"]&.abs, locale: params[:locale]) %>
+                        %
+                      <% end %>
+                    </span>
+                    <span class="Base-subtitle Base-subtitle--verySmall StatisticsPanel-legend">
+                      <%= t("notifications.live.statistics.#{period}_variation") %>
+                    </span>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="StatisticsPanel-row StatisticsPanel-row--centered">
+          <button class="StatisticsPanel-panelIndicator StatisticsPanel-panelIndicator--active"
+                  data-action="carousel#showPanel"
+                  data-carousel-target="indicator"
+                  data-panel-index="0"></button>
+          <button class="StatisticsPanel-panelIndicator"
+                  data-action="carousel#showPanel"
+                  data-carousel-target="indicator"
+                  data-panel-index="1"></button>
+          <button class="StatisticsPanel-panelIndicator"
+                  data-action="carousel#showPanel"
+                  data-carousel-target="indicator"
+                  data-panel-index="2"></button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="Live-notifications" data-controller="notifications">
+      <% @notifications.each do |notification| %>
+        <li class="Notification Notification--<%= notification.subject_type.camelize(:lower) %>">
+          <%= image_tag notification.icon, class: "Notification-icon",
+            alt: "#{t("notifications.live.icones_alt")} #{t("activerecord.models.#{notification.subject_type.underscore}")}" %>
+          <div class="Notification-body">
+            <div class="Notification-part Notification-part--main">
+              <p class="Base-title Base-title--4"><%= notification.name %></p>
+              <p class="Base-title Base-title--5">
+                <%= t("notifications.live.messages.#{notification.subject_type.underscore}") %>
+              </p>
+            </div>
+            <div class="Notification-part Notification-part--end">
+              <%= link_to notification.link, class: "Notification-link" do %>
+                <%= t("notifications.live.cta.#{notification.subject_type.underscore}") %>
+                <i class="material-icons">arrow_forward</i>
+              <% end %>
+              <%= t(
+                    'common.time_ago',
+                    time: distance_of_time_in_words(Time.now, notification.created_at, false, vague: true)
+                  ) %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      <%= link_to url_for(page: params[:page].present? ? params[:page].to_i + 1 : 2),
+        class: "Button Button--secondaryLagoon Button--iconLeft",
+        data: {action: "notifications#fetchNotifications"} do %>
+        <i class="material-icons">cached</i>
+        <%= t("notifications.live.next_page") %>
+      <% end %>
+    </ul>
+  </div>
+</section>

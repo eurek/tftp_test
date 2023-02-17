@@ -1,0 +1,306 @@
+.roadmap_tasks-index {
+
+  .Hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto 5rem;
+    min-height: calc(100vh - 6.5rem);
+
+    &-column {
+      border-left: 1px solid rgba($white, 0.2);
+      grid-row-start: 1;
+      grid-row-end: 4;
+
+      &--1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+
+      &--2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+
+      &--3 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+
+      &--4 {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        border-right: 1px solid rgba($white, 0.2);
+      }
+    }
+
+    &-subtitle {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      text-align: center;
+
+      @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        text-align: left;
+      }
+    }
+
+    &-arrow {
+      grid-row-start: 3;
+      grid-column-start: 3;
+      transform: translateX(-50%);
+
+      @media (min-width: $breakpoint-md) {
+        grid-column-start: 2;
+        transform: translateX(0);
+      }
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      text-align: center;
+
+      @media (min-width: $breakpoint-md) {
+        grid-column-end: 5;
+        font-size: 4rem;
+        text-align: left;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 6rem;
+      }
+    }
+  }
+
+  .DetailsContainer {
+
+    @media (min-width: $breakpoint-xl) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 3.5rem;
+      width: 40%;
+      padding-right: 0;
+      z-index: 1;
+    }
+
+    &-stickyPanel {
+
+      @media (min-width: $breakpoint-xl) {
+        position: sticky;
+        top: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+    }
+
+    &-panel {
+      background-color: $grey-800;
+      padding: 1rem 2rem 2.5rem 2rem;
+    }
+
+    &-detailsPlaceholder {
+      transition: transform 0.3s ease-in-out;
+      padding-top: 2.5rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(100%);
+      z-index: 1;
+      background-color: $grey-900;
+
+      @media (min-width: $breakpoint-xl) {
+        background-color: $grey-800;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateX(100%);
+      }
+
+      &--open {
+        transform: translateY(0);
+
+        @media (min-width: $breakpoint-xl) {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  .Details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+
+      &--mobileColumn {
+        flex-direction: column;
+
+        @media (min-width: $breakpoint-sm) {
+          flex-direction: row;
+        }
+      }
+    }
+
+    &-subtitle {
+      font-family: $body-font;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+
+      @media (min-width: $breakpoint-xxl) {
+        margin-top: 2rem;
+      }
+
+      &--red {
+        color: $red-300;
+      }
+
+      &--lagoonBlue {
+        color: $lagoon-500;
+      }
+
+      &--green {
+        color: $green-300;
+      }
+
+      &--purple {
+        color: $purple-400;
+      }
+
+      &--yellow {
+        color: $yellow-200;
+      }
+    }
+
+    &-text {
+      color: $grey-200;
+      margin: 0;
+      font-size: 1rem;
+
+      &--darker {
+        color: $grey-500;
+      }
+
+      &--moreMargin {
+        margin: 3rem 0;
+      }
+    }
+
+    &-lastDone {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      color: $grey-200;
+
+      .Details-text--darker {
+        cursor: pointer;
+      }
+
+      .material-icons {
+        margin-right: 1rem;
+      }
+    }
+
+    &-cta {
+      border-radius: 10rem;
+      font-family: $body-font;
+      text-transform: none;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (min-width:  400px) {
+        background-color: $black;
+        padding: 0.8rem 1.5rem;
+      }
+
+      @media (min-width: $breakpoint-sm) {
+        padding: 0.8rem 1.5rem;
+        flex-direction: row;
+        background-color: $black;
+      }
+
+      .Button {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+
+        @media (min-width: $breakpoint-sm) {
+          margin-top: 0;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+          margin-top: 0.5rem;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+          margin-top: 0;
+        }
+      }
+
+      &:hover {
+        color: $lagoon-500;
+
+        .Button {
+          border-color: $lagoon-500;
+        }
+      }
+    }
+  }
+
+  .TaskListTitle {
+    text-align: center;
+    margin-top: 4rem;
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  .TaskList {
+
+    &-title {
+      font-weight: 400;
+      font-size: 1.2rem;
+
+      @media (min-width: $breakpoint-sm) {
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 2rem;
+      }
+
+      &-underlined {
+        border-bottom: 2px $white solid;
+      }
+
+      &-darker {
+        color: $grey-500;
+      }
+    }
+
+    &-list {
+      // TODO: Maybe set these as default in global and just override these in content style to leave browser default styling
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

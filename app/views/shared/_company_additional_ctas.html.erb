@@ -1,0 +1,30 @@
+<div class="CompanyAdditionalCtas">
+  <div class="CompanyAdditionalCtas-item">
+    <i class="material-icons">
+      download
+    </i>
+    <%= link_to raw(t('company_home.steps.step_1.presentation')),
+                @external_links.climate_deal_presentation_document,
+                class: "CompanyAdditionalCtas-link",
+                target: "_blank" %>
+  </div>
+  <div class="CompanyAdditionalCtas-item">
+    <i class="material-icons">
+      savings
+    </i>
+    <%= link_to raw(t('company_home.steps.step_1.simulator')),
+                @external_links.climate_deal_simulator_form,
+                class: "CompanyAdditionalCtas-link",
+                target: "_blank" %>
+  </div>
+  <div class="CompanyAdditionalCtas-item">
+    <i class="material-icons">
+      event_available
+    </i>
+    <%= link_to raw(t('company_home.steps.step_1.appointment')),
+                @external_links.climate_deal_meeting_form,
+                class: "CompanyAdditionalCtas-link",
+                target: "_blank" %>
+  </div>
+</div>
+

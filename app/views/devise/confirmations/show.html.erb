@@ -1,0 +1,30 @@
+<% content_for :welcome_title,
+  t('private_space.sign_in.welcome_title')
+%>
+
+<% content_for :welcome_content,
+  raw(t('private_space.sign_in.welcome_message'))
+%>
+
+<% content_for :title do %>
+  <%= t('private_space.activation.title.white') %>
+  <span class="Login-title--blue"> <%= t('private_space.activation.title.blue') %></span>
+<% end %>
+
+<%= simple_form_for(resource, as: resource_name, url: update_user_confirmation_path, html: {:method => 'put'}, id: 'activation-form') do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <% if @requires_password %>
+    <div class="form-inputs">
+      <%= f.input :password, required: true, pattern: ".*[^ ].*",
+        input_html: { 'data-action': 'blur->form#validate' } %>
+      <%= f.input :password_confirmation, required: true, pattern: ".*[^ ].*",
+        input_html: { 'data-action': 'blur->form#validate' } %>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :confirmation_token, @confirmation_token %>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('private_space.activation.cta'), class: "Button Button--box Button--fullWidth" %>
+  </div>
+<% end %>

@@ -1,0 +1,118 @@
+<% content_for :meta_title, @company.name %>
+<% content_for :meta_desc, raw(@company.description) %>
+<% content_for :meta_image, picture(@company, [500, 500]) %>
+<% content_for :purple_footer, true %>
+
+<div class="Section Section--white">
+  <div class="container">
+    <div class="ShareholderDetailedCard ShareholderDetailedCard--<%= @company.shareholder? ? "shareholderCompany" : "company" %>">
+      <div class="ShareholderDetailedCard-image ShareholderDetailedCard-image--default"
+        style="background-image: url('<%= image_path "company-default-cover.jpg" %>');">
+        <%= image_tag(picture(@company, [500, 500]), alt: "#{@company.name} logo", class: "ShareholderDetailedCard-logo") %>
+      </div>
+
+    <div class="ShareholderDetailedCard-infos">
+      <div>
+        <h1 class="Base-title Base-title--2"><%= @company.name %></h1>
+        <p class="ShareholderDetailedCard-infos--emphased">
+          <%= shareholder_status(@company) %>
+        </p>
+        <% if @company.address.present? %>
+          <%= simple_format(@company.address, class: "ShareholderDetailedCard-address") %>
+        <% end %>
+      </div>
+      <div>
+        <p class="ShareholderDetailedCard-infos--sticker">
+          <%= @shareholder_employees.length %>
+          <%= t('shareholder.user_show.infos.employees', count: @shareholder_employees.length) %>
+        </p>
+      </div>
+    </div>
+
+      <div class="ShareholderDetailedCard-infos ShareholderDetailedCard-infos--links">
+        <% [:website, :facebook, :linkedin].each do |attribute| %>
+          <% if @company.public_send(attribute).present? %>
+            <%= link_to @company.public_send(attribute), class: "ShareholderDetailedCard-link", target: :_blank do %>
+              <%= t("shareholder.company_show.links.#{attribute}") %>
+              <i class="material-icons">arrow_forward</i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="BackToShareholders">
+      <%= link_to shareholders_path do %>
+        <p class="Button Button--darkPurple">
+          <%= raw t('shareholder.user_show.back_to_index').upcase %>
+          <i class="material-icons">arrow_forward</i>
+        </p>
+      <% end %>
+    </div>
+
+    <% if @company.badges.any? || @company.roles.any? %>
+      <div class="row ShareholderAssets">
+        <% if @company.badges.any? %>
+          <div class="col-md-8">
+            <h2 class="Base-title Base-title--2"><%= raw t('shareholder.user_show.subtitle_1') %></h2>
+            <%= render "shared/badge_list", badges: @company.badges, mode: "dark" %>
+          </div>
+        <% end %>
+
+        <div class="col-md-4 ShareholderAssets-fonctionsBloc">
+          <h2 class="Base-title Base-title--2"><%= raw t('shareholder.user_show.subtitle_2') %></h2>
+          <%= render "shared/roles_list", shareholder: @company, scope: :attributable_to_company %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% if @company.description.present? || @company.co2_emissions_reduction_actions.present? %>
+  <div class="Section Section--lightGrey">
+    <div class="container CompanyShareholderTexts">
+      <% if @company.description.present? %>
+        <h2 class="Base-title Base-title--2">
+          <%= raw(t("shareholder.company_show.section_2.description_title")) %>
+        </h2>
+        <p class="Base-text--lighter"><%= @company.description %></p>
+      <% end %>
+
+      <% if @company.co2_emissions_reduction_actions.present? %>
+        <h2 class="Base-title Base-title--2">
+          <%= t("shareholder.company_show.section_2.actions_title", shareholder_name: @company.name) %>
+        </h2>
+        <p class="Base-text--lighter"><%= @company.co2_emissions_reduction_actions %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="Section Section--white">
+  <div class="container CompanyShareholders">
+    <h2 class="Base-title Base-title--2">
+      <%= raw(t("shareholder.company_show.section_employees.title", shareholder_name: @company.name)) %>
+    </h2>
+
+    <div class="ShareholdersList">
+      <% @shareholder_employees.each do |shareholder| %>
+        <%= render "shared/shareholder_card", shareholder: shareholder %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "prefooter",
+  background_color: "lightPurple",
+  cta_class: "Button Button--underlinedBlackPurple",
+  text: @company.shareholder? ?
+    raw(t("shareholder.prefooter.title_shareholder_company", shareholder_name: @company.name)) :
+    raw(t("shareholder.prefooter.title_company", shareholder_name: @company.name)),
+  cta: @company.shareholder? ?
+    raw(t("shareholder.prefooter.link_shareholder")) :
+    raw(t("shareholder.prefooter.link_company")),
+  link: @company.shareholder? ?
+    buy_shares_choice_path :
+    @external_links.b2b_contact_form
+%>
+

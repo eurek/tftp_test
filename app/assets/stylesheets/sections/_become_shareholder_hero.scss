@@ -1,0 +1,288 @@
+.BecomeShareholderHero {
+  min-height: calc(100vh - 4rem);
+  padding: 2rem 0;
+
+  @media (min-width: $breakpoint-md) {
+    min-height: calc(100vh - 4.5rem);
+    padding: 3rem 0;
+  }
+
+  &-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  &-image {
+    display: none;
+
+    @media (min-width: $breakpoint-sm) {
+      display: block;
+      width: 15%;
+      object-fit: cover;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      height: calc(100vh - 12rem);
+    }
+  }
+
+  &-mainContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-sm) {
+      width: 75%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 47%;
+    }
+  }
+
+  &-side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 30%;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 0;
+    }
+  }
+
+  &-buyingInfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+
+    @media (min-width: $breakpoint-sm) {
+      margin: 3rem 0;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin: 0;
+    }
+  }
+
+  &-price {
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+
+  &-quantity {
+    font-size: 1rem;
+  }
+
+  &-priceInfo {
+    width: 40%;
+  }
+
+  &-paymentInfo {
+    width: 45%;
+  }
+
+  &-paymentInfoItem {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-direction: column;
+
+    .Button--box {
+      margin-bottom: 1rem;
+      color: $grey-900;
+
+      &:hover {
+        color: $grey-900;
+      }
+    }
+  }
+
+  &-counter {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &-statistics {
+    background: radial-gradient(107.11% 133.14% at 0% 6.84%, $grey-800 0%, rgba(24, 26, 27, 0) 98.88%);
+    padding: 1rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-md) {
+      width: 50%;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &-statisticsTitle {
+    display: inline-block;
+    padding: 0.3rem 4rem 0.3rem 1rem;
+    margin-bottom: 2rem;
+    margin-left: -1.5rem;
+    text-transform: uppercase;
+  }
+
+  &-amf {
+
+    @media (min-width: $breakpoint-md) {
+      margin-left: 2rem;
+      width: 45%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: $grey-300;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      b {
+        color: $grey-50;
+      }
+    }
+  }
+
+  &-amfLink {
+    text-transform: none;
+    text-decoration: underline;
+    font-family: $body-font;
+  }
+
+  &--blackAndLagoon {
+    background-color: $black;
+    color: $white;
+
+    .SharesPurchaseNavbar .choices__inner {
+      color: $lagoon-500;
+    }
+
+    .BecomeShareholderHero {
+      &-price {
+        color: $lagoon-500;
+      }
+
+      &-priceInfo {
+        color: $lagoon-200;
+      }
+
+      &-paymentInfoItem {
+        i {
+          color: $lagoon-500;
+        }
+
+        span {
+          color: $lagoon-100;
+        }
+      }
+
+      &-counter {
+        color: $lagoon-100;
+      }
+
+      &-statisticsTitle {
+        background: linear-gradient(270deg, rgba(0, 150, 162, 0) 3.84%, $rainforest-400 93.5%);
+      }
+    }
+  }
+
+  &--blackAndPurple {
+    background-color: $black;
+    color: $white;
+
+    .SharesPurchaseNavbar .choices__inner {
+      color: $purple-400;
+    }
+
+    .Button--box {
+      color: $white;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .BecomeShareholderHero {
+      &-price {
+        color: $purple-400;
+      }
+
+      &-priceInfo {
+        color: $purple-50;
+      }
+
+      &-paymentInfoItem {
+        i {
+          color: $purple-400;
+        }
+
+        span {
+          color: $purple-200;
+        }
+      }
+
+      &-counter {
+        color: $purple-50;
+      }
+
+      &-statisticsTitle {
+        background: linear-gradient(270deg, rgba(62, 13, 255, 0) 3.84%, $purple-700 93.5%);
+      }
+    }
+  }
+
+  &--darkGreenGradient {
+    background: linear-gradient(100deg, $rainforest-900 15%, $black 100%);
+    color: $white;
+
+    .BecomeShareholderHero {
+      &-paymentInfoItem {
+        i {
+          color: $lagoon-400;
+        }
+      }
+
+      &-statistics {
+        background: radial-gradient(107% 130% at 0% 7%, $rainforest-600 0%, rgba(0, 47, 51, 0) 80%)
+      }
+
+      &-statisticsTitle {
+        background: linear-gradient(270deg, rgba(0, 150, 162, 0) 4%, $rainforest-300 94%);
+      }
+    }
+  }
+}

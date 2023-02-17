@@ -1,0 +1,27 @@
+<h1 class="PrivateSpace-title PrivateSpace-title--purple">
+  <%= t('private_space.companies_index.title') %>
+</h1>
+
+<ul class="CompaniesList">
+  <% @companies.each do |company| %>
+    <li class="CompanySharesPurchaseCard">
+      <h2 class="CompanySharesPurchaseCard-title"><%= company.name %></h2>
+      <div class="CompanySharesPurchaseCard-row">
+        <%=  simple_format(company.address, class: "CompanySharesPurchaseCard-address") %>
+        <%= link_to edit_company_path(id: company.id, from_companies_index: true), class: "CompanySharesPurchaseCard-link" do %>
+          <i class="material-icons">
+            edit
+          </i>
+          Modifier
+        <% end %>
+      </div>
+
+      <p class="CompanySharesPurchaseCard-shares">
+        <%= raw t('private_space.companies_index.company_owns', company: company.name, amount: company.shares_total) %>
+      </p>
+
+    </li>
+  <% end %>
+</ul>
+
+

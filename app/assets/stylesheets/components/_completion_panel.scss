@@ -1,0 +1,59 @@
+.CompletionPanel {
+  color: $grey-300;
+  font-family: $headers-font;
+  font-size: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  @media (min-width: $breakpoint-lg) {
+    text-align: right;
+    padding-bottom: 2rem;
+    padding-top: 0;
+  }
+
+  &-text {
+    text-transform: none;
+    color: $lagoon-200;
+
+    &--red {
+      color: $red-300;
+      margin-bottom: 1rem;
+    }
+
+    &--fontMedium {
+      font-size: 1.25rem;
+    }
+
+    &--margin-top {
+      margin-top: 2rem;
+    }
+  }
+
+  &-rate {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    color: $lagoon-500;
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  &-situation {
+    margin-top: 4rem;
+  }
+
+  .Button--underlined {
+    border-bottom-color: $grey-300;
+
+    &:hover {
+      border-bottom-color: $lagoon-500;
+    }
+  }
+}

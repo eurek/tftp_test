@@ -1,0 +1,163 @@
+<nav class="NavbarMenu NavbarMenu--innovation hidden"
+     data-navbar-target="innovationsMenu">
+  <div class="container">
+    <button class="NavbarMenu-mobileNavigation"
+            data-action="navbar#hideInnovationsMenu">
+      <i class="material-icons">arrow_backward</i>
+      <%= t("common.innovations") %>
+    </button>
+    <div class="NavbarMenu-container NavbarMenu-menu">
+      <div class="NavbarMenu-subMenu">
+        <% [:stars, :received_innovations].each do |menu_item| %>
+          <%= render "shared/navbar_menu_item", menu_item: menu_item %>
+        <% end %>
+      </div>
+
+      <div class="NavbarMenu-subMenu">
+        <%= render "shared/navbar_menu_item", menu_item: :co2_counter %>
+      </div>
+
+      <div class="NavbarMenu-subMenu">
+        <%= render "shared/navbar_menu_item", menu_item: :submit_innovation %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="NavbarMenu hidden"
+     data-navbar-target="aboutMenu">
+  <div class="container">
+    <button class="NavbarMenu-mobileNavigation"
+            data-action="navbar#hideAboutMenu">
+      <i class="material-icons">arrow_backward</i>
+      <%= t("common.about") %>
+    </button>
+    <div class="NavbarMenu-container NavbarMenu-menu">
+      <div class="NavbarMenu-subMenu"
+        data-controller="toggling-class"
+        data-toggling-class-name-class="NavbarMenu-subMenu--open"
+        data-toggling-class-open-element-value="true">
+        <button class="Button NavbarMenu-tagline"
+          data-action="click->toggling-class#toggleClassName"
+          aria-expanded="false">
+          <%= t("navbar.taglines.direct") %>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </button>
+        <div class="NavbarMenu-aboutMenuItem"
+             data-navbar-menu-items-target="subMenu">
+          <% [:shareholders, :notifications, :events, :time_media, :press_clips].each do |menu_item| %>
+            <%= render "shared/navbar_menu_item", menu_item: menu_item %>
+          <% end %>
+        </div>
+      </div>
+      <div class="NavbarMenu-subMenu"
+        data-controller="toggling-class"
+        data-toggling-class-name-class="NavbarMenu-subMenu--open"
+        data-toggling-class-open-element-value="true">
+        <button class="Button NavbarMenu-tagline"
+          data-action="click->toggling-class#toggleClassName"
+          aria-expanded="false">
+          <%= t("navbar.taglines.our_action") %>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </button>
+        <div class="NavbarMenu-aboutMenuItem"
+             data-navbar-menu-items-target="subMenu">
+          <% [:strategy_and_governance, :roadmap_tasks, :problems, :climate_change, :faq].each do |menu_item| %>
+            <%= render "shared/navbar_menu_item", menu_item: menu_item %>
+          <% end %>
+        </div>
+      </div>
+      <div class="NavbarMenu-subMenu"
+        data-controller="toggling-class"
+        data-toggling-class-name-class="NavbarMenu-subMenu--open"
+        data-toggling-class-open-element-value="true">
+        <button class="Button NavbarMenu-tagline"
+          data-action="click->toggling-class#toggleClassName"
+          aria-expanded="false">
+          <%= t("navbar.taglines.documents") %>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </button>
+        <div class="NavbarMenu-aboutMenuItem"
+             data-navbar-menu-items-target="subMenu">
+          <% [:vision, :legal_documents, :files, :communication_documents].each do |menu_item| %>
+            <%= render "shared/navbar_menu_item", menu_item: menu_item %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="NavbarMenu hidden"
+     data-navbar-target="actingMenu">
+  <div class="container">
+    <button class="NavbarMenu-mobileNavigation"
+            data-action="navbar#hideActingMenu">
+      <i class="material-icons">arrow_backward</i>
+      <%= t("common.how_to_act") %>
+    </button>
+    <div class="NavbarMenu-container NavbarMenu-menu">
+      <div class="NavbarMenu-subMenu"
+        data-controller="toggling-class"
+        data-toggling-class-name-class="NavbarMenu-subMenu--open"
+        data-toggling-class-open-element-value="true">
+        <button class="Button NavbarMenu-tagline"
+          data-action="click->toggling-class#toggleClassName"
+          aria-expanded="false">
+          <%= t("navbar.taglines.individuals") %>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </button>
+        <div class="NavbarMenu-aboutMenuItem"
+             data-navbar-menu-items-target="subMenu">
+          <% [:become_shareholder, :quick_actions, :evaluators, :galaxy, :jobs].each do |menu_item| %>
+            <%= render "shared/navbar_menu_item", menu_item: menu_item %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="NavbarMenu-subMenu"
+           data-controller="toggling-class"
+           data-toggling-class-name-class="NavbarMenu-subMenu--open"
+           data-toggling-class-open-element-value="true">
+        <button class="Button NavbarMenu-tagline"
+             data-action="click->toggling-class#toggleClassName"
+             aria-expanded="false">
+          <%= t("navbar.taglines.companies") %>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </button>
+        <div class="NavbarMenu-aboutMenuItem"
+             data-navbar-menu-items-target="subMenu">
+          <%= render "shared/navbar_menu_item", menu_item: :become_shareholder_company %>
+        </div>
+      </div>
+
+      <div class="NavbarMenu-subMenu"
+           data-controller="toggling-class"
+           data-toggling-class-name-class="NavbarMenu-subMenu--open"
+           data-toggling-class-open-element-value="true">
+        <button class="Button NavbarMenu-tagline"
+                data-action="click->toggling-class#toggleClassName"
+                aria-expanded="false">
+          <%= t("navbar.taglines.innovators") %>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </button>
+        <div class="NavbarMenu-aboutMenuItem"
+             data-navbar-menu-items-target="subMenu">
+          <%= render "shared/navbar_menu_item", menu_item: :submit_innovation %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

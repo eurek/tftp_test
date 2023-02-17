@@ -1,0 +1,13 @@
+<% is_employer_step = false if local_assigns[:is_employer_step].nil? %>
+
+<%= link_to company_card_link(company, is_employer_step, shares_purchase_id),
+  class: "CompanyCard",
+  data: {action: is_employer_step ? "click->companies-search#assignEmployer" : ""} do %>
+  <div>
+    <h2 class="CompanyCard-title"><%= company.name %></h2>
+    <%=  simple_format(company.address, class: "CompanyCard-address") %>
+  </div>
+  <p class="Button Button--white Button--underlined CompanyCard-link">
+    <%= t('private_space.choose_company.choose_card') %><i class="material-icons">arrow_forward</i>
+  </p>
+<% end %>

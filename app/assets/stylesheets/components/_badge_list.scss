@@ -1,0 +1,54 @@
+.BadgeList {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-container {
+    margin: 0 0.3rem 0.3rem 0;
+
+    @media (min-width: $breakpoint-xs) {
+      margin: 0 0.5rem 0.5rem 0;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      margin: 0 0.5rem 1rem 0;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      margin: 0 1rem 1rem 0;
+    }
+  }
+
+  &-badge {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+
+    @media (min-width: $breakpoint-sm) {
+      width: 5.5rem;
+      height: 5.5rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: 7.5rem;
+      height: 7.5rem;
+    }
+  }
+
+  &-category {
+    font-family: $headers-font;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+
+    &--dark {
+      color: $rainforest-400;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    &--light {
+      color: $lagoon-200;
+    }
+  }
+}

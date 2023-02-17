@@ -1,0 +1,33 @@
+.shareholders-show_user {
+
+  .BackToShareholders {
+    text-align: right;
+  }
+
+  .ShareholderAssets {
+    color: $black;
+    padding: 3rem 0;
+
+    &-fonctionsBloc {
+      padding-top: 3rem;
+
+      @media (min-width: $breakpoint-md) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .ShareholderReasons {
+    @media (min-width: $breakpoint-lg) {
+      padding: 4.5rem 7rem;
+    }
+  }
+
+  .Base-title--2 {
+    margin-top: 0;
+  }
+
+  .Base-text--bold {
+    font-weight: 700;
+  }
+}

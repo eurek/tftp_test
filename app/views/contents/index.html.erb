@@ -1,0 +1,47 @@
+<% if @category.present? %>
+  <% content_for :meta_title, raw(@category.meta_title) %>
+  <% content_for :meta_desc, raw(@category.meta_description) %>
+<% end %>
+
+<section class="ContentsHeader">
+  <div class="container">
+    <div class="ContentsHeader--max-width">
+      <% if @category.present? %>
+        <div class="ContentsHeader-title">
+          <%= image_tag content_index_icon(@category), class: "ContentsHeader-icone" %>
+          <h1>
+            <%= @category.name %>
+          </h1>
+        </div>
+        <% if params[:page].nil? %>
+          <p class="ContentsHeader-description">
+            <%= raw(@category.description) %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <nav class="TagFilters">
+    <ul class="TagFilters-links" id="TagFilters">
+      <%= render "tag_filters", category: @category unless @category.nil? %>
+    </ul>
+  </nav>
+  <% if @contents.empty? %>
+      <p><%= raw t('contents.zero_state_sentence') %></p>
+  <% else %>
+    <%= render "content_list", contents: @contents %>
+  <% end %>
+  <div><%= paginate @contents, class: 'pagination' %></div>
+</section>
+
+
+<% if @category.body.present? %>
+  <section class="Section">
+    <div class="container CmsContent CmsContent--darkBackground">
+      <%= @category.body&.html_safe %>
+    </div>
+  </section>
+<% end %>

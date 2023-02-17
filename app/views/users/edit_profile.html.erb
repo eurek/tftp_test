@@ -1,0 +1,100 @@
+<% content_for :title_white,
+  t('private_space.profile.title.part1')
+%>
+
+<% content_for :title_blue,
+  t('private_space.profile.title.part2')
+%>
+
+<p class="Onboarding-text">
+  <%= raw t('private_space.profile.subtitle') %>
+</p>
+
+<%= simple_form_for @individual, url: update_user_path, html: {'data-controller': 'form'} do |f| %>
+  <%= f.input :is_displayed, required: false,
+                  label: raw(t('private_space.profile.is_displayed_label')),
+                  wrapper_html: {class: 'Form-checkbox Onboarding-infoBox'},
+                  input_html: { 'data-action': 'change->form#hideFields'} %>
+  <div class="<%= "Form-group--hidden" unless @individual.is_displayed %>" data-form-target="additionalFields">
+    <div class="Form-fieldsGroup">
+      <h2 class="Form-subtitle"><%= raw t('private_space.profile.form_titles.who') %></h2>
+
+      <div class="Form-inlineGroup">
+        <%= f.input :first_name, required: true, pattern: ".*[^ ].*", disabled: true, hint: raw(t('private_space.profile.not_editable')),
+                    input_html: {'data-action': 'blur->form#validate'} %>
+        <%= f.input :last_name, required: true, pattern: ".*[^ ].*", disabled: true, hint: raw(t('private_space.profile.not_editable')),
+                    input_html: {'data-action': 'blur->form#validate'} %>
+      </div>
+
+      <div class="Form-inlineGroup">
+        <%= f.input :country, as: :country,
+          selected: ISO3166::Country.find_country_by_alpha3(@individual&.country)&.alpha2,
+          priority: ["FR", "CH", "BE"],
+          include_blank: true,
+          required: false,
+          input_html: {class: 'Form-select'} %>
+        <%= f.input :city, required: false %>
+      </div>
+      <%= f.input :date_of_birth,
+        as: :string,
+        required: false,
+        input_html: { "data-controller": "datepicker", value: I18n.l(@individual.date_of_birth) }
+      %>
+      <%= render "shared/file_input",
+          f: f,
+          object: @individual,
+          delete_path: delete_user_picture_path,
+          attribute_name: :picture,
+          hint_text: t("common.images_format_accepted") %>
+      <%= f.input :description, required: false,
+        maxlength: 380,
+        hint: "#{@individual.description&.length || 0}/380 #{I18n.t('common.characters')}",
+        placeholder: raw(t('private_space.profile.description_placeholder')),
+        wrapper_html: {"data-controller": "text-area"},
+        input_html: {
+          class: 'Form-text',
+          "data-action": "input->text-area#countCharacters",
+          "data-text-area-target": "textArea"
+        },
+        hint_html: {"data-text-area-target": "counter"} %>
+    </div>
+
+    <div class="Form-fieldsGroup">
+      <h2 class="Form-subtitle"><%= raw t('private_space.profile.form_titles.professional_environment') %></h2>
+      <%= f.input :current_job, required: false,
+        maxlength: 45,
+        hint: "#{@individual.description&.length || 0}/45 #{t('common.characters')}",
+          wrapper_html: {"data-controller": "text-area"},
+          input_html: {
+            "data-action": "input->text-area#countCharacters",
+            "data-text-area-target": "textArea"
+          },
+          hint_html: {"data-text-area-target": "counter"} %>
+
+      <div data-controller="companies-search" id="search-form"
+        data-companies-search-uri-value=<%= choose_company_path %>
+        data-companies-search-create-uri-value=<%= companies_path %>
+        data-companies-search-company-card-partial-value='<%= @company_card_partial %>'>
+        <div data-companies-search-target="companyCard">
+          <% unless @employer.new_record? %>
+            <%= render partial: "shared/company_info_card", locals: {
+              company: @employer, is_company_editable: @is_company_editable
+            } %>
+          <% end %>
+        </div>
+
+        <%= render "search_company_form", f: f, hidden: !@employer.new_record? %>
+        <%= render "new_company_form", f: f, employer: @employer %>
+      </div>
+    </div>
+    <div class="Form-fieldsGroup">
+      <h2 class="Form-subtitle"><%= raw t('private_space.profile.form_titles.motivations') %></h2>
+      <%= f.input :reasons_to_join, label: raw(t('private_space.profile.reasons_label')), required: false,
+        input_html: {class: 'Form-text'} %>
+    </div>
+  </div>
+  <div class="Form-actions Form-actions--moreMarginTop Onboarding-form">
+    <%= f.button :submit, raw(t('private_space.profile.cta')), class: 'Button--box Button--fullWidth' %>
+  </div>
+<% end %>
+

@@ -1,0 +1,16 @@
+<section class="Section Section--morePadding Section--black MissionSection" id="mission-section">
+  <div class="container MissionSection-container">
+    <div class="MissionSection-content">
+      <h2 class="Base-title Base-title--2"><%= raw t('home.mission.title') %></h2>
+      <button class="MissionSection-videoButton Button"
+        data-controller="video-modal"
+        data-action="click->video-modal#openModalAndPlay"
+        data-modal-id="videoModal"
+        data-video-src="<%= t("home.mission.video_youtube_id") %>">
+        <i class="material-icons">play_circle_filled</i>
+        <span><%= raw t("home.mission.video") %></span>
+      </button>
+    </div>
+    <%= yield %>
+  </div>
+</section>

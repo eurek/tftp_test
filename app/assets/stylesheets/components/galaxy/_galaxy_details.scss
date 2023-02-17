@@ -1,0 +1,77 @@
+.GalaxyDetails {
+  &-separator {
+    border-bottom: 3px solid $rainforest-400;
+    margin: 3rem 0;
+  }
+
+  &-title {
+    margin-bottom: 3.5rem;
+  }
+
+  &-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 2.5rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
+  }
+
+  &-duration {
+    display: flex;
+
+    .Base-title--3, .Base-title--4 {
+      margin-top: 0;
+    }
+
+    .material-icons {
+      font-size: 3.75rem;
+      margin-right: 1rem;
+    }
+
+    &--small {
+      .Base-title--3 {
+        font-size: 1.85rem;
+      }
+    }
+  }
+}
+
+.GalaxyGroupDefinition {
+  background-image: asset-url('galaxy/galaxy-ellipses.svg');
+  background-repeat: no-repeat;
+  background-position: -8rem;
+  padding: 8rem 0;
+}
+
+.GalaxyLeaderSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row;
+  }
+
+  &-image {
+    width: 50%;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 40%;
+    }
+  }
+
+  &-columnRight {
+    width: 100%;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 44%;
+    }
+  }
+}

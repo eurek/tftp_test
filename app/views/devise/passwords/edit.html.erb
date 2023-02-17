@@ -1,0 +1,38 @@
+<% content_for :welcome_title,
+  t('private_space.forgotten_password.edit_welcome_title')
+%>
+
+<% content_for :welcome_content,
+  t('private_space.forgotten_password.edit_welcome_message')
+%>
+
+<% content_for :title do %>
+  <%= t('private_space.forgotten_password.edit_title.white') %>
+  <span class="Login-title--blue"> <%= t('private_space.forgotten_password.edit_title.blue') %></span>
+<% end %>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :reset_password_token, as: :hidden %>
+  <%= f.full_error :reset_password_token %>
+
+  <div class="form-inputs">
+    <%= f.input :password,
+                label: t('private_space.forgotten_password.new_password'),
+                required: true,
+                pattern: ".*[^ ].*",
+                autofocus: true,
+                hint: (t('private_space.forgotten_password.minimum_password_length', minimum_password_length: @minimum_password_length) if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                label: t('private_space.forgotten_password.new_password_confirmation'),
+                required: true,
+                pattern: ".*[^ ].*",
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('private_space.forgotten_password.edit_cta'), class: "Button Button--box Button--fullWidth" %>
+  </div>
+<% end %>

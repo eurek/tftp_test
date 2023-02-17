@@ -1,0 +1,166 @@
+<div class="InnovationsContainer">
+  <%= render "innovations_nav", selected_status: params[:status] %>
+  <div class="InnovationsContainer-background"></div>
+
+  <section class="container InnovationsContent" data-controller="search filters">
+    <div class="ContentsHeader-title">
+      <%= image_tag "icones/received_innovations.svg", class: "ContentsHeader-icone" %>
+      <h1 class="Base-title Base-title--1"><%= raw t('innovations.index.title') %></h1>
+    </div>
+    <div class="Filters" data-action="click@window->filters#hidePanelsWhenClickOutside">
+      <%= simple_form_for :filters, { url: innovations_path, id: "FilterForm", method: :get } do |f| %>
+
+      <div class="Filters-globalContainer">
+        <ul class="Filters-container">
+          <li class="Filters-item Filters-item--statuses"
+            data-action="click->filters#displayPanel" data-filter-id="statuses" data-filters-target="trigger">
+            <%= raw t('innovations.index.filters.statuses') %>
+          </li>
+          <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="levers" data-filters-target="trigger">
+            <span class="Filters-title"><%= t("innovations.index.filters.levers").upcase_first %></span>
+          </li>
+          <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="domains" data-filters-target="trigger">
+            <span class="Filters-title"><%= t("innovations.index.filters.domains").upcase_first %></span>
+          </li>
+          <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="episodes" data-filters-target="trigger">
+            <span class="Filters-title"><%= t("innovations.index.filters.episodes").upcase_first %></span>
+          </li>
+        </ul>
+        <%= text_field_tag 'search', @search,
+                class: "SearchBar",
+                placeholder: raw(t('innovations.index.search')),
+                data: { action: "search#submit", "search-target": "query" } %>
+      </div>
+
+      <div class="Filters-detailsContainer" data-filters-target="panelsContainer">
+        <%= render "innovations_nav", mobile: true, selected_status: params[:status] %>
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="levers" data-filters-target="panel">
+          <%= f.input :levers, label: false, input_html: {data: {action: "click->filters#selectInput"}},
+            as: :check_boxes,
+            collection: ActionLever.all,
+            value_method: :id,
+            label_method: lambda { |lever| lever.name.capitalize },
+            checked: params.dig(:filters, :levers)
+          %>
+        </div>
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="domains" data-filters-target="panel">
+          <%= f.input :domains, label: false, input_html: {data: {action: "click->filters#selectInput"}},
+            as: :check_boxes,
+            collection: ActionDomain.all,
+            value_method: :id,
+            label_method: lambda { |lever| lever.name.capitalize },
+            checked: params.dig(:filters, :domains)
+          %>
+        </div>
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="episodes" data-filters-target="panel">
+          <%= f.input :episodes, label: false, input_html: {data: {action: "click->filters#selectInput"}},
+            as: :check_boxes,
+            collection: @episodes_collection,
+            value_method: :id,
+            label_method: lambda { |episode| episode.decorate.display_code },
+            checked: params.dig(:filters, :episodes)
+          %>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+    <div class="UpdatableElement" data-search-target="resultsContainer">
+      <div class="Filters-appliedFilters">
+        <% if @applied_filters[:status].present? %>
+          <%= render partial: "shared/applied_filter",
+            locals: {
+              title: raw(t("innovations.statuses.#{@applied_filters[:status]}.title")),
+              link: innovations_path(@filters_params.except(:status)) } %>
+        <% end %>
+
+        <% if @applied_filters[:filters].present? %>
+          <% @applied_filters[:filters].each do |filter_key, filter_values| %>
+            <% next unless filter_values.present? %>
+
+            <% filter_values.each do |filter_value| %>
+              <%= render partial: "shared/applied_filter",
+                locals: {
+                  title: filter_display_name(filter_value, filter_key),
+                  link: innovations_path(remove_filter(@filters_params, filter_key.to_sym, filter_value.id)) } %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <% if @applied_filters[:search].present? %>
+          <%= render partial: "shared/applied_filter",
+            locals: {
+              title: @applied_filters[:search],
+              link: innovations_path(@filters_params.except(:search)) } %>
+        <% end %>
+
+        <div class="Filters-counterContainer">
+          <%= link_to innovations_path(status: @filters_params[:status]),
+            class: "Filters-clearLink#{" hidden" if params[:filters].blank? }",
+            "data-filters-target": "clear" do %>
+            <%= t("shareholder.index.filters.clear").upcase_first %>
+          <% end %>
+
+          <% unless @applied_filters[:filters].blank? %>
+            <span class="Filters-resultsCount"><%= t("shareholder.index.filters.count", count: @count) %></span>
+          <% end %>
+        </div>
+
+
+      </div>
+      <div class="InnovationCards" >
+        <% if @selected_innovations.length == 0 %>
+          <p class="SearchEmptyState">
+            <%= raw(t('innovations.index.no_result')) %>
+            <%= link_to raw(t('innovations.index.see_all')), innovations_path, class: "SearchEmptyState-link" %>
+          </p>
+        <% end %>
+        <% @selected_innovations.each do |innovation| %>
+          <%= link_to innovation_path(innovation, applied_filters: @filters_params),
+            class: "InnovationCard InnovationCard--#{innovation_tag_and_color(innovation)[:color]}" do %>
+            <div class="InnovationCard-image"
+                 style="background-image: url(<%= innovation.decorate.picture_with_fallback([540, 540]) %>);">
+              <% unless innovation.received_status? %>
+                <span class="InnovationCard-tag">
+                  <%= innovation_tag_and_color(innovation)[:tag] %>
+                </span>
+              <% end %>
+            </div>
+            <div class="InnovationCard-content">
+              <h2 class="InnovationCard-title Base-title Base-title--5">
+                <%= innovation.name %>
+              </h2>
+              <% if should_display_rating?(innovation) %>
+                <div class="InnovationCard-starContainer" data-controller="tooltip" data-tooltip-max-width-value="700">
+                  <%= render "star_scale", rating: innovation.rating %>
+                  <i class="material-icons InnovationCard-scaleHelp"
+                    data-template="stare-scale-explanation"
+                    data-tooltip-target="trigger">
+                    help_outline
+                  </i>
+                  <div class="ShareholderAssetTooltip" id="stare-scale-explanation" data-tooltip-target="source">
+                    <p><%= raw t("innovations.show.rating_explanation") %></p>
+                    <ul>
+                      <% t("innovations.show.rating_points").each do |point| %>
+                        <li><%= point %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% else %>
+                <span class="InnovationCard-noRating"><%= t("innovations.show.no_evaluation") %></span>
+              <% end %>
+              <p class="InnovationCard-description">
+                <%= innovation.short_description&.truncate_words(25) %>
+              </p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div data-search-target="paginationContainer"><%= paginate @selected_innovations, class: 'pagination' %></div>
+    </div>
+  </section>
+</div>

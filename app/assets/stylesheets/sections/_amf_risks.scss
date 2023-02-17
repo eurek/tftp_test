@@ -1,0 +1,91 @@
+.AmfRisks {
+  overflow-x: scroll;
+  scroll-margin-top: 4rem;
+
+  h2 {
+    margin-bottom: 4rem;
+  }
+}
+
+.AmfRisksTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 32rem;
+
+  tr, td, th {
+    text-align: left;
+    padding: 1rem;
+  }
+
+  tbody, p {
+    font-family: $headers-font;
+    font-weight: light;
+    font-size: 1rem;
+  }
+
+  &-data:nth-child(4n - 3) {
+    background-color: $grey-800;
+  }
+
+  &-description {
+    color: $grey-200;
+    display: none;
+
+    &--open {
+      display: table-row;
+    }
+
+    &:nth-child(4n-2) {
+      background-color: $grey-800;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-left: 2rem;
+    }
+  }
+
+  &-value {
+    width: 15%;
+  }
+
+  &-titleCell {
+    display: flex;
+    cursor: pointer;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &--lagoon {
+    .AmfRisksTable {
+      &-data {
+        color: $lagoon-100;
+      }
+
+      &-titleCell:hover {
+        color: $lagoon-400;
+      }
+    }
+  }
+
+  &--purple {
+    .AmfRisksTable {
+      &-data {
+        color: $purple-50;
+      }
+
+      &-titleCell:hover {
+        color: $purple-400;
+      }
+    }
+  }
+}

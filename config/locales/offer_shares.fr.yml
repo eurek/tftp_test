@@ -1,0 +1,19 @@
+---
+fr:
+  offer_shares:
+    cta: "J'offre des actions"
+    benefits:
+      title: "Offrir des actions Time for the Planet<span class='brand'>®</span>, c'est donner l'opportunité à un proche
+      d'oeuvrer pour le climat et de&nbsp;:"
+      first: "Voter aux assemblées générales et choisir le cap à suivre."
+      second: "Rester connecté à toute l’actualité de Time for the planet, en tant qu’actionnaire."
+      third: "Créer son profil Time for the planet sur le site et trouver sa place parmi la communauté."
+    gift_package:
+      title: "Qu’est-ce que je mets dans le paquet cadeau&nbsp;?"
+      text1: "Dans un premier temps, vous achetez des actions au nom de la personne à qui elles sont destinées."
+      text2: "Vous recevez alors une carte à imprimer pour lui témoigner votre attention."
+    cta_banner:
+      title: "Nous sommes plus forts ensemble. Partagez le combat pour la planète avec vos proches."
+      text: "Faites leur un cadeau qui a du sens, offrez des actions Time for the Planet."
+    hero:
+      quantity: "Vous pouvez offrir autant d'actions que vous le souhaitez."

@@ -1,0 +1,47 @@
+---
+fr:
+  co2_counter:
+    counter_section:
+      title: "Notre compteur d’impact"
+      subtitle: "Les innovations déployées par TFTP tabassent les gaz à effet de serre ! Vous trouverez ici toutes 
+        les estimations sur le CO₂ non-émis ou capté grâce à nos investissements."
+      unit : "Kilos de CO₂ économisés ou captés cette année."
+      equivalences:
+        citizen:
+          title: "Citoyen·nes"
+          multiplier: 11000
+          text: "Les émissions annuelles de <br><em>%{count} citoyen·nes européen·nes.</em>"
+        bulbs:
+          title: "Ampoules"
+          multiplier: 4,5
+          text: "L'équivalent en émissions de <br><em>%{count} ampoules LED allumées pendant 1 an.</em>"
+        trees:
+          title: "Arbres"
+          multiplier: 25
+          text: "L'équivalent de <br><em>%{count} arbres plantés.</em>"
+        flights:
+          title: "Avions"
+          multiplier: 1000
+          text: "L'équivalent en émission de <br><em>%{count} vols Paris / New York.</em>"
+        steaks:
+          title: "Steaks"
+          multiplier: 6,5
+          text: "L'équivalent en émission de <br><em>%{count} steaks de boeuf.</em>"
+    graph_section:
+      title: "2022 est la première année où l’action de Time est visible mais pas la dernière !"
+    emissions_section:
+      title: "Pour 2022, Time for the Planet<span class='brand'>®</span>️ c’est seulement <em>%{emissions} kg de CO₂ émis
+      </em> contre <em>%{reduction} kg réduits</em> grâce à nos innovations."
+      emitted: "CO₂ émis par TFTP :"
+      reduced: "CO₂ réduit cette année grace à TFTP : "
+    table_section:
+      title: "Selon leur stade d'avancement, nos innovations ont déjà commencé à réduire les émissions de CO2 ou vont 
+        le faire massivement dans les années à venir."
+      head:
+        name: "Nom de l'innovation"
+        category: "Catégorie"
+        co2: "CO₂ réduit"
+      see_innovation: "En savoir plus sur l'innovation"
+    calcul_section:
+      text: "Pour connaître le calcul qui nous permet de faire ces estimations,  vous pouvez télécharger ce document."
+      cta: "Télécharger"

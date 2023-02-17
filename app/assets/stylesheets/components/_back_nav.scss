@@ -1,0 +1,45 @@
+.BackNav {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  &-backButton.Button {
+    display: inline-flex;
+    text-transform: none;
+
+    .material-icons {
+      width: 2rem;
+      margin-left: 0;
+    }
+  }
+
+  &--black {
+    background-color: $black;
+    color: $lagoon-200;
+
+    .Button {
+      &:hover {
+        color: $lagoon-500;
+      }
+    }
+  }
+
+  &--lagoonText {
+    color: $lagoon-500;
+
+    .Button {
+      &:hover {
+        color: $lagoon-200;
+      }
+    }
+  }
+
+  &--blackTextHoverRainforest {
+    color: $black;
+
+    .Button {
+      &:hover {
+        color: $rainforest-600;
+      }
+    }
+  }
+}

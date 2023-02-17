@@ -1,0 +1,16 @@
+<% if @navbar_menu_links[menu_item].present? %>
+  <div class="NavbarMenuItem">
+    <%= image_tag "icones/#{menu_item}.svg", class: "NavbarMenuItem-icon", alt: menu_item %>
+    <div>
+      <% target = menu_item == :jobs ? "_blank" : "_self" %>
+      <%= link_to @navbar_menu_links[menu_item], target: target do %>
+        <div class="NavbarMenuItem-title">
+          <%= t("navbar.menus.#{menu_item}.title") %>
+        </div>
+        <div class="NavbarMenuItem-subtitle">
+          <%= raw(t("navbar.menus.#{menu_item}.subtitle")) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

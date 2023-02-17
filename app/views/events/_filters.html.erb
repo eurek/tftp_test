@@ -1,0 +1,51 @@
+<div data-controller="filters" class="Filters" data-action="click@window->filters#hidePanelsWhenClickOutside">
+  <%= simple_form_for :filters, { url: events_path, method: :get } do |f| %>
+    <ul class="Filters-container container">
+
+      <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="categories" data-filters-target="trigger">
+        <span class="Filters-title"><%= t("events.index.filters.category").upcase_first %></span>
+      </li>
+
+      <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="locales" data-filters-target="trigger">
+        <span class="Filters-title"><%= t("events.index.filters.language").upcase_first %></span>
+      </li>
+
+      <%= link_to events_path,
+        class: "Filters-item Filters-item--clear",
+        "data-filters-target": "clear" do %>
+        <%= t("shareholder.index.filters.clear").upcase_first %>
+      <% end %>
+    </ul>
+
+    <div class="Filters-detailsContainer" data-filters-target="panelsContainer">
+      <div class="container">
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="categories" data-filters-target="panel">
+          <%= f.input :categories,
+            label: false,
+            as: :check_boxes,
+            input_html: { data: { action: "click->filters#selectInput"}},
+            collection: event_categories,
+            checked: params.dig(:filters, :categories),
+            label_method: lambda { |category| category.first.capitalize }
+          %>
+        </div>
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="locales" data-filters-target="panel">
+
+          <%= f.input :locales,
+            label: false,
+            as: :check_boxes,
+            input_html: {data: { action: "click->filters#selectInput"}},
+            collection: event_locales,
+            checked: params.dig(:filters, :locales),
+            label_method: lambda { |locale| locale.first.capitalize }
+          %>
+        </div>
+
+      </div>
+
+    </div>
+
+  <% end %>
+</div>

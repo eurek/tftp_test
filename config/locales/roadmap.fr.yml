@@ -1,0 +1,29 @@
+---
+fr:
+  roadmap:
+    head_text:
+      title: "Notre <br><em>plan d'action</em>"
+      paragraph: "Time for the Planet a vocation à agir contre le réchauffement climatique à l'echelle mondiale. Voici comment nous allons atteindre cet objectif."
+    current_situation:
+      title: "Notre action pour la planète"
+      funding: "Financement"
+      raised: "récoltés"
+      next_step: "prochain palier"
+      community: "Communauté"
+      associates: "associé·es"
+      enterprises: "Entreprises"
+      enterprises_created: "Entreprises créées"
+      no_enterprises: "en préparation !"
+      structure: "Structuration de Time"
+      last_done_task: "Dernière action réalisée"
+      know_more: "en savoir plus"
+      cta: "Vous voulez nous aidez à avancer\xA0?"
+    tasks:
+      title: "Nos actions"
+      short_term: "Court terme"
+      medium_term: "Moyen terme"
+      long_term: "Long terme"
+      done_at: "Terminée le"
+      todo: "A faire"
+    pre_footer:
+      link: "J'agis pour la planète"

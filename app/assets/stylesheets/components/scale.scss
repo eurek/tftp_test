@@ -1,0 +1,11 @@
+.Scale {
+  font-family: $headers-font;
+  color: $grey-300;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+
+  &-legend {
+    text-align: right;
+  }
+}

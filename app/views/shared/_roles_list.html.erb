@@ -1,0 +1,20 @@
+<ul class="RolesList" data-controller="tooltip" data-tooltip-trigger-type-value="click">
+  <% roles_full_list(shareholder, scope).each do |role| %>
+    <% if shareholder.roles.include?(role) %>
+      <li class="RolesList-role RolesList-role--owned"
+        data-tooltip-target="trigger">
+        <i class="material-icons RolesList-icon">done</i>
+    <% else %>
+      <li class="RolesList-role"
+        data-tooltip-target="trigger">
+        <i class="material-icons RolesList-icon">clear</i>
+    <% end %>
+
+      <p class="Base-text Base-text--bold RolesList-text"><%= role.name %></p>
+    <i class="material-icons RolesList-icon">help_outline</i>
+      <%= render 'shared/role_tooltip', role: role %>
+    </li>
+  <% end %>
+</ul>
+
+

@@ -1,0 +1,100 @@
+<% content_for :meta_title, @shareholder.full_name %>
+<% content_for :meta_desc, raw(@shareholder.description) %>
+<% content_for :meta_image, picture(@shareholder, [500, 500]) %>
+
+<div class="Section Section--white">
+  <div class="container">
+    <div class="ShareholderDetailedCard">
+      <div class="ShareholderDetailedCard-image"
+           style="background-image: url('<%= picture(@shareholder, [500, 500]) %>');"></div>
+
+      <div class="ShareholderDetailedCard-infos">
+        <div>
+          <h1 class="Base-title Base-title--2"><%= @shareholder.decorate.full_name %></h1>
+          <% if @shareholder.shareholder? %>
+            <p class="ShareholderDetailedCard-infos--emphased">
+              <%= raw t('shareholder.user_show.infos.emphased') %> <%= I18n.l(@shareholder.shareholder_since.to_date, format: :default) %>
+            </p>
+          <% end %>
+        </div>
+        <div>
+          <p class="ShareholderDetailedCard-infosBloc">
+            <% if @shareholder.date_of_birth.present? %>
+              <%= "#{Time.current.year - @shareholder.date_of_birth.year} #{t('shareholder.user_show.infos.years')}" %><br>
+            <% end %>
+            <% if @shareholder.country.present? %>
+              <%= @shareholder.decorate.country_name %><br>
+            <% end %>
+            <% if @shareholder.current_job.present? %>
+              <%= @shareholder.current_job %><br>
+            <% end %>
+            <% if @shareholder.linkedin.present? %>
+              <a href="<%= @shareholder.linkedin %>" target="_blank">LINKEDIN <i class="material-icons">arrow_forward</i></a>
+            <% end %>
+          </p>
+        </div>
+        <div>
+          <% unless @shareholder.employer.nil? %>
+            <p>
+              <%= "#{t('shareholder.user_show.infos.company')}:" %>
+              <%= link_to @shareholder.employer.name, shareholder_company_show_path(@shareholder.employer),
+                class: "ShareholderDetailedCard-companyLink" %>
+            </p>
+            <p class="ShareholderDetailedCard-infos--sticker">
+              <%= @shareholder.employer.employees.count %>
+              <%= t('shareholder.user_show.infos.employees', count: @shareholder.employer.employees.count) %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="ShareholderDetailedCard-description">
+        <% if @shareholder.description.present? %>
+          <p class="Base-text Base-text--lighter"><%= "\"#{@shareholder.description}\"" %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="BackToShareholders">
+      <%= link_to shareholders_path do %>
+        <p class="Button Button--blue">
+          <%= raw t('shareholder.user_show.back_to_index').upcase %>
+          <i class="material-icons">arrow_forward</i>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="row ShareholderAssets">
+      <% if @shareholder.badges.any? %>
+        <div class="col-md-8">
+          <h2 class="Base-title Base-title--2"><%= raw t('shareholder.user_show.subtitle_1') %></h2>
+          <%= render "shared/badge_list", badges: @shareholder.badges, mode: "dark" %>
+        </div>
+      <% end %>
+
+      <div class="col-md-4 ShareholderAssets-fonctionsBloc">
+        <h2 class="Base-title Base-title--2"><%= raw t('shareholder.user_show.subtitle_2') %></h2>
+        <%= render "shared/roles_list", shareholder: @shareholder, scope: :attributable_to_user %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @shareholder.reasons_to_join.present? %>
+  <div class="Section Section--lightGrey">
+    <div class="container ShareholderReasons">
+      <h2 class="Base-title Base-title--2">
+        <%= raw(t("shareholder.user_show.section_2.title")) %>
+      </h2>
+      <p class="Base-text--lighter"><%= @shareholder.reasons_to_join %></p>
+    </div>
+  </div>
+<% end %>
+
+<%= render "prefooter",
+  background_color: "lagoon",
+  cta_class: "Button Button--underlinedDark",
+  text: raw(t("shareholder.prefooter.title_user", shareholder_name: @shareholder.decorate.full_name)),
+  cta: raw(t("shareholder.prefooter.link_shareholder")),
+  link: buy_shares_choice_path
+%>

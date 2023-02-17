@@ -1,0 +1,32 @@
+body.logged_in {
+
+  .redactor-box.redactor-styles-on {
+
+    @media (min-width: 576px) {
+      width: 70%;
+      margin-left: 25%;
+    }
+
+    textarea {
+      width: 100%;
+    }
+  }
+}
+
+// Fix bullet points not appearing
+#active_admin_content {
+  form {
+    .input.redactor {
+
+      // revert arctic_admin/scss/_reset.scss
+      ol, ul {
+        list-style: revert;
+      }
+
+      // revert arctic_admin/scss/components/_form.scss
+      li {
+        list-style: revert;
+      }
+    }
+  }
+}

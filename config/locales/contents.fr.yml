@@ -1,0 +1,26 @@
+---
+fr:
+  contents:
+    zero_state_sentence: "Aucun contenu pour le moment"
+    filter: "Filtrer les articles"
+    search_results:
+      zero: "Aucun resultat pour \"%{query}\""
+      one: "Résultat de recherche pour \"%{query}\""
+      other: "Résultats de recherche pour \"%{query}\""
+    tag_filter_count:
+      zero: "%{count} contenu pour \"%{tag_name}\""
+      one: "%{count} contenu pour \"%{tag_name}\""
+      other: "%{count} contenus pour \"%{tag_name}\""
+    list:
+      cta: "Voir notre réponse"
+    show:
+      share: "Partager"
+      related: "Nos autres articles à propos de \"%{tag_name}\"&nbsp;:"
+      published: "Publié le"
+      come_back_link: "Revenir à"
+    time_media:
+      list:
+        cta: "Lire l'article"
+        video_cta: "Voir la vidéo"
+    modal:
+      description: "Fenêtre contenant la vidéo descriptive de l'article"

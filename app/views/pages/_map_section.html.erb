@@ -1,0 +1,27 @@
+<section class="Section MapSection MapSection--<%= color %>" data-home-animations-target="mapSection">
+  <div class="MapSection-textContainer">
+    <div class="container">
+      <div class="col-md-6 offset-md-6">
+        <p class="Base-subtitle Base-subtitle--smaller">
+          <%= pre_title %>
+        </p>
+        <h2 class="MapSection-text Base-title Base-title--3" data-home-animations-target="mapText">
+          <%= title %>
+        </h2>
+        <p class="MapSection-text Base-text" data-home-animations-target="mapText">
+          <%= text %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="MapSection-mapContainer">
+    <%= image_tag "world-map-home.jpg", class: "MapSection-map" %>
+    <div class="MapSection-overlay"></div>
+    <div class="Marker Marker--<%= marker_color %> MapSection-marker MapSection-marker--main"></div>
+    <% 10.times do |index| %>
+      <div class="Marker Marker--<%= marker_color %> MapSection-marker MapSection-marker--<%= index + 1 %>"
+           data-home-animations-target="marker">
+      </div>
+    <% end %>
+  </div>
+</section>

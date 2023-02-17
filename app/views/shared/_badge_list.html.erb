@@ -1,0 +1,19 @@
+<% BadgeCategorizer.new(badges).categorize(mode).each do | category, badges | %>
+  <div class="BadgeList-category BadgeList-category--<%= mode %>">
+    <%= I18n.t("activerecord.attributes.badge.categories.#{category}").capitalize %>
+  </div>
+  <div class="BadgeList BadgeList--<%= category.camelize(:lower) %>" >
+    <% badges.each do |badge| %>
+      <div class="BadgeList-container"
+           data-controller="tooltip"
+           data-tooltip-trigger-type-value="click">
+        <%= image_tag badge.decorate.public_send("picture_#{mode}"),
+            alt: badge.name,
+            "data-template": "badge-tooltip-#{badge.id}",
+            "data-tooltip-target": "trigger",
+            class: "BadgeList-badge" %>
+        <%= render 'shared/badge_tooltip', badge: badge %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

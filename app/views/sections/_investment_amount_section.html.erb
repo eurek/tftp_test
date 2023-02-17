@@ -1,0 +1,15 @@
+<% modifier = nil if local_assigns[:modifier].nil? %>
+
+<section class="Section Section--black Section--morePadding
+                InvestmentAmountSection <%= "InvestmentAmountSection--#{modifier}" if modifier%>">
+  <div class="container InvestmentAmountSection-container">
+    <div class="InvestmentAmountSection-content">
+      <h2 class="Base-title Base-title--3"><%= title %></h2>
+      <% paragraphs.each do |paragraph| %>
+        <p class="Base-subtitle Base-subtitle--xxs"><%= paragraph %></p>
+      <% end %>
+      <%= render cta %>
+    </div>
+    <%= embedded_svg "small-investment.svg", class: "InvestmentAmountSection-image" %>
+  </div>
+</section>

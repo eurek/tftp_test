@@ -1,0 +1,25 @@
+.PressSection {
+  &-container {
+    align-items: center;
+  }
+
+  &-logosContainer {
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  &-logo {
+    width: 6rem;
+    max-height: 2rem;
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+    fill: $white;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 9rem;
+      max-height: 4rem;
+      padding: 0.5rem;
+    }
+  }
+}

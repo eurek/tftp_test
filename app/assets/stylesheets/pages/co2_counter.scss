@@ -1,0 +1,252 @@
+.pages-co2_counter {
+  .HeroSection {
+
+    background: radial-gradient(45% 55% at 50% 60%, $grey-700 0%, $black 80%);
+
+    @media (max-height: 600px) {
+      min-height: calc(100vh - 4rem);
+    }
+
+    @media (min-width: $breakpoint-md) {
+      min-height: calc(100vh - 4.5rem);
+    }
+
+    &-subtitle {
+      max-width: 44rem;
+    }
+  }
+
+  .Counter {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    align-items: center;
+
+    @media (min-width: $breakpoint-xl) {
+      flex-direction: row;
+    }
+
+    &-equalSign {
+      margin: 3rem 0 2rem 0;
+      font-size: 3rem;
+
+      @media (min-width: $breakpoint-md) {
+        margin: 5rem 0 3rem 0;
+      }
+
+      @media (min-width: $breakpoint-xl) {
+        margin: 0 2rem;
+      }
+    }
+
+    &-equivalenceContainer {
+      width: 100%;
+    }
+
+    &-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &-tab {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $grey-300;
+
+      &:hover {
+        color: $white;
+
+        svg path {
+          fill: $white;
+        }
+      }
+
+      p {
+        font-size: 0.75rem;
+        font-family: $headers-font;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: $breakpoint-sm) {
+          font-size: 1rem;
+        }
+      }
+
+      &--active {
+        border-bottom: solid 3px $lagoon-400;
+        color: $lagoon-400;
+
+        svg path {
+          fill: $lagoon-400;
+        }
+      }
+    }
+
+    &-equivalenceIcon {
+      width: 3rem;
+      height: auto;
+    }
+
+    &-equivalenceTexts {
+      position: relative;
+      height: 6rem;
+    }
+
+    &-equivalenceText {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+      transition-delay: 0s;
+
+      &--active {
+        opacity: 1;
+        transition-delay: 0.3s;
+      }
+
+      .Base-subtitle em {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .GraphSection {
+    background: linear-gradient(360deg, $black 5%, $rainforest-900 100%);
+  }
+
+  .TableSection {
+    @media (min-width: $breakpoint-xl) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-title {
+      margin-top: 0;
+      margin-bottom: 3rem;
+
+      @media (min-width: $breakpoint-xl) {
+        width: 30%;
+        margin-bottom: 0;
+      }
+    }
+
+    &-tableContainer {
+      @media (min-width: $breakpoint-xl) {
+        width: 62%;
+      }
+    }
+
+    &-tableHead {
+      display: none;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr;
+      }
+    }
+
+    &-cell {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto;
+      grid-row-gap: 1rem;
+      padding: 2rem 1rem;
+
+      @media (min-width: $breakpoint-md) {
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-template-rows: auto auto;
+        grid-row-gap: 1rem;
+        grid-column-gap: 2rem;
+      }
+
+      &:nth-child(even) {
+        background-color: $grey-800;
+      }
+    }
+
+    &-link {
+      font-size: 1rem;
+      color: $grey-300;
+      border-color: $grey-300;
+
+      &:hover {
+        color: $lagoon-400;
+        border-color: $lagoon-400;
+      }
+    }
+
+    &-linkContainer {
+      @media (min-width: $breakpoint-md) {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 3;
+      }
+    }
+
+    &-co2Title {
+      display: block;
+      color: $grey-300;
+      font-family: $headers-font;
+
+      @media (min-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+  }
+
+  .EmissionsSection {
+    background: radial-gradient(45% 55% at 50% 60%, $grey-700 0%, $black 80%);
+
+    &-title {
+      max-width: 40rem;
+    }
+
+    &-barGraphContainer {
+      margin-top: 3rem;
+      max-width: 48rem;
+
+      @media (min-width: $breakpoint-lg) {
+        margin-top: 5rem;
+      }
+
+      .Base-subtitle {
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+      }
+
+      .Base-title {
+        margin-top: 0.5rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &-bar {
+      height: 3rem;
+      background: linear-gradient(270deg, $lagoon-500 0%, $rainforest-300 100%);
+
+      &--reduction {
+        width: 100%;
+      }
+    }
+  }
+
+  .CalculSection {
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-text {
+      margin-bottom: 2rem;
+      margin-top: 0;
+
+      @media (min-width: $breakpoint-lg) {
+        margin-bottom: 0;
+        width: 60%;
+      }
+    }
+  }
+}

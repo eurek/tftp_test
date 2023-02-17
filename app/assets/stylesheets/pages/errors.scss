@@ -1,0 +1,111 @@
+.errors {
+  background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 70%),
+                    linear-gradient(rgba(0, 94, 102, 0.3),rgba(0, 94, 102, 0.3)),
+                    asset-url('space-bw.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: $white;
+
+  .Error {
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+
+    @media (min-width: $breakpoint-md) {
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: right;
+      padding: 10rem 6rem;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      padding: 5rem 6rem;
+    }
+
+    &-navbar {
+      color: #FFF;
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+
+      svg {
+        margin-right: 1rem;
+      }
+    }
+
+    &-backButton {
+
+      .material-icons {
+        margin-right: 0.5rem;
+        margin-left: 0;
+      }
+    }
+
+    &--404 {
+      background-image: none;
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url("custom-404.svg");
+      }
+    }
+
+    &--422 {
+      background-image: none;
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url("custom-404.svg");
+      }
+    }
+
+    &--500 {
+      background-image: none;
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url("custom-500.svg");
+      }
+    }
+
+
+    &-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFF;
+      margin-top: 3rem;
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 4rem;
+      }
+    }
+
+    &-subtitle {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #D5F6F0;
+      margin-bottom: 4rem;
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 4rem;
+      }
+    }
+
+    &-contact {
+      font-size: 1rem;
+      font-weight: 200;
+      color: #D5F6F0;
+      margin-bottom: 4rem;
+      margin-top: -3rem;
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}

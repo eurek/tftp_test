@@ -1,0 +1,119 @@
+fr:
+  innovations:
+    tags:
+      being_evaluated: "En cours d'évaluation"
+      evaluated: "Evaluée"
+      selected: "Sélectionnée"
+    statuses:
+      received:
+        title: "Reçues"
+        description: "il s'agit de toutes les  innovations proposées à Time for the Planet<span class='brand'>®</span>
+         par l'intermédiaire du <a href='%{href}'> formulaire de soumission des innovations</a>"
+      submitted_to_evaluations:
+        title: "Soumises à évaluations"
+        description: "Après avoir été pré-filtrées afin de vérifier qu’elles répondent bien à l’un des
+          <a href='%{href}'>20 problèmes traités par Time for the Planet<span class='brand'>®</span></a> et qu’elles 
+          ont le degré de maturité attendu, les innovations sont soumises à évaluation."
+      submitted_to_scientific_comity:
+        title: "Soumises au comité scientifique"
+        description: "A l'issu des évaluations par les évaluateurs et évaluatrices bénévoles, les innovations
+          présentant le plus fort potentiel d'impact sont présentées au <a href='%{href}'>Comité Scientifique</a>.
+          Le choix est de la responsabilité des gérants."
+      submitted_to_economical_tests:
+        title: "Soumises aux tests économiques"
+        description: "Les innovations estimées scientifiquement réalistes à l'issu des évaluations par le Comité
+          Scientifique sont mises à l'épreuve pour vérifier leur
+          viabilité économique. Le choix est de la responsabilité des gérants."
+      submitted_to_general_assembly:
+        title: "Soumises à l'assemblée générale"
+        description: "Les innovations atteignant cette étapes sont examinées par le Conseil de Surveillance, qui
+          vérifie que le processus de sélection des innovations a bien été respecté. Elles sont ensuite soumises
+          au vote pour obtenir l'accord d'investissement de l'ensemble des actionnaires. Des phases de négociations
+          financières et juridiques s'engagent alors avec les innovateur·ices."
+      star:
+        title: "Etoiles"
+        description: "Il s'agit des innovations désormais portées au sein de <a href='%{href}'>la filiale de
+          Time for the Planet<span class='brand'>®</span></a>. L'aboutissement ultime du processus !"
+    submit:
+      cta: "Je propose mon innovation"
+      header:
+        intro: "Proposer une innovation"
+        title: "Tu as conçu une innovation permettant de faire baisser les émissions de CO₂ à l’échelle mondiale ?"
+        subtitle: "Et si on travaillait ensemble ?"
+      benefits:
+        title: "Qu’est ce que Time for the Planet<span class='brand'>®</span> peut t’apporter ?"
+        money: "Un investissement entre 500 000 et 3 millions d’euros."
+        social: "Toute la puissance de communication du réseau Time for the Planet<span class='brand'>®</span> 
+          (%{citizens_number} citoyen•nes)."
+        economic_model: "Construction d’un modèle économique pour que ton innovation devienne mondiale
+          et change la donne."
+        entrepreneur: "Si besoin, un•e entrepreneur d’exception rejoint ton entreprise et devient ton associé•e."
+      how_to:
+        title: "Si votre vision est de marquer l’histoire en vous attaquant au plus grand défi de l’histoire
+          de l’humanité, postulez en 10 minutes !"
+        steps:
+          step_1: "Poste les informations dont tu disposes. 100 évaluateur•ices Time for 
+          the Planet<span class='brand'>®</span> vont évaluer l’innovation."
+          step_2: "Si tu es sélectionné•e par les évaluateur•ices, le comité scientifique de 
+          Time for the Planet<span class='brand'>®</span> étudie ton innovation en détail."
+          step_3: "Nous faisons ensemble des tests de marché."
+          step_4: "Ton innovation est proposée à tous les actionnaires de Time for the Planet."
+      statistics:
+        title: "Time for the Planet<span class='brand'>®</span> c’est déjà"
+      pre_footer:
+        title:
+          part_1: "Je postule."
+          part_2: "Je change le monde."
+    index:
+      title: "Innovations et entreprises crées"
+      filters:
+        statuses: Statuts
+        levers: Leviers
+        domains: Domaines
+        episodes: Episodes
+      search: Rechercher
+      see_all: Voir toutes les innovations.
+      no_result: Aucun résultat pour cette recherche.
+    show:
+      back: "Retour à la liste"
+      no_evaluation: "Pas encore d'évaluation"
+      action_lever: "Le levier d’action utilisé"
+      action_domain: "Le secteur d’activité"
+      action_link: "Découvrir notre champs d’action"
+      rating_explanation: "Les 'points Time' sont attribués selon l'adéquation de la solution avec le type
+        d'innovations recherchées par Time for the Planet. Ils correspondent à l'analyse de plusieurs facteurs&nbsp;:"
+      rating_points:
+        - "le potentiel d'impact : note moyenne d'impact > 4 => 0,5 point / si > 4,15 => 1 point."
+        - "la cohérence globale: toutes les notes moyennes des 6 critères de sélection > 2,5 => 1 point."
+        - "le coup de coeur: % d'évaluations qui juge l'innovation top pour agir à grande échelle contre les GES > 20% => 1 point"
+        - "le ciblage: validation du périmètre d'intervention de Time supérieur à 90% => 0,5 point + niveau de maturité de l'inno suffisant => 0,5 point"
+        - "l'acceptation sociale: score d'analyse sémantique des commentaires > 0 => 0,5 point/ si > 3500 => 1 point"
+      evaluations_amount:
+        one: "1 évaluation"
+        other: "<b>%{count}</b> évaluations"
+      details:
+        title: "Le projet en détails"
+        disclaimer: "NB : cette fiche est intégralement remplie par les personnes proposant l’innovation."
+        problem_solved: "Quel est le problème résolu ?"
+        solution_explained: "Comment est-il résolu ?"
+        potential_clients: "Qui sont les clients potentiels ?"
+        differentiating_elements: "En quoi cette solution est-elle différente ?"
+      place: Lieu de développement
+    funded_show:
+      in_short: "En bref"
+      video: "Comprendre en images"
+      details: "Le projet en détail"
+      pitch_deck:
+        link: "Voir le pitch deck"
+        subtext: "Retrouvez toutes les informations essentielles pour sur cette innovation."
+      team: "L’équipe"
+      evaluators:
+        title: "Les évaluateur·ice·s"
+        subtitle: "Time for the Planet s’appuie sur l’intelligence collective de sa communauté, la science et les 
+          méthodes agiles pour sélectionner les innovations à plus fort potentiel en matière de réduction des gaz à 
+          effet de serre."
+        see_more: "voir tous les évaluateurs"
+        see_less: "voir moins d'évaluateur·ice·s"
+      scientific_comitee:
+        title: "L’avis du comité scientifique"
+        link: "Découvrir le conseil scientifique"

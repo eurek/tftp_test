@@ -1,0 +1,22 @@
+<% modifier = nil if local_assigns[:modifier].nil? %>
+<% second_section = false if local_assigns[:second_section].nil? %>
+
+<section class="Section Section--black ShareholderStatusSection <%= "ShareholderStatusSection--#{modifier}" if modifier %>"
+         id="<%= "second-section" if second_section %>">
+  <div class="container">
+    <div class="ShareholderStatusSection-content">
+      <h2 class="Base-title Base-title--3"><%= raw t( "become_shareholder.shareholder_status.title") %></h2>
+      <% %w(rights duties return).each do |item| %>
+        <div class="ShareholderStatusSection-item">
+          <i class="material-icons">
+            arrow_forward
+          </i>
+          <div>
+            <h3><%= raw t( "become_shareholder.shareholder_status.#{item}.title") %></h3>
+            <p><%= raw t( "become_shareholder.shareholder_status.#{item}.description") %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

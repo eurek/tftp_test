@@ -1,0 +1,50 @@
+.InvestmentAmountSection {
+  background: linear-gradient(90deg, $grey-800 0%, $black 90%);
+
+  &-container {
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-content {
+    color: $grey-50;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 40%;
+    }
+
+    .Button {
+      color: $black;
+      margin-top: 2rem;
+    }
+  }
+
+  &-image {
+    display: none;
+
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+      width: 45%;
+      height: auto;
+    }
+  }
+
+  &--purple {
+    .Button:hover {
+      color: $black;
+    }
+
+    .InvestmentAmountSection-image {
+      stop:nth-child(1) {
+        stop-color: $purple-700;
+      }
+
+      stop:nth-child(2) {
+        stop-color: $purple-200;
+      }
+    }
+  }
+}

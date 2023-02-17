@@ -1,0 +1,67 @@
+.pages-vision {
+
+  .Base-title--2 {
+    color: $rainforest-400;
+  }
+
+  .Header {
+
+    @media (min-width: $breakpoint-md) {
+      min-height: calc(100vh - 4.5rem);
+    }
+
+    &-image {
+      display: none;
+      background-image: image-url("earth-globe-planet-45208.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      @media (min-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+
+    &-scrollArrow {
+      display: none;
+      position: absolute;
+      bottom: 1rem;
+      font-size: 4rem;
+      color: $lagoon-500;
+      right: 40%;
+
+      @media (min-width: $breakpoint-md) {
+        display: block;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        right: 43%;
+      }
+    }
+  }
+
+  .Banner {
+    background-color: $grey-800;
+    color: white;
+    padding: 2.5rem 2rem;
+    margin: 2.5rem 0;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 3.5rem 6rem;
+    }
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-listItem {
+      margin-bottom: 1rem;
+    }
+  }
+}

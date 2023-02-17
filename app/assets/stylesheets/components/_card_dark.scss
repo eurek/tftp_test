@@ -1,0 +1,59 @@
+.CardDark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-transform: none;
+  background-color: $grey-900;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &--highlighted {
+    border-left: 6px $lagoon-500 solid;
+  }
+
+  &--last {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background-color: $grey-800;
+
+    .Button {
+      color: $lagoon-500;
+      border-bottom: solid $lagoon-500 3px;
+    }
+
+    .CardDark-text {
+      color: $white;
+    }
+  }
+
+  &-title {
+    color: $white;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &-text {
+    margin: 0;
+    color: $lagoon-200;
+    font-size: 1rem;
+  }
+
+  &-cta {
+    display: block;
+    color: $white;
+    flex-shrink: 0;
+    margin-top: 1rem;
+
+    @media (min-width: $breakpoint-md) {
+      margin-left: 1rem;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<div class="CurrentSituation">
+  <h2 class="Base-title Base-title--3 CurrentSituation-title">
+  <%= raw(t("roadmap.current_situation.title")) %>
+  </h2>
+  <p class="CurrentSituation-text">
+    <%= raw(current_situation.description) %>
+  </p>
+  <h3 class="CurrentSituation-subtitle CurrentSituation-subtitle--red">
+    <%= I18n.t("activerecord.attributes.roadmap_task.categories.funding") %>
+  </h3>
+  <div class="Scale">
+    <%= render partial: "shared/scale_bar",
+      locals: { percentage: fundraising_percentage(fundraising_goal, total_raised), size: "small" } %>
+
+    <div class="Scale-legend">
+      <span>
+        <b><%= number_to_currency(total_raised, locale: params[:locale], precision: 0, unit: "€") %></b>
+        <br>
+        <span class="CurrentSituation-text"><%= raw(t("roadmap.current_situation.raised")) %></span>
+      </span>
+      <span class="Scale-legend--alignRight">
+        <b><%= number_to_currency(fundraising_goal, locale: :fr, precision: 0) %></b>
+        <br>
+        <span class="CurrentSituation-text"><%= raw(t("roadmap.current_situation.next_step")) %></span>
+      </span>
+    </div>
+  </div>
+  <div class="CurrentSituation-row CurrentSituation-row--mobileColumn">
+    <div>
+      <h3 class="CurrentSituation-subtitle CurrentSituation-subtitle--lagoonBlue">
+        <%= I18n.t("activerecord.attributes.roadmap_task.categories.community") %>
+      </h3>
+      <span><b><%= number_with_delimiter(current_situation.total_shareholders, locale: params[:locale]) %></b></span>
+      <br>
+      <span class="CurrentSituation-text"><%= raw(t("roadmap.current_situation.associates")) %></span>
+    </div>
+    <div>
+      <h3 class="CurrentSituation-subtitle CurrentSituation-subtitle--green">
+        <%= raw(t("roadmap.current_situation.enterprises")) %>
+      </h3>
+      <% if funded_innovations != 0 %>
+        <span><b><%= number_with_delimiter(funded_innovations, locale: params[:locale]) %></b></span>
+        <br>
+        <span class="CurrentSituation-text"><%= raw(t("roadmap.current_situation.enterprises_created")) %></span>
+      <% else %>
+        <span class="CurrentSituation-text"><%= raw(t("roadmap.current_situation.no_enterprises")) %></span>
+      <% end %>
+    </div>
+  </div>
+  <h3 class="CurrentSituation-subtitle CurrentSituation-subtitle--purple">
+    <%= I18n.t("activerecord.attributes.roadmap_task.categories.structure") %>
+  </h3>
+  <p class="CurrentSituation-text"><%= raw(current_situation.structure) %></p>
+  <% if last_done_task.present? %>
+    <div class="CurrentSituation-main">
+      <h3 class="CurrentSituation-subtitle"><%= raw(t("roadmap.current_situation.last_done_task")) %></h3>
+      <div class="CurrentSituation-lastDone">
+        <i class="material-icons">done</i>
+        <div>
+          <%= last_done_task.title %>
+          <% if external_link == "true" %>
+            <%= link_to roadmap_tasks_path, class: "CurrentSituation-text CurrentSituation-text--darker", target: "_blank" do %>
+              &nbsp;- <%= raw(t("roadmap.current_situation.know_more")) %>
+            <% end %>
+          <% else %>
+            <span class="CurrentSituation-text--darker"
+                data-href="<%= roadmap_task_path(last_done_task) %>"
+                data-action="click->roadmap#selectTask">&nbsp;- <%= raw(t("roadmap.current_situation.know_more")) %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

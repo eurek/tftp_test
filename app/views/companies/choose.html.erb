@@ -1,0 +1,87 @@
+<% content_for :title_white,
+  t('private_space.choose_company.title.part1')
+%>
+
+<% content_for :title_blue,
+  t('private_space.choose_company.title.part2')
+%>
+
+<% content_for :back_link_path,
+  shares_purchases_path
+%>
+
+<% content_for :back_link_anchor,
+  t('private_space.choose_company.back_link_investments')
+%>
+
+<% content_for :back_link_private_space, true %>
+
+<% if @shares_purchase_id.present? %>
+  <p class="Onboarding-text">
+    <%= raw(t('private_space.choose_company.association_description',
+      date: I18n.l(@shares_purchase.completed_at.to_date),
+      amount: @shares_purchase.amount)
+    ) %>
+  </p>
+<% end %>
+
+
+<section data-controller="form">
+  <% if @pending %>
+    <div class="Form-field Form-checkbox Onboarding-infoBox ">
+      <input type="checkbox" id="no_company" name="no_company" autocomplete="off"
+        data-action="change->form#hideFields change->form#revealButton">
+      <label for="no_company" class="Form-label"><%= @individual.do_not_add_company %></label>
+    </div>
+  <% end %>
+
+  <div data-form-target="additionalFields">
+    <div class="Onboarding-formSeparator">
+      <%= simple_form_for :search, url: choose_company_path, method: "GET" do |f| %>
+      <%= f.label :name, label: t('private_space.choose_company.company_name') %>
+      <div class="Form--inline">
+        <%= f.input :name, label: false, input_html: { value: params[:search].present? ? params[:search][:name] : "" } %>
+        <%= f.submit t('private_space.choose_company.cta'), class: "Button Button--inline Button--box" %>
+      </div>
+      <%= f.input :exact, label: t('private_space.choose_company.exact_checkbox'), as: :boolean,
+        input_html: {checked: params[:search].present? ? params[:search][:exact] == "1" : false} %>
+      <%= f.input :shares_purchase_id, as: :fake, input_html: {value: @shares_purchase_id, type: "hidden"}, label: false %>
+      <% end %>
+    </div>
+
+    <div class="Onboarding-formSeparator">
+      <% if params[:search].present? %>
+        <div id="companies-search-results">
+          <p class="Onboarding-text Onboarding-text--centered"><%= results_count(@companies, params[:search][:name]) %></p>
+
+          <% @companies.each do |company| %>
+            <%= render partial: "company_card", locals: {
+              company: company,
+              is_employer_step: @is_employer_step,
+              shares_purchase_id: @shares_purchase_id
+            } %>
+          <% end %>
+
+          <%= link_to new_company_path({company: {name: @new_company_name}, shares_purchase_id: @shares_purchase_id}),
+            data: {action: @is_employer_step ? "click->companies-search#newCompany" : ""},
+            class: "CompanyCard Onboarding-addCompany" do
+          %>
+              <h2 class="CompanyCard-title">
+                <%= t('private_space.choose_company.no_match_text') %>
+              </h2>
+              <p class="Button Button--white Button--underlined CompanyCard-link">
+                <%= t('private_space.choose_company.add_a_company') %>
+                <i class="material-icons">arrow_forward</i>
+              </p>
+          <% end %>
+        </div>
+
+      <% end%>
+    </div>
+  </div>
+
+  <%= link_to "Valider", finish_onboarding_path,
+    class: "Button Button--box Button--fullWidth Button--hidden",
+    data: { target: 'form.button' } %>
+</section>
+

@@ -1,0 +1,337 @@
+.pages.pages-company_home {
+
+  .Section em {
+    color: $purple-400;
+  }
+
+  .Button--underlined:hover {
+    color: $purple-400;
+    border-bottom-color: $purple-400;
+  }
+
+  .CompaniesLogos {
+    background: radial-gradient(40% 50% at 50% 50%, $grey-800 20%, $black 100%);
+    scroll-margin-top: 4rem;
+
+    &-title {
+      @media (min-width: $breakpoint-lg) {
+        width: 50%;
+      }
+    }
+
+    &-container {
+      margin-top: 6rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 2rem 1rem;
+      align-items: center;
+      justify-items: center;
+
+      @media (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 4rem 2rem;
+      }
+    }
+
+    &-logo {
+      width: 6rem;
+      height: auto;
+
+      @media (min-width: $breakpoint-sm) {
+        width: 8rem;
+      }
+    }
+
+    &-link {
+      margin-top: 3rem;
+      text-align: right;
+
+      @media (min-width: $breakpoint-md) {
+        margin-top: 4rem;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  .MissionSection {
+    background-image: linear-gradient(180deg, $black 36.78%, rgba(0, 0, 0, 0) 100%), image_url('snowy-mountains.jpg');
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-videoButton {
+      background-color: $purple-700;
+    }
+
+    &-incentive {
+      background: linear-gradient(90deg, rgba(1, 1, 1, 0.9) 62.5%, rgba(1, 1, 1, 0.2) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 2.5rem 1rem 1.5rem;
+
+      @media (min-width: $breakpoint-lg) {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      em {
+        padding: 0;
+      }
+
+      p {
+        font-weight: 800;
+        font-family: $headers-font;
+
+        @media (min-width: $breakpoint-lg) {
+          width: 50%;
+        }
+      }
+    }
+
+    &-incentiveIcon {
+      width: 5rem;
+      height: 5rem;
+      align-self: center;
+
+      @media (min-width: $breakpoint-lg) {
+        margin-right: 2.5rem;
+      }
+    }
+
+    .Button--lightPurpleBox {
+      color: $black;
+
+      @media (min-width: $breakpoint-lg) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .FundedInnovationsSection {
+
+    &-indicator {
+      border: 1px solid $purple-400;
+
+      &--active {
+        background-color: $purple-400;
+      }
+    }
+  }
+
+  .FundedInnovationCard-name {
+    color: $purple-600;
+  }
+
+  .CompaniesMission {
+
+    &-title {
+      margin-bottom: 4rem;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 50%;
+      }
+    }
+
+    &-columns {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+      }
+    }
+
+    &-column {
+      position: relative;
+
+      @media (min-width: $breakpoint-md) {
+        width: 40%;
+      }
+    }
+
+    p {
+      font-family: $headers-font;
+    }
+
+    em {
+      font-style: normal;
+    }
+
+    &-illustration {
+      margin-bottom: 2.5rem;
+    }
+
+    &-scope {
+      color: $purple-500;
+      background-color: $purple-200;
+      border-radius: 1rem;
+      padding: 0.25rem 0.5rem;
+      position: absolute;
+      top: 2.5rem;
+      font-size: 13px;
+
+      &--1 {
+        left: -1%;
+      }
+
+      &--2 {
+        left: 37%;
+      }
+
+      &--3 {
+        top: 4rem;
+        left: 2%;
+      }
+    }
+
+    .ReasonToInvest {
+      background: radial-gradient(circle at top left, $purple-900 0%, rgba(24, 26, 27, 0) 40%);
+      padding: 1rem;
+      margin-bottom: 2rem;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 1.5rem 2rem;
+      }
+
+      &-title {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(270deg, rgba(28, 19, 63, 0) 0%, $purple-900 37%, $purple-700 94%);
+        padding: 0.2rem 0.5rem;
+        margin-left: -1.5rem;
+
+        @media (min-width: $breakpoint-md) {
+          margin-left: -3rem;
+        }
+
+        h3 {
+          margin: 0;
+        }
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+
+      &-text {
+        color: $purple-200;
+      }
+    }
+
+    .FutureFundingSection-cta {
+      background-color: $purple-400;
+    }
+  }
+
+  .ReasonToInvest {
+    background: radial-gradient(circle at top left, $purple-900 0%, rgba(24, 26, 27, 0) 40%);
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 1.5rem 2rem;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(270deg, rgba(28, 19, 63, 0) 0%, $purple-900 37%, $purple-700 94%);
+      padding: 0.2rem 0.5rem;
+      margin-left: -1.5rem;
+
+      @media (min-width: $breakpoint-md) {
+        margin-left: -3rem;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-text {
+      color: $purple-200;
+    }
+  }
+
+  .ClimateDividendsGovernance {
+    &-logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 2rem 1rem;
+      align-items: center;
+      justify-items: center;
+      margin-top: 2rem;
+
+      @media (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem 1rem;
+        margin-top: 4rem;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        grid-template-columns: repeat(5, 1fr);
+        margin-top: 6rem;
+      }
+    }
+
+    &-image {
+      height: 5rem;
+      width: auto;
+    }
+
+    &-link {
+      margin-top: 3rem;
+      text-align: right;
+
+      @media (min-width: $breakpoint-md) {
+        margin-top: 4rem;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        margin-top: 5rem;
+      }
+    }
+  }
+  .LearnMore {
+    background-color: $grey-800;
+
+    &-linksContainer {
+      margin-top: 2rem;
+
+      @media (min-width: $breakpoint-md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 0 4rem;
+      }
+    }
+
+    &-link {
+      display: block;
+      color: $white;
+      text-transform: none;
+      text-decoration: underline;
+      margin-bottom: 1rem;
+
+      &:hover {
+        color: $purple-300;
+      }
+    }
+  }
+}
+
+

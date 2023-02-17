@@ -1,0 +1,36 @@
+<section class="Section Section--grey800 FundedInnovationsSection">
+  <div class="container FundedInnovationsSection-container">
+    <h2 class="Base-title Base-title--3"><%= title %></h2>
+    <div class="FundedInnovationsSection-list">
+      <% funded_innovations.each do |innovation| %>
+        <%= link_to innovation_path(innovation),
+          class: "FundedInnovationCard",
+          style: "background-image: url(#{ innovation.picture_with_fallback([1080, 1080]) });",
+          target: "_blank" do %>
+          <div class="FundedInnovationCard-overlay"></div>
+          <div class="Base-title Base-title--4 FundedInnovationCard-name"><%= innovation.name %></div>
+          <div class="FundedInnovationCard-content">
+            <p class="FundedInnovationCard-amountInvested">
+              <%= number_to_currency(
+                    innovation.funded_innovation.amount_invested,
+                    locale: params[:locale],
+                    precision: 0,
+                    unit: "€"
+                  ) %>
+            </p>
+            <p class="FundedInnovationCard-description"><%= innovation.short_description %></p>
+            <p class="FundedInnovationCard-potential">
+              <%= t("home.funded_innovations.potentiel")%> <%= innovation.funded_innovation.carbon_potential %>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to innovations_path(status: "star"),
+      class: "Button Button--underlined",
+      target: "_blank" do %>
+      <%= raw t('home.global_cta.funded_innovations') %>
+      <i class="material-icons">arrow_forward</i>
+    <% end %>
+  </div>
+</section>

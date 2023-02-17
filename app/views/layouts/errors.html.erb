@@ -1,0 +1,21 @@
+<div class="container">
+  <%= link_to root_path, class: "Error-navbar" do %>
+    <%= embedded_svg 'logo-time-planet.svg', alt: "Time for the Planet Logo" %>
+    TFTP
+  <% end %>
+</div>
+<div class="container">
+  <%= link_to :back, class: "Button Button--underlined Error-backButton" do %>
+    <i class="material-icons">arrow_back</i>
+    <%= raw t("error_pages.back_cta") %>
+  <% end %>
+  <div class="Error Error--<%= @status %>">
+    <%= yield %>
+    <%= link_to root_path, class: "Button Button--underlined" do %>
+      <%= raw t("error_pages.home_cta") %>
+      <i class="material-icons">arrow_forward</i>
+    <% end %>
+  </div>
+</div>
+
+<% parent_layout "application" %>

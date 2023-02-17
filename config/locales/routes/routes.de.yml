@@ -1,0 +1,13 @@
+de:
+  routes:
+    sponsorship-campaign: sponsoring
+    new: neu
+    create: kreieren
+    dashboard: dashboard
+    about: alles-erfahren
+    add-picture: bild-einfuegen
+    offer-shares: aktien-verschenken
+    offer-shares-company: aktien-unternehmen-verschenken
+    become-shareholder-company: unternehmen-teilhaber-werden
+    become-shareholder: teilhaber-werden
+    buy-shares-choice: wahl-aktienkauf

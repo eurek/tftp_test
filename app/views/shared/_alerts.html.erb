@@ -1,0 +1,22 @@
+<div class="Flash">
+  <% flash.each do |type, msg| %>
+    <% next if type == "live" %>
+    <div class="Flash-card <%= "Flash-card--#{type}" %>" data-controller="flash">
+      <i class="material-icons Flash-icon <%= "Flash-icon--#{type}" %>">
+        <% case type %>
+        <% when "notice" %>
+          check_circle
+        <% when "alert" %>
+          warning
+        <% when "info" %>
+          info
+        <% end %>
+      </i>
+      <p class="Flash-message"><%= msg.upcase_first %></p>
+      <button type="button" class="Flash-button" aria-label="fermer" role="alert" data-action="flash#close">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,57 @@
+<% button_present = false if local_assigns[:button_present].nil? %>
+<% animation = "" if local_assigns[:animation].nil? %>
+
+<nav class="BecomeShareholderNavbar BecomeShareholderNavbar--<%= color %>"
+     data-controller="toggling-class <%= "buy-shares-choice" unless button_present %>"
+     data-toggling-class-name-class="BecomeShareholderNavbar--open"
+     data-toggling-class-open-element-value="true"
+     aria-expanded="false">
+  <div class="container BecomeShareholderNavbar-container <%= animation %>">
+    <button class="BecomeShareholderNavbar-toggle Button"
+            data-action="toggling-class#toggleClassName"
+            aria-haspopup="true"
+            aria-expanded="false">
+      <%= t("common.become_shareholder_navbar.form_mobile_toggle") %> ...
+      <i class="material-icons">expand_more</i>
+    </button>
+    <%= simple_form_for :buy_shares_choice,
+      url: buy_shares_choice_path,
+      method: "get",
+      html: {
+        class: "BecomeShareholderNavbar-form",
+        "data-buy-shares-choice-target": "form"
+      } do |f| %>
+
+      <%= f.input :shareholder_type,
+        label: false,
+        as: :select,
+        collection: [
+          [t("common.become_shareholder_navbar.individual"), "individual"],
+          [t("common.become_shareholder_navbar.company"), "company"]
+        ],
+        prompt: "#{t("common.become_shareholder_navbar.shareholder_type_placeholder")} ...",
+        input_html: {
+          "data-buy-shares-choice-target": "input",
+          "data-action": "buy-shares-choice#submitIfReady"
+        } %>
+      <%= f.input :transaction_type,
+        label: false,
+        as: :select,
+        collection: [
+          [t("common.become_shareholder_navbar.buy"), "buy"],
+          [t("common.become_shareholder_navbar.offer"), "offer"],
+          [t("common.become_shareholder_navbar.coupon"), "coupon"]
+        ],
+        prompt: "#{t("common.become_shareholder_navbar.transaction_type_placeholder")} ...",
+        input_html: {
+          "data-buy-shares-choice-target": "input",
+          "data-action": "buy-shares-choice#submitIfReady"
+        } %>
+      <%= f.button :submit, t("buy_shares_choice.cta"),
+        class: "Button Button--box Button--darkGreenBox" if button_present
+      %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</nav>

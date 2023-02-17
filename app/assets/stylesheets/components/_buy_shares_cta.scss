@@ -1,0 +1,42 @@
+.BuySharesCta {
+
+  &--lightPurple {
+    background-color: $purple-700;
+    color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $purple-500;
+    }
+  }
+
+  &--darkGreen {
+    color: $white;
+    background-color: $rainforest-400;
+
+    &:hover {
+      color: $white;
+      background-color: $rainforest-400;
+    }
+  }
+
+  &--lightGreen {
+    color: $black;
+    background-color: $lagoon-500;
+
+    &:hover {
+      color: $black;
+      background-color: $lagoon-400;
+    }
+  }
+
+  &--darkPurple {
+    color: $white;
+    background-color: $purple-700;
+
+    &:hover {
+      color: $white;
+      background-color: $purple-600;
+    }
+  }
+}

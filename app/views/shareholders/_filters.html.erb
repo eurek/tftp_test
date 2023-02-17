@@ -1,0 +1,91 @@
+<div data-controller="filters" class="Filters" data-action="click@window->filters#hidePanelsWhenClickOutside">
+  <%= simple_form_for :filters, { url: shareholders_path, id: "FilterForm", method: :get } do |f| %>
+    <ul class="Filters-container container">
+
+      <li data-filter-id="types">
+        <%= f.input :types,
+          label: false,
+          input_html: { data: { action: "click->filters#selectInput"}},
+          as: :check_boxes,
+          collection: @types_collection,
+          checked: params.dig(:filters, :types),
+          label_method: lambda { |type| type.first.capitalize },
+          item_label_class: "Filters-item",
+          wrapper_html: { class: "Filters-typesCheckboxes" }
+        %>
+      </li>
+
+      <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="badges" data-filters-target="trigger">
+        <span class="Filters-title"><%= t("shareholder.index.filters.badges").upcase_first %></span>
+      </li>
+
+      <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="roles" data-filters-target="trigger">
+        <span class="Filters-title"><%= t("shareholder.index.filters.roles").upcase_first %></span>
+      </li>
+
+      <li class="Filters-item" data-action="click->filters#displayPanel" data-filter-id="countries" data-filters-target="trigger">
+        <span class="Filters-title"><%= t("shareholder.index.filters.countries").upcase_first %></span>
+      </li>
+
+      <%= link_to shareholders_path,
+          class: "Filters-item Filters-item--clear#{" hidden" if params[:filters].blank? }",
+          "data-filters-target": "clear" do %>
+          <%= t("shareholder.index.filters.clear").upcase_first %>
+      <% end %>
+    </ul>
+
+    <div class="Filters-detailsContainer" data-filters-target="panelsContainer">
+      <div class="container">
+
+        <div class="Filters-details Filters-details--badges" id="badges" data-filters-target="panel">
+          <div class="Flex Flex-wrap" data-controller="tooltip">
+            <% BadgeCategorizer.new(badges).categorize("light").each do | category, badges | %>
+              <p class="Filters-categoryText"><%= raw(t("activerecord.attributes.badge.categories.#{category}")).capitalize %></p>
+
+              <%= f.input :badges,
+                label: false,
+                input_html: {class: "Filters-badgesCheckbox", data: {action: "click->filters#selectInput"}},
+                as: :check_boxes,
+                collection: badges,
+                value_method: :id,
+                label_method: lambda { |badge| image_tag(url_for(badge.picture_light),
+                                                        class: "Filters-badgesImage",
+                                                        alt: badge.name,
+                                                        data: {template: "badge-tooltip-#{badge.id}", "tooltip-target": "trigger"}
+                                                        ).html_safe },
+                checked: params.dig(:filters, :badges)
+              %>
+
+              <!--googleoff: index-->
+              <% badges.each do |badge| %>
+                <%= render 'shared/badge_tooltip', badge: badge %>
+              <% end %>
+              <!--googleon: index-->
+            <% end %>
+          </div>
+        </div>
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="roles" data-filters-target="panel">
+
+          <%= f.input :roles, label: false, input_html: {data: {action: "click->filters#selectInput"}},
+            as: :check_boxes,
+            collection: Role.all,
+            value_method: :id,
+            label_method: lambda { |role| role.name.capitalize },
+            checked: params.dig(:filters, :roles)
+          %>
+        </div>
+
+        <div class="Base-text Filters-details Filters-details--checkboxes" id="countries" data-filters-target="panel">
+          <%= f.input :countries,
+            label: false,
+            as: :check_boxes,
+            input_html: {data: { action: "click->filters#selectInput"}},
+            collection: countries_collection(@countries_codes),
+            checked: params.dig(:filters, :countries)
+          %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

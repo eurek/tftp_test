@@ -1,0 +1,13 @@
+<div class="ShareholderAssetTooltip" id="badge-tooltip-<%= badge.id %>"
+     data-tooltip-target="source">
+  <div class="ShareholderAssetTooltip-name">
+    <%= badge.name.upcase_first %>
+  </div>
+  <div class="ShareholderAssetTooltip-fun-description">
+    <%= asset_description_text_or_html(badge.fun_description) %>
+  </div>
+  <div class="ShareholderAssetTooltip-description">
+    <%= asset_description_text_or_html(badge.description) %>
+    <%= t("common.badge_counter", count: badge.accomplishments_count) %>
+  </div>
+</div>

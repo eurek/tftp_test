@@ -1,0 +1,128 @@
+<section class="Section Section--black HeroSection">
+  <div class="container">
+    <h1 class="Base-title Base-title--2"><%= raw t("co2_counter.counter_section.title") %></h1>
+    <p class="Base-subtitle Base-subtitle--verySmall Base-subtitle--grey300 HeroSection-subtitle">
+      <%= raw t("co2_counter.counter_section.subtitle") %>
+    </p>
+
+    <div class="Counter">
+      <%= render "shared/co2_counter", total_co2: @total_co2_2022 %>
+
+      <span class="Base-title Base-title--1 Counter-equalSign">=</span>
+      <div class="Counter-equivalenceContainer" data-controller="tabs" data-tabs-tab-active-class="Counter-tab--active"
+           data-tabs-description-active-class="Counter-equivalenceText--active">
+        <div class="Counter-tabs" role="tablist">
+          <% %w(citizen bulbs trees flights steaks).each do |equivalence| %>
+            <div class="Counter-tab <%= " Counter-tab--active" if equivalence == "citizen" %>"
+                 role="tab" aria-selected="<%= equivalence == "citizen" ? "true" : "false" %>"
+                 data-action="click->tabs#switch" data-tabs-target="tab" data-id="<%= equivalence %>">
+              <%= embedded_svg "co2_counter/co2-equivalence-#{equivalence}-icon.svg", class:"Counter-equivalenceIcon", role: "img" %>
+              <p><%= raw t("co2_counter.counter_section.equivalences.#{equivalence}.title") %></p>
+            </div>
+          <% end %>
+        </div>
+        <div class="Counter-equivalenceTexts">
+          <% %w(citizen bulbs trees flights steaks).each do |equivalence| %>
+            <div class="Counter-equivalenceText <%= "Counter-equivalenceText--active" if equivalence == "citizen" %>"
+                 role="tabpanel" aria-hidden="<%= equivalence == "citizen" ? "false" : "true"%>"
+                 data-id="<%= equivalence %>" data-tabs-target="description">
+              <p class="Base-subtitle Base-subtitle--verySmall">
+                <%= raw t("co2_counter.counter_section.equivalences.#{equivalence}.text",
+                  count: number_with_delimiter(
+                    @total_co2_2022 / t("co2_counter.counter_section.equivalences.#{equivalence}.multiplier").to_i),
+                    locale: params[:locale]
+                ) %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="Section Section--darkGreen Section--morePadding GraphSection">
+  <div class="container">
+<!--    TODO: add graph as a graph and not an image-->
+    <h2 class="Base-title Base-title--3"><%= raw t("co2_counter.graph_section.title") %></h2>
+    <% if locale == :fr %>
+      <%= image_tag "co2_counter/graph-CO2.svg" %>
+    <% else %>
+      <%= image_tag "co2_counter/graph-CO2-en.svg" %>
+    <% end %>
+  </div>
+</section>
+
+<% if locale == :fr %>
+  <section class="Section Section--darkGreen Section--morePadding">
+    <div class="container CalculSection">
+      <p class="Base-title Base-title--4 CalculSection-text"><%= raw t("co2_counter.calcul_section.text") %></p>
+      <%= link_to raw(t("co2_counter.calcul_section.cta")), "/pdfs/methodologie-calcul-CO2-reduit.pdf",
+        download: "methodologie-calcul-CO2-reduit", class: "Button Button--box" %>
+    </div>
+  </section>
+<% end %>
+
+<section class="Section Section--black Section--morePadding EmissionsSection">
+  <div class="container">
+    <h2 class="Base-title Base-title--3 EmissionsSection-title">
+      <%= raw t("co2_counter.emissions_section.title",
+        emissions: number_with_delimiter(@tftp_emissions, locale: params[:locale]),
+        reduction: number_with_delimiter(@total_co2_2022, locale: params[:locale])) %>
+    </h2>
+    <div class="EmissionsSection-barGraphContainer">
+      <div class="EmissionsSection-bar" style="width: 1%;"></div>
+      <p class="Base-subtitle Base-subtitle--xxs Base-title--grey300">
+        <%= raw t("co2_counter.emissions_section.emitted") %>
+      </p>
+      <p class="Base-title Base-title--4">
+        <%= number_with_delimiter(@tftp_emissions, locale: params[:locale]) %> kg
+      </p>
+      <div class="EmissionsSection-bar EmissionsSection-bar--reduction"></div>
+      <p class="Base-subtitle Base-subtitle--xxs Base-title--grey300">
+        <%= raw t("co2_counter.emissions_section.reduced") %>
+      </p>
+      <p class="Base-title Base-title--4">
+        <%= number_with_delimiter(@total_co2_2022, locale: params[:locale]) %> kg
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="Section Section--black Section--morePadding">
+  <div class="container">
+    <div class="TableSection">
+      <h2 class="Base-title Base-title--3 TableSection-title"><%= raw t("co2_counter.table_section.title") %></h2>
+      <div class="TableSection-tableContainer">
+        <div class="TableSection-tableHead Base-subtitle Base-subtitle--xxs Base-subtitle--grey300">
+          <span><%= raw t("co2_counter.table_section.head.name") %></span>
+          <span><%= raw t("co2_counter.table_section.head.category") %></span>
+          <span><%= raw t("co2_counter.table_section.head.co2") %></span>
+        </div>
+        <% @funded_innovations.each do |funded_innovation| %>
+          <div class="TableSection-cell">
+            <span class="Base-title Base-title--4 Base-title--lagoon">
+              <%= funded_innovation.innovation.name %>
+            </span>
+            <span class="Base-subtitle Base-subtitle--xxs">
+              <%= human_enum_name(funded_innovation, :development_stage) %>
+            </span>
+            <div >
+              <span class="TableSection-co2Title"><%= raw t("co2_counter.table_section.head.co2") %></span>
+              <span class="Base-title Base-title--5">
+                <%= number_with_delimiter(funded_innovation.co2_reduction.try("2022").to_i, locale: params[:locale]) %>
+                kg
+              </span>
+            </div>
+            <span class="TableSection-linkContainer">
+              <%= link_to innovation_path(funded_innovation.innovation), class: "Button Button--underlined TableSection-link" do %>
+                <%= raw(t("co2_counter.table_section.see_innovation")) %>
+                <i class="material-icons">arrow_forward</i>
+              <% end %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

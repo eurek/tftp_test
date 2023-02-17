@@ -1,0 +1,59 @@
+.Statistics {
+  background: linear-gradient(108deg, $grey-800 20%, $black 80%);
+
+  .Base-title {
+    margin-bottom: 4rem;
+  }
+
+  &-tabs {
+    position: relative;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 45%;
+      margin-bottom: 0;
+    }
+  }
+
+  &-activeTabMarker {
+    height: 2.5rem;
+    width: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.2s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      height: 4rem;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+    }
+  }
+
+  &-graph {
+    @media (min-width: $breakpoint-lg) {
+      width: 50%;
+    }
+  }
+
+  &-amfMention {
+    margin-top: 3rem;
+    color: $grey-300;
+  }
+
+  &--lagoon .Statistics-activeTabMarker {
+    background-color: $lagoon-500;
+  }
+
+  &--purple .Statistics-activeTabMarker {
+    background-color: $purple-400;
+  }
+}

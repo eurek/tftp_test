@@ -1,0 +1,90 @@
+<section class="SubmitHeader Section">
+  <div class="container">
+    <div class="SubmitHeader-content">
+      <span class="Sticker"><%= raw t('innovations.submit.header.intro') %></span>
+      <h1 class="Base-title Base-title--2 Base-title--white">
+      <%= raw t('innovations.submit.header.title') %>
+      </h1>
+      <p class="Base-title Base-title--3 Base-title--lagoon">
+        <%= raw t('innovations.submit.header.subtitle') %>
+      </p>
+      <%= link_to raw(t('innovations.submit.cta')), @external_links.innovation_proposal_form, class: "Button Button--box", target: "_blank" %>
+    </div>
+  </div>
+
+  <div class="SubmitHeader-image">
+  </div>
+</section>
+
+<section class="Section SubmitBenefits">
+  <div class="container">
+    <h2 class="Base-subtitle SubmitBenefits-title"><%= raw t('innovations.submit.benefits.title') %></h2>
+    <div class="SubmitBenefits-container">
+      <div class="SubmitBenefits-item">
+        <i class="material-icons">
+          account_balance
+        </i>
+        <p class="Base-title Base-title--5">
+          <%= raw t('innovations.submit.benefits.money') %>
+        </p>
+      </div>
+      <div class="SubmitBenefits-item">
+        <i class="material-icons">
+          groups
+        </i>
+        <p class="Base-title Base-title--5">
+          <%= raw t('innovations.submit.benefits.social',
+                    citizens_number: number_with_delimiter(@citizens_number, locale: params[:locale])) %>
+        </p>
+      </div>
+      <div class="SubmitBenefits-item">
+        <i class="material-icons">
+          language
+        </i>
+        <p class="Base-title Base-title--5">
+          <%= raw t('innovations.submit.benefits.economic_model') %>
+        </p>
+      </div>
+      <div class="SubmitBenefits-item">
+        <i class="material-icons">
+          person_add
+        </i>
+        <p class="Base-title Base-title--5">
+          <%= raw t('innovations.submit.benefits.entrepreneur') %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="HowToSubmitInnovation Section">
+  <div class="container HowToSubmitInnovation-container">
+    <h2 class="Base-title Base-title--3 Base-title--white HowToSubmitInnovation-title">
+      <%= raw t('innovations.submit.how_to.title') %>
+    </h2>
+
+    <ul class="HowToSubmitInnovation-steps">
+      <% [1,2,3,4].each do |i| %>
+        <li class="HowToSubmitInnovation-step">
+          <span class="HowToSubmitInnovation-stepNumber">
+            <%= i %>
+          </span>
+          <p class="Base-subtitle Base-subtitle--verySmall HowToSubmitInnovation-stepText">
+            <%= raw t("innovations.submit.how_to.steps.step_#{i}") %>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<section class="Section Section--morePadding SubmitInnovationCta">
+  <div class="container">
+    <h2 class="Base-title Base-title--1 Base-title--white">
+      <%= t('innovations.submit.pre_footer.title.part_1') %><br>
+      <%= t('innovations.submit.pre_footer.title.part_2') %>
+    </h2>
+
+    <%= link_to raw(t('innovations.submit.cta')), @external_links.innovation_proposal_form, class: "Button Button--box", target: "_blank" %>
+  </div>
+</section>

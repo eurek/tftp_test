@@ -1,0 +1,107 @@
+<% content_for :back_link_path,
+  user_profile_path
+%>
+
+<% content_for :back_link_anchor,
+  t('private_space.investments.back_link_anchor')
+%>
+
+<% content_for :title_white,
+  raw(t('private_space.investments.title'))
+%>
+
+<% unless @user.pending? %>
+
+  <div class="InvestmentCards">
+    <div class="InvestmentCards-card">
+      <h2 class="PrivateSpace-subtitle">
+        <%= raw(t('private_space.investments.individual.title')) %>
+      </h2>
+      <% if @individual_shares_purchases_total == 0 %>
+        <span>
+          <%= raw(t('private_space.investments.individual.empty_state')) %>
+        </span>
+        <%= link_to raw(t('private_space.investments.individual.empty_state_cta')), become_shareholder_path,
+          class: "Button Button--box", target: "_blank" %>
+      <% else %>
+        <span>
+          <%= raw(t('private_space.investments.you_own')) %>
+        </span>
+        <span class="Base-title Base-title--2 Base-title--lagoon">
+          <%= number_with_delimiter(@individual_shares_purchases_total) %>
+        </span>
+        <span>
+          <%= raw(t('private_space.investments.individual.text', count: @individual_shares_purchases_total)) %>
+        </span>
+      <% end %>
+    </div>
+
+    <div class="InvestmentCards-card">
+      <h2 class="PrivateSpace-subtitle">
+        <%= raw(t('private_space.investments.professional.title')) %>
+      </h2>
+      <% if @company_shares_purchases_total == 0 %>
+        <span>
+          <%= raw(t('private_space.investments.professional.empty_state')) %>
+        </span>
+        <%= link_to raw(t('private_space.investments.professional.empty_state_cta')), become_shareholder_company_path,
+          class: "Button Button--box", target: "_blank" %>
+      <% else %>
+        <span>
+          <%= raw(t('private_space.investments.you_own')) %>
+        </span>
+        <span class="Base-title Base-title--2 Base-title--lagoon">
+          <%= number_with_delimiter(@company_shares_purchases_total) %>
+        </span>
+        <span>
+          <%= raw(t('private_space.investments.professional.text', count: @company_shares_purchases_total)) %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+
+  <h2 class="PrivateSpace-subtitle">
+    <%= raw(t('private_space.investments.list.title')) %>
+  </h2>
+
+<% else %>
+  <p class="PrivateSpace-text">
+    <%= raw(t('private_space.investments.onboarding.text')) %>
+  </p>
+<% end %>
+
+<% @shares_purchases.each do |shares_purchase| %>
+  <%= render "shares_purchase_card", shares_purchase: shares_purchase.decorate %>
+<% end %>
+
+<% if @user.pending %>
+  <%= link_to raw(t('private_space.investments.onboarding.cta')),
+    finish_onboarding_path,
+    class: "Button Button--box Button--fullWidth"
+  %>
+<% end %>
+
+<% content_for :right_panel do %>
+  <h2 class="PrivateSpace-subtitle">
+    <%= raw(t('private_space.investments.reinvest_title')) %>
+  </h2>
+  <% if @individual.refund_link.present? %>
+    <p class="Base-subtitle PrivateSpace-subtitle">
+      <%= raw t("private_space.investments.reinvest.headline") %>
+    </p>
+    <%= link_to t("private_space.investments.reinvest.cta"),
+      @individual.refund_link,
+      class: "Button Button--box",
+      target: '_blank' %>
+  <% end %>
+
+  <% if @individual.recurring_purchase_link.present? %>
+    <p class="Base-subtitle PrivateSpace-subtitle">
+      <%= raw t("private_space.investments.recurring_purchase.headline") %>
+    </p>
+    <%= link_to t("private_space.investments.recurring_purchase.cta"),
+      @individual.recurring_purchase_link,
+      class: "Button Button--box",
+      target: '_blank' %>
+  <% end %>
+<% end %>

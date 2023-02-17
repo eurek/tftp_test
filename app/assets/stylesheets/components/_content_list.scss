@@ -1,0 +1,10 @@
+.ContentList {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+  margin-bottom: 4rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

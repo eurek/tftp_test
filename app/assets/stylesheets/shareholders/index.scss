@@ -1,0 +1,91 @@
+.shareholders-index {
+
+  .Base-title--3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .FirstSection {
+    padding-top: 3rem;
+
+    @media (min-width: $breakpoint-sm) {
+      padding-top: 4rem;
+    }
+  }
+
+  .SearchBar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-sm) {
+      flex-direction: row;
+    }
+
+    input {
+
+      &[type="text"] {
+        height: 3rem;
+        border: none;
+        background-color: $grey-200;
+        border-radius: 3px;
+        padding: 0 1rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+
+        @media (min-width: $breakpoint-sm) {
+          border-radius: 3px 0 0 3px;
+          flex: 1;
+          margin-bottom: 0;
+        }
+      }
+
+      &[type="submit"] {
+        height: 3rem;
+        border: none;
+        background-color: $rainforest-600;
+        border-radius: 3px;
+        color: white;
+
+        &[value] {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: 'Gilroy', sans-serif;
+          font-size: 1rem;
+        }
+
+        @media (min-width: $breakpoint-sm) {
+          border-radius: 0 3px 3px 0;
+        }
+      }
+    }
+
+    &-textLight {
+      color: $grey-700;
+      text-align: center;
+      font-family: $headers-font;
+      font-size: 1.25rem;
+      margin-top: 0;
+
+      &--emphased {
+        font-weight: 800;
+      }
+    }
+  }
+
+  #ShareholdersContent {
+    padding-top: 0;
+  }
+
+  .ShareholdersList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

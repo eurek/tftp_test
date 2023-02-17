@@ -1,0 +1,17 @@
+---
+fr:
+  operation_day_1:
+    global_cta: "Devenir ambassadeur"
+    become_shareholder:
+      statistics:
+        since_beginning: "Depuis le début de l’opération :"
+        new_shareholders: "nouveaux actionnaires"
+        shareholders: "actionnaires"
+        collected: "rassemblés"
+        objective: "Pour atteindre notre objectif,"
+        we_need: "il nous faut encore :"
+        we_have_left: "il nous reste :"
+      better_gift:
+        title: "Déçu·e par le Père Noël ?"
+        subtitle: "C’est le moment de revendre tes cadeaux pour investir dans Time for the 
+          Planet<span class='brand'>®</span>️ 😉"

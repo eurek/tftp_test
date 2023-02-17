@@ -1,0 +1,83 @@
+.BlogMediaCard {
+
+  &:hover {
+
+    .BlogMediaCard-imageContainer {
+      top: -0.2rem;
+      left: -0.2rem;
+    }
+
+    .BlogMediaCard-content {
+      top: 0.2rem;
+      left: 0.2rem;
+    }
+
+    .BlogMediaCard-link .material-icons {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &-imageContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    width: 95%;
+    z-index: 1;
+  }
+
+  &-image {
+    width: 100%;
+    height: 17rem;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20rem;
+    padding: 10rem 2rem 0 2rem;
+    margin-top: -10rem;
+    margin-left: 5%;
+    background-color: $lagoon-500;
+    transition: all 0.3s ease-in-out;
+    transform-origin: left;
+    cursor: pointer;
+
+    @media (min-width: $breakpoint-md) {
+      height: 22rem;
+    }
+  }
+
+  &-title {
+    color: $black;
+    text-transform: none;
+    margin-bottom: 0;
+    font-size: 1.15rem;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .Button--underlined {
+    color: $rainforest-600;
+    border-color: $rainforest-600;
+    margin-top: 0;
+    margin-left: auto;
+
+    &:hover {
+      color: $grey-900;
+      border-color: $grey-900;
+    }
+
+    .material-icons {
+      transition: margin-left 0.3s ease-in-out;
+    }
+  }
+}

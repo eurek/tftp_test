@@ -1,0 +1,30 @@
+<section class="Section Section--black Statistics Statistics--<%=  color %>">
+  <div class="container">
+    <h2 class="Base-title Base-title--2">
+      <%= raw(t('home.statistics.title',
+        time: distance_of_time_in_words(Time.now, CurrentSituation::FUNDRAISING_START_DATE, only: [:years, :months])))
+      %>
+    </h2>
+    <div class="Statistics-container" data-controller="statistics-graph" data-statistics-graph-color-value="<%= color %>">
+      <div class="Statistics-tabs" data-controller="statistics-tabs">
+        <div class="Statistics-activeTabMarker" data-statistics-tabs-target="activeTab">
+        </div>
+        <% statistics.each_with_index do |(key, value), index| %>
+          <%= render "shared/data_tab",
+            data_name: key,
+            data: key == :shares_purchases ? number_to_currency(value[:total], locale: params[:locale], precision: 0, unit: "€") :
+              number_with_delimiter(value[:total], locale: params[:locale]),
+            css_class: key == :shares_purchases ? "DataTab--active" : "",
+            index: index,
+            dataset: value[:dataset]
+          %>
+        <% end %>
+      </div>
+      <div class="Statistics-graph">
+        <canvas data-statistics-graph-target="canvas">
+        </canvas>
+      </div>
+    </div>
+    <p class="Statistics-amfMention"><%= raw t("common.funds_raised_amf_mention") %></p>
+  </div>
+</section>

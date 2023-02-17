@@ -1,0 +1,108 @@
+<section class="Section BecomeShareholderHero <%= "BecomeShareholderHero--#{color}" %>">
+  <div class="container">
+    <div class="BecomeShareholderHero-columns">
+      <%= image_tag image, class: "BecomeShareholderHero-image" %>
+
+      <div class="BecomeShareholderHero-mainContent">
+        <h1 class="Base-title Base-title--3" data-controller="buy-shares-choice">
+          <%= simple_form_for :buy_shares_choice,
+                              url: buy_shares_choice_path,
+                              method: "get",
+                              html: {
+                                class: "SharesPurchaseNavbar",
+                                "data-buy-shares-choice-target": "form",
+                                autocomplete: "off"
+                              } do |f| %>
+            <div class="SharesPurchaseNavbar-row">
+              <span><%= t("become_shareholder.navbar.persona.label") %></span>
+
+              <%= f.input :shareholder_type,
+                          label: false,
+                          as: :select,
+                          collection: [
+                            [t("become_shareholder.navbar.persona.individual"), "individual"],
+                            [t("become_shareholder.navbar.persona.company"), "company"]
+                          ],
+                          selected: selected_shareholder_type,
+                          input_html: {
+                            "data-buy-shares-choice-target": "input",
+                            "data-action": "buy-shares-choice#resetTransactionTypeInput buy-shares-choice#submitIfReady"
+                          } %>
+            </div>
+
+            <div class="SharesPurchaseNavbar-row">
+              <span><%= t("become_shareholder.navbar.action.label") %></span>
+              <%= f.input :transaction_type,
+                          label: false,
+                          as: :select,
+                          collection: [
+                            ["#{t("common.become_shareholder_navbar.transaction_type_prompt")} ...", ""],
+                            [t("become_shareholder.navbar.action.buy"), "buy"],
+                            [t("become_shareholder.navbar.action.offer"), "offer"],
+                            [t("become_shareholder.navbar.action.coupon"), "coupon"]
+                          ],
+                          selected: selected_transaction_type,
+                          input_html: {
+                            "data-buy-shares-choice-target": "input",
+                            "data-action": "buy-shares-choice#submitIfReady"
+                          } %>
+            </div>
+          <% end %>
+        </h1>
+        <div class="BecomeShareholderHero-buyingInfo">
+          <div class="BecomeShareholderHero-priceInfo">
+            <p class="BecomeShareholderHero-price Base-title Base-title--4"><%= raw t( "become_shareholder.hero.price") %></p>
+            <p class="BecomeShareholderHero-quantity"><%= raw shares_quantity_explanation %></p>
+          </div>
+          <div class="BecomeShareholderHero-paymentInfo">
+            <p class="BecomeShareholderHero-paymentInfoItem">
+              <i class="material-icons material-icons-outlined">timer</i>
+              <span><%= raw t( "become_shareholder.hero.payment_info.time") %></span>
+            </p>
+            <p class="BecomeShareholderHero-paymentInfoItem">
+              <i class="material-icons">credit_card</i>
+              <span><%= raw t( "become_shareholder.hero.payment_info.credit_card") %></span>
+            </p>
+            <p class="BecomeShareholderHero-paymentInfoItem">
+              <i class="material-icons">sync_alt</i>
+              <span><%= raw t( "become_shareholder.hero.payment_info.wire") %></span>
+            </p>
+          </div>
+        </div>
+        <div class="BecomeShareholderHero-actions">
+          <span class="BecomeShareholderHero-counter">
+            <%= raw social_proof_counter %>
+          </span>
+          <%= render cta %>
+          <%= link_to raw(t( "common.know_more")), "#second-section",
+            "data-turbolinks": "false",
+            class: "Button Button--#{secondary_cta_modifier}" %>
+        </div>
+      </div>
+      <div class="BecomeShareholderHero-side">
+        <div class="BecomeShareholderHero-statistics">
+          <span class="BecomeShareholderHero-statisticsTitle Base-title Base-title--6">
+            <%= raw t( "become_shareholder.hero.statistics.title") %>
+          </span>
+          <%= render partial: "shared/fundraising_stats", locals: {
+            size: "small",
+            total_raised: @total_raised,
+            current_episode: @current_episode
+          } %>
+        </div>
+
+        <div class="BecomeShareholderHero-amf">
+          <p>
+            <%= raw t( "become_shareholder.hero.amf.paragraph1") %>
+            <%= link_to raw(t( "become_shareholder.hero.amf.link")), "#amf-risks",
+              class: "BecomeShareholderHero-amfLink",
+              "data-turbolinks": "false" %>
+          </p>
+          <p>
+            <%= raw t( "become_shareholder.hero.amf.paragraph2") %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

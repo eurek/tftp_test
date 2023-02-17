@@ -1,0 +1,33 @@
+.ShareholderRightsSection {
+
+  .row {
+    margin-right: 0;
+  }
+
+  &-container {
+    align-items: center;
+  }
+
+  &-image {
+    height: 0;
+    background-image: asset-url('party.jpg');
+    background-size: cover;
+
+    @media (min-width: $breakpoint-md) {
+      height: calc(100vh - 4.5rem);
+    }
+  }
+
+  &-title {
+    font-weight: 200;
+    font-size: 1.5rem;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+
+  .Base-text--withSeparator {
+    border-bottom: 3px solid $rainforest-400;
+  }
+}

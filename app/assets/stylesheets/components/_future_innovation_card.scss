@@ -1,0 +1,41 @@
+.FutureInnovationCard {
+  position: relative;
+  display: flex;
+  flex: 1 1 100%;
+  padding: 1.2rem;
+  background-size: cover;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 1 1 0;
+  }
+
+  &-overlay {
+    background: linear-gradient(270deg, $black 53.32%, rgba(24, 26, 27, 0.61) 100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &-name {
+    margin: 0;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+  }
+
+  &-assessments {
+    color: $lagoon-400;
+  }
+
+  &-icon {
+    width: 2.5rem;
+    position: relative;
+    margin-right: 1.2rem;
+  }
+
+  &-description {
+    margin-bottom: 0;
+  }
+}

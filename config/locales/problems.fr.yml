@@ -1,0 +1,39 @@
+---
+fr:
+  problem:
+    meta:
+      title: "Notre champs d'action"
+      description: "L’objectif de Time for the Planet est de lancer des solutions qui réduisent drastiquement nos émissions de gazs à effet de serre (GES), afin d’atteindre la neutralité carbone au plus vite"
+    title: "Notre champs<em> d'action</em>"
+    levers:
+      - title: "Zéro émission"
+        text: "Développer des sources d’énergie et matériaux qui n’émettent pas de GES."
+        cover_image: "problems/alternative-energy-building-clouds-energy-356036 1.png"
+      - title: "Efficacité énergétique"
+        text: "Développer des sources d’énergie et matériaux qui n’émettent pas de GES."
+        cover_image: "problems/panoramic-shot-of-sky-247763 1.png"
+      - title: "Sobriété"
+        text: "Développer des sources d’énergie et matériaux qui n’émettent pas de GES."
+        cover_image: "problems/biker-holding-mountain-bike-on-top-of-mountain-with-green-161172 1.png"
+      - title: "Captation"
+        text: "Développer des sources d’énergie et matériaux qui n’émettent pas de GES."
+        cover_image: "problems/underwater-photography-of-ocean-2397651 1.png"
+    lever_title: "Nous allons agir sur 4 leviers d’action complémentaires :"
+    problem_title: "Les 20 problèmes"
+    footer_link: "J'achète des actions"
+    texts: 
+      paragraph1: "L’objectif de Time for the Planet est de lancer des solutions qui réduisent drastiquement nos émissions de gazs à effet de serre (GES), afin d’atteindre la neutralité carbone au plus vite."
+      paragraph2: "Nous avons identifié 20 problèmes majeurs à régler pour avoir un impact mondial sur les émissions de GES."
+    show:
+      link_back: "Revenir aux 20 problèmes"
+      subtitle: "Les projets identifiés par Time for the Planet pour"
+      last_card_text: "Vous avez un projet dans cette thématique ?"
+      last_card_link_1: "proposez"
+      last_card_link_2: "un projet"
+      long_text_title: "Plus d'information"
+    domain:
+      title_1: 'Energie'
+      title_2: 'Industrie'
+      title_3: 'Transport'
+      title_4: 'Agriculture'
+      title_5: 'Bâtiment'

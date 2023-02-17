@@ -1,0 +1,11 @@
+<% if done_tasks.present? || to_be_done_tasks.present? %>
+  <h2 class="TaskList-title Base-text"><%= title %> <span class="TaskList-title-darker"><%= time_range %></span></h2>
+  <ul class="TaskList-list">
+    <% done_tasks.map do |task| %>
+      <%= render 'task', task: task %>
+    <% end %>
+    <% to_be_done_tasks.map do |task| %>
+      <%= render 'task', task: task %>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,33 @@
+.GiftAnimation {
+
+  &:hover {
+    .GiftAnimation-gift {
+      background-image: asset-url('cadeau-time-flash.svg');
+      background-repeat: no-repeat;
+      background-size: 90%;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &-gift {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 0;
+    background-position: center;
+    width: 9.75rem;
+
+    img {
+      width: 50%;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: 12rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 16rem;
+      height: 16rem;
+    }
+  }
+}

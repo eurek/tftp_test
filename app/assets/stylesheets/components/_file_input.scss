@@ -1,0 +1,74 @@
+.FileInput {
+  position: relative;
+
+  &-input {
+    position: absolute;
+    transform: scale(0);
+  }
+
+  &-label {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    background-color: $rainforest-700;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    color: $lagoon-200;
+    text-transform: none;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.125rem;
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    &--uploadedFile {
+      text-decoration: underline;
+    }
+
+    &.Form-input--valid {
+      background-repeat: no-repeat;
+      background-position: 98%;
+    }
+
+    i {
+      margin-right: 1rem;
+    }
+  }
+
+  &-editsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &-editButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family:  $body-font;
+    color: $lagoon-200;
+    text-transform: none;
+
+    &--hidden {
+      display: none;
+    }
+
+    i {
+      margin-right: 0.6rem;
+    }
+  }
+
+  &-deleteButton {
+    margin-left: 2rem;
+  }
+}

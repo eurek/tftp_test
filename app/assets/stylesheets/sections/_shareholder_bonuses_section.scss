@@ -1,0 +1,62 @@
+.ShareholderBonusesSection {
+
+  &-container {
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  &-item {
+    background: linear-gradient(180deg, $grey-800 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 30%;
+      padding: 2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &-image {
+    height: 4rem;
+    width: auto;
+    margin-bottom: 2rem;
+  }
+
+  &-description {
+    color: $grey-50;
+
+    .strike {
+      text-decoration: line-through;
+    }
+  }
+
+  &--lagoon {
+    .ShareholderBonusesSection-image stop:nth-child(1) {
+      stop-color: $rainforest-400;
+    }
+
+    .ShareholderBonusesSection-image stop:nth-child(2) {
+      stop-color: $lagoon-500;
+    }
+  }
+
+  &--purple {
+    .ShareholderBonusesSection-image stop:nth-child(1) {
+      stop-color: $purple-700;
+    }
+
+    .ShareholderBonusesSection-image stop:nth-child(2) {
+      stop-color: $purple-400;
+    }
+  }
+}

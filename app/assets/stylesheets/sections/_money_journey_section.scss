@@ -1,0 +1,156 @@
+.MoneyJourneySection {
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  &-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  &-step {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @media (min-width: $breakpoint-md) {
+      width: 48%;
+      margin-bottom: 5rem;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      width: 23%;
+      margin-bottom: 0;
+    }
+
+    &--1 {
+      background-image: asset-url('frame-money-journey-step-1-mobile.svg');
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url('frame-money-journey-step-1.svg');
+      }
+    }
+
+    &--2 {
+      background-image: asset-url('frame-money-journey-step-2-mobile.svg');
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url('frame-money-journey-step-2.svg');
+      }
+    }
+
+    &--3 {
+      background-image: asset-url('frame-money-journey-step-3-mobile.svg');
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url('frame-money-journey-step-3.svg');
+      }
+    }
+
+    &--4 {
+      background-image: asset-url('frame-money-journey-step-4-mobile.svg');
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url('frame-money-journey-step-4.svg');
+      }
+    }
+  }
+
+  &-icon {
+    height: 3rem;
+    width: auto;
+  }
+
+  &-transparency {
+    margin: 3rem auto 0 auto;
+    max-width: 56rem;
+
+    @media (min-width: $breakpoint-md) {
+      margin-top: 5rem;
+    }
+
+    a {
+      text-transform: none;
+      text-decoration: underline;
+    }
+  }
+
+  &--lagoon {
+    .MoneyJourneySection {
+      &-icon {
+        &--1 {
+          color: $lagoon-100;
+        }
+
+        &--2 {
+          color: $lagoon-300;
+        }
+
+        &--3 {
+          color: $lagoon-400;
+        }
+
+        &--4 {
+          color: $lagoon-500;
+        }
+      }
+    }
+  }
+
+  &--purple {
+    .MoneyJourneySection {
+      &-step {
+        &--2 {
+          background-image: asset-url('frame-money-journey-company-step-2-mobile.svg');
+
+          @media (min-width: $breakpoint-md) {
+            background-image: asset-url('frame-money-journey-company-step-2.svg');
+          }
+        }
+
+        &--3 {
+          background-image: asset-url('frame-money-journey-company-step-3-mobile.svg');
+
+          @media (min-width: $breakpoint-md) {
+            background-image: asset-url('frame-money-journey-company-step-3.svg');
+          }
+        }
+
+        &--4 {
+          background-image: asset-url('frame-money-journey-company-step-4-mobile.svg');
+
+          @media (min-width: $breakpoint-md) {
+            background-image: asset-url('frame-money-journey-company-step-4.svg');
+          }
+        }
+      }
+
+      &-icon {
+        &--1 {
+          color: $purple-50;
+        }
+
+        &--2 {
+          color: $purple-200;
+        }
+
+        &--3 {
+          color: $purple-300;
+        }
+
+        &--4 {
+          color: $purple-400;
+        }
+      }
+    }
+  }
+}

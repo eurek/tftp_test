@@ -1,0 +1,28 @@
+table do
+  thead do
+    tr do
+      %w[Id Type Content].each(&method(:th))
+    end
+  end
+  tbody do
+    resources.each do |ressource|
+      tr do
+        td do
+          ressource.searchable_id
+        end
+        td do
+          ressource.searchable_type
+        end
+        td do
+          ressource.content
+        end
+        td do
+          link_to(
+            "Show",
+            send("admin_#{ressource.searchable_type.downcase}_url", ressource.searchable_id)
+          )
+        end
+      end
+    end
+  end
+end

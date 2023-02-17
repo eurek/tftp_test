@@ -1,0 +1,97 @@
+---
+fr:
+  navbar:
+    taglines:
+      direct: En direct
+      how_to_act: Comment agir ?
+      our_action: Notre action
+      documents: Documents
+      individuals: En tant que particuliers
+      companies: En tant qu'entreprises
+      innovators: En tant qu'innovateurs
+    menus:
+      vision:
+        title: Charte
+        subtitle: Les valeurs qui nous animent
+      legal_documents:
+        title: Documents légaux
+        subtitle: "Parce qu'on aime bien faire les choses"
+      files:
+        title: Dossiers
+        subtitle: "De presse, scientifique ou d'investissment"
+      roadmap_tasks:
+        title: "Plan d'action"
+        subtitle: Toutes les étapes pour réaliser notre mission
+      problems:
+        title: 20 problèmes
+        subtitle: À l'attaque des GES !
+      faq:
+        title: FAQ
+        subtitle: Vos questions, nos réponses
+      strategy_and_governance:
+        title: Stratégie et gouvernance
+        subtitle: Les clés du succès
+      climate_change:
+        title: Le dérèglement climatique
+        subtitle: Comprendre les enjeux
+      blog:
+        title: News from the Planet
+        subtitle: "Le blog de Time for the Planet<span class='brand'>®</span>"
+      press_clips:
+        title: Parutions presse
+        subtitle: Les médias parlent de nous
+      events:
+        title: Évènements
+        subtitle: Toutes les occasions pour servir notre cause
+      shareholders:
+        title: Les actionnaires
+        subtitle: "Plus nombreux chaque jour !"
+      companies:
+        title: Entreprises
+        subtitle: "Financées par Time for the Planet<span class='brand'>®</span>"
+      evaluators:
+        title: Devenir évaluateur
+        subtitle: À la recherche du joyau de la lutte contre le GES
+      schools:
+        title: Écoles et associations
+        subtitle: Nos partenaires institutionnels
+      galaxy:
+        title: Rejoindre la galaxie de l'action
+        subtitle: La communauté la plus active et joyeuse du monde
+      innovations:
+        title: Proposer une innovation
+        subtitle: "Toutes les idées pour passer à l'action"
+      become_shareholder:
+        title: Devenir actionnaire
+        subtitle: En 5 minutes, à partir de 1€
+      become_shareholder_company:
+        title: Associer mon entreprise
+        subtitle: Investissez avec l'un de nos climate deals
+      communication_documents:
+        title: Documents de communication
+        subtitle: Pour faire entendre notre voix autour de vous
+      quick_actions:
+        title: Aider en 30 secondes
+        subtitle: Toutes les petites actions accessibles à tous·tes
+      time_media:
+        title: Le média
+        subtitle: Les grands entretiens de Time
+      submit_innovation:
+        title: Proposer une innovation
+        subtitle: Postulez pour faire financer votre innovation
+      stars:
+        title: Innovations financées
+        subtitle: Les étoiles de Time for the Planet
+      received_innovations:
+        title: Innovations reçues
+        subtitle: Toutes les idées pour passer à l'action
+      notifications:
+        title: Le live
+        subtitle: Tout ce qui se passe chez Time en direct
+      jobs:
+        title: Postuler
+        subtitle: Les entreprises financées par Time recrutent
+      co2_counter:
+        title: "Notre compteur d'impact"
+        subtitle: "Suivez le CO₂ non émis ou stocké grâce à notre action"
+

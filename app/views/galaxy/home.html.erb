@@ -1,0 +1,96 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+
+<%= render partial: "shared/secondary_navbar", locals: {
+  color: "darkRainforest",
+  title: t("galaxy.galaxy_navbar.tagline"),
+  links: [{ anchor: t("galaxy.galaxy_navbar.about"), url: "#" }],
+  cta: {
+    anchor: t("galaxy.galaxy_navbar.cta"),
+    url: @external_links.galaxy_training_event,
+    target: "_blank"
+  }
+} %>
+
+<div class="DiscoverGalaxySection">
+  <div class="container DiscoverGalaxySection-container">
+    <div class="DiscoverGalaxySection-columnLeft">
+      <p class="Base-title Base-title--4 Base-title--lightLagoon">
+        <%= raw t('galaxy.discover.quote') %>
+      </p>
+      <h2 class="Base-title--3">
+        <%= raw t('galaxy.discover.title') %>
+      </h2>
+      <p class="Base-text Base-text--lighter">
+        <%= raw t('galaxy.discover.subtitle') %>
+      </p>
+    </div>
+    <div class="DiscoverGalaxySection-columnRight">
+      <div class="DiscoverGalaxySection-image">
+      </div>
+    </div>
+  </div>
+  <div class="container DiscoverGalaxySection-cta">
+    <%= link_to @external_links.galaxy_training_event,
+      class: "Button Button--box SecondaryNavbar-cta",
+      target: "_blank" do %>
+        <%= t("galaxy.galaxy_navbar.cta") %>
+    <% end %>
+
+    <%= link_to "#GroupsSection",
+      class: "DiscoverGalaxySection-seeMore Base-subtitle Base-subtitle--verySmall",
+      "data-turbolinks": "false" do %>
+      <i class="material-icons">arrow_downward</i>
+      <span><%= t("galaxy.discover.cta") %></span>
+    <% end %>
+  </div>
+</div>
+
+<div class="Section Section--black GroupsSection" id="GroupsSection">
+  <div class="container">
+    <div class="GroupsSection-introduction">
+      <h2 class="Base-title Base-title--2"><%= raw t('galaxy.groups_section.title') %></h2>
+      <p class="Base-title Base-title--4 Base-title--lagoon"><%= raw t('galaxy.groups_section.subtitle') %></p>
+    </div>
+    <div class="GroupsSection-grid">
+      <%[:planets, :comets, :stars].each do |group| %>
+        <%= link_to public_send("#{group}_path"), class: 'GalaxyCard' do %>
+          <div class="GalaxyCard-image"
+               style="background-image: url(<%= image_path "galaxy/galaxy-group-#{group}.svg" %>);"></div>
+          <div class="GalaxyCard-content">
+            <p class="Base-title Base-title--3"><%= raw t("galaxy.groups_section.#{group}.title") %></p>
+            <p class="GalaxyCard-description Base-text Base-text--lighter"><%= raw t("galaxy.groups_section.#{group}.description") %></p>
+            <span class="GalaxyCard-cta Button Button--underlined">
+              <%= t('galaxy.groups_section.cta') %>
+              <i class="material-icons">arrow_forward</i>
+            </span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="Section PeopleSection">
+  <div class="container">
+    <div class="PeopleSection-grid">
+      <div class="PeopleSection-presentation">
+        <h2 class="Base-title Base-title--2"><%= raw t('galaxy.people_section.presentation.title') %></h2>
+        <p class="Base-title Base-title--4 Base-title--lagoon"><%= raw t('galaxy.people_section.presentation.subtitle') %></p>
+      </div>
+      <% [:quarks, :gluons, :planet_leaders, :comet_leaders, :keepers].each do |name| %>
+        <%= link_to public_send("#{name}_path"), class: 'GalaxyCard' do %>
+          <div class="GalaxyCard-image GalaxyCard-image--smaller" style="background-image: url(<%= image_path "galaxy/#{name}.svg" %>);"></div>
+          <div class="GalaxyCard-content">
+            <p class="Base-subtitle Base-subtitle--verySmall Base-subtitle--bold"><%= raw t("galaxy.people_section.people_type.#{name}.title") %></p>
+            <p class="GalaxyCard-description Base-text Base-text--lighter"><%= raw t("galaxy.people_section.people_type.#{name}.description") %></p>
+            <span class="GalaxyCard-cta Button Button--underlined">
+              <%= t('galaxy.groups_section.cta') %>
+              <i class="material-icons">arrow_forward</i>
+            </span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

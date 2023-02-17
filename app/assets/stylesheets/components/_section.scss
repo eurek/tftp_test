@@ -1,0 +1,137 @@
+.Section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
+  position: relative;
+
+  &--main {
+    min-height: 60vh;
+  }
+
+  &--morePadding {
+    @media (min-width: $breakpoint-lg) {
+      padding: 5rem 0;
+    }
+  }
+
+  &--black {
+    background-color: $black;
+    color: $white;
+
+    em {
+      font-style: normal;
+      color: $lagoon-500;
+    }
+  }
+
+  &--lagoon {
+    background-color: $lagoon-500;
+    color: $grey-900;
+
+    .Base-text--withSeparator {
+      border-color: $white;
+    }
+
+    em {
+      font-style: normal;
+      color: $lagoon-500;
+      background-color: $grey-900;
+    }
+  }
+
+  &--lightGrey {
+    background-color: $grey-50;
+    color: $grey-900;
+  }
+
+  &--white {
+    background-color: $white;
+    color: $grey-900;
+
+    em {
+      font-style: normal;
+      color: $rainforest-400;
+    }
+  }
+
+  &--lightGrey, &--white {
+    a {
+      color: $rainforest-600;
+
+      &:hover {
+        color: $rainforest-900;
+      }
+    }
+  }
+
+  &--lagoonTint2 {
+    background-color: $lagoon-100;
+    color: $grey-900;
+  }
+
+  &--darkGreen {
+    background-color: $rainforest-900;
+    color: $white;
+
+    em {
+      font-style: normal;
+      color: $lagoon-500;
+    }
+  }
+
+  &--rainforest {
+    background-color: $rainforest-600;
+    color: $white;
+  }
+
+  &--purple {
+    background-color: $purple-400;
+    color: $grey-900;
+  }
+
+  &--lightPurple {
+    background-color: $purple-200;
+    color: $grey-900;
+  }
+
+  &--darkPurple {
+    background-color: $purple-900;
+    color: $white;
+  }
+
+  &--grey800 {
+    background-color: $grey-800;
+    color: $white;
+  }
+
+  &--grey900 {
+    background-color: $grey-900;
+    color: $white;
+  }
+
+  em {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    text-shadow: none;
+  }
+
+  &-imageBackground {
+    display: none;
+    background-size: cover;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+  }
+
+  &-image {
+    width: 100%;
+    object-fit: cover;
+    margin-right: 0;
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+  }
+}

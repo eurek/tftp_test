@@ -1,0 +1,10 @@
+.tippy-box[data-theme~='dark'] {
+  background-color: $grey-800;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: $headers-font;
+  padding: 1rem;
+  border-left: 0.5rem solid $lagoon-500;
+  z-index: 1;
+  border-radius: 0;
+}

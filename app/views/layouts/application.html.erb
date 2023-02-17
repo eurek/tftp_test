@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+    <% if Rails.env.production? %>
+      <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P2RFTQN');
+      </script>
+      <meta name="facebook-domain-verification" content="pp7guoyzu7n66hl6b35gpi3qonmzzm" />
+    <% end %>
+    <!-- End Google Tag Manager -->
+
+    <title><%= meta_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon-time-planet.png') %>
+
+    <!-- Detect device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker">
+
+
+    <meta name="description" content="<%= yield(:meta_desc) %>" />
+    <meta name="title" content="<%= meta_title %>" />
+    <% if content_for?(:robots) %>
+      <meta name="robots" content="<%= yield(:robots) %>"/>
+    <% end %>
+
+    <!-- Open Graph Meta Data -->
+      <meta property="og:title" content="<%= yield(:meta_title) %>" />
+      <meta property="og:description" content="<%= yield(:meta_desc) %>"  />
+      <meta property="og:url" content="<%= request.original_url %>" />
+      <meta property="og:type" content="website" />
+      <% if params["i-joined"] %>
+        <meta name="image_preview" property="og:image" content="<%= image_url("i_joined.png") %>">
+      <% else %>
+        <meta property="og:image" content="<%= meta_image %>" />
+      <% end %>
+    <!-- End Of Open Graph Meta Data -->
+
+    <!-- Plausible analytics tag -->
+    <script defer data-domain="join-time.com" src="https://plausible.io/js/plausible.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+    <!-- Matomo -->
+    <% if Rails.env.production? %>
+      <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://jointime.matomo.cloud/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '2']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src='//cdn.matomo.cloud/jointime.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+    <% end %>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body class="Base <%= body_class %>" data-controller="<%= yield(:page_js_controller) %>">
+
+    <!-- Google Tag Manager (noscript) -->
+    <% if Rails.env.production? %>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2RFTQN"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    <% end %>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <%= render 'shared/alerts' %>
+    <%= yield %>
+  </body>
+</html>

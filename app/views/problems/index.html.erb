@@ -1,0 +1,62 @@
+<% content_for :meta_title, raw(t("problem.meta.title")) %>
+<% content_for :meta_desc, raw(t("problem.meta.description")) %>
+
+<div class="Section Section--white">
+  <div class="container">
+    <div class="row">
+      <div class="ProblemsIntro">
+        <div class="col-md-10 offset-md-1">
+          <h1 class="Base-title Base-title--1">
+            <%= raw t('problem.title') %>
+          </h1>
+          <p class="Base-subtitle Base-subtitle--verySmall">
+            <%= raw t('problem.texts.paragraph1') %>
+          </p>
+          <p class="Base-subtitle Base-subtitle--verySmall">
+            <%= raw t('problem.texts.paragraph2') %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="Base-title Base-title--3"> <%= raw(t("problem.lever_title")) %> </h2>
+    <div class="row">
+      <% t('problem.levers').each do |lever| %>
+        <%= render "action_lever",
+            cover_image: lever[:cover_image],
+            title: lever[:title],
+            text: lever[:text]
+        %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<div class="Section Section--lightGrey">
+  <div class="container">
+    <h2 class="Base-title Base-title--3"><%= raw t('problem.problem_title') %></h2>
+
+    <div class="ProblemsGrid">
+      <% @problems.each do |problem| %>
+        <%= link_to problem_path(problem), class: "ProblemCard" do %>
+          <div class="ProblemCard-imageContainer">
+            <div
+            class="ProblemCard-image"
+            style="background-image: url('<%= url_for(problem_cover_image(problem, [250, 250])) %>');"
+          >
+          </div>
+
+            <div class="ProblemCard-stickers">
+              <div class="ProblemCard-sticker ProblemCard-sticker--domain"><%= human_enum_name(problem, :domain) %></div>
+              <div class="ProblemCard-sticker ProblemCard-sticker--action"><%= human_enum_name(problem, :action_lever)  %></div>
+            </div>
+          </div>
+          <p class="Base-title Base-title--4 ProblemCard-title"><%= problem.title %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "prefooter" %>

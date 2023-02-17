@@ -1,0 +1,13 @@
+it:
+  routes:
+    sponsorship-campaign: passaparola
+    new: nuovo
+    create: creare
+    dashboard: dashboard
+    about: saperne-di-piu
+    add-picture: aggiungere-immagine
+    offer-shares: regalare-azioni
+    offer-shares-company: regalare-azioni-azienda
+    become-shareholder-company: diventare-azionista-azienda
+    become-shareholder: diventare-azionista
+    buy-shares-choice: scelta-acquisto-azioni

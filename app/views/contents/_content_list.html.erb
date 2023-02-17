@@ -1,0 +1,17 @@
+<div class="ContentList" data-controller="video-modal" data-modal-id="videoModal">
+  <% if @category&.title == Category::PRESS_TITLE %>
+    <%= render "media_content_list", contents: @contents %>
+  <% else %>
+    <% contents.each do |content| %>
+
+      <%= render partial: "shared/content_card", locals: {
+        path: custom_content_path(content),
+        title: content.short_title.present? ? content.short_title : content.title,
+        cta: raw(t('contents.list.cta')),
+        image: content_cover_image(content, [300, 300]),
+        image_alt: content.cover_image_alt
+      } %>
+
+    <% end %>
+  <% end %>
+</div>

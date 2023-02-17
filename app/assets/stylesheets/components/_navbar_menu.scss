@@ -1,0 +1,110 @@
+.NavbarMenu {
+  background-color: $grey-800;
+  font-family: $headers-font;
+  font-size: 1rem;
+  font-weight: 800;
+  color: $white;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  @media (max-width: $breakpoint-lg) {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .Button {
+    @media (min-width: $breakpoint-sm) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .material-icons {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0;
+  }
+
+  &-menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+  }
+
+  &-tagline.Button {
+    color: $lagoon-200;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    cursor: pointer;
+    text-transform: none;
+
+    @media (min-width: $breakpoint-md) {
+      cursor: auto;
+    }
+  }
+
+  &-mobileNavigation {
+    display: none;
+
+    @media (max-width: $breakpoint-lg) {
+      display: flex;
+      align-items: center;
+      font-size: 1rem !important;
+      color: $lagoon-500;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      margin: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .material-icons {
+      width: 2.5rem;
+    }
+  }
+
+  &-subMenu {
+    &--open {
+
+      .material-icons {
+        transform: rotate(180deg);
+      }
+
+      .NavbarMenu-aboutMenuItem {
+        @media (max-width: $breakpoint-md) {
+          max-height: 50rem;
+        }
+      }
+    }
+  }
+
+  &-menuItemButton {
+    display: none;
+
+    @media (max-width: $breakpoint-md) {
+      display: block;
+    }
+  }
+
+  &-aboutMenuItem {
+    transition: max-height 0.3s ease-in-out;
+
+    @media (max-width: $breakpoint-md) {
+      max-height: 0rem;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+<% content_for :navbar_classes, 'Navbar--notSticky' %>
+
+<%= render 'become_shareholder_navbar', color: "black", animation: "BecomeShareholderNavbar--slide" do %>
+  <%= render partial: 'buy_shares_cta',
+    locals: {
+      color: "lightGreen",
+      cta_text: raw(t('use_gift_coupon.cta')),
+      link: @external_links.use_gift_coupon,
+    }
+  %>
+<% end %>
+
+<%= render partial: "sections/become_shareholder_header_section", locals: {
+  background_color: "white",
+  icon_path: 'certificat-coeur.svg',
+  title: raw(t('use_gift_coupon.hero.title')),
+  subtitle_1: raw(t('use_gift_coupon.hero.subtitle1')),
+  subtitle_2: raw(t('use_gift_coupon.hero.subtitle2')),
+  cta_color: "lightGreen",
+  cta_text: raw(t('use_gift_coupon.cta')),
+  cta_link: @external_links.use_gift_coupon,
+  total_raised: @total_raised,
+  shares_purchases_statistics: @shares_purchases_statistics,
+  fundraising_goal: @current_episode.fundraising_goal,
+  current_situation: @current_situation,
+  marker_path: asset_path("marker-rainforest.svg"),
+  goal_marker_path: asset_path("marker-lagoon.svg"),
+  line_color: "#0096A2",
+  gradient_rgba_code: "0,150,162",
+  indicators_color: "rainforest400",
+  goal_indicator_color: "grey800"} %>
+
+<section class="Section Section--lagoon GoalSection" data-controller="arrows-animation" data-action="scroll@window->arrows-animation#animateArrows">
+  <div class="container GoalSection-background">
+    <% t('become_shareholder.engagements').each do |engagement| %>
+      <div class="GoalSection-text">
+        <div class="GoalSection-titleContainer">
+          <i class="material-icons" data-arrows-animation-target="arrow" data-space="1.5rem">arrow_forward</i>
+          <p class="Base-title Base-title--3"><%= raw engagement[:title] %></p>
+        </div>
+        <p class="Base-subtitle Base-subtitle--verySmall"><%= raw engagement[:description] %></p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<%= render 'shared/become_shareholder_section_rights' %>
+
+<section class="Section Section--darkGreen" data-controller="badges-animation" data-action="scroll@window->badges-animation#animateBadges">
+  <div class="container BadgesSection">
+    <div class="BadgesSection-text">
+      <h3 class="Base-title--2"><%= t('become_shareholder.badges.title') %></h3>
+      <p class="Base-subtitle"><%= raw(t('become_shareholder.badges.subtitle')) %></p>
+    </div>
+
+    <div class="BadgesSection-grid">
+      <% @revealed_badges.each do |revealed_badge| %>
+        <div class="BadgesSection-badgeReveal">
+            <i class="material-icons BadgesSection-lock" data-badges-animation-target="lock">lock</i>
+            <%= image_tag revealed_badge.decorate.picture_light, "data-badges-animation-target": "badge", class: 'BadgesSection-badge' %>
+        </div>
+      <% end %>
+      <% 6.times do %>
+      <i class="material-icons BadgesSection-lock">lock</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="Section Section--black RoadmapSection" data-controller="roadmap-animation" data-action="scroll@window->roadmap-animation#animateTasks">
+  <div class="container RoadmapSection-container">
+    <div class="RoadmapSection-tasks">
+      <% @last_done_short_tasks.each do |task| %>
+        <div class="RoadmapSection-task" data-roadmap-animation-target="task">
+          <%= render "roadmap_tasks/task", task: task %>
+        </div>
+      <% end %>
+    </div>
+    <div class="RoadmapSection-text">
+      <h3 class="Base-title--2"><%= t('become_shareholder.roadmap.title') %></h3>
+      <p class="Base-subtitle"><%= t('become_shareholder.roadmap.subtitle') %></p>
+      <%= link_to roadmap_tasks_path, class: "Button Button--white Button--underlined" do %>
+        <%= t('become_shareholder.roadmap.cta') %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "recent_shareholders_section", locals: {
+  title: raw(t( 'become_shareholder.list.title')),
+  recent_shareholders: @recent_shareholders,
+  current_situation: @current_situation,
+  first_top: {title: raw(t('become_shareholder.tops.week')), value: @week_top},
+  second_top: {title: raw(t('become_shareholder.tops.year', year: Date.today.year)), value: @year_top},
+  third_top: {title: raw(t('become_shareholder.tops.day')), value: @day_top},
+  image: "mountains.svg"
+} %>
+
+<section class="Section Section--darkGreen">
+  <div class="container GoForwardSection">
+    <div class="GoForwardSection-top">
+      <h3 class="Base-title--1 GoForwardSection-title"><%= raw t( 'become_shareholder.go_forward.title') %></h3>
+      <h3 class="Base-title--2 GoForwardSection-subtitle"><%= raw t( 'become_shareholder.go_forward.subtitle') %></h3>
+    </div>
+    <div class="Base-title Base-title--3 Base-text--lighter GoForwardSection-skills">
+      <i class="material-icons GoForwardSection-image">build</i>
+      <div class="GoForwardSection-text"><%= raw t( 'become_shareholder.go_forward.skills') %></div>
+    </div>
+    <div class="Base-title Base-title--3 Base-text--lighter GoForwardSection-moneypot">
+      <i class="material-icons GoForwardSection-image">volunteer_activism</i>
+      <div class="GoForwardSection-text"><%= raw t( 'become_shareholder.go_forward.moneypot') %></div>
+    </div>
+  </div>
+</section>
+
+<%= render "sections/amf_documentation", color: "whiteAndGreen" %>

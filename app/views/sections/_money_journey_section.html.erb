@@ -1,0 +1,17 @@
+<section class="Section Section--black Section--morePadding MoneyJourneySection <%= "MoneyJourneySection--#{modifier}" %>">
+  <div class="container">
+    <h2 class="Base-title Base-title--3"><%= raw t( "become_shareholder.money_journey.title") %></h2>
+    <div class="MoneyJourneySection-steps">
+      <% (1..4).each do |step_number| %>
+        <div class="MoneyJourneySection-step MoneyJourneySection-step--<%= step_number %>">
+          <%= embedded_svg "money-journey-step-#{step_number}.svg", class: "MoneyJourneySection-icon MoneyJourneySection-icon--#{step_number}" %>
+          <p><%= raw t( "become_shareholder.money_journey.steps.step#{step_number}") %></p>
+        </div>
+      <% end %>
+    </div>
+    <p class="MoneyJourneySection-transparency Base-subtitle Base-subtitle--verySmall">
+      <b><%= raw t( "become_shareholder.money_journey.transparency.title") %></b>
+      <%= raw t( "become_shareholder.money_journey.transparency.description") %>
+    </p>
+  </div>
+</section>

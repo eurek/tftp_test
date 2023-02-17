@@ -1,0 +1,126 @@
+.MapSection {
+  padding: 0;
+  margin-bottom: -5px;
+  min-height: 10vh;
+
+  &-textContainer {
+    color: $white;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    @media (min-width: $breakpoint-md) {
+      position: absolute;
+      padding: 0;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      top: 30%;
+    }
+  }
+
+  &-text {
+    transition: opacity 0.5s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      opacity: 0;
+    }
+  }
+
+  &-mapContainer {
+    position: relative;
+  }
+
+  &-map {
+    position: relative;
+  }
+
+  &-overlay {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &-marker {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &--1 {
+      left: 9%;
+      top: 27%;
+    }
+
+    &--2 {
+      left: 17%;
+      top: 42%;
+    }
+
+    &--3 {
+      left: 24%;
+      top: 23%;
+    }
+
+    &--4 {
+      left: 43%;
+      top: 57%;
+    }
+
+    &--5 {
+      left: 47%;
+      top: 52%;
+    }
+
+    &--6 {
+      left: 48%;
+      top: 30%;
+    }
+
+    &--7 {
+      left: 62%;
+      top: 18%;
+    }
+
+    &--8 {
+      left: 82%;
+      top: 28%;
+    }
+
+    &--9 {
+      left: 86%;
+      top: 86%;
+    }
+
+    &--10 {
+      left: 26%;
+      top: 67%;
+    }
+
+    &--main {
+      left: 46%;
+      top: 36%;
+      opacity: 1;
+    }
+  }
+
+  &--rainforest {
+    .MapSection {
+      &-overlay {
+        background: rgba($rainforest-900, 0.7);
+      }
+    }
+  }
+
+  &--purple {
+    .MapSection {
+      &-overlay {
+        background: rgba($purple-900, 0.7);
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<div class="SharesPurchaseCard">
+  <i class="material-icons SharesPurchaseCard-icon">
+  arrow_forward
+  </i>
+
+  <div class="SharesPurchaseCard-content">
+    <div>
+      <span>
+        <%= raw(t('private_space.investments.list.shares', count: shares_purchase.amount)) %> -
+      </span>
+      <span class="SharesPurchaseCard-date">
+        <%= l shares_purchase.completed_at.to_date %>
+      </span>
+    </div>
+
+    <span class="Tag Tag--<%= shares_purchase.type[:css_class] %> SharesPurchaseCard-tag">
+      <%= shares_purchase.type[:value] %>
+    </span>
+  </div>
+
+  <% if shares_purchase.subscription_bulletin.attached? %>
+    <%= link_to rails_blob_path(shares_purchase.subscription_bulletin, disposition: "attachment"),
+                class: "SharesPurchaseCard-downloadBulletin" do %>
+      <i class="material-icons">
+        download
+      </i>
+      <%= raw(t("private_space.investments.list.download_bulletin")) %>
+    <% end %>
+  <% end %>
+
+
+    <% if shares_purchase.company_info.present? && shares_purchase.company_id.nil? %>
+      <div class="SharesPurchaseCard-companyAssociationActions">
+        <%= link_to raw(t('private_space.investments.list.cta')),
+                    choose_company_path(
+                      search: {name: shares_purchase.company_info["name"]},
+                      shares_purchase_id: shares_purchase.id
+                    ),
+                    class: "Button Button--secondaryLagoon"
+        %>
+      </div>
+    <% elsif shares_purchase.company_info.present? && shares_purchase.company_id.present? %>
+      <div class="SharesPurchaseCard-companyAssociationActions">
+        <%= raw(t('private_space.investments.list.associated_to', company_name: shares_purchase.company.name)) %>
+        <%= link_to choose_company_path(
+                      search: {name: shares_purchase.company.name},
+                      shares_purchase_id: shares_purchase.id
+                    ),
+                    class: "PrivateSpace-text SharesPurchaseCard-updateLink" do %>
+          <i class="material-icons" aria-label="<%= raw(t('private_space.investments.list.edit_association')) %>">
+            edit
+          </i>
+        <% end %>
+        <%= link_to remove_shares_purchase_to_company_association_path(id: shares_purchase.id),
+                    class: "PrivateSpace-text SharesPurchaseCard-updateLink" do %>
+          <i class="material-icons" aria-label="<%= raw(t('private_space.investments.list.remove_association')) %>">
+            delete
+          </i>
+        <% end %>
+      </div>
+    <% end %>
+
+</div>

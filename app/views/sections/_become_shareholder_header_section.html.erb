@@ -1,0 +1,47 @@
+<% cta_data_attribute = '' if local_assigns[:cta_data_attribute].nil? %>
+
+<section class="BuySharesHero BuySharesHero--<%= background_color %>">
+  <div class="container BuySharesHero-rows">
+    <div class="BuySharesHero-block">
+      <div class="BuySharesHero-titleContainer">
+        <%= image_tag(icon_path, class: 'BuySharesHero-image') %>
+        <h1 class="Base-title Base-title--2"><%= title %></h1>
+      </div>
+      <p class="BuySharesHero-subtitle BuySharesHero-subtitle--emphasized">
+        <%= subtitle_1 %>
+      </p>
+      <div class="BuySharesHero-subtitle"><%= subtitle_2 %></div>
+      <% if I18n.locale == :fr && local_assigns[:warning].present? %>
+        <div class="BuySharesHero-warning"><%= warning %></div>
+      <% end %>
+      <%= render partial: "shares_purchases/buy_shares_cta",
+        locals: {
+          class_name: 'BuySharesHero-button',
+          color: cta_color,
+          cta_text: cta_text,
+          cta_data_attribute: cta_data_attribute,
+          link: cta_link,
+          with_arrow: true
+        }
+      %>
+
+      <%= yield %>
+    </div>
+
+    <div class="BuySharesHero-block BuySharesHero-block--right">
+      <%= render partial: "shares_purchases/fundraising_graph",
+        locals: {
+          total_raised: total_raised,
+          shares_purchases_statistics: shares_purchases_statistics,
+          current_situation: current_situation,
+          fundraising_goal: fundraising_goal,
+          marker_path: marker_path,
+          goal_marker_path: goal_marker_path,
+          line_color: line_color,
+          gradient_rgba_code: gradient_rgba_code,
+          indicators_color: indicators_color,
+          goal_indicator_color: goal_indicator_color
+        } %>
+    </div>
+  </div>
+</section>

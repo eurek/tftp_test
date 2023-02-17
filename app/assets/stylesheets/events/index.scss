@@ -1,0 +1,76 @@
+.events-index {
+  background-color: $black;
+  color: $white;
+
+  .Filters {
+    margin-bottom: 3rem;
+  }
+
+  .ContentList {
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ContentCard {
+    flex-direction: column-reverse;
+    height: unset;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      height: 16rem;
+    }
+
+    &--defaultPicture {
+
+      .ContentCard-imageContainer {
+        display: flex;
+        align-items: center;
+      }
+
+      .ContentCard-image {
+        height: 80%;
+        object-fit: contain;
+      }
+    }
+
+    &-imageContainer {
+      width: unset;
+      height: 10rem;
+      background-color: $rainforest-900;
+
+      @media (min-width: $breakpoint-sm) {
+        height: 15rem;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        height: unset;
+        width: 75%;
+      }
+
+      @media (min-width: $breakpoint-xl) {
+        width: 55%;
+      }
+    }
+
+    &-content {
+      width: 100%;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 65%;
+      }
+    }
+  }
+
+  .Section--grey800 {
+    color: $grey-200;
+
+    .ContentCard-content {
+      background-color: $grey-300;
+    }
+  }
+}

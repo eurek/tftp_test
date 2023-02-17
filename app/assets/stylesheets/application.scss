@@ -1,0 +1,29 @@
+// boostrap grid system only
+@import "bootstrap/bootstrap-grid";
+
+// graphical variables
+@import "config/*";
+
+@import "layouts/*";
+
+@import "components/**/*";
+
+@import "pages/*";
+@import "contents/*";
+@import "roadmap_tasks/*";
+@import "problems/*";
+@import "shareholders/*";
+@import "users/*";
+@import "devise/*";
+@import "sponsorship_campaigns/*";
+@import "shares_purchases/*";
+@import "events/*";
+@import "innovations/*";
+@import "notifications/*";
+@import "companies/*";
+@import "sections/*";
+@import "episodes/*";
+
+html {
+  scroll-behavior: smooth;
+}

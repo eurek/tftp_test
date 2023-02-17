@@ -1,0 +1,28 @@
+.ShareholderAssetTooltip {
+  display: none;
+
+  &-name {
+    margin-top: 0;
+    font-weight: bold;
+    color: $white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-description {
+    color: $lagoon-100;
+    margin-top: 1rem;
+
+    a {
+      text-transform: none;
+
+      &:hover {
+        color: $rainforest-400;
+      }
+    }
+  }
+
+  &-fun-description {
+    color: $lagoon-500;
+  }
+}

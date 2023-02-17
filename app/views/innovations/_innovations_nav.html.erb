@@ -1,0 +1,42 @@
+<% mobile = false if local_assigns[:mobile].nil? %>
+
+<nav class="InnovationsNav <%= mobile ? 'InnovationsNav--mobile Filters-details' : 'InnovationsNav--desktop' %>"
+  id=<%= "statuses" if mobile %> data-filters-target="panel">
+  <ul>
+    <li class="InnovationsNavItem <%= "InnovationsNavItem--active" unless selected_status %>">
+      <%= link_to innovations_path,
+        class: "InnovationsNavItem-link",
+        data: { 'filters-target': mobile ? 'allStatus' : '' } do %>
+        <div class="InnovationsNavItem-header">
+          <span class="InnovationsNavItem-title Base-title Base-title--5">
+            <%= raw t('innovations.statuses.received.title') %>
+          </span>
+          <span class="Tag Tag--lagoon">
+            <%= Innovation.count %>
+          </span>
+        </div>
+      <% end %>
+      <p class="InnovationsNavItem-description">
+        <%= raw t("innovations.statuses.received.description", href: innovation_status_link("received")) %>
+      </p>
+    </li>
+
+    <% Innovation.statuses.keys.drop(1).each do |status| %>
+      <li class="InnovationsNavItem <%= " InnovationsNavItem--active" if selected_status == status %>">
+        <%= link_to innovations_path(status: status), class: "InnovationsNavItem-link" do %>
+          <div class="InnovationsNavItem-header">
+            <span class="InnovationsNavItem-title Base-title Base-title--5">
+              <%= raw t("innovations.statuses.#{status}.title") %>
+            </span>
+            <span class="Tag Tag--lagoon">
+              <%= Innovation.send(status).count %>
+            </span>
+          </div>
+        <% end %>
+        <p class="InnovationsNavItem-description">
+          <%= raw t("innovations.statuses.#{status}.description", href: innovation_status_link(status)) %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</nav>

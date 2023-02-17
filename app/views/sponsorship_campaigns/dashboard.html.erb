@@ -1,0 +1,94 @@
+<section class="DashboardSection">
+  <h1 class="PrivateSpace-title--purple">
+    <%= raw(t('sponsorship_campaign.dashboard.title')) %>
+  </h1>
+  <p class="PrivateSpace-text">
+    <%= raw(t(
+      'sponsorship_campaign.dashboard.subtitle',
+      total_shareholders: number_with_delimiter(@total_shareholders, locale: params[:locale]))) %>
+  </p>
+
+  <% if locale == :fr %>
+    <iframe class="SponsorshipCampaignVideo" width="560" height="315"
+      src="https://www.youtube.com/embed/4uiRsX8jyhM"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  <% end %>
+
+  <div class="SponsorshipCampaignAction">
+    <h2 class="SponsorshipCampaignAction-title">
+      <%= raw(t('sponsorship_campaign.dashboard.link_title')) %>
+    </h2>
+    <div class="SponsorshipCampaignAction-container" data-controller="clipboard">
+      <input type="text" class="SponsorshipCampaignAction-link" data-clipboard-target= "source" value="<%= @sponsorship_campaign_link %>" readonly>
+      <%= button_tag raw(t('sponsorship_campaign.dashboard.link_cta')),
+        class: "Button Button--box SponsorshipCampaignAction-cta", "data-action": "clipboard#copy" %>
+    </div>
+  </div>
+</section>
+
+<section class="DashboardSection">
+  <h2 class="PrivateSpace-title PrivateSpace-title--spaceAfter">
+    <%= raw(t('sponsorship_campaign.dashboard.actions_title')) %>
+  </h2>
+
+  <% if locale == :fr %>
+    <div data-tf-widget="KZWjCQ5X" data-tf-iframe-props="title=Aider Time for the Planet® à grandir" style="width:100%;height:750px;margin-bottom:4rem;"></div>
+    <script src="//embed.typeform.com/next/embed.js"></script>
+  <% else %>
+    <div data-controller="modal" data-modal-id="money-pot-modal" >
+      <div class="ActionCard" data-action="click->modal#openModal">
+        <%= embedded_svg "email.svg", class: "ActionCard-icon" %>
+        <p class="ActionCard-text">
+          <%= raw(t('sponsorship_campaign.dashboard.actions.email')) %>
+        </p>
+        <i class="material-icons ActionCard-arrow">
+          arrow_forward
+        </i>
+      </div>
+
+      <%= render "shared/modal", modal_id: "money-pot-modal", description: t('sponsorship_campaign.dashboard.actions.email_modal.description') do %>
+        <div class="SponsorshipCampaignEmail" data-controller="clipboard">
+          <h1><%= raw(t('sponsorship_campaign.dashboard.actions.email_modal.title')) %></h1>
+          <p><%= raw(t('sponsorship_campaign.dashboard.actions.email_modal.subtitle')) %></p>
+
+          <textarea class="SponsorshipCampaignEmail-content" data-clipboard-target= "source" readonly>
+            <%= raw(t('sponsorship_campaign.dashboard.actions.email_modal.content', sponsorship_campaign_url: @sponsorship_campaign_link)) %>
+          </textarea>
+          <%= button_tag raw(t('sponsorship_campaign.dashboard.actions.email_modal.cta')),
+            class: "Button Button--box SponsorshipCampaignEmail-cta", "data-action": "clipboard#copy" %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= render partial: "action_card", locals: {
+      link: linkedin_share_link(@sponsorship_campaign_link, t("sponsorship_campaign.public_show.title", shareholder_name: @user.individual.full_name)),
+      icon: "linkedin.svg",
+      text: raw(t('sponsorship_campaign.dashboard.actions.linkedin'))
+    } %>
+
+    <%= render partial: "action_card", locals: {
+      link: facebook_share_link(@sponsorship_campaign_link),
+      icon: "facebook.svg",
+      text: raw(t('sponsorship_campaign.dashboard.actions.facebook'))
+    } %>
+
+    <%= render partial: "action_card", locals: {
+      link: twitter_share_link(@sponsorship_campaign_link, t("sponsorship_campaign.public_show.title", shareholder_name: @user.individual.full_name)),
+      icon: "twitter.svg",
+      text: raw(t('sponsorship_campaign.dashboard.actions.twitter'))
+    } %>
+  <% end %>
+
+</section>
+
+<% content_for :right_panel do %>
+  <span class="PrivateSpace-title PrivateSpace-title--lagoon PrivateSpace-title--large">
+    <%= @user.generated_visits || 0 %>
+  </span>
+  <p class="PrivateSpace-text PrivateSpace-text--noMarginTop PrivateSpace-text--headerFont">
+    <%= raw(t('sponsorship_campaign.dashboard.right_content.generated_visits')) %>
+  </p>
+<% end %>

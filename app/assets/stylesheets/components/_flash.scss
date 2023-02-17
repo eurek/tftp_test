@@ -1,0 +1,78 @@
+.Flash {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    width: 32rem;
+  }
+
+  &-card {
+    margin: 1rem;
+    background: linear-gradient(270deg, $grey-900 3.18%, $grey-700 800%);
+    padding: 1rem;
+    color: $grey-200;
+    box-shadow: $shadow;
+    border-left: 3px solid;
+    display: flex;
+    align-items: center;
+    animation: $slide-left;
+
+    @media (min-width: $breakpoint-md) {
+      margin: 1rem 2rem 1rem 0;
+    }
+
+    &--notice {
+      border-left-color: $green-300;
+    }
+
+    &--alert {
+      border-left-color: $red-300;
+    }
+
+    &--info {
+      border-left-color: $lagoon-500;
+    }
+  }
+
+  &-icon {
+    margin-right: 1rem;
+
+    &--notice {
+      color: $green-300;
+    }
+
+    &--alert {
+      color: $red-300;
+    }
+
+    &--info {
+      color: $lagoon-500;
+    }
+  }
+
+  &-message {
+    flex-grow: 1;
+    margin: 0 1rem 0 0;
+  }
+
+  &-button {
+    align-self: flex-start;
+    background: none;
+    border: none;;
+    cursor: pointer;
+    color: $grey-200;
+  }
+
+  &-link {
+    float: right;
+    color: $white;
+    margin-top: 1rem;
+  }
+
+  &-close {
+    animation: $slide-right;
+  }
+}

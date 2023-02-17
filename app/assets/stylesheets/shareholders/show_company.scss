@@ -1,0 +1,57 @@
+.shareholders-show_company {
+  .CompanyShareholderTexts {
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 7rem;
+    }
+  }
+
+  .BackToShareholders {
+    text-align: right;
+  }
+
+  .ShareholderAssets {
+    width: 100%;
+    color: $black;
+    padding: 1rem 0;
+
+    @media (min-width: $breakpoint-sm) {
+      padding: 3rem 0;
+    }
+  }
+
+  .RolesList {
+
+    &-icon {
+      color: $purple-200;
+    }
+
+    &-role--owned {
+      background-color: $purple-400;
+      color: $black;
+
+      .RolesList-icon {
+        color: $black;
+      }
+    }
+  }
+
+  .tippy-box[data-theme~='dark'] {
+    border-color: $purple-400;
+  }
+
+  .ShareholderAssetTooltip-description {
+    color: $purple-200;
+  }
+
+  .ShareholdersList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

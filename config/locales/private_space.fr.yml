@@ -1,0 +1,260 @@
+---
+fr:
+  activerecord:
+    attributes:
+      individual:
+        first_name: "ton prénom"
+        last_name: "ton nom"
+        date_of_birth: "ta date de naissance"
+        country: "ton pays"
+        city: "ta ville"
+        email: "ton email"
+        picture: "ta photo"
+        current_job: "ton poste actuel"
+        description: "ta description"
+        reasons_to_join: "tes motivations pour rejoindre Time"
+      user:
+        email: "ton email"
+        password: "ton nouveau mot de passe"
+        remember_me: "Se souvenir de moi ?"
+      company:
+        name: "nom de l'entreprise"
+        address: "adresse"
+        logo: "logo"
+        description: "description"
+        current_job: "ton poste actuel"
+        co2_emissions_reduction_actions: "actions internes pour réduire les émissions de CO2"
+        website: "site internet"
+        facebook: "page Facebook"
+        linkedin: "profil LinkedIn"
+  private_space:
+    edit_password:
+      title:
+        part1: "Choisis un"
+        part2: "mot de passe"
+      subtitle: "Pour des raisons de sécurité, nous t'invitons à choisir un nouveau mot de passe."
+      cta: "Modifier mon mot de passe"
+    profile:
+      title:
+        part1: "Complète"
+        part2: "ton profil"
+      reasons_label: "Pourquoi as-tu rejoint Time for the Planet<span class='brand'>®</span> ?"
+      subtitle: "En devenant actionnaire de Time for the Planet<span class='brand'>®</span>, tu rejoins une 
+        communauté dédiée à la sauvegarde de la planète. Tu peux en être fier·e ! Complète ton profil pour apparaitre dans
+        la liste des actionnaires."
+      description_placeholder: "Ici tu peux simplement dire ce qui compte pour toi dans la vie, au niveau
+        professionnel, mais aussi extra-professionnel. "
+      is_displayed_label: "Je souhaite apparaitre dans la liste des actionnaires"
+      cta: "Valider mon profil"
+      form_titles:
+        who: "Qui es-tu ?"
+        professional_environment: "Ton environnement professionnel"
+        motivations: "Tes motivations"
+      current_company: "Ton entreprise actuelle"
+      remove_employer: "Supprimer"
+      employer_removed: "Ton entreprise a bien été supprimée de ton profil."
+      add_employer: "Ajoute ton entreprise"
+      edit_employer: "Modifier les informations"
+      not_editable: "Non modifiable, contacter emilie@time-planet.com si besoin de modifier ce champ."
+    activation:
+      title:
+        white: "Active ton"
+        blue: "espace actionnaire"
+      cta: "Activer mon espace"
+    sign_in:
+      welcome_title: "Bienvenue sur ton espace actionnaire !"
+      welcome_message: "Cet espace est réservé aux actionnaires de Time for the Planet<span class='brand'>®</span>. 
+        Il permet de se tenir au courant de ce qui se passe dans le mouvement, de modifier ton profil d'actionnaire et 
+        d'accéder au lien te permettant d'inviter tes amis et collègues à rejoindre le mouvement !"
+      title:
+        white: "Ton espace"
+        blue: "actionnaire"
+      hint: "Reçu dans l'email de confirmation"
+      cta: "Me connecter"
+      password: "Ton mot de passe"
+    devise_links:
+      sign_in: "Tu as déjà un compte actionnaire ?"
+      join: "Devenir actionnaire"
+      forgotten_password: "Mot de passe oublié ?"
+    forgotten_password:
+      welcome_title: "Pas de panique !"
+      welcome_message: "Rappelle-nous ton adresse email, et on t'enverra à cette adresse un lien te permettant de
+        choisir un nouveau mot de passe."
+      title:
+        white: "Mot de passe"
+        blue: "oublié ?"
+      cta: "Recevoir le lien"
+      email:
+        greeting: "Bonjour"
+        first_sentence: "Tu as demandé à changer ton mot de passe pour te connecter à ton compte actionnaire
+          Time for the Planet<span class='brand'>®</span>. Tu peux le faire en cliquant sur le lien ci-dessous :"
+        second_sentence: "Si ce n'est pas toi qui a demandé à recevoir cet email, tu n'as rien à faire."
+        third_sentence: "Le mot de passe ne sera pas modifié tant que tu n'auras pas cliqué sur ce lien et choisis
+          un nouveau. Bonne journée à toi !"
+        link: "Modifier mon mot de passe"
+      edit_welcome_title: "Choisis un nouveau mot de passe"
+      edit_welcome_message: "Tu veux accéder à ton espace actionnaire mais tu as oublié ton mot de passe ?
+        Choisis en un nouveau !"
+      edit_title:
+        white: "Ton nouveau"
+        blue: "mot de passe"
+      edit_cta: "Modifier"
+      new_password: "Nouveau mot de passe"
+      new_password_confirmation: "Confirmer le mot de passe"
+      minimum_password_length: "%{minimum_password_length} caractères minimum"
+    choose_company:
+      title:
+        part1: "Ton"
+        part2: "entreprise"
+      association_description: "Le %{date}, tu as acheté %{amount} actions au nom de ta structure.
+        Sélectionne ta structure et complète son profile !"
+      back_link_anchor: "Revenir à mon profil"
+      back_link_investments: "Revenir à la liste de mes actions"
+      company_name: "Nom de ton entreprise"
+      cta: "Rechercher"
+      exact_checkbox: "Rechercher le nom exact"
+      choose_card: "Choisir"
+      result: "résultat"
+      results: "résultats"
+      no_result: "Aucun résultat. Veuillez refaire une recherche ou ajouter votre entreprise."
+      description:
+        company_share_holder: "Tu as souhaité devenir actionnaire de Time for the Planet<span class='brand'>®</span>
+          au nom de ton entreprise ! Tu démontres ainsi l’engagement sociétal de ton entreprise. Si tu le souhaites, 
+          ton entreprise peut également apparaitre dans la liste des actionnaires."
+        individual_share_holder: "Si tu le souhaites, tu peux ajouter à ton profil l’entreprise dans laquelle tu
+          travailles actuellement."
+      do_not_add_company:
+        company_share_holder: "Je ne souhaite pas que mon entreprise apparaisse dans la liste des actionnaires."
+        individual_share_holder: "Je ne souhaite pas ajouter mon entreprise."
+      error: "Quelque chose n'a pas fonctionné. Essaie de recommencer !"
+      add_a_company: "Ajouter une entreprise"
+      no_match_text: "Aucune réponse ne correspond ?"
+    edit_company:
+      title:
+        part1: "Informations sur"
+        part2: "ton entreprise"
+      reduction_actions_placeholder: "Si ton entreprise s'est engagée dans des actions pour réduire son empreinte carbone, tu peux détailler ici ces actions."
+      cta: "Valider mon entreprise"
+      back_link_anchor: "Revenir au choix de l’entreprise"
+      is_displayed_label: "Je souhaite que mon entreprise apparaisse dans la liste des actionnaires."
+      success: "Les informations sur ton entreprise ont bien été mises à jour."
+    dashboard:
+      hello: "Bonjour"
+      subtitle: "Bienvenue sur ton espace actionnaire."
+      investment:
+        title: "Ton investissement"
+        sentence1: "Tu possèdes"
+        sentence2: "actions de Time for the Planet<span class='brand'>®</span>."
+        reinvest_link: "Investir de nouveau"
+      sponsorship_campaign:
+        title: "Ton lien ambassadeur·rice"
+        content: "Ta famille, ami·es, ou collègues partagent tes convictions ?
+          Découvre comment devenir un·e véritable ambassadeur·rice de Time for the Planet<span class='brand'>®</span> !"
+        cta: "Je deviens ambassadeur·rice"
+      gift:
+        title: "Un cadeau qui a du sens"
+        content: "Pour Noël, anniversaire, fête des mamans et papas, ou tout simplement pour faire plaisir,
+          tu peux offrir des parts de Time for the Planet<span class='brand'>®</span> à tes proches, collègues,
+          client·es et partenaires !"
+        cta: "Offrir des actions"
+      application:
+        title: "Application Time for the Planet<span class='brand'>®</span>"
+        content: "Télécharge l'appli Time for the Planet<span class='brand'>®</span> pour agir au quotidien et 
+          suivre en temps réel les news, la levée de fonds, les actions en cours."
+        cta: "Télécharger"
+      galaxy_application:
+        title: "Espace galaxie de l'action"
+        content: "Entre au cœur de l'action Time : visualise et évalue les innovations proposées, participe à des planètes, suis toutes les stats, toutes les news et...lis la gazette !"
+        cta: "Entrer dans la galaxie de l'action"
+      planets:
+        title: "Tes planètes"
+        content: "Les planètes permettent de s’organiser autour d’une thématique ou d’un lieu pour aider
+          Time for the Planet<span class='brand'>®</span> à avancer."
+        cta: "A venir"
+      welcome: "Merci d'avoir complété ton profil. Bienvenue sur ton dashboard actionnaire."
+      profile_updated: "Ton profil a bien été mis à jour."
+      completion_panel:
+        shareholder_profile: "Ton profil actionnaire est rempli à"
+        company_profile: "Ton profil entreprise est rempli à"
+        see_shareholder_profile: "Voir mon profil actionnaire"
+        see_company_profile: "Voir mon profil entreprise"
+        edit_profile: "Modifier mon profil"
+        time_planet_situation: "Où en est Time for The Planet<span class='brand'>®</span> ?"
+        roadmap_button: "Voir le plan d'action"
+        title: "Les profils remplis à 100% sont<br>davantage mis en avant"
+    badges:
+      title: "Tes badges"
+      subtitle: "A quoi servent les badges ?"
+      explanation: "Les badges servent à récompenser tous types d'actions pour Time for the 
+        Planet<span class='brand'>®</span>&nbsp;: achats de parts, coup de main... Ils sont affichés sur ton profil 
+        d'actionnaire (si tu as décidé de rendre celui-ci public&nbsp;!)"
+    roles:
+      title: "Tes fonctions"
+      subtitle: "Qu’est-ce que les fonctions ?"
+      explanation: "Les fonctions sont des rôles assignés à certains actionnaires pour permetre de faire avancer
+        la grande machine qu’est Time for the Planet<span class='brand'>®</span>. Ils sont organisés en galaxie. 
+        Pour en savoir plus tu peux visiter les pages sur le sujet."
+      link: "Voir la page galaxie"
+    edit_account:
+      title: "Paramètres de ton compte actionnaire"
+      password_hint: "A laisser vide si tu souhaites changer seulement l'email."
+      current_password_hint: "Ton mot de passe actuel est requis pour valider tes modifications."
+      cta: "Modifier"
+      delete_question: "Tu ne souhaites pas avoir d'espace actionnaire ?"
+      cancel_cta: "Supprimer mon compte"
+      cancel_confirmation: "Es-tu vraiment sûr·e de vouloir supprimer ton compte d'actionnaire ?"
+      success: "Les paramètres de ton compte ont bien été modifiés."
+    investments:
+      title: Tes investissements
+      you_own: Tu possèdes
+      individual:
+        title: "Ton investissement citoyen"
+        text:
+          one: "action de Time for the Planet<span class='brand'>®</span> en ton nom."
+          other: "actions de Time for the Planet<span class='brand'>®</span> en ton nom."
+        empty_state: "Tu peux devenir actionnaire de Time for the Planet<span class='brand'>®</span> à titre personnel,
+          à partir de 1€."
+        empty_state_cta: "Je deviens actionnaire"
+      professional:
+        title: "Ton investissement professionnel"
+        text:
+          one: "action de Time for the Planet<span class='brand'>®</span> au nom de tes entreprises."
+          other: "actions de Time for the Planet<span class='brand'>®</span> au nom de tes entreprises."
+        empty_state: "Si tu es chef·fe d’entreprise tu as la possibilité d’investir au nom de celle-ci."
+        empty_state_cta: "En savoir plus"
+      list:
+        title: "Tes achats d’actions"
+        shares:
+          one: "1 action"
+          other: "%{count} actions"
+        type:
+          company: "Professionnel"
+          individual: "Citoyen"
+        cta: "Associer ma structure"
+        associated_to: "Associé à %{company_name}"
+        edit_association: "Modifier la structure associée"
+        remove_association: "Supprimer l'association à une structure."
+        download_bulletin: "Télécharger le justificatif"
+      remove_association:
+        success: "L'association a bien été supprimée."
+        error: "Il y a eu un problème, essaie de recommencer."
+      back_link_anchor: "Revenir à mon profile"
+      onboarding:
+        text: "Tu as acheté des parts de Time for the Planet au nom d'une ou plusieurs entreprises ou structure.
+          Associer ces structures à tes achats de parts te permet d'avoir aussi un profil pour tes structures sur le
+          site de Time. Tu peux ainsi mettre en valeurs l'engagement environmental de ta ou tes structures !"
+        cta: "Valider mes achats de parts"
+      reinvest_title: "Investir de nouveau"
+      reinvest:
+        headline: "N’hésites pas à investir une nouvelle fois si tu souhaites faire avancer le projet plus vite."
+        cta: "Racheter des actions"
+      recurring_purchase:
+        headline: "Tu peux également choisir d’investir chaque mois de manière citoyenne."
+        cta: "Investir chaque mois"
+    choose_employer:
+      error: "L'ajout de ton entreprise n'a pas fonctionné, merci de ré-essayer"
+      success: "Ton entreprise a bien été ajoutée."
+    companies_index:
+      title: Tes structures
+      company_owns: "%{company} possède<br><span class='Base-title Base-title--2'>%{amount}</span> actions de Time for the Planet"
+      back_link: Revenir à mes entreprises

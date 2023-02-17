@@ -1,0 +1,64 @@
+.Co2Counter {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: space-between;
+  background-image: asset-url("co2_counter/counter-border.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 1rem 2rem;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: 2rem 3rem;
+  }
+
+  &-numbers {
+    display: grid;
+    grid-template-columns: repeat(11, auto);
+    grid-column-gap: 0.25rem;
+    margin-right: 1rem;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-column-gap: 0.5rem;
+    }
+  }
+
+  &-number {
+    width: 1rem;
+    height: 2rem;
+    background: linear-gradient(180deg, $grey-900 0%, $grey-700 35%, $grey-900 100%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $breakpoint-sm) {
+      width: 1.5rem;
+      height: 3rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: 2.5rem;
+      height: 4rem;
+    }
+  }
+
+  &-space {
+    width: 0.5rem;
+
+    @media (min-width: $breakpoint-md) {
+      width: 1rem;
+    }
+  }
+
+  &-units {
+    position: absolute;
+    left: 0;
+    bottom: -4rem;
+  }
+}

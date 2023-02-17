@@ -1,0 +1,94 @@
+.CmsContent {
+
+  h2, h3, h4, h5, h6 {
+    color: $rainforest-600;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  h2 + h3 {
+    margin-top: 0;
+  }
+
+  p {
+    font-weight: 300;
+  }
+
+  pre {
+    background-color: $grey-50;
+    color: $grey-800;
+    white-space: normal;
+    font-family: $headers-font;
+    font-weight: 800;
+    border-left: 8px solid $lagoon-500;
+    padding: 2rem 2.5rem;
+  }
+
+  li {
+    font-weight: 300;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+  em {
+    font-style: italic;
+    color: inherit;
+  }
+
+  a {
+    text-transform: none;
+    text-decoration: underline;
+    color: $rainforest-600;
+
+    &:hover {
+      color: $rainforest-900;
+    }
+  }
+
+  figure {
+    margin: 1rem 0;
+  }
+
+  figcaption {
+    font-weight: 300;
+    font-size: 1.125rem;
+    color: $grey-500;
+    margin-bottom: 2rem;
+  }
+
+  &--darkBackground {
+    color: $grey-300;
+
+    h2, h3, h4, h5, h6 {
+      color: $lagoon-500;
+    }
+
+    pre {
+      background-color: $grey-800;
+      color: $grey-300;
+    }
+
+    a {
+      color: $lagoon-500;
+
+      &:hover {
+        color: $lagoon-400;
+      }
+    }
+  }
+}

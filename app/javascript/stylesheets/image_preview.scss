@@ -1,0 +1,10 @@
+.ImagePreview {
+  height: 10rem;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 575px) {
+  .ImagePreview {
+    display: block;
+  }
+}

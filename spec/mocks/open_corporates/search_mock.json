@@ -1,0 +1,1014 @@
+{
+  "api_version": "0.4",
+  "results": {
+    "companies": [{
+      "company": {
+        "name": "FRANCE TELEVISION PUBLICITE CONSEIL",
+        "company_number": "382258622",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1991-06-17",
+        "dissolution_date": null,
+        "company_type": "SAS, société par actions simplifiée",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": false,
+        "current_status": "Actif",
+        "created_at": "2017-01-30T23:18:13+00:00",
+        "updated_at": "2020-09-14T15:08:58+00:00",
+        "retrieved_at": "2020-09-01T03:58:59+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/382258622",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-09-01T03:58:59+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "64 A 70 64 AVENUE J B CLEMENT",
+          "locality": "BOULOGNE-BILLANCOURT",
+          "region": "HAUTS-DE-SEINE",
+          "postal_code": "92100",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "64 A 70 64 AVENUE J B CLEMENT, BOULOGNE-BILLANCOURT, HAUTS-DE-SEINE, 92100",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "59.11B",
+            "description": "Production de films institutionnels et publicitaires",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-5911B"
+          }
+        }, {
+          "industry_code": {
+            "code": "59.11",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-5911"
+          }
+        }, {
+          "industry_code": {
+            "code": "5911",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-5911"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FRANCE TELEVISION NUMERIQUE",
+        "company_number": "408255560",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1996-07-05",
+        "dissolution_date": "2016-09-30",
+        "company_type": "SAS, société par actions simplifiée",
+        "registry_url": "https://www.infogreffe.fr/infogreffe/ficheIdentite.do?siren=408255560",
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2017-01-17T11:33:49+00:00",
+        "updated_at": "2020-03-26T12:03:14+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/408255560",
+        "previous_names": [],
+        "source": {
+          "publisher": "Greffes des Tribunaux de Commerce (Infogreffe)",
+          "url": "https://data.infogreffe.fr/explore/",
+          "retrieved_at": null,
+          "terms": "Licence ouverte / Open Licence",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "7 ESP HENRI DE FRANCE",
+          "locality": "PARIS 15",
+          "region": "PARIS",
+          "postal_code": "75015",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "7 ESP HENRI DE FRANCE, PARIS 15, PARIS, 75015",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "64.20Z",
+            "description": "Activités des sociétés holding",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-6420Z"
+          }
+        }, {
+          "industry_code": {
+            "code": "64.20",
+            "description": "Activities of holding companies",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-6420"
+          }
+        }, {
+          "industry_code": {
+            "code": "6420",
+            "description": "Activities of holding companies",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-6420"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "UNIVERSAL STUDIOS TELEVISION FRANCE",
+        "company_number": "378816722",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1990-05-29",
+        "dissolution_date": "2001-09-11",
+        "company_type": "SA à conseil d'administration (s.a.i.)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-08-29T04:29:27+00:00",
+        "updated_at": "2020-03-29T01:44:33+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/378816722",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "8 RUE LA BOETIE",
+          "locality": "PARIS 8",
+          "region": "PARIS",
+          "postal_code": "75008",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "8 RUE LA BOETIE, PARIS 8, PARIS, 75008",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "PMA FILM \u0026 TELEVISION FRANCE",
+        "company_number": "838109122",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "2018-02-21",
+        "dissolution_date": null,
+        "company_type": "SAS, société par actions simplifiée",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": false,
+        "current_status": "Actif",
+        "created_at": "2018-03-20T01:05:02+00:00",
+        "updated_at": "2020-09-25T15:38:56+00:00",
+        "retrieved_at": "2020-09-01T03:58:59+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/838109122",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-09-01T03:58:59+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "115 RUE MANIN",
+          "locality": "PARIS 19",
+          "region": "PARIS",
+          "postal_code": "75019",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "115 RUE MANIN, PARIS 19, PARIS, 75019",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "59.11B",
+            "description": "Production de films institutionnels et publicitaires",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-5911B"
+          }
+        }, {
+          "industry_code": {
+            "code": "59.11",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-5911"
+          }
+        }, {
+          "industry_code": {
+            "code": "5911",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-5911"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FRANCE MENAGER TELEVISION",
+        "company_number": "634500052",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1963-12-25",
+        "dissolution_date": "1990-02-28",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-09-20T06:06:27+00:00",
+        "updated_at": "2020-04-10T13:25:02+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/634500052",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "16 RUE DE LA REPUBLIQUE",
+          "locality": "SAINT-ETIENNE",
+          "region": "LOIRE",
+          "postal_code": "42000",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "16 RUE DE LA REPUBLIQUE, SAINT-ETIENNE, LOIRE, 42000",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "RELAI TELEVISION FRANCE",
+        "company_number": "400275301",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1995-02-20",
+        "dissolution_date": "1995-12-25",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Fermé",
+        "created_at": "2019-09-12T01:02:05+00:00",
+        "updated_at": "2020-03-24T03:29:30+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/400275301",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "9 RUE DU CHATEAU",
+          "locality": "LOCHES",
+          "region": "INDRE-ET-LOIRE",
+          "postal_code": "37600",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "9 RUE DU CHATEAU, LOCHES, INDRE-ET-LOIRE, 37600",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FRANCE TELEVISION INTERACTIVE",
+        "company_number": "429606734",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "2000-02-15",
+        "dissolution_date": "2009-12-31",
+        "company_type": "Groupement d'intérêt économique (GIE)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-12-30T05:48:14+00:00",
+        "updated_at": "2020-04-03T17:18:37+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/429606734",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "IMMEUBLE LE BARJAC 1 BOULEVARD VICTOR",
+          "locality": "PARIS 15",
+          "region": "PARIS",
+          "postal_code": "75015",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "IMMEUBLE LE BARJAC 1 BOULEVARD VICTOR, PARIS 15, PARIS, 75015",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "60.20B",
+            "description": "Edition de chaînes thématiques",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-6020B"
+          }
+        }, {
+          "industry_code": {
+            "code": "60.20",
+            "description": "Television programming and broadcasting activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-6020"
+          }
+        }, {
+          "industry_code": {
+            "code": "6020",
+            "description": "Television programming and broadcasting activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-6020"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "WORLDWIDE TELEVISION NEWS FRANCE",
+        "company_number": "343584561",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1987-12-11",
+        "dissolution_date": "1995-12-25",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Fermé",
+        "created_at": "2019-09-15T02:30:26+00:00",
+        "updated_at": "2020-03-25T12:12:05+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/343584561",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "40 RUE WASHINGTON",
+          "locality": "PARIS 8",
+          "region": "PARIS",
+          "postal_code": "75008",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "40 RUE WASHINGTON, PARIS 8, PARIS, 75008",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "CELLCAST TELEVISION FRANCE",
+        "company_number": "451813653",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "2003-11-20",
+        "dissolution_date": "2004-08-16",
+        "company_type": "SAS, société par actions simplifiée",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Fermé",
+        "created_at": "2019-09-12T21:11:25+00:00",
+        "updated_at": "2020-03-28T16:57:09+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/451813653",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "43 BOULEVARD MALESHERBES",
+          "locality": "PARIS 8",
+          "region": "PARIS",
+          "postal_code": "75008",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "43 BOULEVARD MALESHERBES, PARIS 8, PARIS, 75008",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FRANCE CINE TELEVISION",
+        "company_number": "542097894",
+        "jurisdiction_code": "fr",
+        "incorporation_date": null,
+        "dissolution_date": "1984-12-25",
+        "company_type": "Autre SA coopérative à conseil d'administration",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-09-19T21:24:47+00:00",
+        "updated_at": "2020-04-10T06:12:31+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/542097894",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "62 RUE FRANCOIS 1ER",
+          "locality": "PARIS 8",
+          "region": "PARIS",
+          "postal_code": "75008",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "62 RUE FRANCOIS 1ER, PARIS 8, PARIS, 75008",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FRANCE RADIO TELEVISION MULTIMEDIA",
+        "company_number": "442310595",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "2002-06-15",
+        "dissolution_date": "2003-07-10",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-09-02T10:40:26+00:00",
+        "updated_at": "2020-03-24T08:56:55+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/442310595",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "12 RUE ROBERT DESNOS",
+          "locality": "SAINT-DENIS",
+          "region": "SEINE-SAINT-DENIS",
+          "postal_code": "93200",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "12 RUE ROBERT DESNOS, SAINT-DENIS, SEINE-SAINT-DENIS, 93200",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "THOMSON TELEVISION COMPONENTS FRANCE",
+        "company_number": "775695018",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1972-01-01",
+        "dissolution_date": "2009-06-30",
+        "company_type": "SA à conseil d'administration (s.a.i.)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-09-24T14:02:56+00:00",
+        "updated_at": "2020-03-23T22:13:15+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/775695018",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "46 QUAI ALPHONSE LE GALLO",
+          "locality": "BOULOGNE-BILLANCOURT",
+          "region": "HAUTS-DE-SEINE",
+          "postal_code": "92100",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "46 QUAI ALPHONSE LE GALLO, BOULOGNE-BILLANCOURT, HAUTS-DE-SEINE, 92100",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "27.11Z",
+            "description": "Fabrication de moteurs, génératrices et transformateurs électriques",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-2711Z"
+          }
+        }, {
+          "industry_code": {
+            "code": "64.20Z",
+            "description": "Activités des sociétés holding",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-6420Z"
+          }
+        }, {
+          "industry_code": {
+            "code": "27.11",
+            "description": "Manufacture of electric motors, generators and transformers",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-2711"
+          }
+        }, {
+          "industry_code": {
+            "code": "2710",
+            "description": "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-2710"
+          }
+        }, {
+          "industry_code": {
+            "code": "64.20",
+            "description": "Activities of holding companies",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-6420"
+          }
+        }, {
+          "industry_code": {
+            "code": "6420",
+            "description": "Activities of holding companies",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-6420"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "ALLO FRANCE TELEVISION",
+        "company_number": "401712401",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1995-07-01",
+        "dissolution_date": "1997-03-20",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-09-12T17:00:39+00:00",
+        "updated_at": "2020-03-24T17:42:42+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/401712401",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "4 ALLÉE JEAN DE LA FONTAINE",
+          "locality": "NANTERRE",
+          "region": "HAUTS-DE-SEINE",
+          "postal_code": "92000",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "4 ALLÉE JEAN DE LA FONTAINE, NANTERRE, HAUTS-DE-SEINE, 92000",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "TELEVISION SATELLITE FRANCE",
+        "company_number": "414212787",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1997-10-15",
+        "dissolution_date": null,
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": false,
+        "current_status": "Actif",
+        "created_at": "2017-01-18T22:59:21+00:00",
+        "updated_at": "2020-03-28T21:02:43+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/414212787",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "AGROPOLE DELTAGRO 2HALL B LIEU-DIT LASSERRE",
+          "locality": "ESTILLAC",
+          "region": "LOT-ET-GARONNE",
+          "postal_code": "47310",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "AGROPOLE DELTAGRO 2HALL B LIEU-DIT LASSERRE, ESTILLAC, LOT-ET-GARONNE, 47310",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "46.51Z",
+            "description": "Commerce de gros (commerce interentreprises) d'ordinateurs, d'équipements informatiques périphériques et de logiciels",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-4651Z"
+          }
+        }, {
+          "industry_code": {
+            "code": "46.51",
+            "description": "Wholesale of computers, computer peripheral equipment and software",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-4651"
+          }
+        }, {
+          "industry_code": {
+            "code": "4651",
+            "description": "Wholesale of computers, computer peripheral equipment and software",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-4651"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FOX TELEVISION STUDIOS FRANCE",
+        "company_number": "493075477",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "2006-11-22",
+        "dissolution_date": "2011-06-23",
+        "company_type": "Société par actions simplifiée à associé unique ou société par actions simplifiée unipersonnelle",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-12-30T15:20:59+00:00",
+        "updated_at": "2020-04-10T01:49:20+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/493075477",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "152 BOULEVARD HAUSSMANN",
+          "locality": "PARIS 8",
+          "region": "PARIS",
+          "postal_code": "75008",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "152 BOULEVARD HAUSSMANN, PARIS 8, PARIS, 75008",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "59.11A",
+            "description": "Production de films et de programmes pour la télévision",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-5911A"
+          }
+        }, {
+          "industry_code": {
+            "code": "59.11",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-5911"
+          }
+        }, {
+          "industry_code": {
+            "code": "5911",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-5911"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "FRANCE TELEVISION SATELLITE",
+        "company_number": "392568416",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1993-09-01",
+        "dissolution_date": "1993-12-25",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Fermé",
+        "created_at": "2019-09-03T21:18:42+00:00",
+        "updated_at": "2020-04-03T03:40:28+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/392568416",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "AVENUE DES TABERNOTTES",
+          "locality": "ARTIGUES-PRES-BORDEAUX",
+          "region": "GIRONDE",
+          "postal_code": "33370",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "AVENUE DES TABERNOTTES, ARTIGUES-PRES-BORDEAUX, GIRONDE, 33370",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "SONY PICTURES TELEVISION DISTRIBUTION (FRANCE)",
+        "company_number": "542089180",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1954-01-01",
+        "dissolution_date": null,
+        "company_type": "Société en nom collectif",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": false,
+        "current_status": "Actif",
+        "created_at": "2017-01-23T05:48:44+00:00",
+        "updated_at": "2020-04-10T06:11:18+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/542089180",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "3 RUE LA BOETIE",
+          "locality": "PARIS 8",
+          "region": "PARIS",
+          "postal_code": "75008",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "3 RUE LA BOETIE, PARIS 8, PARIS, 75008",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "59.13A",
+            "description": "Distribution de films cinématographiques",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-5913A"
+          }
+        }, {
+          "industry_code": {
+            "code": "59.13",
+            "description": "Motion picture, video and television programme distribution activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-5913"
+          }
+        }, {
+          "industry_code": {
+            "code": "5913",
+            "description": "Motion picture, video and television programme distribution activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-5913"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "PHOENIX SATELLITE TELEVISION (FRANCE) SAS",
+        "company_number": "514933423",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "2009-08-21",
+        "dissolution_date": null,
+        "company_type": "SAS, société par actions simplifiée",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": false,
+        "current_status": "Actif",
+        "created_at": "2017-02-23T12:53:21+00:00",
+        "updated_at": "2020-09-15T19:50:37+00:00",
+        "retrieved_at": "2020-09-01T03:58:59+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/514933423",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-09-01T03:58:59+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "106 BOULEVARD DE SEBASTOPOL",
+          "locality": "PARIS 3",
+          "region": "PARIS",
+          "postal_code": "75003",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "106 BOULEVARD DE SEBASTOPOL, PARIS 3, PARIS, 75003",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "59.11A",
+            "description": "Production de films et de programmes pour la télévision",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-5911A"
+          }
+        }, {
+          "industry_code": {
+            "code": "59.11",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-5911"
+          }
+        }, {
+          "industry_code": {
+            "code": "5911",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-5911"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "ARAB RADIO \u0026 TELEVISION FRANCE SARL",
+        "company_number": "408588788",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1996-07-15",
+        "dissolution_date": "2010-11-15",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2019-09-14T21:49:13+00:00",
+        "updated_at": "2020-03-26T14:59:53+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/408588788",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-03-01T05:11:01+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "25 AVENUE PIERRE 1ER SERBIE",
+          "locality": "PARIS 16",
+          "region": "PARIS",
+          "postal_code": "75116",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "25 AVENUE PIERRE 1ER SERBIE, PARIS 16, PARIS, 75116",
+        "industry_codes": [],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }, {
+      "company": {
+        "name": "I STUDIO FRANCE CINEMA TELEVISION",
+        "company_number": "349536383",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1989-01-09",
+        "dissolution_date": "2012-09-15",
+        "company_type": "Société à responsabilité limitée (sans autre indication)",
+        "registry_url": "https://www.infogreffe.fr/infogreffe/ficheIdentite.do?siren=349536383",
+        "branch": null,
+        "branch_status": null,
+        "inactive": true,
+        "current_status": "Cessée",
+        "created_at": "2017-01-22T08:19:41+00:00",
+        "updated_at": "2020-03-26T19:56:05+00:00",
+        "retrieved_at": "2020-03-01T05:11:01+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/349536383",
+        "previous_names": [],
+        "source": {
+          "publisher": "Greffes des Tribunaux de Commerce (Infogreffe)",
+          "url": "https://data.infogreffe.fr/explore/",
+          "retrieved_at": null,
+          "terms": "Licence ouverte / Open Licence",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "CHAMBAUD ZI DE CHAMBAUD",
+          "locality": "SAINT-ROMAIN-LACHALM",
+          "region": "HAUTE-LOIRE",
+          "postal_code": "43620",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "CHAMBAUD ZI DE CHAMBAUD, SAINT-ROMAIN-LACHALM, HAUTE-LOIRE, 43620",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "70.22Z",
+            "description": "Conseil pour les affaires et autres conseils de gestion",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-7022Z"
+          }
+        }, {
+          "industry_code": {
+            "code": "70.22",
+            "description": "Business and other management consultancy activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-7022"
+          }
+        }, {
+          "industry_code": {
+            "code": "7020",
+            "description": "Management consultancy activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-7020"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }],
+    "page": 1,
+    "per_page": 20,
+    "total_pages": 2,
+    "total_count": 32
+  }
+}

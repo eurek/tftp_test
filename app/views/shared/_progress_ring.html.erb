@@ -1,0 +1,39 @@
+<svg
+  class="ProgressRing"
+  data-controller="progress-ring"
+  data-progress-ring-percent-value="<%= percent %>"
+  data-action="scroll@window->progress-ring#animateRing"
+  height="<%= size == "large" ? "120" : "80" %>"
+  width="<%= size == "large" ? "120" : "80" %>"
+>
+  <defs>
+    <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0096A2"/>
+      <stop offset="100%" stop-color="#89E5D3"/>
+    </linearGradient>
+  </defs>
+  <circle
+    stroke-width="<%= size == "large" ? "16" : "8" %>"
+    stroke="#3D4243"
+    fill="transparent"
+    r="<%= size == "large" ? "52" : "36" %>"
+    cx="<%= size == "large" ? "60" : "40" %>"
+    cy="<%= size == "large" ? "60" : "40" %>"
+    />
+  <circle
+    class="ProgressRing-ring"
+    style="stroke-dashoffset:326.726px; stroke-dasharray:326.726px;"
+    data-progress-ring-target="ring"
+    stroke-width="<%= size == "large" ? "16" : "8" %>"
+    stroke="url(#linear)"
+    fill="transparent"
+    r="<%= size == "large" ? "52" : "36" %>"
+    cx="<%= size == "large" ? "60" : "40" %>"
+    cy="<%= size == "large" ? "60" : "40" %>"
+    />
+
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+    class="ProgressRing-number <%= "ProgressRing-number--smaller" unless size == "large" %> ">
+    <tspan data-progress-ring-target="number"><%= percent.round %></tspan><tspan>%</tspan>
+  </text>
+</svg>

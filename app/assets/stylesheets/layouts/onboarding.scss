@@ -1,0 +1,150 @@
+.Onboarding {
+  background-color: $grey-900;
+  padding-top: 0.1rem;
+
+  @media (min-width: $breakpoint-lg) {
+    height: 100vh;
+    display:flex;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    color: $grey-300;
+    padding: 1rem 2rem;
+
+    @media (min-width: $breakpoint-lg) {
+      padding: 1rem 4rem;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+
+  &-leftBloc {
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 60vw;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &-content {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      padding: 0 4rem;
+    }
+  }
+
+  &-logo {
+    margin: 1rem auto;
+    display: block;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 1.8rem;
+      margin: 0;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+    }
+  }
+
+  &-backlink {
+    display: inline-flex;
+    align-items: center;
+    color: $lagoon-200;
+    font-size: 0.8rem;
+    font-family: $headers-font;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-left: 1.5rem;
+
+    .material-icons {
+      margin-right: 0.2rem;
+    }
+
+    &:hover {
+      color: $lagoon-500;
+    }
+  }
+
+  &-form {
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &-video {
+    width: 40vw;
+    background-color: $rainforest-900;
+  }
+
+  &-title {
+    color: $white;
+    font-family: $headers-font;
+    font-weight: 800;
+    letter-spacing: 0.005rem;
+    margin-top: 3rem;
+    text-align: center;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.8rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 2rem;
+    }
+
+    &--lagoon {
+      color: $lagoon-500;
+    }
+  }
+
+  &-text {
+    color: $grey-200;
+    margin-bottom: 2rem;
+
+    &--centered {
+      text-align: center;
+    }
+  }
+
+  &-infoBox {
+    background-color: $grey-800;
+    padding: 0.5rem;
+  }
+
+  &-formSeparator {
+    margin-top: 3rem;
+  }
+
+  div.Onboarding-addCompany {
+    background-color: $rainforest-900;
+
+    .CompanyCard-title {
+      margin: 0;
+      margin-right: 2rem;
+
+      @media (min-width: $breakpoint-md) {
+        margin-right: 5rem;
+      }
+    }
+  }
+
+  .Form-card, .CompanyInfoCard {
+    background-color: $grey-800;
+  }
+}

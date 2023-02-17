@@ -1,0 +1,225 @@
+<% content_for :extra_body_classes, "innovations--fundedShow" %>
+
+<%= render partial: "shared/back_nav", locals: {
+  path: @back_button_link,
+  anchor: raw(t('innovations.show.back')),
+  modifier: @innovation.status == "star" ? "lagoonText" : "blackTextHoverRainforest"
+} %>
+
+<section class="InnovationHeader"
+  style="background-image: linear-gradient(90.04deg, #0C0D0D 32%, rgba(12, 13, 13, 0) 83%), url(<%= @innovation.picture_with_fallback([1200, 1200]) %>);">
+  <div class="container InnovationHeader-container">
+    <div class="InnovationHeader-presentation" data-controller="tooltip" data-tooltip-max-width-value="700">
+      <div class="InnovationHeader-tag">
+        <%= human_enum_name(@innovation, :status) %>
+      </div>
+      <h1 class="Base-title Base-title--3">
+        <%= @innovation.name %>
+      </h1>
+      <%= render "star_scale", rating: @innovation.rating %>
+      <i class="material-icons InnovationHeader-scaleHelp"
+        data-template="stare-scale-explanation"
+        data-tooltip-target="trigger">
+        help_outline
+      </i>
+      <div class="ShareholderAssetTooltip" id="stare-scale-explanation" data-tooltip-target="source">
+        <p><%= raw t("innovations.show.rating_explanation") %></p>
+        <ul>
+          <% t("innovations.show.rating_points").each do |point| %>
+            <li><%= point %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div>
+        <%= @innovation.evaluations_amount %>
+      </div>
+      <% if @innovation.funded_innovation&.development_stage.present? %>
+        <p class="InnovationHeader-developmentStage">
+            <%= human_enum_name(@innovation.funded_innovation, :development_stage) %>
+        </p>
+      <% end %>
+
+      <p class="InnovationHeader-shortDescription Base-subtitle Base-subtitle--verySmall">
+        <%= @innovation.short_description %>
+      </p>
+      <% if @innovation.funded_innovation&.website.present? %>
+        <div class="InnovationHeader-website">
+          <i class="material-icons">
+            open_in_new
+          </i>
+          <%= link_to @innovation.funded_innovation.website, @innovation.funded_innovation.website, target: "_blank", class: "InnovationHeader-link" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="InnovationHeader-actionCategories">
+      <% if @innovation.action_lever.present? %>
+        <span class="InnovationHeader-subtitle">
+          <%= t("innovations.show.action_lever") %>
+        </span>
+        <div class="InnovationHeader-actionCategory">
+          <%= image_tag @innovation.action_lever.icon, class: "InnovationHeader-icon" %>
+          <span class="Base-title Base-title--5"><%= @innovation.action_lever.name %></span>
+        </div>
+      <% end %>
+      <% if @innovation.action_domain.present? %>
+        <span class="InnovationHeader-subtitle">
+          <%= t("innovations.show.action_domain") %>
+        </span>
+        <div class="InnovationHeader-actionCategory">
+          <%= image_tag @innovation.action_domain.icon, class: "InnovationHeader-icon" %>
+          <span class="Base-title Base-title--5"><%= @innovation.action_domain.name %></span>
+        </div>
+      <% end %>
+      <%= link_to problems_path, class: "Button Button--underlined" do %>
+        <%= t("innovations.show.action_link") %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="Section SummarySection">
+  <dl class="SummarySection-keyFigures">
+    <% [:funded_at, :company_created_at, :amount_invested].each do |attribute| %>
+      <div class="KeyFigure">
+        <dt class="KeyFigure-name"><%= t("activerecord.attributes.funded_innovation.#{attribute}") %></dt>
+          <dd class="KeyFigure-value">
+            <%= key_figure_display(@innovation.funded_innovation.public_send(attribute)) %>
+        </dd>
+      </div>
+    <% end %>
+  </dl>
+  <div class="container SummarySection-container">
+    <% if @innovation.funded_innovation.summary(locale: params[:locale]).present? %>
+      <div class="SummarySection-content">
+        <h2 class="Base-title Base-title--3 SummarySection-title"><%= t("innovations.funded_show.in_short") %></h2>
+        <div class="SummarySection-summary">
+          <%= @innovation.funded_innovation.summary&.html_safe %>
+        </div>
+      </div>
+    <% end %>
+    <% if @innovation.funded_innovation.pictures.attached? %>
+      <div class="SummarySection-carousel Carousel"
+        data-controller="carousel"
+        data-carousel-initial-position-value="0"
+        data-carousel-last-position-value="<%= @innovation.funded_innovation.pictures.size - 1 %>"
+        data-carousel-carousel-class="Carousel-imageContainer"
+        data-carousel-active-indicator-class="Carousel-indicator--active"
+        data-carousel-active-arrow-class="Carousel-arrow--active">
+        <div class="Carousel-row">
+          <button class="Carousel-arrow"
+            data-action="click->carousel#showPanel"
+            data-panel-index="previous"
+            data-carousel-target="backArrow">
+            <i class="material-icons">arrow_back_ios</i>
+          </button>
+          <div class="Carousel-carousel">
+            <div class="Carousel-imageContainer" data-carousel-target="carousel">
+              <% @innovation.funded_innovation.pictures.each do |picture| %>
+                <%= image_tag(picture, class: "Carousel-image") %>
+              <% end %>
+            </div>
+          </div>
+          <button class="Carousel-arrow"
+            data-action="click->carousel#showPanel"
+            data-panel-index="next"
+            data-carousel-target="forwardArrow">
+            <i class="material-icons">arrow_forward_ios</i>
+          </button>
+        </div>
+        <% unless @innovation.funded_innovation.pictures.size == 1 %>
+          <div class="Carousel-row Carousel-thumbnailContainer">
+            <% @innovation.funded_innovation.pictures.each_with_index do |picture, index| %>
+              <button class="Carousel-indicator"
+                data-action="carousel#showPanel"
+                data-carousel-target="indicator"
+                data-panel-index="<%= index %>">
+                <%= image_tag(picture, class: "Carousel-thumbnail") %>
+              </button>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<% if @innovation.funded_innovation.video_link.present? %>
+  <section class="Section Section--grey800 VideoSection">
+    <div class="container">
+      <h2 class="Base-title Base-title--3"><%= t("innovations.funded_show.video") %></h2>
+      <iframe
+        class="VideoSection-video"
+        src="<%= @innovation.funded_innovation.video_link %>"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+<% end %>
+
+<section class="Section DetailsSection">
+  <div class="container DetailsSection-container">
+    <h2 class="Base-title Base-title--4"><%= t("innovations.funded_show.details") %></h2>
+    <div class="DetailsSection-content">
+      <% %w[problem_solved solution_explained potential_clients differentiating_elements].each do |details_attribute| %>
+        <% if @innovation.send(details_attribute).present? %>
+          <h3 class="DetailsSection-subtitle">
+            <%= raw(t("innovations.show.details.#{details_attribute}")) %>
+          </h3>
+          <p>
+            <%= @innovation.send(details_attribute) %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    <% if @innovation.funded_innovation.pitch_deck_link.present? %>
+      <div class="DetailsSection-pitchDeck">
+        <div class="DetailsSection-pitchDeckLink">
+          <i class="material-icons DetailsSection-pitchDeckIcon">assessment</i>
+          <%= link_to @innovation.funded_innovation.pitch_deck_link, target: "_blank", class: 'Button Button--underlined' do %>
+            <%= t("innovations.funded_show.pitch_deck.link") %> <i class="material-icons">arrow_forward</i>
+          <% end %>
+        </div>
+        <span class="DetailsSection-pitchDeckSubtext"><%= t("innovations.funded_show.pitch_deck.subtext") %></span>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<% unless @innovation.funded_innovation.team_members.blank? %>
+  <section class="Section TeamSection">
+    <div class="container">
+      <h2 class="Base-title Base-title--3"><%= t("innovations.funded_show.team") %></h2>
+      <div class="TeamSection-list">
+        <% @innovation.funded_innovation.team_members.each do |individual| %>
+          <%= render "shared/shareholder_card", shareholder: individual if individual.present? %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<section class="Section Section--grey800 ScientificComiteeSection">
+  <div class="container ScientificComiteeSection-container">
+    <div class="ScientificComiteeSection-content">
+      <h2 class="Base-title Base-title--3"><%= t("innovations.funded_show.scientific_comitee.title") %></h2>
+      <div class="ScientificComiteeSection-opinion">
+        <%= @innovation.funded_innovation.scientific_committee_opinion&.html_safe %>
+      </div>
+    </div>
+    <div class="ScientificComiteeSection-cta">
+      <%= image_tag "scientific_comitee.svg", class: "ScientificComiteeSection-image" %>
+      <%= link_to shareholders_path(filters: {roles: [Role::SCIENTIFIC_COMMITEE_ID]}), class: "Button Button--underlined" do %>
+        <%= t("innovations.funded_show.scientific_comitee.link") %> <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="BackgroundLiaison">
+  <div class="BackgroundLiaison-background"></div>
+</div>
+
+

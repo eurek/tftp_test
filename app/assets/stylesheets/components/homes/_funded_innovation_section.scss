@@ -1,0 +1,110 @@
+.FundedInnovationsSection {
+  overflow: hidden;
+
+  .Base-title--3 {
+    @media (min-width: $breakpoint-md) {
+      width: 80%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 60%;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+    margin: 2rem 0 4rem 0;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .Button--underlined {
+    align-self: flex-end;
+    margin-top: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.FundedInnovationCard {
+  position: relative;
+  height: 28rem;
+  padding: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-transform: none;
+
+  &:hover {
+    .FundedInnovationCard-amountInvested, .FundedInnovationCard-description, .FundedInnovationCard-potential {
+      color: $lagoon-400;
+    }
+  }
+
+  &-overlay {
+    background: linear-gradient(180deg, rgba($black, 0.2) 0%, $grey-800 86.16%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &-name {
+    background-color: $white;
+    color: $rainforest-400;
+    position: absolute;
+    top: 1.5rem;
+    left: -1rem;
+    padding: 0.25rem 1rem;
+  }
+
+  &-amountInvested {
+    font-family: $headers-font;
+    color: $white;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &-description {
+    color: $grey-300;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+  }
+
+  &-potential {
+    font-family: $headers-font;
+    color: $grey-300;
+    font-weight: 800;
+    margin: 0;
+    font-size: 1rem;
+  }
+}

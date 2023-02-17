@@ -1,0 +1,13 @@
+fr:
+  routes:
+    sponsorship-campaign: parrainage
+    new: nouveau
+    create: creer
+    dashboard: tableau-de-bord
+    about: tout-savoir
+    add-picture: ajouter-image
+    offer-shares: offrir-actions
+    offer-shares-company: offrir-actions-entreprise
+    become-shareholder-company: devenir-actionnaire-entreprise
+    become-shareholder: devenir-actionnaire
+    buy-shares-choice: choix-achat-actions

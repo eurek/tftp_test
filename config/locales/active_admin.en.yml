@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      roadmap_task: "Tasks"
+      translation: "Static Contents"
+  activeadmin:
+    contents:
+      notices:
+        duplicated: "Successfully duplicated, you have been redirected to the new item. Please change slug before saving"

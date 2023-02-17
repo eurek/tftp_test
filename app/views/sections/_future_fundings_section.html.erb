@@ -1,0 +1,61 @@
+<% cta = "default" if local_assigns[:cta].nil? %>
+<% color = nil if local_assigns[:color].nil? %>
+
+<section class="Section FutureFundingSection <%= "FutureFundingSection--#{color}" if color.present? %>">
+  <div class="container">
+    <div class="FutureFundingSection-row FutureFundingSection-row--header">
+      <div>
+        <h2 class="Base-title Base-title--3 FutureFundingSection-title">
+          <%= raw t('home.future_fundings.title') %>
+        </h2>
+        <p class="Base-subtitle FutureFundingSection-subtitle"><%= raw t('home.future_fundings.subtitle') %></p>
+      </div>
+      <div class="FutureFundingSection-endOfCurrentEpisode FutureFundingSection-endOfCurrentEpisode--desktop">
+        <%= raw t('home.future_fundings.warning', time: distance_of_time_in_words(
+          Date.today,
+          current_episode.finished_at)) %>
+      </div>
+    </div>
+
+    <div class="FutureFundingSection-endOfCurrentEpisode">
+      <%= raw t('home.future_fundings.warning', time: distance_of_time_in_words(
+        Date.today,
+        current_episode.finished_at)) %>
+    </div>
+    <div class="FutureFundingSection-row FutureFundingSection-row--innovations">
+      <% future_fundings.each do |innovation| %>
+        <div class="FutureInnovationCard"
+             style="background-image: url(<%= innovation.decorate.picture_with_fallback([540, 540]) %>);">
+          <div class="FutureInnovationCard-overlay"></div>
+          <p class="Base-title Base-title--4 FutureInnovationCard-name"><%= innovation.name %></p>
+          <%= image_tag 'icones/lock.svg', class: "FutureInnovationCard-icon" %>
+          <div>
+            <p class="Base-title Base-title--4 FutureInnovationCard-assessments Base-title--noMarginTop"><%= innovation.evaluations_amount %></p>
+            <p class="Base-subtitle Base-subtitle--xxs FutureInnovationCard-description"><%= innovation.short_description %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="FutureFundingSection-row FutureFundingSection-row--link">
+      <%= link_to innovations_path(status: "submitted_to_evaluations"),
+        class: "FutureFundingSection-link Button Button--underlined",
+        target: "_blank" do %>
+        <%= raw t('home.global_cta.innovations') %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+
+    <div class="FutureFundingSection-currentSituation">
+      <%= render partial: "shared/fundraising_stats", locals: { current_episode: current_episode, total_raised: total_raised } %>
+
+      <% if cta == "default" %>
+        <%= link_to raw(t('home.global_cta.become_associate')),
+                    link,
+                    class: "Button Button--box FutureFundingSection-cta" %>
+      <% else %>
+        <%= cta %>
+      <% end %>
+
+    </div>
+  </div>
+</section>

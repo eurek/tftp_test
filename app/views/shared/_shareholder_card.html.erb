@@ -1,0 +1,41 @@
+<%= link_to shareholder_show_path(shareholder), class: card_class(shareholder) do %>
+  <div class="ShareholderCard-body">
+    <div class="ShareholderCard-stickers">
+      <% roles(shareholder).each do |role| %>
+        <div class="Sticker">
+          <%= role %>
+        </div>
+      <% end %>
+    </div>
+    <div class="ShareholderCard-texts">
+      <h2 class="Base-text Base-text--bigger ShareholderCard-title">
+        <%= shareholder_display_name(shareholder) %>
+      </h2>
+      <% if shareholder.class.to_s == "User" %>
+        <p class="Base-text ShareholderCard-job"><%= shareholder.decorate.current_job_short %></p>
+      <% end %>
+      <div class="ShareholderCard-badges">
+        <% (shareholder.badges.size <= 6 ? shareholder.badges : shareholder.badges[0..4]).each do |badge| %>
+          <%= image_tag badge.decorate.picture_light, alt: badge.name, class: "ShareholderCard-badge" %>
+        <% end %>
+        <% if shareholder.badges.size > 6 %>
+          <div class="ShareholderCard-badge ShareholderCard-badge--last">
+            <%= "+#{shareholder.badges.size - 5}" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <% if shareholder.class.to_s == "Individual" %>
+    <div
+      class="ShareholderCard-picture"
+      style='background-image: url("<%= picture(shareholder, [200, 200]) %>");'>
+    </div>
+  <% else %>
+    <div class="ShareholderCard-picture">
+      <%= image_tag(picture(shareholder, [200, 200]), alt: "#{shareholder.name} logo") %>
+    </div>
+  <% end %>
+<% end %>

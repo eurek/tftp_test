@@ -1,0 +1,20 @@
+.AppliedFilter {
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  background-color: $rainforest-700;
+  color: $lagoon-100;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $lagoon-500;
+    }
+  }
+}

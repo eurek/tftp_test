@@ -1,0 +1,96 @@
+---
+fr:
+  become_shareholder_company:
+    documentation:
+      amf_text: "Time for the Planet est la première société à mission, entièrement dédiée à la sauvegarde de l'humanité.
+        Nos <b>offres</b> au <b>public de titres financiers</b> sont réglementées par l’autorité des marchés financiers, "
+      amf_link: "en particulier l’article 212-44 du règlement général de l’AMF."
+      amf_url: "https://reglement-general.amf-france.org/eli/fr/aai/amf/rg/fr.html"
+      synthetic_information_text1: "Nous avons rédigé un"
+      synthetic_information_link: "Document d’information synthétique"
+      synthetic_information_text2: ", à l’occasion de l’émission d’actions nouvelles (celles que vous pouvez donc acquérir via notre site internet).
+        L’offre ne donne pas lieu à un prospectus soumis au visa de l’AMF."
+    hero:
+      quantity: "Un montant plancher de nombre d’action est fixé selon le nombre de collaborateur·ices."
+      simulator_link: "Calculer combien investir"
+      counter: "<b>%{count} entreprises</b> ont acheté des actions la semaine dernière"
+    steps:
+      title: "Les étapes <em>de votre investissement.</em>"
+      step_1:
+        title: "Tout comprendre sur l'investissement dans TFTP"
+        paragraph_1: "Nos responsables grands comptes sont disponibles pour répondre à toutes vos questions."
+        paragraph_2: "Un investissement plancher est demandé, en fonction du nombre de collaborateur·ices 
+          de votre entreprise."
+      step_2:
+        title: "Signature et souscription sécurisée sur le site"
+        paragraph_1: "Vous remplissez le formulaire et vous signez un bon de souscription d’action : tout est fait en ligne."
+        paragraph_2: "Pour les paiements en CB cela se déroule en ligne au moment de la signature du bon de 
+          souscription, pour les paiements par virement vous recevrez le RIB par email."
+      step_3:
+        title: "Partagez votre engagement avec vos communautés"
+        paragraph_1: "Vous faites partie des entreprises actionnaires de TFTP."
+        paragraph_2: "Vous pouvez communiquez sur votre engagement grâce à un kit de communication dédié."
+    climate_dividends:
+      description: "<p>Vous l’aurez compris, en devenant actionnaire de TFTP, vous n’aurez 
+        aucun dividendes financiers.</p><p>En revanche, vous recevrez chaque année des Dividendes Climat, qui 
+        comptabilisent le nombre de tonnes de gaz à effet de serre évitées ou stockées grâce à votre investissement. 
+        Ces Dividendes Climat viennent valoriser vos actions.</p><p>Par ailleurs, ils sont intégrables à vos 
+        documents extra financiers, vos appels d’offres et permettent notamment d’adresser la ligne 15 du scope 3 
+        de votre empreinte carbone. Pour en savoir plus sur comment intégrer les Dividendes Climat à votre 
+        comptabilité carbone, <a target='_blank' 
+        href='https://uploads-ssl.webflow.com/616fd7314088ebe3d6c7035a/62b3f60adcb5333b1c53dc9f_GS%20Protocole%20Climate%20Dividends%20-%20June%202022.pdf'>
+        consultez notre protocole.</a>"
+      summary: "Ces Dividendes Climat nous permettent de mesurer précisément le résultat de nos actions et ils 
+        mesurent votre contribution à la neutralité carbone mondiale."
+    legal_and_accounting:
+      title: "Le point <em>«&nbspjuridique et comptabilité&nbsp»</em>"
+      subtitle: "Votre entreprise souhaite et peut investir :"
+      buy: "Votre entreprise acquiert des actions (1 euro l’action)."
+      not_a_donation: "Ce n’est pas un don : votre entreprise devrait récupérer son argent (1 euro investi = 
+        1 euro récupéré à 10 ans)."
+      asset: "Ces actions s’inscrivent à l’actif de votre bilan comptable (ce n’est pas une charge, votre bilan 
+        en sort amélioré)."
+      dividends: "Il n’y aura jamais de versement de dividendes financiers ou de plus-value possible : TRI de 0."
+      general_assembly: "L’entreprise est convoquée aux Assemblées générales, peut voter pour choisir les innovations 
+        et pour les questions de gouvernance."
+      risk: "L’entreprise est commanditaire au sein de la SCA donc ne supporte pas de risque au-delà de son apport."
+    recent_shareholders:
+      title: "Les dernières entreprises actionnaires"
+    tops:
+      all_time: "Record depuis la création"
+      month: "Record du mois"
+    investment_amount:
+      title: "Et si je ne sais pas combien investir ?"
+      paragraph_1: "Les entreprises qui deviennent actionnaires de TTFTP investissent un montant plancher qui 
+        dépend du nombre de collaborateurs·trices. "
+      paragraph_2: "L’idée est de proposer un montant d’investissement minimum cohérent avec la taille de 
+        l’entreprise. Un simulateur vous permet de découvrir ce plancher et de calibrer votre investissement."
+      paragraph_3: "Bien entendu, c’est un plancher et non un plafond, vous pouvez investir plus ou réinvestir 
+        chaque année !"
+      cta: "Combien investir ?"
+    cta_section:
+      title: "Convaincu·e ?"
+      cta: "Devenir actionnaire"
+    other_choices:
+      offer_shares:
+        title: "Offrir des actions, <em>une autre manière de fédérer</em>"
+        transition: "Vous avez besoin d’embarquer vos salarié·es dans la transition et la décarbonation ? 
+          Misez sur la fierté en offrant des actions TFTP à vos salarié·es. 
+          Ils seront alignés avec votre engagement !"
+        activate_shares: "En moyenne, 75% des salarié·es choisissent de les activer et certain·es ajoutent même de 
+          l’argent ! Les montants qui ne sont pas activés sont investis au nom de l’entreprise en direct."
+        operation: "Imaginez aussi des opérations avec vos clients ou vos fournisseurs pour embarquer toutes vos 
+          parties prenantes. Nous sommes là pour vous y aider !"
+      individual:
+        title: "Vous êtes un individu ?"
+        cta: "Acheter des actions a titre individuel"
+    bonuses:
+      galaxy: "Il s’agit de la communauté des actionnaires de Time, organisée autour de l’action et de la 
+        bienveillance. Rejoignez notre serveur Discord (un outil de forum), et vous trouverez forcément des 
+        actionnaires qui partagent les intérêts de vos collaborateurs·trices. Des fans de baleines aux pros 
+        du marketing, il y en a pour tous les goûts."
+      assessors: "Envie de donner un petit coup de main et de découvrir en avant-première toutes les innovations 
+        soumises à Time ? Proposez à vos équipes et votre écosystème de devenir évaluateur·ice citoyen·ne, 
+        et d'évaluer les innovations reçues par Time. Pas besoin d’avoir fait un bac scientifique, 
+        on vous forme à la méthode et vous donne une grille d'évaluation !"
+

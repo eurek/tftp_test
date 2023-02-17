@@ -1,0 +1,307 @@
+.BecomeShareholderNavbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &--slide {
+    animation: $slide-down;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &-toggle.Button {
+    text-transform: none;
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+
+    .material-icons {
+      color: $white;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .BuySharesCta {
+    display: none;
+
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  &-form {
+    flex-basis: 55%;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      max-height: 40rem;
+      align-items: center;
+      padding: 0;
+      overflow: visible;
+    }
+
+    .Form-field {
+      min-width: 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        margin-bottom: 0;
+        margin-right: 3.5rem;
+        width: 50%;
+      }
+    }
+
+    .choices, .choices__inner, .choices__list {
+      border-radius: 3px;
+      font-weight: 300;
+    }
+
+    .choices__placeholder {
+      opacity: 0.7;
+    }
+
+    .choices[data-type*="select-one"]::after {
+      border-width: 7px;
+      margin-top: 0;
+      transform: translateY(-50%);
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .choices[data-type*="select-one"].is-open::after {
+      margin-top: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .choices__inner, .choices__list {
+      border: none;
+    }
+
+    .choices__list--single {
+      padding-right: 1.5rem;
+      padding-left: 0.5rem;
+    }
+
+    .choices__list--single .choices__item {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .choices__list--dropdown {
+      word-break: break-word;
+    }
+  }
+
+  &--open {
+
+    .BecomeShareholderNavbar {
+
+      &-toggle.Button .material-icons {
+        transform: rotate(180deg);
+      }
+
+      &-form {
+        max-height: 40rem;
+        padding: 2rem 0;
+        overflow: visible;
+      }
+    }
+  }
+
+  &--darkGreen {
+    background-color: $rainforest-600;
+
+    @media (min-width: $breakpoint-lg) {
+      background-color: $rainforest-900;
+    }
+
+    .BecomeShareholderNavbar {
+
+      &-toggle {
+        color: $lagoon-100;
+
+        &:hover {
+          color: $lagoon-100;
+        }
+
+        .material-icons {
+          color: $white;
+        }
+      }
+
+      &-form {
+
+        .choices, .choices__inner, .choices__list {
+          background-color: $black;
+          color: $lagoon-200;
+        }
+
+        .choices.is-focused {
+          border: 1px solid $lagoon-500;
+        }
+
+        .choices__list--dropdown .choices__item--selectable.is-highlighted {
+          background-color: $grey-800;
+        }
+
+        .choices[data-type*="select-one"]::after {
+          background: $lagoon-500;
+          border-color: $lagoon-500;
+        }
+      }
+    }
+  }
+
+  &--black {
+    background-color: $grey-800;
+
+    @media (min-width: $breakpoint-lg) {
+      background-color: $black;
+    }
+
+    .BecomeShareholderNavbar {
+
+      &-toggle {
+        color: $lagoon-200;
+
+        &:hover {
+          color: $lagoon-200;
+        }
+
+        .material-icons {
+          color: $white;
+        }
+      }
+
+      &-form {
+
+        .choices, .choices__inner, .choices__list {
+          background-color: $rainforest-900;
+          color: $lagoon-200;
+        }
+
+        .choices.is-focused {
+          border: 1px solid $lagoon-500;
+        }
+
+        .choices__list--dropdown .choices__item--selectable.is-highlighted {
+          background-color: $rainforest-600;
+        }
+
+        .choices[data-type*="select-one"]::after {
+          background: $lagoon-500;
+          border-color: $lagoon-500;
+        }
+      }
+    }
+  }
+
+  &--darkPurple {
+    background-color: $purple-500;
+
+    @media (min-width: $breakpoint-lg) {
+      background-color: $purple-900;
+    }
+
+    .BecomeShareholderNavbar {
+
+      &-toggle {
+        color: $purple-200;
+
+        &:hover {
+          color: $purple-200;
+        }
+
+        .material-icons {
+          color: $white;
+        }
+      }
+
+      &-form {
+
+        .choices, .choices__inner, .choices__list {
+          background-color: $black;
+          color: $purple-200;
+        }
+
+        .choices.is-focused {
+          border: 1px solid $purple-500;
+        }
+
+        .choices__list--dropdown .choices__item--selectable.is-highlighted {
+          background-color: $grey-800;
+        }
+
+        .choices[data-type*="select-one"]::after {
+          background: $purple-500;
+          border-color: $purple-500;
+        }
+      }
+    }
+  }
+
+  &--lightPurple {
+    background-color: $purple-200;
+
+    @media (min-width: $breakpoint-lg) {
+      background-color: $purple-50;
+    }
+
+    .BecomeShareholderNavbar {
+
+      &-toggle {
+        color: $purple-900;
+
+        &:hover {
+          color: $purple-900;
+        }
+
+        .material-icons {
+          color: $purple-900;
+        }
+      }
+
+      &-form {
+
+        .choices, .choices__inner, .choices__list {
+          background-color: $purple-900;
+          color: $purple-50;
+        }
+
+        .choices.is-focused {
+          border: 1px solid $purple-400;
+        }
+
+        .choices__list--dropdown .choices__item--selectable.is-highlighted {
+          background-color: $purple-600;
+        }
+
+        .choices[data-type*="select-one"]::after {
+          background: $purple-400;
+          border-color: $purple-400;
+        }
+      }
+    }
+  }
+}

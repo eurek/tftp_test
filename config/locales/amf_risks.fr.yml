@@ -1,0 +1,103 @@
+---
+fr:
+  amf_risks:
+    titles:
+      main: "Information sur les risques"
+      risk_name: "Intitulé du risque"
+      probability: "Probabilité d’occurrence"
+      extent: "Ampleur"
+      impact: "Impact"
+    risk_assessement:
+      low: "Faible"
+      medium: "Moyen"
+      high: "Fort"
+    legal_form:
+      title: "Risques juridiques et réglementaires liés à la forme de société en commandite par actions"
+      description: "<p>Du fait de la forme juridique de Société en Commandite par Actions de la Société et des statuts,
+        les gérants ne peuvent être révoqués que par décision conjointe de l’assemblée générale ordinaire et
+        de l'associé commandité ou par le Tribunal de commerce pour une cause légitime à la demande de tout associé
+        ou de la Société. Pour rappel, le capital de l’associé commandité, Act for the Planet est détenu par
+        les gérants de la Société, ainsi que par TFTP elle-même.</p>
+        <p>En outre, cette forme sociale génère une forte dépendance vis-à-vis de l’associé commandité en raison de
+        son droit de véto sur les décisions sociales. Le pouvoir étendu des gérants en vertu de la loi a été réduit
+        par les statuts, par le biais de limitations de pouvoirs (en pratique des autorisations préalables du
+        Conseil de surveillance, voire de l’assemblée générale elle-même) afin notamment de réduire autant que
+        possible les risques de conflits d’intérêts.</p>"
+    treasury_control:
+      title: "Risque lié au contrôle de la gestion de la trésorerie et de ses comptes bancaires"
+      description: "<p>Compte tenu du niveau important de sa trésorerie avant réalisation des prises de participation,
+        la Société s’expose à un risque en cas de fraude et a mis en place un dispositif de contrôle des
+        flux financiers pour sécuriser sa trésorerie, via des règles internes de double signature et la surveillance
+        des comptes bancaires de manière journalière par plusieurs personnes. Dans les faits, pour tout virement
+        supérieur à un montant de 50 000€, la banque de la Société doit obtenir une double validation, via boîtier
+        électronique et code personnalisé, d’au moins deux gérants de la Société avant d’effectuer le virement.</p>"
+    financial_situation:
+      title: "Risque lié à la situation financière de la Société"
+      description: "<p>Actuellement, avant la réalisation de la levée de fonds de la présente offre, la Société
+        dispose d'un fonds de roulement net suffisant pour faire face à ses obligations et à ses besoins de
+        trésorerie pour les 12 prochains mois.</p>
+        <p>La Société ne disposant pas de revenu complémentaire, son activité et sa situation financière dépendent
+        de la réussite de la présente augmentation de capital. En cas d’échec économique d’une ou plusieurs filiales,
+        il existe un risque d’absence de rentabilité pour la Société. Dans cette hypothèse, la Société aura la
+        possibilité d’utiliser une partie des fonds levés au soutien de ses filiales pour tenter d’atteindre une
+        rentabilité à plus long terme.</p>
+        <p>Le total des charges pouvant être exposées étant limité par les statuts à 10% des fonds levés et du chiffre
+        d’affaires net de l’exercice précédent, la Société ne fait pas face à un risque lié au règlement de
+        ses charges.</p>
+        <p>La Société n’ayant pas consommé l’intégralité des fonds levés dans des investissements ou frais de
+        fonctionnement (eux-mêmes plafonnés statutairement à 10% des montants levés et du chiffre d’affaires),
+        cela permet d’avoir une trésorerie suffisante pour les besoins des 12 prochains mois.</p>"
+    no_dividend:
+      title: "Risque d’absence de dividendes"
+      description: "<p>L'achat d'actions TFTP ne permettra pas systématiquement un retour sur investissement via
+        dividendes, la Société ayant vocation à réinvestir les sommes dans de nouvelles prises de participation.
+        Les statuts de la Société limitent les distributions de dividendes afin de consacrer les bénéfices réalisés
+        à la lutte contre le dérèglement climatique (article 29 des statuts).</p>
+        <p>En effet, la distribution de dividendes est conditionnée statutairement à la réalisation de l’événement
+        suivant : un retour de la température de la planète à 0°C, lequel s’entend comme l'élévation de la température
+        moyenne de la planète sur les 30 (trente) dernières années par rapport à la moyenne des températures de
+        l'ère pré-industrielle (1850-1900), selon la méthodologie et les données communiquées par le GIEC
+        (Groupe d'Experts Intergouvernemental sur l'Evolution du Climat) ou, à défaut, sur celles de la NASA
+        (National Aeronautics and Space Administration). Cette condition de limitation du réchauffement climatique
+        à 0°C pourrait être remplie entre 2050 et 2100 selon le scénario le plus optimiste du GIEC.</p>"
+    shareholders_dilution:
+      title: "Risque de dilution des actionnaires"
+      description: "<p>Les actions de TFTP seront sujettes à d’importantes dilutions futures, les actions ayant
+        vocation à être systématiquement émises à la valeur nominale (sans prime d’émission, conformément à
+        l’article 9.1 des statuts). La dilution se matérialise lorsqu'une société émet de nouvelles actions
+        (exemple : lors d'une augmentation de capital).</p>
+        <p>La dilution affecte tous les actionnaires existants qui n'achètent pas une partie des nouvelles actions
+        émises. Le résultat pour un actionnaire existant est que sa part au capital se retrouve réduite.
+        Cela aura un impact sur :</p>
+        <ul>
+          <li>le droit de vote (par exemple, pour élire le conseil de surveillance et statuer sur les autorisations
+          préalables à donner à la gérance de procéder à des investissements) ; et</li>
+          <li>le droit au dividende, s’il y en a un, et la plus-value.</li>
+        </ul>"
+    non_liquidity:
+      title: "Risque de non-liquidité des titres"
+      description: "<p>Les actions de la Société n’étant pas destinées à être cotées et aucun marché ne devant être
+        organisé à l’initiative de la Société, il existe un risque de non-liquidité des actions souscrites.</p>
+        <p>Sauf en cas de succession, de liquidation de communauté de biens entre époux ou de cession à un conjoint,
+        un ascendant ou un descendant, toute cession d’actions à un tiers, de quelque manière que ce soit
+        (en ce compris par voie de transmission universelle de patrimoine), est soumise à l’agrément préalable
+        de la gérance. Toute cession de quelque nature que ce soit ayant pour conséquence de permettre à tout
+        tiers ou actionnaire de détenir directement ou indirectement, plus de 25% (vingt-cinq) du capital ou des
+        droits de vote fera l’objet d’un refus d’agrément de la part de la Société.</p>
+        <p>La cession des actions ne bénéficie d’aucun avantage fiscal pour l’acquéreur.</p>
+        <p>Aucune stipulation statutaire ou extrastatutaire ne permet le retrait des actionnaires de la Société.</p>
+        <p>La faculté de céder les actions de la Société est limitée du fait de la politique de distribution
+        de dividendes.</p>"
+    capital_loss:
+      title: "Risque lié à la perte potentielle en capital pour le souscripteur"
+      description: "<p>L’activité de la Société peut générer un risque de perte d'une partie ou de la totalité du
+        capital investi par ses actionnaires. Ce risque est inhérent à l'activité de la Société qui est de sourcer,
+        financer et développer des innovations.</p>"
+    business_model:
+      title: "Risque lié au modèle économique de la société"
+      description: "La Société n’ayant pas la rentabilité pour objectif prioritaire. Il en résulte une faible 
+        rentabilité au regard des sommes investies par l’investisseur. Les revenus de la Société sous forme de 
+        dividendes perçus de ses participations pourraient en effet être modestes ou ne lui être versés qu’à 
+        moyen terme. En conséquence la Société n’a pas vocation à réaliser de bénéfices et n’entend pas distribuer
+        de dividende."
+

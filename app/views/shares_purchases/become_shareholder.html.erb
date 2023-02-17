@@ -1,0 +1,115 @@
+<%= render partial: "sections/become_shareholder_hero", locals: {
+  color: "blackAndLagoon",
+  image: "space-image-become-shareholder.jpg",
+  selected_shareholder_type: "individual",
+  selected_transaction_type: "buy",
+  shares_quantity_explanation: t( "become_shareholder.hero.quantity"),
+  social_proof_counter: t("become_shareholder.hero.counter.citizens",
+                          count: number_with_delimiter(@shares_purchases_by_citizens_last_week, locale: params[:locale])),
+  cta: "become_shareholder_cta",
+  secondary_cta_modifier: "secondaryLagoon"
+} %>
+
+<section class="Section Section--black BetterGiftSection">
+  <%= image_tag "sell-gifts.svg", class: "BetterGiftSection-image" %>
+  <div class="container">
+    <p class="Base-title Base-title--3 Base-title--lagoon BetterGiftSection-title">
+      <%= raw t("operation_day_1.become_shareholder.better_gift.title") %>
+    </p>
+    <p class="Base-title Base-title--3 BetterGiftSection-subtitle">
+      <%= raw t("operation_day_1.become_shareholder.better_gift.subtitle") %>
+    </p>
+    <%= link_to raw(t( "become_shareholder.hero.cta")), @external_links.shares_purchase_form,
+      class: "Button Button--box", target: "_blank" %>
+  </div>
+</section>
+
+<%= render partial: "sections/shareholder_status_section", locals: { second_section: true } %>
+
+<%= render partial: "sections/money_journey_section", locals: { modifier: "lagoon" } %>
+
+<%= render partial: "sections/climate_dividends_section", locals: {
+  color: "rainforest",
+  title: raw(t( "become_shareholder.climate_dividends.title")),
+  description: raw(t( "become_shareholder.climate_dividends.description1")),
+  highlighted_description: raw(t( "become_shareholder.climate_dividends.description2")),
+  cta: render("become_shareholder_cta")
+}  %>
+
+<%= render partial: "sections/future_fundings_section", locals: {
+  current_episode: @current_episode,
+  total_raised: @total_raised,
+  future_fundings: @future_fundings,
+  cta: render("become_shareholder_cta")
+} %>
+
+<%= render partial: "sections/investment_amount_section", locals: {
+  title: raw(t( "become_shareholder.small_investment.title")),
+  paragraphs: [
+    raw(t( "become_shareholder.small_investment.description")),
+    raw(t( "become_shareholder.small_investment.join_us"))
+  ],
+  cta: "become_shareholder_cta"
+} %>
+
+<%= render partial: "sections/shareholder_bonuses_section", locals: {
+  modifier: "lagoon ",
+  profile_text: raw(t( "become_shareholder.bonus.profile.description")),
+  galaxy_text: raw(t( "become_shareholder.bonus.galaxy.description")),
+  evaluator_text: raw(t( "become_shareholder.bonus.evaluator.description"))
+} %>
+
+<% unless @testimonials.blank? %>
+  <section class="Section Testimonials">
+    <div class="container">
+      <h2 class="Base-title Base-title--3"><%= raw t( "become_shareholder.testimonials.title") %></h2>
+    </div>
+    <ul class="Testimonials-list">
+      <% @testimonials.each do |individual| %>
+        <li class="TestimonialCard">
+          <p class="TestimonialCard-text">"<%= raw individual.reasons_to_join&.truncate_words(25) %>"</p>
+          <div class="TestimonialCard-id">
+            <%= image_tag(picture(individual, [60, 60]), class: "TestimonialCard-image") %>
+            <span class="TestimonialCard-name"><%= individual.full_name %></span>
+          </div>
+        </li>
+      <% end %>
+      <div class="Testimonials-offset"></div>
+    </ul>
+    <div class="container">
+      <%= link_to raw(t( "become_shareholder.hero.cta")), @external_links.shares_purchase_form,
+                  class: "Button Button--box Testimonials-cta", target: "_blank" %>
+    </div>
+  </section>
+<% end %>
+
+<%= render partial: "sections/statistics", locals: { statistics: @statistics, color: "lagoon" } %>
+
+<%= render partial: "recent_shareholders_section", locals: {
+  title: raw(t( 'become_shareholder.list.title')),
+  recent_shareholders: @recent_shareholders,
+  current_situation: @current_situation,
+  first_top: {title: raw(t('become_shareholder.tops.week')), value: @week_top},
+  second_top: {title: raw(t('become_shareholder.tops.year', year: Date.today.year)), value: @year_top},
+  third_top: {title: raw(t('become_shareholder.tops.day')), value: @day_top},
+  modifier_class: "RecentShareholdersSection--blackAndLagoon",
+  image: "mountains-dark.svg"
+} %>
+
+<section class="Section Section--morePadding ConvincingSection">
+  <div class="container">
+    <h3 class="Base-title--1 Base-title--white ConvincingSection-title">
+      <%= raw t( 'become_shareholder.convincing.title') %>
+    </h3>
+    <h3 class="Base-title--2 Base-title--lagoon ConvincingSection-subtitle">
+      <%= raw t( 'become_shareholder.convincing.subtitle') %>
+    </h3>
+    <%= render "become_shareholder_cta" %>
+  </div>
+</section>
+
+<%= render "shareholder_options_section" %>
+
+<%= render "sections/amf_documentation", color: "darkGreen" %>
+
+<%= render "sections/amf_risks", color: "lagoon" %>

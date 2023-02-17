@@ -1,0 +1,49 @@
+<% content_for :navbar_classes, "Navbar--notSticky Navbar--dark Navbar--forceDarkBackground" %>
+
+<%= render "galaxy/shared/galaxy_navbar" %>
+
+<div class="Section GalaxyHero">
+  <div class="container GalaxyHero-container">
+    <div class="GalaxyHero-content">
+      <div class="GalaxyHero-text">
+        <h1><%= t("galaxy.gluons.title") %></h1>
+        <h2 class="Base-title--lagoon"><%= raw(t("galaxy.gluons.purposes.title")) %></h2>
+        <p class="Base-title Base-title--4"><%= t("galaxy.gluons.purposes.subtitle") %></p>
+      </div>
+      <%= image_tag 'galaxy/gluons.svg', class: "GalaxyHero-image" %>
+    </div>
+    <i class="Base-scrollArrow material-icons">arrow_downward</i>
+  </div>
+</div>
+
+<div class="HalfSection">
+  <div class="HalfSection-column HalfSection-column--left">
+    <div class="HalfSection-container">
+      <h2 class="Base-title--3 GalaxyDetails-title"><%= t("galaxy.gluons.roles.title") %></h2>
+      <% t("galaxy.gluons.roles.items").each do |item|%>
+        <div class="GalaxyDetails-item">
+          <i class="material-icons">check_circle</i>
+          <p class="Base-text--lighter"><%= raw(item) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="HalfSection-column HalfSection-column--right">
+    <div class="HalfSection-container">
+      <p class="Base-title Base-title--4"><%= raw t('galaxy.gluons.roles.how') %></p>
+      <div class="GalaxyDetails-separator"></div>
+      <div class="GalaxyDetails-duration">
+        <i class="material-icons">schedule</i>
+        <p class="Base-title Base-title--4"><%= raw t("galaxy.gluons.roles.duration") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Section Section--black GalaxyGroupDefinition">
+  <div class="container">
+    <% t("galaxy.gluons.definitions").each do |definition| %>
+      <p class="Base-title Base-title--3"><%= definition %></p>
+    <% end %>
+  </div>
+</div>

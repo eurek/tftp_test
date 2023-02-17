@@ -1,0 +1,36 @@
+.pages-coming_soon {
+  .ComingSoon {
+    background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 70%),
+      linear-gradient(rgba(0, 94, 102, 0.3),rgba(0, 94, 102, 0.3)),
+      asset-url('space-bw.jpg');
+    background-size: cover;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+
+    .Base-title {
+      margin-top: 0;
+      max-width: 40rem;
+    }
+
+    .Button {
+      margin-top: 4rem;
+    }
+
+    &-illustration {
+      background-image: none;
+
+      @media (min-width: $breakpoint-md) {
+        background-image: asset-url("coming-soon.png");
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50%;
+      }
+    }
+  }
+}

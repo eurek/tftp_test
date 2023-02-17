@@ -1,0 +1,21 @@
+---
+fr:
+  episodes:
+    season_number: "Saison %{number}"
+    number: "Episode %{number}"
+    period: "Du %{started_at} au %{finished_at}"
+    time_status:
+      current : "En cours"
+      finished: "Terminé"
+      coming: "A venir"
+    index:
+      title: "Les épisodes de Time for the Planet"
+      subtitle: "Retrouvez tout l’historique de notre mouvement."
+    hero:
+      funded_innovations:
+        zero: "innovation financée<br>dont <em>%{this_episode}</em> durant cet épisode"
+        one:  "innovation financée<br>dont <em>%{this_episode}</em> durant cet épisode"
+        other:  "innovations financées<br>dont <em>%{this_episode}</em> durant cet épisode"
+      raising_goal: "récoltés sur un objectif de <em>%{amount}</em>"
+    details:
+      funded_innovations_title: "Innovations financées pendant cet épisode"

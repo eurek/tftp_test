@@ -1,0 +1,92 @@
+.ShareholderStatusSection {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, $grey-800 50%), asset-url('shareholder-status-background.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  scroll-margin-top: 4rem;
+
+  @media (min-width: $breakpoint-md) {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, $grey-800 30%), asset-url('shareholder-status-background.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, $grey-800 25%), asset-url('shareholder-status-background.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+
+  @media (min-width: $breakpoint-xxl) {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, $grey-800 20%), asset-url('shareholder-status-background.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+
+
+  &-content {
+    max-width: 40rem;
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+
+    a {
+      text-transform: none;
+      text-decoration: underline;
+      font-family: $body-font;
+    }
+  }
+
+  &-item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    h3, i {
+      color: $lagoon-500;
+      margin-top: 0;
+    }
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &--company {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, $purple-900 50%), asset-url('shareholder-status-company-background.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+
+    @media (min-width: $breakpoint-md) {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, $purple-900 30%), asset-url('shareholder-status-company-background.jpg');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, $purple-900 25%), asset-url('shareholder-status-company-background.jpg');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+    }
+
+    @media (min-width: $breakpoint-xxl) {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, $purple-900 20%), asset-url('shareholder-status-company-background.jpg');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+    }
+
+    h3, i {
+      color: $purple-400;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.problems-show {
+
+  .ProblemShow {
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+
+    &-image {
+      background-size: cover;
+      min-height: 20rem;
+
+      @media (min-width: $breakpoint-md) {
+        width: 40%;
+      }
+    }
+
+    &-content {
+      padding: 2rem;
+      color: white;
+      position: relative;
+      background-color: $grey-800;
+
+      &--sticker {
+        font-weight: bold;
+        padding: 0.2rem 0.5rem;
+        width: max-content;
+        font-size: 0.8rem;
+        font-weight: bold;
+
+        &--domain {
+          background-color: $lagoon-500;
+          margin-bottom: 0.5rem;
+          color: $black;
+        }
+
+        &--action {
+          background-color: $rainforest-400;
+        }
+
+        @media (min-width: $breakpoint-md) {
+          margin-left: -4rem;
+        }
+      }
+
+      @media (min-width: $breakpoint-md) {
+        width: 60%;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+
+    &-description p {
+      font-size: 1rem;
+    }
+  }
+
+  .BackToProblems {
+    display: flex;
+    justify-content: flex-end;
+    color: $rainforest-600;
+
+    &-link {
+      font-size: 1rem;
+    }
+  }
+
+  .ProjectList {
+    padding-top: 2rem;
+
+    &-cardContainer {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .ProjectsCard {
+    min-height: 25rem;
+    background-color: $grey-800;
+    color: white;
+    position: relative;
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+
+    i {
+      font-size: 2.5rem;
+    }
+
+    &-text, &-text p {
+      font-weight: 300;
+      text-transform: none;
+    }
+
+    &--last {
+      padding: 3rem 1.7rem;
+      background-color: $rainforest-900;
+      text-align: center;
+      height: 97%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      &:hover {
+        color: $lagoon-500;
+      }
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      width: 100%;
+    }
+  }
+}

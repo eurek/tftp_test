@@ -1,0 +1,139 @@
+.FutureFundingSection {
+  padding: 4rem 0;
+  background-color: $black;
+  color: $white;
+
+  h2 em {
+    color: $lagoon-400;
+    font-style: normal;
+  }
+
+  &-row {
+    display: flex;
+
+    &--header {
+      align-items: flex-start;
+    }
+
+    &--innovations {
+      column-gap: 1.25rem;
+      row-gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    &--link {
+      justify-content: flex-end;
+    }
+  }
+
+  &-currentSituation {
+    background-color: $grey-900;
+    margin: 4rem 0 2rem 0;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-bottom: 6rem;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .FundraisingStats {
+      @media (min-width: $breakpoint-lg) {
+        width: 60%;
+      }
+
+      @media (min-width: $breakpoint-xl) {
+        width: 70%;
+      }
+    }
+  }
+
+  &-title {
+    margin-top: 0;
+  }
+
+  &-subtitle {
+    margin-top: 0;
+    color: $lagoon-100;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-endOfCurrentEpisode {
+    background-color: $grey-800;
+    border: 3px solid;
+    border-image-source: linear-gradient(0.25turn, $grey-700, $grey-500, $grey-700);
+    border-image-slice: 1;
+    font-family: $headers-font;
+    font-weight: 300;
+    font-size: 1.25rem;
+    padding: 1rem;
+    width: 19rem;
+    flex-shrink: 0;
+    margin: 0 auto 4rem auto;
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+      margin-left: 5rem;
+
+      @media (min-width: $breakpoint-lg) {
+        display: block;
+      }
+    }
+  }
+
+  &-cta {
+    color: $black;
+    margin-top: 3rem;
+    flex-shrink: 0;
+
+    &:hover {
+      color: $black;
+      background-color: $lagoon-400;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-top: 0;
+      width: 35%;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      width: 25%;
+    }
+  }
+
+  &-link {
+    margin-top: 2rem;
+    color: inherit;
+
+    &:hover {
+      color: $lagoon-500;
+    }
+  }
+
+  &--purple {
+    .FutureFundingSection {
+      &-cta {
+        background-color: $purple-400;
+
+        &:hover {
+          background-color: $purple-300;
+        }
+      }
+    }
+
+    .FutureInnovationCard-assessments {
+      color: $purple-400;
+    }
+  }
+}

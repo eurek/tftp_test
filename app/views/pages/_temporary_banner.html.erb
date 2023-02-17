@@ -1,0 +1,16 @@
+<section class="TemporaryBanner">
+  <div class="container TemporaryBanner-content">
+    <div class="TemporaryBanner-icon">
+      <i class="material-icons">campaign</i>
+    </div>
+    <div>
+      <span class="TemporaryBanner-text">
+        <%= banner.headline(fallback: false) %>
+      </span>
+      <%= link_to banner.cta(fallback: false),
+        banner.link(fallback: false),
+        target: '_blank',
+        class: 'TemporaryBanner-link' %>
+    </div>
+  </div>
+</section>

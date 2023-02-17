@@ -1,0 +1,46 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<%= render "galaxy/shared/galaxy_navbar" %>
+
+<div class="Section GalaxyHero" data-controller="arrows-animation" data-action="scroll@window->arrows-animation#animateArrows">
+  <div class="container GalaxyHero-container">
+    <div class="GalaxyHero-content">
+      <div class="GalaxyHero-text">
+        <h1><%= t("galaxy.planets.title") %></h1>
+        <h2 class="Base-title--lagoon"><%= t("galaxy.planets.subtitle") %></h2>
+        <% t("galaxy.planets.purposes").each do |purpose| %>
+          <div class="GalaxyHero-paragraph">
+            <i class="material-icons" data-arrows-animation-target="arrow" data-space="1rem">arrow_forward</i>
+            <p class="Base-text--lighter Base-subtitle--lightLagoon"><%= raw(purpose) %></p>
+          </div>
+        <% end %>
+      </div>
+      <%= image_tag 'galaxy/galaxy-group-planets.svg', class: "GalaxyHero-image" %>
+    </div>
+    <i class="Base-scrollArrow material-icons">arrow_downward</i>
+  </div>
+</div>
+
+<div class="HalfSection">
+  <div class="HalfSection-column HalfSection-column--left">
+    <div class="HalfSection-container">
+      <h2 class="Base-title--3 GalaxyDetails-title"><%= t("galaxy.planets.roles.title") %></h2>
+      <% t("galaxy.planets.roles.items").each do |item|%>
+        <div class="GalaxyDetails-item">
+          <i class="material-icons">check_circle</i>
+          <p class="Base-text--lighter"><%= raw(item) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="HalfSection-column HalfSection-column--right" >
+    <div class="HalfSection-container">
+      <p class="Base-title Base-title--4"><%= raw(t("galaxy.planets.roles.how")) %></p>
+      <div class="GalaxyDetails-separator"></div>
+      <div class="GalaxyDetails-duration">
+        <i class="material-icons">schedule</i>
+        <p class="Base-title Base-title--4"><%= t("galaxy.planets.roles.duration") %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+es:
+  routes:
+    sponsorship-campaign: sponsorship
+    new: nuevo
+    create: crear
+    dashboard: dashboard
+    about: para-saber-mas
+    add-picture: anadir-imagen
+    offer-shares: regalar-acciones
+    offer-shares-company: regalar-acciones-empresa
+    become-shareholder-company: convertirse-accionista-empresa
+    become-shareholder: convertirse-accionista
+    buy-shares-choice: eleccion-compra-acciones

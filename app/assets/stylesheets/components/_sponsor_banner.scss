@@ -1,0 +1,81 @@
+.SponsorBanner {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &-image {
+    background-color: $white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+
+    @media (min-width: $breakpoint-md) {
+      width: 20%;
+      height: auto;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+
+      @media (min-width: $breakpoint-md) {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &-content {
+    padding: 2rem;
+    background: linear-gradient(180deg, $rainforest-900 0%, rgba(0, 47, 51, 0) 100%);
+
+    @media (min-width: $breakpoint-md) {
+      background: linear-gradient(90deg, $rainforest-900 0%, rgba(0, 47, 51, 0) 100%);
+      width: 80%;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &--large {
+    .SponsorBanner-image {
+      height: 8rem;
+
+      @media (min-width: $breakpoint-md) {
+        width: 35%;
+        height: auto;
+      }
+    }
+
+    .SponsorBanner-content {
+      @media (min-width: $breakpoint-md) {
+        width: 65%;
+      }
+    }
+  }
+
+  &--reverse {
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row-reverse;
+    }
+
+    .SponsorBanner-content {
+      background: linear-gradient(180deg, $rainforest-900 0%, rgba(0, 47, 51, 0) 100%);
+
+      @media (min-width: $breakpoint-md) {
+        background: linear-gradient(270deg, $rainforest-900 0%, rgba(0, 47, 51, 0) 100%);
+      }
+    }
+  }
+}

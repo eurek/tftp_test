@@ -1,0 +1,140 @@
+<% content_for :extra_body_classes, "innovations-show--#{innovation_tag_and_color(@innovation)[:color]}" %>
+
+<%= render partial: "shared/back_nav", locals: {
+  path: @back_button_link,
+  anchor: raw(t('innovations.show.back')),
+  modifier: @innovation.status == "star" ? "lagoonText" : "blackTextHoverRainforest"
+} %>
+
+<section class="InnovationHeader">
+  <div class="container">
+    <div class="InnovationHeader-grid">
+      <div class="InnovationCard InnovationCard--fullImage InnovationCard--<%= innovation_tag_and_color(@innovation)[:color] %>">
+        <% unless @innovation.received_status? %>
+          <span class="InnovationCard-tag">
+            <%= innovation_tag_and_color(@innovation)[:tag] %>
+          </span>
+        <% end %>
+        <div class="InnovationCard-image"
+             style="background-image: url(<%= @innovation.picture_with_fallback([540, 540]) %>);">
+        </div>
+        <% if @innovation.star_status? %>
+          <div class="InnovationCard-whiteBackground">
+          </div>
+        <% end %>
+      </div>
+
+      <div class="InnovationHeader-presentation" data-controller="tooltip" data-tooltip-max-width-value="700">
+        <h1 class="Base-title Base-title--3">
+          <%= @innovation.name %>
+        </h1>
+        <% if should_display_rating?(@innovation) %>
+          <%= render "star_scale", rating: @innovation.rating %>
+          <i class="material-icons InnovationHeader-scaleHelp"
+             data-template="stare-scale-explanation"
+             data-tooltip-target="trigger">
+            help_outline
+          </i>
+          <div class="ShareholderAssetTooltip" id="stare-scale-explanation" data-tooltip-target="source">
+            <p><%= raw t("innovations.show.rating_explanation") %></p>
+            <ul>
+              <% t("innovations.show.rating_points").each do |point| %>
+                <li><%= point %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div>
+            <%= @innovation.evaluations_amount %>
+          </div>
+        <% end %>
+        <p class="InnovationHeader-status">
+          <strong><%= raw(t("innovations.statuses.#{@innovation.status}.title")) %> :</strong>
+          <%= raw(t(
+            "innovations.statuses.#{@innovation.status}.description",
+            href: innovation_status_link(@innovation.status)
+          )) %>
+        </p>
+        <p class="InnovationHeader-shortDescription Base-subtitle Base-subtitle--verySmall">
+          <%= @innovation.short_description %>
+        </p>
+      </div>
+      <div class="InnovationHeader-actionCategories">
+        <% if @innovation.action_lever.present? %>
+          <span class="InnovationHeader-subtitle">
+            <%= t("innovations.show.action_lever") %>
+          </span>
+          <div class="InnovationHeader-actionCategory">
+            <%= image_tag @innovation.action_lever.icon, class: "InnovationHeader-icon" %>
+            <span class="Base-title Base-title--5"><%= @innovation.action_lever.name %></span>
+          </div>
+        <% end %>
+        <% if @innovation.action_domain.present? %>
+          <span class="InnovationHeader-subtitle">
+            <%= t("innovations.show.action_domain") %>
+          </span>
+          <div class="InnovationHeader-actionCategory">
+            <%= image_tag @innovation.action_domain.icon, class: "InnovationHeader-icon" %>
+            <span class="Base-title Base-title--5"><%= @innovation.action_domain.name %></span>
+          </div>
+        <% end %>
+        <%= link_to problems_path, class: "Button Button--underlined" do %>
+          <%= t("innovations.show.action_link") %>
+          <i class="material-icons">arrow_forward</i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="InnovationContent container">
+  <div class="InnovationContent-grid">
+    <div class="InnovationContent-gridItem">
+      <% if @innovation.submitted_at.present? %>
+        <span class="InnovationContent-subtitle">
+          <%= raw(t('activerecord.attributes.innovation.submitted_at')) %>
+        </span>
+        <span class="InnovationContent-summaryInfo">
+          <%= I18n.l(@innovation.submitted_at, format: :long) %>
+        </span>
+      <% end %>
+
+      <% if @innovation.founders.present? %>
+        <span class="InnovationContent-subtitle">
+          <%= raw(t('activerecord.attributes.innovation.founders')) %>
+        </span>
+        <% @innovation.founders.each do |founder| %>
+          <span class="InnovationContent-summaryInfo">
+            <%= founder %>
+          </span>
+        <% end %>
+      <% end %>
+
+      <% if @innovation.city.present? || @innovation.country.present?%>
+        <span class="InnovationContent-subtitle">
+          <%= raw(t("innovations.show.place")) %>
+        </span>
+          <span class="InnovationContent-summaryInfo">
+            <%= @innovation.place %>
+          </span>
+      <% end %>
+    </div>
+    <div class="InnovationContent-gridItem">
+      <h2>
+        <%= raw(t("innovations.show.details.title")) %>
+      </h2>
+      <span class="InnovationContent-disclaimer">
+        <%= raw(t("innovations.show.details.disclaimer")) %>
+      </span>
+      <% %w[problem_solved solution_explained potential_clients differentiating_elements].each do |details_attribute| %>
+        <% if @innovation.send(details_attribute).present? %>
+          <h3 class="InnovationContent-subtitle">
+            <%= raw(t("innovations.show.details.#{details_attribute}")) %>
+          </h3>
+          <p>
+            <%= @innovation.send(details_attribute) %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

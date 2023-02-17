@@ -1,0 +1,12 @@
+<%= form_tag admin_search_path, method: :get, class: "global-search" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "input-text",
+    placeholder: "Global search"
+  %>
+  <%= submit_tag "Find", class: "submit-button" %>
+<% end %>
+
+<br>
+
+<%= render "result" %>

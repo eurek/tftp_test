@@ -1,0 +1,25 @@
+<% cta = nil if local_assigns[:cta].nil? %>
+
+<section class="Section Section--morePadding ClimateDividends ClimateDividends--<%= color %>" id="climate-dividends">
+  <div class="container">
+    <h2 class="Base-title Base-title--3"><%= title %></h2>
+    <div class="ClimateDividends-content">
+      <div class="ClimateDividends-definition">
+        <span class="ClimateDividends-number ClimateDividends-number--withGradient">1</span>
+        <%= image_tag "climate-dividends-logo.svg", class: "ClimateDividends-logo" %>
+        <span class="ClimateDividends-number">=</span>
+        <span class="ClimateDividends-number ClimateDividends-number--withGradient">1</span>
+        <span class="ClimateDividends-equivalent">
+          <%= raw t( "become_shareholder.climate_dividends.co2_equivalent") %>
+        </span>
+      </div>
+      <div class="ClimateDividends-description">
+        <div class="ClimateDividends-text"><%= description %></div>
+        <p class="Base-title Base-title--5 ClimateDividends-summary">
+          <%= highlighted_description %>
+        </p>
+        <%= cta unless cta.nil? %>
+      </div>
+    </div>
+  </div>
+</section>

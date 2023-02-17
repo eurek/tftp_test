@@ -1,0 +1,28 @@
+<% class_name = '' if local_assigns[:class_name].nil? %>
+
+<div class="LanguageSwitcher"
+     data-controller="language-switcher"
+     data-action="click@window->language-switcher#hide keydown@window->language-switcher#escapeHide">
+  <button class="LanguageSwitcher-toggle  <%= class_name %>"
+          data-action="language-switcher#togglePopup">
+    <img class="LanguageSwitcher-flag"
+         alt="<%= t('common.language') %>"
+         src="https://img.icons8.com/color/48/000000/<%= t('common.flag') %>-circular.png"/>
+    <%= params[:locale] %>
+    <i class="material-icons">expand_more</i>
+  </button>
+  <div class="LanguageSwitcher-popup hidden" data-language-switcher-target="popup">
+    <% [:fr, :en, :it, :es, :de, :pl].each do |locale| %>
+      <% I18n.with_locale(locale) do %>
+        <% next if (@url_params&.call || {})[:allow_locale] == false || t("common.language", fallback: false, default: "").blank? %>
+        <a href="<%= url_for({locale: locale.to_s}.merge(@url_params&.call&.except(:allow_locale) || {}), ) %>"
+           class="LanguageSwitcher-language Button">
+          <img class="LanguageSwitcher-flag"
+               alt="<%= t('common.language', locale: locale) %>"
+               src="https://img.icons8.com/color/48/000000/<%= t('common.flag', locale: locale) %>-circular.png"/>
+          <%= t('common.language', locale: locale) %>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+</div>

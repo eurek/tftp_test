@@ -1,0 +1,41 @@
+.ArrowPointsSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+
+  &-title {
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-md) {
+      width: 48%;
+      margin-right: 8rem;
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 2rem;
+  }
+
+  &-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-family: $headers-font;
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+
+      .material-icons {
+        margin-right: 1rem;
+        font-size: 2rem;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.shares_purchases-index {
+  .InvestmentCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem 0 3rem 0;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+
+    &-card {
+      background-color: $grey-900;
+      width: 100%;
+      padding: 1rem;
+      color: $lagoon-200;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: $breakpoint-md) {
+        width: 48%;
+        padding: 2rem;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      &:first-child {
+        margin-bottom: 2rem;
+
+        @media (min-width: $breakpoint-md) {
+          margin-bottom: 0;
+        }
+      }
+
+      .Button--box {
+        margin-top: 2rem;
+      }
+    }
+
+    .Base-title {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .Button--fullWidth {
+    margin-top: 4rem;
+  }
+
+  .PrivateSpace-summaryContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @media (min-width: $breakpoint-lg) {
+      text-align: right;
+      padding: 0 0 5rem 3rem;
+    }
+
+    .Button--box {
+      margin-bottom: 6rem;
+    }
+  }
+}

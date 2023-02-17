@@ -1,0 +1,14 @@
+ <% if shareholder&.first_name.present? %>
+  <div class="CommunitySection-shareholderName Base-title Base-title--5">
+    <%= shareholder.full_name %>
+  </div>
+<% end %>
+<div class="CommunitySection-shareholderDescription">
+  <p><%= shareholder.current_job if shareholder&.current_job.present? && I18n.locale == :fr %></p>
+  <% if shareholder&.shareholder_since.present? %>
+    <p><%= raw(t('home.community.member_since', time: distance_of_time_in_words(
+      Time.now,
+      shareholder&.shareholder_since, { :highest_measure_only => true }))) %>
+    </p>
+  <% end %>
+</div>

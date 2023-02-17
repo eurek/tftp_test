@@ -1,0 +1,184 @@
+---
+fr:
+  home:
+    meta:
+      title: "L'entrepreneuriat au service de l'urgence climatique."
+      description: "Nous sommes une société à but non lucratif qui crée et finance des entreprises luttant à l’échelle mondiale contre le dérèglement climatique. Rejoignez-nous !"
+    temporary_ad:
+      text: "Time for the Planet<span class='brand'>®</span> en ce moment à la TV !"
+      cta: "Voir les vidéos"
+    statistics:
+      title: "En %{time},"
+      data:
+        shares_purchases: "rassemblés*"
+        shareholders: "actionnaires"
+        innovation_assessors: "évaluateur·ices d'innovations"
+        innovations_assessed: "innovations évaluées"
+        funded_innovations: "innovations financées"
+    book:
+      title: "Découvrez <em>le livre manifeste.</em>"
+      description: "Pour comprendre l'origine du projet, les valeurs qui le portent et la méthode envisagée
+        pour tabasser ces foutus gaz à effet de serre !"
+      cta: "Je commande le livre"
+    hero:
+      pretitle: "Nous, citoyens du monde entier, ne sommes pas résignés face au changement climatique."
+      title:
+        part_1: "Nous sommes des millions,<br>et nous avons <em>le pouvoir d’agir.</em>"
+        part_2: "Il est temps de s’en servir."
+      cta: "OK, mais comment ?"
+      switch_persona: "Aller à la page entreprise"
+    community:
+      title: "Aujourd’hui nous sommes <em>%{count}.</em><br>Demain, avec vous, nous pouvons être des millions."
+      subtitle: "Rejoignez la plus grande <em>communauté citoyenne</em> dédiée à
+        l’<em>action mondiale</em> contre les gaz à effet de serre."
+      member_since: "Membre depuis %{time}"
+      you: "Vous ?"
+    mission:
+      title: "Time for the Planet<span class='brand'>®</span> rassemble de l’argent<br>pour détecter et déployer 
+      <em>100 innovations mondiales</em><br>contre les <em>gaz à effet de serre.</em>"
+      video: "Tout comprendre<br> en 2 minutes"
+      video_youtube_id: DZnWYPM8dzg
+      modal_explanation: "Fenêtre contenant la vidéo descriptive de Time for the Planet<span class='brand'>®</span>"
+    funded_innovations:
+      title: "Quelques innovations <em>déjà financées et déployées</em> par Time for the Planet"
+      potentiel: "Potentiel :"
+    steps:
+      title: "Vous pouvez <em>faire la différence.</em>"
+      step_1:
+        title: "Devenez associé·e de Time for the Planet"
+        price: "<b>1 action coûte 1 euro</b> et vous pouvez en acheter autant que vous le souhaiter."
+        time: "<b>5 minutes suffisent.</b> Achetez vos actions directement sur ce site à l’aide de votre carte bleue."
+      step_2:
+        title: "Votre argent finance des innovations à impact massif"
+        funding: "Au minimum 90% de votre argent finance des innovations ayant <b>un impact mondial et massif contre
+          les émissions de gaz à effet de serre.</b>"
+        costs: "Au maximum 10% sert au frais de fonctionnement (frais juridiques, salaires, développements web...)."
+        public: "<b>Nos comptes sont publics.</b>"
+        cta: "Consultez les comptes."
+      step_3:
+        title: "Ça rapporte... Uniquement à la planète !"
+        future: "Nous verserons des dividendes aux actionnaires uniquement le jour où nous aurons réaliser
+          notre mission : régler le problème du réchauffement climatique. En clair c'est pas toute suite !"
+        climate_dividends: "Vous recevrez en revanche un suivi précis de <b>la quantité de gaz à effet de serre
+          non émis ou stockés</b> grâce à votre investissement."
+    future_fundings:
+      title: "Quelques exemples des prochaines innovations <em>que nous pourrions financer.</em>"
+      subtitle: "Nous n'y arriverons pas sans votre aide."
+      warning: "Cloture des financements pour ces innovations dans %{time}."
+      already_raised: "déja récoltés"
+      goal: "Sur <em>%{amount}</em>"
+      time_left: "Plus que %{time} pour atteindre cet objectif"
+    personas:
+      title: "Ce mouvement <em>est le vôtre.</em>"
+      superpower: "Votre superpouvoir :"
+      citizen:
+        title: "Vous êtes un·e citoyen·ne, une association ou une collectivité"
+        power: "Un mouvement gigantesque"
+        description: "<p>Tous ensemble, vous formez un mouvement d’une puissance sans limite.</p>
+          <p>Que vous ayez beaucoup d’argent à investir ou une toute petite somme, rejoignez-vous. Plus nous serons
+          nombreux, plus nous pourrons convaincre de gros investisseurs.</p>
+          <p>Et il vous suffit de 5 minutes pour activer ce super pouvoir.</p>"
+        cta: "Je rejoins le mouvement"
+      company:
+        title: "Vous êtes une entreprise"
+        power: "Les moyens d'agir à très grande échelle"
+        description: "<p>Votre entreprise peut devenir actionnaire de Time for the Planet, et ainsi s’engager dans
+          la lutte sans merci contre le changement climatique.</p>
+          <p>En tant qu’entreprise, vous avez la possibilité d’investir des montants souvent plus élevés que
+          les citoyens et ainsi d’amplifier considérablement notre action.</p>"
+        cta: "Mon entreprise s’engage"
+      innovator:
+        title: "Vous êtes un·e innovateur·ice"
+        power: "Une créativité à toute épreuve"
+        description: "<p>Vous avez développé une innovation permettant de lutter à grande échelle contre les
+          émissions de gaz à effet de serre ?</p>
+          <p>Postulez pour que votre innovation soit étudiée puis déployée et financée par Time for the Planet.</p>"
+        cta: "Je soumets une innovation"
+    open_source:
+      paragraph1: "Le temps n’est plus à la concurrence mais à la coopération."
+      paragraph2: "Toutes les innovations financées sont disponibles en open source."
+      paragraph3: "Ainsi, ces innovations se diffusent encore plus largement, et sont disponibles pour toute l’humanité."
+    fundamentals:
+      title: "Nos fondamentaux"
+      non_profit:
+        title: "Non lucrativité"
+        description: "<p>Investir chez Time for the Planet, ça rapporte... à la planète ! Vous ne toucherez pas de
+          dividendes sur vos actions, mais des dividendes climat, qui comptabilisent le nombre de tonne de gaz à
+          effet de serre non émis ou séquestrés grâce à votre investissement.</p>"
+      open_source:
+        title: "Open source"
+        description: "<p>Le temps n’est plus à la compétition mais à la coopération. Toutes les innovations financées
+          par Time for the Planet disposent de license Open source, afin de diffuser largement des solutions
+          précieuses pour lutter contre le dérèglement climatique.</p>"
+      collective_intelligence:
+        title: "Intelligence collective"
+        description: "<p>Nous croyons à l’utilité de chacun·e dans notre mission. Les décisions importantes,
+          comme le choix des innovations à financer se font lors de l’assemblée générale avec tous les
+          actionnaires. Notre Galaxie de l’Action permet à chacun d’apporter, s’il ou elle le souhaite
+          un coup de main, en plus de sa participation financière.</p>"
+      transparency:
+        title: "Transparence"
+        description: "<p>De par nos engagements, nous nous considérons comme redevables auprès de toutes et tous.
+          Les salaires des dirigeant·es sont plafonnés et les comptes de Time for the Planet sont
+          <a href='https://time-planet.com/fr/tout-savoir/documents-legaux/comptes-annuels' target='_blank'>
+          libres d’accès.</a></p><p>NB : Les salaires des salarié·es ne peuvent pas être diffusés s'ils ne
+          le souhaitent pas.</p>"
+      science:
+        title : "La science comme guide"
+        description: "<p>Ici, pas de débat, juste du pragmatisme. Nous suivons les recommandations du GIEC, pour qui
+          le développement d’innovations réduisant les émissions de gaz à effet de serre est indispensable
+          pour éviter les scénarios les plus catastrophiques. Les innovations financées sont évaluées
+          d’abord par des évaluateur·ices citoyen·nes, puis par notre conseil scientifique formé de
+          chercheur•euses et expert·es du climat.</p>"
+      action:
+        title: "L’action"
+        description: "<p>Nous nous sommes regroupés en réaction au sentiment d'impuissance face au problème du
+          dérèglement climatique. Le mot d'ordre pour faire bouger les choses a alors été : <q>action</q>.
+          Chez Time for the Planet, on a fait le choix de se concentrer sur le <q>faire</q> plutôt que sur le
+          <q>dire</q>, considérant qu'il existe déjà suffisamment de personnes et d'organisations dans cette
+          seconde catégorie.</p>"
+    faq:
+      title: "Des questions ?"
+      who:
+        question: "Vous acceptez qui comme actionnaire ?"
+        answer: "On accepte tous les individus à partir de 18 ans, ainsi que les entreprises, les associations,
+          les collectivités et les fonds d'investissement."
+      technology:
+        question: "Est-ce que vous pensez que la technologie va sauver le monde ?"
+        answer: "La réponse courte ? Non. En tout cas pas toute seule. Il faudra des décisions politiques courageuses,
+          un changement drastique de nos comportements et des actions rapides. Mais la technologie devra,
+          quoi qu'il arrive, tenir un rôle pour éviter la catastrophe environnementale. Et c'est à nous,
+          citoyen·nes, de nous assurer qu'elle le fera. On vous invite à lire <a
+          href='https://time-planet.com/fr/tout-savoir/strategie-gouvernance/chez-time-for-the-planet-croit-on-que-la-technologie'
+           target='_blank'>notre article</a> sur cette question."
+      criteria:
+        question: "Quels sont vos critères pour sélectionner les innovations ?"
+        answer: "Nous sommes à la recherche d'innovations ayant un impact mondial important sur la réduction des
+        gaz à effet de serre, qu'elles soient low-tech, high-tech ou no-tech. <a
+        href='https://time-planet.com/fr/tout-savoir/strategie-gouvernance/comment-selectionne-t-on-les-innovations-'
+        target='_blank'>En savoir plus sur le processus de sélection des innovations.</a>"
+      open_source:
+        question: "L’open source, ça fonctionne comment ?"
+        answer: "Ce que nous entendons par open source, c'est le fait de mettre à disposition de tiers l'ensemble
+          des éléments permettant de copier, utiliser et commercialiser les innovations produites par nos entreprises.
+          Le principe de Time for the Planet est de créer des entreprises qui doivent être suffisamment viables
+          économiquement pour pouvoir se développer, avoir un impact sur le changement climatique, et susciter la
+          création de nombreuses autres entreprises basées sur l'innovation apportée. <a
+          href='https://time-planet.com/fr/tout-savoir/strategie-gouvernance/comment-nous-allons-utiliser-lopen-source-pour-lutter'
+          target='_blank'>En savoir plus.</a>"
+    global_cta:
+      become_associate: "Je deviens associé·e"
+      innovations: "Voir toutes les innovations"
+      funded_innovations: "Voir toutes les innovations financées"
+    press:
+      title: "Ils parlent de nous"
+    episodes:
+      title: "Précédement dans <em>TFTP ...</em>"
+      cta_one_episode: "Voir l'épisode"
+      cta_all_episodes: "Voir tous les épisodes"
+    counter_section:
+      title: "Et <em>ça marche !</em> Les innovations financées par Time for the Planet<span class='brand'>®</span> 
+        commencent à tabasser les gaz à effet de serre !"
+      cta: "Voir le détail de l'impact"
+    cta_section:
+      text: "Avec vous, nous pouvons  aller encore plus loin !"

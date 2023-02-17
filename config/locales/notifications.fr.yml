@@ -1,0 +1,26 @@
+---
+fr:
+  notifications:
+    live:
+      title: "En direct de Time"
+      subtitle: "Time for the Planet<span class='brand'>®</span> c’est avant tout une communauté vivante ! 
+        Toutes les actions menées par celle-ci sont visible en direct sur cette page."
+      icones_alt: "Icone pour la catégorie"
+      statistics:
+        title: "La levée de fond"
+        total: "Total"
+        today: "Aujourd'hui"
+        current_week: "Cette semaine"
+        current_month: "Ce mois-ci"
+        today_variation: "par rapport à hier"
+        week_variation: "par rapport à la semaine dernière"
+        month_variation: "par rapport au mois dernier"
+      next_page: "Charger plus d’actions"
+      messages:
+        event: "a commencé"
+        innovation: "a été évalué"
+        individual: "vient de devenir actionnaire de Time for the Planet<span class='brand'>®</span>"
+      cta:
+        event: "Voir tous les événements"
+        innovation: "Voir toutes les innovations"
+        individual: "Voir tous les actionnaires"

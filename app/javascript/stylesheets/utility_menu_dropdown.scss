@@ -1,0 +1,32 @@
+#header {
+
+  ul#utility_nav.tabs {
+
+    li {
+      /* Hover on li, display the ul */
+      &:hover > ul { display: block;}
+    }
+
+    & > li {
+      position: relative;
+
+      a {
+        padding: 0 1rem;
+      }
+
+      /* Drop down menus */
+      ul {
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        @include box-shadow($box-shadow);
+        padding: 0 1rem 1rem 1rem;
+        display: none;
+
+        li {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+---
+fr:
+  events:
+    index:
+      title: "Évènements"
+      incoming: "Évènements à venir"
+      passed: "Évènements passés"
+      cta: "Découvrir l'évènement"
+      language: "Langue :"
+      filters:
+        language: "Langue"
+        category: "Type d'évènement"
+    show:
+      event_language: "Cet évènement est en %{language}."
+      when: "Quand ?"
+      where: "Où ?"
+      registration: "Billeterie / Inscription"
+      description: "Description"
+      back: "Revenir aux évènements"

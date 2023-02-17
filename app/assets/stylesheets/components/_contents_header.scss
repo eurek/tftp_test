@@ -1,0 +1,40 @@
+.ContentsHeader {
+  color: $white;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  background: linear-gradient(90deg, #000000 10.5%, #181A1B 63.53%);
+
+  &-title {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      margin: 1rem;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  &-icone {
+    width: 4rem;
+    height: auto;
+
+    @media (min-width: $breakpoint-lg) {
+      height: 5rem;
+    }
+  }
+
+  &-description {
+    font-size: 1rem;
+    font-weight: 800;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.5rem;
+      max-width: 740px;
+    }
+  }
+}

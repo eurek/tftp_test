@@ -1,0 +1,21 @@
+.RelatedContents {
+  background-color: $lagoon-200;
+  padding: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 2rem;
+  }
+
+  &-title {
+    font-weight: bold;
+    color: $grey-900;
+    font-size: 1rem;
+  }
+
+  li a {
+    color: $rainforest-600;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+}

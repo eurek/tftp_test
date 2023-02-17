@@ -1,0 +1,20 @@
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<%= render partial: "shared/secondary_navbar", locals: {
+  color: "darkRainforest",
+  title: raw(t("shareholder.index.title")),
+  links: [
+    { anchor: raw(t("shareholder.secondary_navbar.list_view")), url: shareholders_path },
+    { anchor: raw(t("shareholder.secondary_navbar.map_view")), url: shareholders_map_path }
+    ],
+  cta: {
+    anchor: t("common.become_shareholder.cta"),
+    url: buy_shares_choice_path,
+    target: "_self"
+  }
+} %>
+
+<div id="map" data-controller="map"
+     style="width: 100%; height: 600px;"
+     data-map-markers-value="<%= @markers.to_json %>"
+     data-map-api-key-value="<%= Rails.application.credentials[:mapbox_api_key] %>"></div>

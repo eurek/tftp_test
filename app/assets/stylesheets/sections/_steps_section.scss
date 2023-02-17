@@ -1,0 +1,119 @@
+.StepsSection {
+  background: linear-gradient(143.81deg, $grey-800 36.37%, $black 99.17%);
+  color: $white;
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-step {
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+    margin-left: 1rem;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 27%;
+      margin-left: 0;
+    }
+
+    p {
+      color: $grey-300;
+    }
+
+    b {
+      color: $white;
+    }
+
+    .Button--box {
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    &--revealed {
+      .StepsSection-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .StepsSection-number {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &--hidden {
+
+      .StepsSection-content {
+        opacity: 0;
+        transform: translateY(1.5rem);
+      }
+
+      .StepsSection-number {
+        opacity: 0;
+        transform: translateY(1.5rem);
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s 0.3s ease-out;
+  }
+
+  &-link {
+    text-transform: none;
+    text-decoration: underline;
+    font-family: $body-font;
+
+    &:hover {
+      color: $lagoon-500;
+    }
+  }
+
+  &-number {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    z-index: 1;
+    transition: all 0.8s ease-out;
+    font-size: 6rem;
+    font-family: $headers-font;
+    font-weight: bold;
+    background-image: linear-gradient(180deg, $rainforest-400 0%, $rainforest-900 90%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 8rem;
+      top: -3rem;
+      left: -2rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      top: -4rem;
+      font-size: 12rem;
+    }
+  }
+
+  &--companies {
+
+    .Button--purpleBox {
+      margin-bottom: 3rem;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .StepsSection-number {
+      background-image: linear-gradient(180deg, $purple-700 0%, $grey-900 100%);
+    }
+  }
+}

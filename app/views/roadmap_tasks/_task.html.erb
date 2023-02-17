@@ -1,0 +1,21 @@
+<li class="Task Task--<%= task_color(task) %>"
+    data-href="<%= roadmap_task_path(task) %>"
+    data-action="click->roadmap#selectTask">
+  <% if task.done_at.present? || task.status_done? %>
+    <div class="Task-check Task-check--done">
+      <i class="Banner-listItem--done material-icons">done</i>
+    </div>
+  <% else %>
+    <div class="Task-check"></div>
+  <% end %>
+  <div class="Task-body">
+    <div>
+      <h3 class="Task-title Base-subtitle--verySmall"><%= raw(task.title) %></h3>
+      <div class="Task-status"><%= status_display(task) %></div>
+    </div>
+    <div class="Tag Tag--<%= task_color(task) %> Task-category">
+      <%= human_enum_name(task, :category) %>
+    </div>
+  </div>
+  <i class="Task-arrow material-icons seeDetails">keyboard_arrow_right</i>
+</li>

@@ -1,0 +1,20 @@
+<div class="Modal" id="<%= modal_id %>" aria-hidden="true">
+  <div class="Modal-overlay" tabindex="-1" data-micromodal-close="true">
+    <div role="dialog"
+         aria-modal="true"
+         aria-labelledby="<%= modal_id %>"
+         aria-describedby="<%= description %>"
+         class="Modal-container">
+      <button type="button"
+              class="Modal-close Button"
+              autofocus="false"
+              data-micromodal-close="true"
+              aria-label=<%= raw(t("common.close")).upcase %>>
+        <span aria-hidden="true" data-micromodal-close="true" class="Button">
+          <%= raw(t("common.close")).upcase %> <i class="material-icons" data-micromodal-close="true">closes</i>
+        </span>
+      </button>
+      <%= yield %>
+    </div>
+  </div>
+</div>

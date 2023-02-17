@@ -1,0 +1,71 @@
+{
+  "api_version": "0.4",
+  "results": {
+    "companies": [{
+      "company": {
+        "name": "FRANCE TELEVISION PUBLICITE CONSEIL",
+        "company_number": "382258622",
+        "jurisdiction_code": "fr",
+        "incorporation_date": "1991-06-17",
+        "dissolution_date": null,
+        "company_type": "SAS, société par actions simplifiée",
+        "registry_url": null,
+        "branch": null,
+        "branch_status": null,
+        "inactive": false,
+        "current_status": "Actif",
+        "created_at": "2017-01-30T23:18:13+00:00",
+        "updated_at": "2020-09-14T15:08:58+00:00",
+        "retrieved_at": "2020-09-01T03:58:59+00:00",
+        "opencorporates_url": "https://opencorporates.com/companies/fr/382258622",
+        "previous_names": [],
+        "source": {
+          "publisher": "Institut National de la Statistique et des Études Économiques (INSEE)",
+          "url": "https://www.sirene.fr",
+          "retrieved_at": "2020-09-01T03:58:59+00:00",
+          "terms": "French Open Government Licence \"Licence ouverte / Open Licence\"",
+          "terms_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        },
+        "registered_address": {
+          "street_address": "64 A 70 64 AVENUE J B CLEMENT",
+          "locality": "BOULOGNE-BILLANCOURT",
+          "region": "HAUTS-DE-SEINE",
+          "postal_code": "92100",
+          "country": "FRANCE"
+        },
+        "registered_address_in_full": "64 A 70 64 AVENUE J B CLEMENT, BOULOGNE-BILLANCOURT, HAUTS-DE-SEINE, 92100",
+        "industry_codes": [{
+          "industry_code": {
+            "code": "59.11B",
+            "description": "Production de films institutionnels et publicitaires",
+            "code_scheme_id": "fr_naf_2008",
+            "code_scheme_name": "Nomenclature d'activités française (2008)",
+            "uid": "fr_naf_2008-5911B"
+          }
+        }, {
+          "industry_code": {
+            "code": "59.11",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "eu_nace_2",
+            "code_scheme_name": "European Community NACE Rev 2",
+            "uid": "eu_nace_2-5911"
+          }
+        }, {
+          "industry_code": {
+            "code": "5911",
+            "description": "Motion picture, video and television programme production activities",
+            "code_scheme_id": "isic_4",
+            "code_scheme_name": "UN ISIC Rev 4",
+            "uid": "isic_4-5911"
+          }
+        }],
+        "restricted_for_marketing": null,
+        "native_company_number": null
+      }
+    }],
+    "page": 1,
+    "per_page": 20,
+    "total_pages": 1,
+    "total_count": 1
+  }
+}

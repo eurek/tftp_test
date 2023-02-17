@@ -1,0 +1,7 @@
+<% content_for :title_white, t('private_space.edit_company.title.part1') %>
+<% content_for :title_blue, t('private_space.edit_company.title.part2') %>
+<% content_for :back_link_path, resolve_edit_company_back_link_path(params[:from_companies_index], @shares_purchase_id, @previous_search) %>
+<% content_for :back_link_anchor, resolve_edit_company_back_link_anchor(params[:from_companies_index]) %>
+<% content_for :back_link_private_space, true %>
+
+<%= render "form", company: @company, path: update_company_path %>

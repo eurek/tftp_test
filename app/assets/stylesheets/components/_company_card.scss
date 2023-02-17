@@ -1,0 +1,43 @@
+.CompanyCard {
+  background-color: $rainforest-600;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-transform: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $white;
+  align-items: flex-start;
+
+  &:hover, &:focus {
+    background-color: $rainforest-400;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &-title {
+    font-family: $body-font;
+    font-size: 1.125rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: $white;
+
+    @media (min-width: $breakpoint-md) {
+      margin-right: 1rem;
+    }
+  }
+
+  &-address {
+    margin: 0;
+    color: $lagoon-200;
+  }
+
+  &-link {
+    @media (min-width: $breakpoint-md) {
+      flex-shrink: 0;
+    }
+  }
+}

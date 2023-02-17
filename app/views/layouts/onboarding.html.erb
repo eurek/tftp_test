@@ -1,0 +1,31 @@
+<section class="Onboarding">
+  <%= embedded_svg 'logo-time-planet.svg', class: "Onboarding-logo", alt: "Time for the Planet Logo" %>
+
+  <div class="Onboarding-leftBloc">
+    <div class="Onboarding-header <%= "Onboarding-header--right" unless yield(:back_link_anchor).present? && yield(:back_link_path).present? %>">
+      <% if yield(:back_link_anchor).present? && yield(:back_link_path).present? %>
+        <%= link_to yield(:back_link_path), class: "Onboarding-backlink" do %>
+          <i class="material-icons">
+            arrow_back
+          </i>
+          <%= yield(:back_link_anchor) %>
+        <% end %>
+      <% end %>
+      <%= render "shared/language_switcher" %>
+    </div>
+
+    <div class="Onboarding-content">
+      <h1 class="Onboarding-title">
+        <%= yield(:title_white) %>
+        <span class="Onboarding-title--lagoon"> <%= yield(:title_blue) %></span>
+      </h1>
+      <%= yield %>
+    </div>
+
+  </div>
+
+  <div class="Onboarding-video">
+  </div>
+</section>
+
+<% parent_layout "application" %>

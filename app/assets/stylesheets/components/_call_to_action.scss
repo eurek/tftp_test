@@ -1,0 +1,46 @@
+.CallToAction {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $rainforest-900;
+  color: $white;
+  padding: 1rem 0.75rem;
+
+  .Button {
+    color: $white;
+
+    &:hover {
+      color: $lagoon-500;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    margin: 0 1.25rem 0 0;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 2rem 1.5rem;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 7rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 3.75rem 2.25rem;
+  }
+}

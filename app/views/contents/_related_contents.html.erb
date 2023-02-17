@@ -1,0 +1,10 @@
+<div class="RelatedContents">
+  <span class="RelatedContents-title">
+    <%= raw(t("contents.show.related", tag_name: @content.category.name)) %>
+  </span>
+  <ul>
+    <% related_contents.each do |content| %>
+      <li><%= link_to raw(content.title), custom_content_path(content) %></li>
+    <% end %>
+  </ul>
+</div>

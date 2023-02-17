@@ -1,0 +1,131 @@
+<% content_for :page_js_controller, "episodes" %>
+
+<section class="Section Section--grey800">
+  <div class="container">
+    <div class="Header">
+      <%= image_tag "icones/episodes.svg", class: "Header-icon" %>
+      <div class="Header-content">
+        <p class="Base-title Base-title--2 Header-title"><%= raw t('episodes.index.title') %></p>
+        <p class="Base-subtitle Base-subtitle--xxs Header-subtitle"><%= raw t('episodes.index.subtitle') %></p>
+      </div>
+    </div>
+
+    <div class="EpisodesList">
+      <div class="EpisodesList-arrow EpisodesList-arrow--back EpisodesList-arrow--hidden" data-episodes-target="backArrow" data-action="click->episodes#scrollBack">
+        <i class="material-icons">
+          arrow_back_ios
+        </i>
+      </div>
+
+      <div class="EpisodesList-arrow EpisodesList-arrow--forward" data-episodes-target="forwardArrow" data-action="click->episodes#scrollForward">
+        <i class="material-icons">
+          arrow_forward_ios
+        </i>
+      </div>
+
+      <div class="EpisodesList-container" data-episodes-target="episodesListContainer"
+           data-action="scroll->episodes#toggleArrows">
+        <% @episodes.each_with_index do |episode, index| %>
+          <%= link_to episode_path(episode),
+                      class: "EpisodeCard #{"EpisodeCard--showing" if episode == @episode}",
+                      id: index,
+                      data: { action: "click->episodes#switchEpisode", "episodes-target": "episodeCard" } do %>
+            <div class="EpisodeCard-row">
+              <p class="Base-title Base-title--5">
+            <span class="EpisodeCard-season">
+              <%= raw(t('episodes.season_number', number: episode.season_number)) %><br>
+            </span>
+                <span class="EpisodeCard-number">
+              <%= raw(t('episodes.number', number: episode.number)) %>
+            </span>
+              </p>
+              <span class="EpisodeCard-button">Voir</span>
+            </div>
+
+            <p class="EpisodeCard-date">
+              <%= episode.decorate.duration %>
+            </p>
+            <% if episode.current? %>
+              <div class="EpisodeCard-currentTag">
+                En cours
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="episode-show" data-episodes-target="episodeContainer">
+  <div class="EpisodeHero">
+    <div class="container EpisodeHero-container" style="background-image: url(<%= image_path @episode.cover_image_with_fallback([1200, 1200]) %>);">
+      <div class="EpisodeHero-overlay"></div>
+
+      <div class="EpisodeHero-content">
+        <div class="EpisodeHero-tag">
+          <%= @episode.time_status %>
+        </div>
+        <h1>
+          <span class="Base-title Base-title--3 EpisodeHero-season">
+            <%= raw(t('episodes.season_number', number: @episode.season_number)) %><br>
+          </span>
+            <span class="Base-title Base-title--3 EpisodeHero-number">
+            <%= raw(t('episodes.number', number: @episode.number)) %>
+          </span>
+            <span class="EpisodeHero-title Base-subtitle Base-subtitle--smaller">
+            <%= @episode.title %>
+          </span>
+        </h1>
+        <p class="EpisodeHero-date Base-subtitle Base-subtitle--smaller">
+          <%= @episode.duration %>
+        </p>
+        <p class="EpisodeHero-description"><%= sanitize @episode.description %></p>
+
+        <% if @episode.current? %>
+          <div class="EpisodeHero-stats">
+            <%= render partial: "shared/fundraising_stats", locals: { current_episode: @current_episode, total_raised: @total_raised } %>
+
+            <%= link_to raw(t('home.global_cta.become_associate')),
+                        buy_shares_choice_path,
+                        class: "Button Button--box FutureFundingSection-cta" %>
+          </div>
+        <% else %>
+          <div class="EpisodeHero-stats EpisodeHero-stats--finished">
+            <div class="EpisodeHero-fundedInnovations">
+              <span class="EpisodeHero-gradientNumber"><%= @total_funded_innovations %></span>
+              <span>
+                <%= raw t('episodes.hero.funded_innovations',
+                          count: @total_funded_innovations,
+                          this_episode: @funded_innovations.count) %>
+              </span>
+            </div>
+            <div class="EpisodeHero-totalRaised">
+          <span class="Base-title Base-title--2 Base-title--lagoon">
+            <%= number_to_currency(
+                  @total_raised,
+                  locale: params[:locale],
+                  precision: 0,
+                  unit: "€"
+                ) %>
+          </span>
+              <span class="EpisodeHero-raisingGoal">
+            <%= raw t('episodes.hero.raising_goal', amount:
+              number_to_currency(@episode.fundraising_goal, locale: params[:locale], precision: 0, unit: "€")) %>
+          </span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <% unless @episode.current? || @funded_innovations.empty? %>
+    <%= render partial: "sections/funded_innovation_section", locals: {
+      funded_innovations: @funded_innovations,
+      title: raw(t("episodes.details.funded_innovations_title")) } %>
+  <% end %>
+</section>
+
+

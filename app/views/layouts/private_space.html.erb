@@ -1,0 +1,106 @@
+<div class="PrivateSpace" data-controller="private-space-navbar"
+  data-action="resize@window->private-space-navbar#setNavbarOnLargeScreens">
+  <div class="PrivateSpace-navbar" data-private-space-navbar-target="navbar">
+    <%= link_to root_path, target: "_blank", class: "PrivateSpace-navbarLink--first" do %>
+      <%= embedded_svg 'logo-time-planet.svg', class: "PrivateSpace-logo", alt: "Time for the Planet Logo" %>
+    <% end %>
+    <%= link_to user_dashboard_path, class: active_link_class([user_dashboard_path], "PrivateSpace-navbarLink") do %>
+      <i class="material-icons PrivateSpace-icon">
+        dashboard
+      </i>
+    <% end %>
+
+    <%= link_to shares_purchases_path, class: active_link_class([shares_purchases_path], "PrivateSpace-navbarLink") do %>
+      <i class="material-icons PrivateSpace-icon">
+        credit_card
+      </i>
+    <% end %>
+
+    <%= link_to sponsorship_campaign_dashboard_path,
+      class: active_link_class([sponsorship_campaign_dashboard_path], "PrivateSpace-navbarLink") do %>
+      <i class="material-icons PrivateSpace-icon">groups</i>
+    <% end %>
+
+    <%= link_to user_badges_path, class: active_link_class([user_badges_path], "PrivateSpace-navbarLink") do %>
+      <i class="material-icons PrivateSpace-icon">
+        military_tech
+      </i>
+    <% end %>
+    <%= link_to user_profile_path, class: active_link_class(
+          [user_profile_path, update_user_path],
+          "PrivateSpace-navbarLink"
+        ) do %>
+      <i class="material-icons PrivateSpace-icon">
+        perm_identity
+      </i>
+    <% end %>
+    <% if @user.is_admin? %>
+      <%= link_to companies_path, class: active_link_class(
+        [companies_path],
+        "PrivateSpace-navbarLink"
+      ) do %>
+        <i class="material-icons PrivateSpace-icon">
+          apartment
+        </i>
+      <% end %>
+    <% end %>
+
+    <%= link_to edit_user_registration_path, class: active_link_class(
+          [edit_user_registration_path],
+          "PrivateSpace-navbarLink"
+        ) do %>
+      <i class="material-icons PrivateSpace-icon">
+        settings
+      </i>
+    <% end %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "PrivateSpace-navbarLink PrivateSpace-navbarLink--last" do %>
+      <i class="material-icons PrivateSpace-icon">
+        power_settings_new
+      </i>
+    <% end %>
+  </div>
+  <div class="PrivateSpace-mobileNavbar">
+    <%= button_tag(
+      class: "PrivateSpace-navbarLink PrivateSpace-navbarLink--mobileNav PrivateSpace-hamburger",
+      data: { 'action': "click->private-space-navbar#toggle" }
+    ) do %>
+      <i class="material-icons PrivateSpace-icon" data-private-space-navbar-target="hamburger">
+        menu
+      </i>
+    <% end %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "PrivateSpace-navbarLink PrivateSpace-navbarLink--mobileNav" do %>
+      <i class="material-icons PrivateSpace-icon">
+        power_settings_new
+      </i>
+    <% end %>
+  </div>
+  <div class="PrivateSpace-content">
+    <% if yield(:back_link_anchor).present? && yield(:back_link_path).present? && yield(:back_link_private_space).present? %>
+      <%= link_to yield(:back_link_path), class: "Onboarding-backlink" do %>
+        <i class="material-icons">
+          arrow_back
+        </i>
+        <%= yield(:back_link_anchor) %>
+      <% end %>
+    <% end %>
+    <div class="PrivateSpace-header">
+      <h1 class="PrivateSpace-title PrivateSpace-title--purple">
+        <% if content_for?(:title_white) %>
+          <%= yield(:title_white) %> <%= yield(:title_blue) %>
+        <% end %>
+      </h1>
+      <%= render "shared/language_switcher" %>
+    </div>
+    <%= yield %>
+  </div>
+
+  <% if content_for?(:right_panel) %>
+    <div class="PrivateSpace-summary">
+      <div class="PrivateSpace-summaryContent">
+        <%= yield(:right_panel) %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% parent_layout "application" %>

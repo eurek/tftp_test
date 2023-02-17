@@ -1,0 +1,80 @@
+.MediaCard {
+  position: relative;
+  height: 27rem;
+  background-color: $grey-50;
+  text-transform: none;
+  transition: box-shadow 0.3s ease-in-out;
+  margin: 1rem;
+
+  &:hover {
+    box-shadow: $shadow-large;
+
+    .MediaCard-link .material-icons {
+      transform: translateX(5px);
+    }
+  }
+
+  &-imageContainer {
+    position:relative;
+  }
+
+  &-videoButton {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    padding: 0;
+
+    .material-icons {
+      margin: 0;
+      font-size: 5rem;
+      color: $white;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $lagoon-500;
+      }
+    }
+  }
+
+  &-image {
+    width: 100%;
+    height: 17rem;
+    object-fit: cover;
+  }
+
+  &-title {
+    margin: 1rem 2rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: none;
+    color: $black;
+
+    @media (min-width: $breakpoint-xl) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 2rem 1rem 0;
+    color: $rainforest-600;
+    border-color: $rainforest-600;
+    font-size: 0.8rem;
+
+    @media (min-width: $breakpoint-xl) {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: $grey-900;
+      border-color: $grey-900;
+    }
+
+    .material-icons {
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

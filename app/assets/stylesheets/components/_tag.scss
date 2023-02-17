@@ -1,0 +1,30 @@
+.Tag {
+  border-radius: 50px;
+  padding: 0.1rem 0.6rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1rem;
+  }
+
+  &--lagoon {
+    background-color: $lagoon-300;
+    color: $rainforest-400;
+  }
+
+  &--purple {
+    background-color: $purple-300;
+    color: $purple-600;
+  }
+
+  &--red {
+    background-color: $red-200;
+    color: $red-500;
+  }
+
+  &--green {
+    background-color: $green-200;
+    color: $green-600;
+  }
+}

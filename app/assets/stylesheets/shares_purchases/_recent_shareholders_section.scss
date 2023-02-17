@@ -1,0 +1,194 @@
+.RecentShareholdersSection {
+  padding: 4rem 0;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+    }
+  }
+
+  &-title {
+    margin-bottom: 4rem;
+    margin-top: 0;
+  }
+
+  &-shareholder {
+    border-bottom: 3px solid $lagoon-100;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-bottom: 0.25rem;
+
+    @media (min-width: $breakpoint-md) {
+      max-width: 50%;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      max-width: 100%;
+    }
+
+    .Base-title--4 {
+      margin-top: 0;
+    }
+  }
+
+  &-list {
+    width: 100%;
+    margin-bottom: 11rem;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 60%;
+      margin-bottom: 0;
+    }
+  }
+
+  &-shareholderInfos {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &-sharesNumber {
+    color: $rainforest-600;
+    font-weight: 800;
+  }
+
+  &-sharesDate {
+    font-weight: 300;
+  }
+
+  &-link {
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: end;
+
+    &:hover {
+      color: $rainforest-600;
+    }
+  }
+
+  &-mountains {
+    position: relative;
+    width: 100%;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-left: 4rem;
+      width: auto;
+    }
+  }
+
+  &-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  &-top {
+    position: absolute;
+    width: 8rem;
+
+    span {
+      display: block;
+    }
+
+    &--second {
+      top: -8rem;
+      left: 40%;
+    }
+
+    &--first {
+      top: -1.5rem;
+      left: 0;
+    }
+
+    &--third {
+      top: -0.5rem;
+      right: 0;
+    }
+  }
+
+  &-topTitle {
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 1.125rem;
+
+    &--colored{
+      color: $rainforest-600;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &-topText {
+    font-family: $headers-font;
+    color: $rainforest-600;
+    margin-top: 0.2rem;
+  }
+
+  &--blackAndLagoon {
+    background-color: $black;
+    color: $white;
+
+    .RecentShareholdersSection {
+      &-shareholder {
+        border-bottom-color: $grey-700;
+      }
+
+      &-sharesNumber {
+        color: $lagoon-500;
+      }
+
+      &-sharesDate {
+        color: $grey-50;
+      }
+
+      &-topTitle--colored {
+        color: $lagoon-500;
+      }
+
+      &-topText {
+        color: $grey-300;
+      }
+    }
+  }
+
+  &--blackAndPurple {
+    background-color: $black;
+    color: $white;
+
+    .RecentShareholdersSection {
+      &-shareholder {
+        border-bottom-color: $grey-700;
+      }
+
+      &-sharesNumber {
+        color: $purple-400;
+      }
+
+      &-sharesDate {
+        color: $grey-50;
+      }
+
+      &-topTitle--colored {
+        color: $purple-400;
+      }
+
+      &-topText {
+        color: $grey-300;
+      }
+
+      &-svg radialGradient stop:nth-child(1) {
+        stop-color: $purple-500;
+      }
+
+      &-link:hover {
+        color: $purple-400;
+      }
+    }
+  }
+}

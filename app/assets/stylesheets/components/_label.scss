@@ -1,0 +1,8 @@
+.Label {
+  border-radius: 1rem;
+  background-color: $grey-900;
+  padding: 0.2rem 1rem;
+
+  // Add support when used in a flexbox to avoid taking all width
+  align-self: flex-start;
+}

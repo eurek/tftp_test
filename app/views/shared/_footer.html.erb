@@ -1,0 +1,69 @@
+<footer class="Footer Section <%= content_for?(:purple_footer) ? "Section--darkPurple" : "Section--darkGreen" %>">
+  <div class="container Footer-content">
+    <%= link_to url_for(params.permit.merge(only_path: true, locale: params[:locale].to_s)),
+        class:'Footer-topLink Button Button--underlined' do %>
+      <%= t('common.up') %> <i class="material-icons">arrow_upward</i>
+    <% end %>
+    <div class="Footer-row">
+      <div class="Footer-brand">
+        <%= embedded_svg 'logo-time-planet.svg', class: "Footer-logo" %>
+        <div>
+          <span class="Footer-brand">TFTP</span>
+          <p class="Footer-tagline"><%= t('common.slogan') %></p>
+          <%= link_to @external_links.linkedin, target: "_blank" do %>
+            <%= embedded_svg 'linkedin.svg', class: "Button Footer-icon" %>
+          <% end %>
+          <% if locale == :fr %>
+            <%= link_to "https://twitter.com/TFTP_France", target: "_blank" do %>
+              <%= embedded_svg 'twitter.svg', class: "Button Footer-icon" %>
+            <% end %>
+            <%= link_to "https://www.instagram.com/timefortheplanet", target: "_blank" do %>
+              <%= embedded_svg 'instagram.svg', class: "Button Footer-icon" %>
+            <% end %>
+            <%= link_to "https://www.youtube.com/channel/UCaoCN2IXMV6_rArWgM0qWVw", target: "_blank" do %>
+              <%= embedded_svg 'youtube.svg', class: "Button Footer-icon" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="Footer-column">
+        <div class="Footer-column Footer-column--app">
+          <% if locale == :fr %>
+            <%= link_to @external_links.time_app,
+                class: "Button Footer-blockLink", target: "_blank" do %>
+              <span><%= t('common.application_download') %></span>
+              <i class="material-icons">arrow_downward</i>
+            <% end %>
+          <% end %>
+          <%= link_to @external_links.galaxy_app,
+              class: "Button Footer-blockLink", target: "_blank" do %>
+            <span><%= t('common.galaxy_application') %></span>
+            <i class="material-icons">arrow_downward</i>
+          <% end %>
+        </div>
+        <div class="Footer-column Footer-column--links">
+          <%= link_to buy_shares_choice_path, class:'Button Button--underlined Footer-link Footer-link--smaller' do %>
+            <span><%= t('common.act') %></span> <i class="material-icons">arrow_forward</i>
+          <% end %>
+          <%= link_to t('common.contact'), @external_links.contact_form, class: "Button Footer-link", target: "_blank" %>
+          <%= link_to t(@legal.title), page_path(slug: @legal.slug), class:'Button Footer-link' if @legal.present? %>
+          <%= link_to t(@confidentiality.title), page_path(slug: @confidentiality.slug), class:'Button Footer-link' if @confidentiality.present? %>
+          <%= link_to t(@cookies.title), page_path(slug: @cookies.slug), class:'Button Footer-link' if @cookies.present? %>
+          <%= link_to t('common.cookies_management'), "javascript:openAxeptioCookies()", class:'Button Footer-link' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script> (function() {
+    var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/";
+    if(!gi.call(d,id)) {
+      js=ce.call(d,"script");
+      js.id=id; js.src=b+"embed.js";
+      q=gt.call(d,"script")[0];
+      q.parentNode.insertBefore(js,q)
+    }
+  })()
+</script>

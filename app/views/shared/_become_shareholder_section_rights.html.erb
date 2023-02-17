@@ -1,0 +1,16 @@
+<% id_name = '' if local_assigns[:id_name].nil? %>
+
+<section class="Section--white ShareholderRightsSection" id="<%= id_name %>">
+  <div class="row ShareholderRightsSection-container">
+    <div class="col-md-6 ShareholderRightsSection-image"></div>
+    <div class="col-md-4 offset-1">
+      <h2 class="ShareholderRightsSection-title"><%= raw t('become_shareholder.how_to.title2') %></h2>
+      <% t('become_shareholder.how_to.bullet_points').each do |bullet_point| %>
+        <h3 class="Base-title Base-title--3"><%= raw bullet_point[:title] %></h3>
+        <p class="Base-text--lighter Base-text--withSeparator">
+          <%= raw bullet_point[:description] %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</section>

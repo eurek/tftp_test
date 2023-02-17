@@ -1,0 +1,39 @@
+// Empty data in #show
+.attributes_table td span.empty {
+  opacity: 30%;
+  font-style: italic;
+}
+
+// Panels
+.panel {
+  margin-bottom: 2em;
+}
+
+.panel:last-child {
+  margin-bottom: unset;
+}
+
+// HTML previews
+.panel.block .panel_contents {
+  padding: 1em;
+  border: 1px solid $border-color;
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.panel.html_preview .panel_contents {
+  ol, ul {
+    list-style: revert;
+    padding-left: 1em;
+  }
+}
+
+// Panels in forms
+fieldset .panel {
+  border-top: 1px solid $border-color;
+  padding-top: 1em;
+  margin-top: 2em;
+}

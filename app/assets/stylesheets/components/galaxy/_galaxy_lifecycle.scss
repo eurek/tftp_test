@@ -1,0 +1,29 @@
+.GalaxyLifecycle {
+  &-title {
+    margin-bottom: 3.5rem;
+  }
+
+  &-subtitle {
+    color: $lagoon-500;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &-list {
+    padding: 0 1rem;
+    margin-top: 0;
+
+    li {
+      font-size: 1.125rem;
+    }
+  }
+
+  &-text {
+    padding: 0;
+    margin: 0;
+  }
+
+  &-bloc {
+    margin-bottom: 3rem;
+  }
+}

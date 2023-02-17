@@ -1,0 +1,65 @@
+<section class="ContentsHeader">
+  <div class="container">
+    <div class="ContentsHeader--max-width">
+        <div class="ContentsHeader-title">
+          <%= image_tag 'icones/events.svg', class: "ContentsHeader-icone" %>
+          <h1>
+            <%= raw t('events.index.title') %>
+          </h1>
+        </div>
+          <p class="ContentsHeader-description">
+          </p>
+    </div>
+  </div>
+</section>
+
+<section class="Section">
+  <%= render "filters"%>
+
+  <div class="container">
+    <h2>
+      <%= raw t('events.index.incoming') %>
+    </h2>
+
+    <div class="ContentList UpdatableElement">
+      <% @incoming_events.each do |event| %>
+        <%= render partial: "shared/content_card", locals: {
+          path: event_path(id: event.id),
+          title: event.title,
+          date: event.date_display,
+          locale: event.locale,
+          cta: raw(t('events.index.cta')),
+          image: event_cover_image(event, [700, 700]),
+          image_alt: event.title,
+          content: event,
+          additional_classes: event.picture.attached? ? "" : "ContentCard--defaultPicture"
+        } %>
+      <% end %>
+    </div>
+
+  </div>
+</section>
+
+<section class="Section Section--grey800">
+  <div class="container">
+    <h2>
+      <%= raw t('events.index.passed') %>
+    </h2>
+
+    <div class="ContentList UpdatableElement">
+      <% @passed_events.each do |event| %>
+        <%= render partial: "shared/content_card", locals: {
+          path: event_path(id: event.id),
+          title: event.title,
+          date: "#{I18n.l(event.date, format: :long).upcase_first} #{event.timezone}",
+          locale: event.locale,
+          cta: raw(t('events.index.cta')),
+          image: event_cover_image(event, [600, 300]),
+          image_alt: event.title,
+          additional_classes: event.picture.attached? ? "" : "ContentCard--defaultPicture"
+        } %>
+      <% end %>
+    </div>
+
+  </div>
+</section>

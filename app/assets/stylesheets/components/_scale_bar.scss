@@ -1,0 +1,28 @@
+.ScaleBar {
+  display: flex;
+  background-color: $grey-200;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  &--large {
+    height: 2rem;
+
+    .ScaleBar-cursor {
+      background-color: $rainforest-400;
+    }
+  }
+
+  &--small {
+    height: 0.75rem;
+
+    .ScaleBar-cursor {
+      background-color: $red-300;
+    }
+  }
+
+  &-cursor {
+    display: inline-block;
+    height: 100%;
+  }
+}

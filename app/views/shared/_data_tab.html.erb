@@ -1,0 +1,15 @@
+<% css_class = "" if local_assigns[:css_class].nil? %>
+
+<div class="DataTab <%= css_class %>" data-index="<%= index %>"
+  data-action="click->statistics-tabs#switch click->statistics-graph#updateChart" data-statistics-tabs-target="tab"
+  data-graph-values="<%= dataset.to_json %>">
+  <div class="DataTab-container">
+    <span class="DataTab-number Base-title Base-title--3">
+      <%= data %>
+    </span>
+    <span class="Base-subtitle Base-subtitle--smaller">
+      <%= raw(t("home.statistics.data.#{data_name}"))%>
+    </span>
+  </div>
+</div>
+

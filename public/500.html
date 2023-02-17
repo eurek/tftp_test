@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>We're sorry, but something went wrong (500)</title>
+  <link rel="icon" href="/images/favicon-time-planet.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Gilroy", "Helvetica", "sans-serif";
+      background-color: #000000;
+      background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 70%),
+                        linear-gradient(rgba(0, 94, 102, 0.3),rgba(0, 94, 102, 0.3)),
+                        url('/images/space-bw.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: $white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    b {
+      font-weight: 800;
+    }
+
+    .navbar {
+      color: #FFF;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+
+    .navbar img {
+        margin-right: 1rem;
+      }
+
+    .navbar:hover {
+      color: #FFF;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #FFF;
+      border-bottom: solid #FFF 3px;
+    }
+
+    .button:hover {
+      transition: all 0.3s;
+      color: #89E5D3;
+      border-color: #89E5D3;
+    }
+
+    .back-button .material-icons {
+        margin-right: 0.5rem;
+        font-weight: 800;
+    }
+
+    .home-button .material-icons {
+        margin-left: 0.5rem;
+        font-weight: 800;
+    }
+
+    .error {
+      background-image: none;
+      padding: 0 2rem;
+    }
+
+    .error-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFF;
+      margin-top: 3rem;
+    }
+
+    .error-subtitle {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #D5F6F0;
+      margin-bottom: 1.125rem;
+    }
+
+    .contact {
+      font-size: 1rem;
+      font-weight: 200;
+      color: #D5F6F0;
+      margin-bottom: 4rem;
+    }
+
+    @media (min-width: 768px) {
+      .error-title {
+        margin-top: 6rem;
+      }
+
+      .contact {
+        font-size: 1.5rem;
+        margin-bottom: 8rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .button {
+        font-size: 1.25rem;
+      }
+
+      .error {
+        background-image: url("/images/custom-500.svg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: right;
+        padding: 4rem 6rem;
+      }
+
+      .error-title {
+        font-size: 4rem;
+      }
+
+      .error-subtitle {
+        font-size: 4rem;
+      }
+
+      .contact {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="container">
+    <a href="https://time-planet.com" class="navbar">
+      <img src="/images/logo-time-planet.svg" alt="logo Time for the Planet">
+      Time for the Planet
+    </a>
+    <a href="javascript:history.back()" class="button back-button">
+      <i class="material-icons">arrow_back</i>
+      Revenir sur la page précédente
+    </a>
+    <div class="error">
+      <h1 class="error-title">Erreur 500</h1>
+      <div class="error-subtitle">Erreur interne</div>
+      <div class="contact">Pour nous signaler cette erreur vous pouvez<br>nous contacter à <b>admin@time-planet.com</b></div>
+      <a href="https://time-planet.com" class="button home-button">
+        Aller sur la page d'accueil
+        <i class="material-icons">arrow_forward</i>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

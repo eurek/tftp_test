@@ -1,0 +1,21 @@
+<nav class="SecondaryNavbar SecondaryNavbar--<%= color %>"
+     data-controller="toggling-class"
+     data-toggling-class-name-class="SecondaryNavbar--open"
+     data-toggling-class-open-element-value="true">
+  <div class="container SecondaryNavbar-container">
+    <button class="SecondaryNavbar-toggle Button"
+            data-action="toggling-class#toggleClassName"
+            aria-haspopup="true"
+            aria-expanded="false">
+      <%= title %>
+      <i class="material-icons">expand_more</i>
+    </button>
+    <div class="SecondaryNavbar-menu">
+      <h1 class="Base-title Base-title--1 Base-title--white"><%= title %></h1>
+      <% links.each do |link| %>
+        <%= link_to link[:anchor], link[:url], class: "Base-title Base-title--4 #{active_link_class([link[:url]], "SecondaryNavbar-link")}" %>
+      <% end %>
+      <%= link_to cta[:anchor], cta[:url], target: cta[:target], class: "Button Button--box SecondaryNavbar-cta" %>
+    </div>
+  </div>
+</nav>

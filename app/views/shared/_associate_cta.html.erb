@@ -1,0 +1,12 @@
+<% class_name = '' if local_assigns[:class_name].nil? %>
+<% associate_cta_class_name = 'Button--darkGreenBox' unless request.path == become_shareholder_path %>
+
+<%= link_to @external_links.shares_purchase_form,
+    class:"Button Button--box Button--darkGreenBox #{class_name} #{associate_cta_class_name}",
+    target: "_blank" do %>
+    <% if request.path == become_shareholder_company_path %>
+      <%= t('common.become_shareholder_company.cta') %> <i class="material-icons">arrow_forward</i>
+    <% else %>
+      <%= t('common.become_shareholder.cta') %> <i class="material-icons">arrow_forward</i>
+    <% end %>
+<% end %>

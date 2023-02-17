@@ -1,0 +1,104 @@
+@import 'activeadmin_addons/src/stylesheets/all';
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+//@import "~@activeadmin/activeadmin/src/scss/mixins";
+//@import "~@activeadmin/activeadmin/src/scss/base";
+
+$primary-color: #0096A2;
+@import "~arctic_admin/src/scss/main";
+
+@import "../../../vendor/redactor/redactor.css";
+@import "./redactor";
+@import "./image_input";
+@import "./image_preview";
+@import "./panels";
+@import "./select";
+@import "./admin_translations";
+
+@import "./utility_menu_dropdown";
+
+.index.admin_translations .action_item {
+  // Hide new button on translation index page because did not find a way to remove button without removing action
+  display: none;
+}
+
+.button.has_many_add {
+  margin: 1rem;
+}
+
+.inputs.has_many_fields {
+  background-color: #f5f5f5;
+  padding: 1rem;
+}
+
+.actions {
+  margin-bottom: 2rem;
+}
+
+.table_tools .batch_actions_selector {
+  margin-bottom: 2rem;
+}
+
+a.batch_action {
+  margin: 0.5rem 0;
+  display: block;
+}
+
+// Admin Show: First column width
+body.show {
+  .attributes_table table {
+    table-layout: fixed;
+  }
+
+  .table_actions {
+    margin-bottom: -4px;
+
+    .member_link {
+      @include primary-button($primary-color, white);
+      padding: 4px 8px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+body.show .attributes_table table tbody tr th {
+  width: 40%;
+}
+
+// Scopes
+.scopes ul.table_tools_segmented_control {
+  display: inline-flex;
+  margin-right: 0.25em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// Global Search Form
+.global-search {
+  display: flex;
+  .input-text {
+    width: 150px;
+    margin-right: 20px;
+  }
+  .submit-button {
+    width: 100px;
+  }
+}
+
+// Global Search results
+.admin_search {
+  #main_content {
+    overflow-x: auto;
+  }
+}

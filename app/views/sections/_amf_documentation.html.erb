@@ -1,0 +1,17 @@
+<section class="Section AmfDocumentation--<%= color %>">
+  <div class="container Section--morePadding">
+    <p class="Base-subtitle Base-subtitle--smaller">
+      <%= raw t('become_shareholder_company.documentation.amf_text') %>
+      <%= link_to t('become_shareholder_company.documentation.amf_link'),
+                  t('become_shareholder_company.documentation.amf_url'),
+                  target: "_blank", class: 'AmfDocumentation-link' %>
+    </p>
+    <p class="Base-subtitle Base-subtitle--smaller">
+      <%= raw t('become_shareholder_company.documentation.synthetic_information_text1') %>
+      <%= link_to t('become_shareholder_company.documentation.synthetic_information_link'),
+                  @external_links.summary_information_document,
+                  target: "_blank", class: 'AmfDocumentation-link' %>
+      <%= raw t('become_shareholder_company.documentation.synthetic_information_text2') %>
+    </p>
+  </div>
+</section>

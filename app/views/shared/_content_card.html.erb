@@ -1,0 +1,30 @@
+<% additional_classes = '' if local_assigns[:additional_classes].nil? %>
+<% date = nil if local_assigns[:date].nil? %>
+<% locale = nil if local_assigns[:locale].nil? %>
+
+<%= link_to path, class: "ContentCard #{additional_classes}" do %>
+  <div class="ContentCard-content">
+    <div>
+      <h2 class="ContentCard-title"><%= raw(title.upcase_first) %></h2>
+      <% if date.present? %>
+        <p class="ContentCard-date">
+          <%= date %>
+        </p>
+      <% end %>
+      <% if locale.present? %>
+        <p class="ContentCard-locale">
+          <%= t('events.index.language') %>
+          <%= t('common.language', locale: locale).upcase_first %>
+        </p>
+      <% end %>
+    </div>
+
+      <p class="ContentCard-link Button Button--underlined">
+        <%= cta %>
+        <i class="material-icons">arrow_forward</i>
+      </p>
+  </div>
+  <div class="ContentCard-imageContainer">
+    <%= image_tag(image, alt: image_alt, class: "ContentCard-image") %>
+  </div>
+<% end %>

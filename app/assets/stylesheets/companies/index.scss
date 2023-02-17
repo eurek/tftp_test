@@ -1,0 +1,57 @@
+.companies-index {
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .CompaniesList {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .CompanySharesPurchaseCard {
+    background-color: $grey-800;
+    margin-left: 0;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    &-title {
+      margin-top: 0;
+      color: $purple-200;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-address {
+      margin: 0;
+    }
+
+    &-link {
+      text-transform: none;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $purple-400;
+      }
+
+      i {
+        size: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-shares {
+      margin-top: 2rem;
+      margin-bottom: 0;
+      color: $purple-200;
+
+      .Base-title {
+        color: $purple-500;
+      }
+    }
+  }
+}

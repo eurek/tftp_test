@@ -1,0 +1,32 @@
+.CompanyCtaSection {
+background-image: linear-gradient(90deg, $black 40%, rgba(0, 0, 0, 0.23) 100%), image_url('mountains-at-night.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: bottom right;
+
+.Base-title {
+margin-bottom: 4rem;
+}
+
+.Button--box {
+color: $black;
+display: block;
+margin-bottom: 4rem;
+
+&:hover {
+color: $black;
+}
+}
+
+&-container {
+display: flex;
+flex-direction: column;
+align-items: stretch;
+max-width: 24rem;
+}
+
+&-description {
+color: $purple-200;
+text-align: center;
+}
+}

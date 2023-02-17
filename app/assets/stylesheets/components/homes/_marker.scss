@@ -1,0 +1,24 @@
+.Marker {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border-width: 0.3rem;
+  border-style: solid;
+
+  @media (min-width: $breakpoint-lg) {
+    width: 2rem;
+    height: 2rem;
+    border-width: 0.4rem;
+  }
+
+  &--lagoon {
+    background-color: $lagoon-500;
+    border-color: $lagoon-200;
+  }
+
+  &--purple {
+    background-color: $purple-400;
+    border-color: $purple-200;
+  }
+}

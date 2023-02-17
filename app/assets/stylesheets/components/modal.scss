@@ -1,0 +1,88 @@
+.Modal {
+  display: none;
+
+  .VideoModal-video {
+    height: 90%;
+    width: 90%;
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+    justify-content: safe center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0,0,0,0.6);
+    z-index: 50;
+  }
+
+  &-container {
+    position: relative;
+    background-color: $black;
+    color: $grey-200;
+    padding: 4rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: $breakpoint-sm) {
+      border-radius: 4px;
+      padding: 2rem;
+    }
+  }
+
+  &.is-open {
+    display: block;
+  }
+
+  &-close {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0;
+    height: 3.5rem;
+    cursor: pointer;
+  }
+
+  &-header {
+    align-items: flex-start;
+    margin-bottom: 1rem;
+
+    @media (min-width: $breakpoint-sm) {
+      display: flex;
+    }
+  }
+
+  &-title {
+    font-size: 1.4rem;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  &-text {
+    font-size: 1.2rem;
+  }
+
+  &-buttonContainer {
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-sm) {
+      max-width: 70%;
+    }
+  }
+}

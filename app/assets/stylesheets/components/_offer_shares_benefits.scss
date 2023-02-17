@@ -1,0 +1,91 @@
+/* TODO : pensez à enlever css non nécessaire quand passage sur nouvelles pages */
+
+.OfferSharesBenefits {
+  &-title {
+    max-width: 40rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-column {
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 30%;
+      margin-bottom: 0;
+    }
+  }
+
+  &-icon {
+    &.material-icons {
+      font-size: 5rem;
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 7rem;
+      }
+    }
+  }
+
+  &-description {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    font-family: $headers-font;
+    font-weight: bold;
+
+    @media (min-width: $breakpoint-lg) {
+      left: 4rem;
+    }
+
+    &--lagoon {
+      color: $rainforest-900;
+    }
+  }
+
+  &--lagoon {
+    .OfferSharesBenefits-description {
+      color: $rainforest-900;
+    }
+
+    .OfferSharesBenefits-icon.material-icons {
+      color: $lagoon-200;
+      opacity: 0.5;
+    }
+  }
+
+  &--purple {
+    .OfferSharesBenefits-description {
+      color: $purple-900;
+    }
+
+    .OfferSharesBenefits-icon.material-icons {
+      color: $purple-200;
+    }
+  }
+
+  &--grey {
+    .OfferSharesBenefits-description {
+      color: $lagoon-500;
+    }
+
+    .OfferSharesBenefits-icon.material-icons {
+      color: $grey-700;
+
+      @media (min-width: $breakpoint-lg) {
+        font-size: 9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,356 @@
+.Button {
+  font-size: 1rem;
+  font-family: $headers-font;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.25rem;
+  }
+
+  .material-icons {
+    margin-left: 0.5rem;
+    font-weight: 800;
+  }
+
+  &--iconLeft .material-icons {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    transition: all 0.3s;
+    color: $lagoon-500;
+    border-color: $lagoon-500;
+  }
+
+  &--underlined {
+    border-bottom: solid $white 3px;
+  }
+
+  &--underlinedDark {
+    border-bottom: solid $grey-900 3px;
+
+    &:hover {
+      transition: all 0.3s;
+      color: $rainforest-900;
+      border-bottom: solid $rainforest-900 3px;
+    }
+  }
+
+  &--underlinedLagoon {
+    border-bottom: solid $lagoon-500 3px;
+
+    .material-icons {
+      color: $lagoon-500;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $lagoon-500;
+    }
+  }
+
+  &--underlinedDarkLagoon {
+    border-bottom: solid $rainforest-600 3px;
+    color: $rainforest-600;
+
+    .material-icons {
+      color: $rainforest-600;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $lagoon-500;
+
+      .material-icons {
+        color: $lagoon-500;
+      }
+    }
+  }
+
+  &--underlinedPurple {
+    border-bottom: solid $purple-400 3px;
+    color: $white;
+
+    .material-icons {
+      color: $purple-400;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $purple-400;
+      border-bottom: solid $purple-400 3px;
+
+      .material-icons {
+        color: $purple-400;
+      }
+    }
+  }
+
+  &--underlinedLightPurple {
+    border-bottom: solid $purple-300 3px;
+    color: $purple-300;
+
+    .material-icons {
+      color: $purple-300;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $purple-400;;
+      border-bottom: solid $purple-400 3px;
+
+      .material-icons {
+        color: $purple-400;
+      }
+    }
+  }
+
+  &--underlinedMixedPurple {
+    border-bottom: solid $purple-500 3px;
+    color: $black;
+
+    .material-icons {
+      color: $purple-500;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $purple-700;
+      border-bottom: solid $purple-700 3px;
+
+      .material-icons {
+        color: $purple-700;
+      }
+    }
+  }
+
+  &--underlinedBlackPurple {
+    border-bottom: solid $black 3px;
+    color: $black;
+
+    .material-icons {
+      color: $black;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $purple-900;
+      border-bottom: solid $purple-900 3px;
+
+      .material-icons {
+        color: $purple-900;
+      }
+    }
+  }
+
+  &--underlinedDarkPurple {
+    border-bottom: solid $purple-900 3px;
+    color: $purple-900;
+
+    .material-icons {
+      color: $purple-900;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      color: $purple-700;
+      border-bottom: solid $purple-700 3px;
+
+      .material-icons {
+        color: $purple-700;
+      }
+    }
+  }
+
+  &--smaller {
+    font-size: 0.8rem;
+
+    .material-icons {
+      font-size: 0.8rem;
+      margin-left: 0.2rem;
+    }
+  }
+
+  &--middleSize {
+    font-size: 0.8rem;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1rem;
+    }
+
+    .material-icons {
+      font-size: 0.8rem;
+      margin-left: 0.2rem;
+
+      @media (min-width: $breakpoint-sm) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &--green {
+    color: $rainforest-600;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $black;
+
+    &:hover {
+      color: $rainforest-400;
+    }
+  }
+
+  &--darkPurple {
+    color: $purple-900;
+
+    &:hover {
+      color: $purple-400;
+    }
+  }
+
+  &--box {
+    background-color: $lagoon-500;
+    color: $grey-900;
+    padding: 0.8rem 1.2rem;
+    border-radius: 3px;
+    border: none;
+    transition: background-color 0.3s;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      background-color: $lagoon-300;
+      color: $grey-900;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      width: auto;
+    }
+  }
+
+  &--darkGreenBox {
+    background-color: $rainforest-600;
+    color: $white;
+
+    &:hover {
+      background-color: $rainforest-400;
+    }
+  }
+
+  &--purpleBox {
+    background-color: $purple-700;
+    color: $white;
+
+    &:hover {
+      background-color: $purple-600;
+    }
+  }
+
+  &--lightPurpleBox {
+    background-color: $purple-400;
+    color: $black;
+
+    &:hover {
+      background-color: $purple-300;
+      color: $black;
+    }
+  }
+
+  &--whiteBox {
+    background-color: $white;
+    color: $black;
+
+    &:hover {
+      background-color: $lagoon-300;
+      color: $black;
+    }
+  }
+
+  &--secondaryLagoon {
+    color: $lagoon-500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 3px;
+    border: 2px solid $lagoon-500;
+    transition: all 0.3s;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      border-color: $lagoon-300;
+      color: $lagoon-300;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      width: auto;
+    }
+  }
+
+  &--secondaryPurple {
+    color: $purple-400;
+    padding: 0.8rem 1.2rem;
+    border-radius: 3px;
+    border: 2px solid $purple-400;
+    transition: all 0.3s;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      border-color: $purple-300;
+      color: $purple-300;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      width: auto;
+    }
+  }
+
+  &--secondaryWhite {
+    color: $white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 3px;
+    border: 2px solid $white;
+    transition: all 0.3s;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      border-color: $lagoon-300;
+      color: $lagoon-300;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      width: auto;
+    }
+  }
+
+  &--fullWidth {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &--inline {
+    padding: 0 1.2rem;
+    border-radius: 0 3px 3px 0;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

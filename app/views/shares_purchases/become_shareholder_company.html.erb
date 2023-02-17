@@ -1,0 +1,154 @@
+<% content_for :purple_footer, true %>
+
+<%= render partial: "sections/become_shareholder_hero", locals: {
+  color: "blackAndPurple",
+  image: "space-image-become-shareholder-company.jpg",
+  selected_shareholder_type: "company",
+  selected_transaction_type: "buy",
+  shares_quantity_explanation: t( "become_shareholder_company.hero.quantity"),
+  social_proof_counter: t("become_shareholder_company.hero.counter",
+                          count: number_with_delimiter(@shares_purchases_by_companies_last_week, locale: params[:locale])),
+  cta: "become_shareholder_company_cta",
+  secondary_cta_modifier: "secondaryPurple"
+} %>
+
+<section class="Section StepsSection StepsSection--companies" id="second-section">
+  <div class="container">
+    <h2 class="Base-title Base-title--2 Base-title--white"><%= raw t( "become_shareholder_company.steps.title") %></h2>
+    <div class="StepsSection-container">
+      <div class="StepsSection-step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('become_shareholder_company.steps.step_1.title') %></h3>
+          <p><%= raw t('become_shareholder_company.steps.step_1.paragraph_1') %></p>
+          <p><%= raw t('become_shareholder_company.steps.step_1.paragraph_2') %></p>
+          <%= render "shared/company_additional_ctas" %>
+        </div>
+        <div class="StepsSection-number">1</div>
+      </div>
+      <div class="StepsSection-step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('become_shareholder_company.steps.step_2.title') %></h3>
+          <p><%= raw t('become_shareholder_company.steps.step_2.paragraph_1') %></p>
+          <p><%= raw t('become_shareholder_company.steps.step_2.paragraph_2') %></p>
+        </div>
+        <div class="StepsSection-number">2</div>
+      </div>
+      <div class="StepsSection-step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('become_shareholder_company.steps.step_3.title') %></h3>
+          <p><%= raw t('become_shareholder_company.steps.step_3.paragraph_1') %></p>
+          <p><%= raw t('become_shareholder_company.steps.step_3.paragraph_2') %></p>
+        </div>
+        <div class="StepsSection-number">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "sections/shareholder_status_section", locals: { modifier: "company" } %>
+
+<section class="Section Section--morePadding Section--grey800 LegalAndAccountingSection">
+  <div class="container LegalAndAccountingSection-container">
+    <h2 class="Base-title Base-title--3 LegalAndAccountingSection-title">
+      <%= raw t('become_shareholder_company.legal_and_accounting.title') %>
+    </h2>
+    <%= render "become_shareholder_company_cta" %>
+    <p class="Base-subtitle Base-subtitle--verySmall LegalAndAccountingSection-subtitle">
+      <%= raw t('become_shareholder_company.legal_and_accounting.subtitle') %>
+    </p>
+    <div class="LegalAndAccountingSection-explanations--1">
+      <% %w(buy not_a_donation asset).each do |explanation| %>
+        <p class="LegalAndAccountingSection-explanation">
+          <%= raw t("become_shareholder_company.legal_and_accounting.#{explanation}") %>
+        </p>
+      <% end %>
+    </div>
+    <div class="LegalAndAccountingSection-explanations--2">
+      <% %w(dividends general_assembly risk).each do |explanation| %>
+        <p class="LegalAndAccountingSection-explanation">
+          <%= raw t("become_shareholder_company.legal_and_accounting.#{explanation}") %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "sections/money_journey_section", locals: { modifier: "purple" } %>
+
+<%= render partial: "sections/climate_dividends_section", locals: {
+  color: "purple",
+  title: raw(t("company_home.climate_dividends.title")),
+  description: raw(t( "become_shareholder_company.climate_dividends.description")),
+  highlighted_description: raw(t( "become_shareholder_company.climate_dividends.summary")),
+  cta: render("become_shareholder_company_cta")
+}  %>
+
+<%= render partial: "sections/shareholder_bonuses_section", locals: {
+  modifier: "purple ",
+  profile_text: raw(t( "become_shareholder.bonus.profile.description")),
+  galaxy_text: raw(t("become_shareholder_company.bonuses.galaxy")),
+  evaluator_text: raw(t("become_shareholder_company.bonuses.assessors"))
+} %>
+
+<%= render partial: "sections/statistics", locals: { statistics: @statistics, color: "purple" } %>
+
+<%= render partial: "recent_shareholders_section", locals: {
+  title: raw(t("become_shareholder_company.recent_shareholders.title")),
+  recent_shareholders: @recent_shareholders_companies,
+  current_situation: @current_situation,
+  first_top: {title: raw(t('become_shareholder.tops.year', year: Date.today.year)), value: @year_top_companies},
+  second_top: {title: raw(t('become_shareholder_company.tops.all_time')), value: @all_time_top_companies},
+  third_top: {title: raw(t('become_shareholder_company.tops.month')), value: @month_top_companies},
+  modifier_class: "RecentShareholdersSection--blackAndPurple",
+  image: "mountains-dark.svg"
+} %>
+
+<%= render partial: "sections/investment_amount_section", locals: {
+  title: raw(t("become_shareholder_company.investment_amount.title")),
+  paragraphs: [
+    raw(t("become_shareholder_company.investment_amount.paragraph_1")),
+    raw(t("become_shareholder_company.investment_amount.paragraph_2")),
+    raw(t("become_shareholder_company.investment_amount.paragraph_3"))
+  ],
+  cta: "investment_amount_cta",
+  modifier: "purple"
+} %>
+
+<%= render partial: "sections/company_cta_section", locals: {
+  title: raw(t('become_shareholder_company.cta_section.title')),
+  cta: raw(t('become_shareholder_company.cta_section.cta'))
+} %>
+
+<section class="Section Section--morePadding OtherChoicesSection">
+  <div class="container">
+    <div class="OtherChoicesSection-offerShares">
+      <h2 class="Base-title Base-title--3 Base-title--white Base-title--noMarginTop OtherChoicesSection-halfContainer">
+        <%= raw(t("become_shareholder_company.other_choices.offer_shares.title")) %>
+      </h2>
+      <div class="OtherChoicesSection-halfContainer">
+        <% %w(transition activate_shares operation).each do |reason| %>
+          <div class="OtherChoicesSection-reasonToOffer">
+            <i class="material-icons">
+              arrow_forward
+            </i>
+            <p><%= raw(t("become_shareholder_company.other_choices.offer_shares.#{reason}")) %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="OtherChoicesSection-individual">
+      <h2 class="Base-title Base-title--3 Base-title--lightPurple">
+        <%= raw(t("become_shareholder_company.other_choices.individual.title")) %>
+      </h2>
+      <%= link_to become_shareholder_path, class: "Button Button--underlined OtherChoicesSection-individualCta" do %>
+        <%= raw(t("become_shareholder_company.other_choices.individual.cta")) %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+  <%= image_tag "citizen-group.svg", class: "OtherChoicesSection-image" %>
+</section>
+
+<%= render "sections/amf_documentation", color: "darkPurple" %>
+
+<%= render "sections/amf_risks", color: "purple" %>

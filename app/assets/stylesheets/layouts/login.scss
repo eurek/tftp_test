@@ -1,0 +1,92 @@
+.Login {
+  min-height: 100vh;
+  display: flex;
+  background-color: $black;
+
+  &-picture {
+    display: none;
+    min-height: 100vh;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 60%;
+    }
+  }
+
+  &-overlay {
+    background-color: $rainforest-900;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &-welcomeMessage {
+    max-width: 24rem;
+    margin: 3rem;
+  }
+
+  &-welcomeTitle {
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $white;
+  }
+
+  &-welcomeContent {
+    color: $grey-200;
+    font-size: 1.2rem;
+  }
+
+  &-content {
+    flex: 1;
+    min-height: 100vh;
+
+    @media (min-width: $breakpoint-sm) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-form {
+    margin: auto;
+    padding: 1rem;
+    max-width: 20rem;
+    text-align: center;
+  }
+
+  &-title {
+    color: $white;
+    margin-bottom: 2rem;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    &--blue {
+      color: $lagoon-500;
+    }
+  }
+
+  &-logo {
+    width: 3rem;
+    margin: auto;
+    margin-top: 3rem;
+
+    @media (min-width: $breakpoint-sm) {
+      margin-top: 0;
+    }
+  }
+}

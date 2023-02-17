@@ -1,0 +1,39 @@
+.RolesList {
+  list-style: none;
+  padding: 0;
+
+  &-text {
+    flex-grow: 1;
+    margin: 0 2rem;
+  }
+
+  &-icon {
+    color: $lagoon-200;
+  }
+
+  &-role {
+    width: 100%;
+    height: 3.5rem;
+    background-color: $grey-800;
+    margin-bottom: 0.5rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+
+    &--owned {
+      background-color: $lagoon-500;
+      color: $black;
+
+      .RolesList-icon {
+        color: $black;
+      }
+    }
+  }
+
+  &-showDetail {
+    cursor: pointer;
+  }
+}

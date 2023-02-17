@@ -1,0 +1,27 @@
+<section class="Section Section--black">
+  <div class="container ShareholderOptionsSection">
+    <%= link_to become_shareholder_company_path,
+      class: "ShareholderOptionsSection--column ShareholderOptionsSection--columnCompany" do %>
+      <h3 class="Base-title--3"><%= raw t('become_shareholder.options.company.title') %></h3>
+      <div class="ShareholderOptionsSection-buildingImages">
+        <%= image_tag('building-light.png', class: 'ShareholderOptionsSection-buildingImage') %>
+        <%= image_tag('building-enlightened.png', class: 'ShareholderOptionsSection-buildingImage ShareholderOptionsSection-buildingImage--active') %>
+      </div>
+      <div class="Button Button--white Button--underlined ShareholderOptionsSection-cta">
+        <%= raw t('become_shareholder.options.company.cta') %>
+        <i class="material-icons">arrow_forward</i>
+      </div>
+    <% end %>
+
+    <%= link_to offer_shares_path, class: "ShareholderOptionsSection--column GiftAnimation" do %>
+      <h3 class="Base-title--3"><%= raw t('become_shareholder.options.gift.title') %></h3>
+      <div class="GiftAnimation-gift">
+        <%= image_tag('cadeau-time.svg') %>
+      </div>
+      <div class="Button Button--white Button--underlined ShareholderOptionsSection-cta">
+        <%= raw t('become_shareholder.options.gift.cta') %>
+        <i class="material-icons">arrow_forward</i>
+      </div>
+    <% end %>
+  </div>
+</section>

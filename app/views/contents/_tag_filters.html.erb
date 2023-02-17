@@ -1,0 +1,9 @@
+<% category.tags.each do |tag| %>
+  <% next unless tag.published(fallback: false) %>
+  <li>
+    <%= link_to tag_path(tag), class: "#{tag_class(tag, "TagFilters-button")}" do %>
+      <%= tag.name %>
+      <i class="material-icons"><%= tag_selected?(tag) ? "done" : "close" %></i>
+    <% end %>
+  </li>
+<% end %>

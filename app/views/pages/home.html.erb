@@ -1,0 +1,324 @@
+<% content_for :meta_title, raw(t('home.meta.title')) %>
+<% content_for :meta_desc, raw(t('home.meta.description')) %>
+<% content_for :page_js_controller, "home-animations" %>
+
+<% if @no_index  %>
+  <% content_for :robots, "noindex, nofollow" %>
+<% end %>
+
+<% if @banner&.is_displayed(fallback: false) %>
+  <%= render "temporary_banner", banner: @banner  %>
+<% end %>
+
+<section class="Section Section--black Hero Hero--withPicture" data-action="scroll@window->home-animations#animateOnScroll">
+  <div class="container Hero-content">
+    <%= link_to company_home_path, class: "Hero-personaSwitchButton" do %>
+      <i class="material-icons Button Button--secondaryLagoon">
+        cached
+      </i>
+      <span><%= raw t('home.hero.switch_persona') %></span>
+    <% end %>
+    <div class="Hero-animatedText">
+      <p class="Base-subtitle Base-subtitle--smaller Hero-pretitle"><%= raw t('home.hero.pretitle') %></p>
+      <h1 class="Base-title Base-title--1">
+        <span class="Hero-title"><%= raw t('home.hero.title.part_1') %></span>
+        <span class="Hero-title Hero-title--part2"><%= raw t('home.hero.title.part_2') %></span>
+      </h1>
+    </div>
+    <%= link_to raw(t('home.hero.cta')), "#CommunitySection", class: "Button Button--box", "data-turbolinks": "false" %>
+  </div>
+  <div class="Hero-overlay"></div>
+</section>
+
+<section class="Section Section--black CommunitySection" id="CommunitySection">
+  <div class="container CommunitySection-container">
+    <div class="CommunitySection-content">
+      <h2 class="Base-title Base-title--3">
+        <%= raw t('home.community.title',
+                  count: number_with_delimiter(@total_shareholders, locale: params[:locale])) %>
+      </h2>
+      <p class="Base-subtitle Base-subtitle--smaller"><%= raw t('home.community.subtitle') %></p>
+    </div>
+    <%= link_to buy_shares_choice_path, class: "CommunitySection-you Base-title Base-title--3" do %>
+      <%= raw t('home.community.you') %>
+    <% end %>
+    <div class="CommunitySection-shareholderContainer CommunitySection-shareholderContainer--highlighted">
+      <div class="CommunitySection-shareholderPicture CommunitySection-shareholderPicture--large"
+           style="background-image: url('<%= picture(@recent_shareholders[0], [200, 200]) %>');">
+      </div>
+      <%= render "shareholder_infos", shareholder: @recent_shareholders[0] %>
+    </div>
+
+    <% (1..6).each do |number| %>
+      <div class="CommunitySection-shareholderPicture CommunitySection-shareholderPicture--<%= number %>"
+           style="background-image: url('<%= picture(@recent_shareholders[number], [200, 200]) %>');">
+      </div>
+    <% end %>
+    <% (0..1).each do |number| %>
+      <div class="CommunitySection-shareholderContainer CommunitySection-shareholderContainer--star<%= number + 1  %>">
+        <div class="CommunitySection-shareholderPicture CommunitySection-shareholderPicture--large"
+             style="background-image: url('<%= picture(@star_shareholders[number], [200, 200]) %>');">
+        </div>
+        <%= render "shareholder_infos", shareholder: @star_shareholders[number] %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<%= render "mission_section", title: raw(t('home.mission.title')) %>
+
+<section class="Section Section--black Section--morePadding HomeCounterSection">
+  <div class="container">
+    <h2 class="Base-title Base-title--3 HomeCounterSection-title">
+      <%= raw t("home.counter_section.title") %>
+    </h2>
+    <%= render "shared/co2_counter", total_co2: @total_co2_2022 %>
+    <div class="HomeCounterSection-cta">
+      <%= link_to co2_counter_path, class: "Button Button--underlined", target: "_blank" do %>
+        <%= raw t("home.counter_section.cta") %>
+        <i class="material-icons">arrow_forward</i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="Section Section--darkGreen CtaSection">
+  <div class="container CtaSection-container">
+    <p class="Base-title Base-title--4">
+      <%= raw t("home.cta_section.text") %>
+    </p>
+    <%= link_to raw(t('home.global_cta.become_associate')), become_shareholder_path, class: "Button Button--box" %>
+  </div>
+</section>
+
+<%= render partial: "sections/funded_innovation_section", locals: {
+  funded_innovations: @funded_innovations,
+  title: raw(t('home.funded_innovations.title')) } %>
+
+<section class="Section StepsSection" data-home-animations-target="stepsSection">
+  <div class="container">
+    <h2 class="Base-title Base-title--2"><%= raw t('home.steps.title') %></h2>
+    <div class="StepsSection-container">
+      <div class="StepsSection-step" data-home-animations-target="step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('home.steps.step_1.title') %></h3>
+          <p><%= raw t('home.steps.step_1.price') %></p>
+          <p><%= raw t('home.steps.step_1.time') %></p>
+          <%= link_to raw(t('home.global_cta.become_associate')), become_shareholder_path, class: "Button Button--box" %>
+        </div>
+        <div class="StepsSection-number">1</div>
+      </div>
+
+      <div class="StepsSection-step" data-home-animations-target="step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('home.steps.step_2.title') %></h3>
+          <p><%= raw t('home.steps.step_2.funding') %></p>
+          <p><%= raw t('home.steps.step_2.costs') %></p>
+          <p>
+            <%= raw t('home.steps.step_2.public') %>
+            <%= link_to t('home.steps.step_2.cta'), @annual_accounts_link, class: "StepsSection-link", target: "_blank" %>
+          </p>
+        </div>
+        <div class="StepsSection-number">2</div>
+      </div>
+
+      <div class="StepsSection-step" data-home-animations-target="step">
+        <div class="StepsSection-content">
+          <h3 class="Base-title Base-title--4"><%= raw t('home.steps.step_3.title') %></h3>
+          <p><%= raw t('home.steps.step_3.future') %></p>
+          <p><%= raw t('home.steps.step_3.climate_dividends') %></p>
+        </div>
+        <div class="StepsSection-number">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "map_section", locals: {
+  pre_title: raw(t('home.open_source.paragraph1')),
+  title: raw(t('home.open_source.paragraph2')),
+  text: raw(t('home.open_source.paragraph3')),
+  color: "rainforest",
+  marker_color: "lagoon"
+} %>
+
+<%= render partial: "sections/future_fundings_section", locals: {
+  current_episode: @current_episode,
+  total_raised: @total_raised,
+  future_fundings: @future_fundings,
+  link: buy_shares_choice_path
+} %>
+
+<section class="Section Section--grey800">
+  <div class="container">
+    <h2 class="Base-title Base-title--3"><%= raw t('home.personas.title') %></h2>
+    <div class="Personas" data-controller="tabs" data-tabs-tab-active-class="Personas-tab--active"
+      data-tabs-description-active-class="Personas-description--active">
+      <div class="Personas-tabs" role="tablist">
+        <% %w(citizen company innovator).each do |persona| %>
+          <a class="Personas-tab<%= " Personas-tab--active" if persona == "citizen" %>"
+            role="tab" aria-selected="<%= persona == "citizen" ? "true" : "false" %>"
+            data-action="click->tabs#switch" data-tabs-target="tab" data-id="<%= persona %>">
+            <div class="Personas-iconContainer Personas-iconContainer--<%= persona %>">
+              <%= image_tag "personas/#{persona}-icon.svg", class: "Personas-icon", role: "img" %>
+            </div>
+            <h3 class="Base-title Base-title--5"><%= raw t("home.personas.#{persona}.title") %></h3>
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        <% end %>
+      </div>
+
+      <div class="Personas-descriptionContainer">
+        <% %w(citizen company innovator).each do |persona| %>
+          <div class="Personas-description <%= "Personas-description--active" if persona == "citizen" %>"
+            role="tabpanel" aria-hidden="<%= persona == "citizen" ? "false" : "true"%>"
+            data-id="<%= persona %>" data-tabs-target="description">
+             <p class="Personas-descriptionTitle">
+              <%= raw t('home.personas.superpower') %>
+              <b><%= raw t("home.personas.#{persona}.power") %></b>
+            </p>
+            <%= raw t("home.personas.#{persona}.description") %>
+            <%= link_to t("home.personas.#{persona}.cta"), home_persona_cta(persona), class: "Button Button--box" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "sections/statistics", locals: { statistics: @statistics, color: "lagoon" } %>
+
+<% if params[:locale] == "fr" %>
+  <%= render partial: "press_section", locals: {color: "darkGreen"} %>
+<% end %>
+
+<% if params[:locale] == "fr" && @first_episode.present? %>
+  <section class="Section Section--grey800 EpisodesSection">
+    <div class="container">
+      <h2 class="Base-title Base-title--3"><%= raw t("home.episodes.title") %></h2>
+      <div class="EpisodesSection-container">
+        <% @recent_episodes.each do |episode| %>
+          <%= link_to episode_path(episode), class: "EpisodeCard",
+                      style: "background-image: url(#{image_path episode.cover_image_with_fallback([400, 400])});",
+                      target: "_blank" do %>
+            <div class="EpisodeCard-overlay"></div>
+            <div class="EpisodeCard-content">
+              <span class="EpisodeCard-tag <%= "EpisodeCard-tag--current" if episode.current? %>">
+                <%= episode.time_status %>
+              </span>
+              <p>
+                <span class="Base-title Base-title--4 EpisodeCard-season">
+                  <%= raw(t('episodes.season_number', number: episode.season_number)) %><br>
+                </span>
+                <span class="Base-title Base-title--4 EpisodeCard-number">
+                  <%= raw(t('episodes.number', number: episode.number)) %>
+                </span>
+              </p>
+              <span class="EpisodeCard-duration"><%= episode.duration %></span>
+              <h3>
+                <%= episode.title %>
+              </h3>
+              <div class="EpisodeCard-link">
+                <span class="Button Button--underlined">
+                  <%= t('home.episodes.cta_one_episode') %> <i class="material-icons">arrow_forward</i>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="EpisodesSection-cta">
+        <%= link_to episode_path(@first_episode), class: "Button Button--underlined", target: "_blank" do %>
+          <%= t('home.episodes.cta_all_episodes') %> <i class="material-icons">arrow_forward</i>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<section class="Section Section--black">
+  <div class="container">
+    <h2 class="Base-title Base-title--2">
+      <%= raw t('home.fundamentals.title') %>
+    </h2>
+    <div class="FundamentalsSection" data-controller="tabs" data-tabs-tab-active-class="FundamentalsSection-tab--active"
+      data-tabs-description-active-class="FundamentalsSection-description--active">
+      <div class="FundamentalsSection-tabs" role="tablist">
+        <% %w(non_profit open_source collective_intelligence transparency science action).each do |fundamental| %>
+          <a class="FundamentalsSection-tab<%= " FundamentalsSection-tab--active" if fundamental == "non_profit" %>"
+            role="tab" aria-selected="<%= fundamental == "non_profit" ? "true" : "false"%>"
+            data-action="click->tabs#switch" data-tabs-target="tab" data-id="<%= fundamental %>">
+            <%= embedded_svg "fundamentals/#{fundamental}.svg", class: "FundamentalsSection-icon" %>
+            <h3 class="Base-title Base-title--5">
+              <%= raw(t("home.fundamentals.#{fundamental}.title")) %>
+            </h3>
+          </a>
+        <% end %>
+      </div>
+      <div class="FundamentalsSection-descriptionContainer">
+        <% %w(non_profit open_source collective_intelligence transparency science action).each do |fundamental| %>
+          <div class="FundamentalsSection-description<%= " FundamentalsSection-description--active" if fundamental == "non_profit" %>"
+            role="tabpanel" aria-hidden="<%= fundamental == "non_profit" ? "false" : "true"%>"
+            data-id="<%= fundamental %>" data-tabs-target="description">
+            <%= raw(t("home.fundamentals.#{fundamental}.description")) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="Section Section--black Section--morePadding FaqSection">
+  <div class="container">
+     <h2 class="Base-title Base-title--2"><%= raw t('home.faq.title') %></h2>
+    <div class="FaqSection-container" data-controller="tabs statistics-tabs" data-tabs-tab-active-class="FaqSection-tab--active"
+      data-action="resize@window->statistics-tabs#repositionOnResize"
+      data-tabs-description-active-class="FaqSection-description--active">
+      <div class="FaqSection-tabs" role="tablist">
+        <div class="FaqSection-activeTabMarker" data-statistics-tabs-target="activeTab">
+        </div>
+        <% %w(who technology criteria open_source).each_with_index do |item, index| %>
+          <a class="FaqSection-tab<%= " FaqSection-tab--active" if item == "who" %>"
+            role="tab" aria-selected="<%= item == "who" ? "true" : "false"%>"
+            data-action="tabs#switch statistics-tabs#switch" data-tabs-target="tab" data-id="<%= item %>" data-index="<%= index %>">
+            <%= raw(t("home.faq.#{item}.question")) %>
+          </a>
+        <% end %>
+      </div>
+      <div class="FaqSection-descriptionContainer">
+        <% %w(who technology criteria open_source).each do |item| %>
+          <p class="FaqSection-description <%= " FaqSection-description--active" if item == "who" %>"
+            role="tabpanel" aria-hidden="<%= item == "who" ? "false" : "true"%>"
+            data-id="<%= item %>" data-tabs-target="description">
+            <%= raw(t("home.faq.#{item}.answer")) %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if params[:locale] == "fr" %>
+  <section class="BookSection">
+    <div class="container BookSection-container">
+      <div class="BookSection-content">
+        <h2 class="Base-title Base-title--2 BookSection-title">
+          <%= raw t('home.book.title') %>
+        </h2>
+        <p>
+          <%= raw t('home.book.description') %>
+        </p>
+        <%= link_to "https://www.books.time-planet.com/", class: "Button Button--underlined", target: "_blank" do %>
+          <%= t('home.book.cta') %> <i class="material-icons">arrow_forward</i>
+        <% end %>
+      </div>
+      <%= image_tag "time_book.png", class: "BookSection-image" %>
+    </div>
+  </section>
+<% end %>
+
+<%= render "shared/modal",
+    modal_id: "videoModal",
+    description: t("home.mission.modal_explanation") do %>
+    <div id="youtube-player" class="VideoModal-video"></div>
+<% end %>

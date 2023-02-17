@@ -1,0 +1,8 @@
+fr:
+  activerecord:
+    attributes:
+      funded_innovation:
+        development_stages:
+          laboratory: "Laboratoire"
+          prototype: "Prototype"
+          industrial_or_pre_industrial: "Phase pré-industrielle ou industrielle"

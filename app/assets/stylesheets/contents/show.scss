@@ -1,0 +1,199 @@
+.contents-show {
+  background-color: $white;
+
+  .Header {
+    background-color: $grey-50;
+
+    @media (min-width: $breakpoint-md) {
+      height: 25rem;
+      display: flex;
+    }
+
+    &-coverImage {
+      height: 20rem;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+
+      @media (min-width: $breakpoint-sm) {
+        height: 30rem;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        height: 25rem;
+      }
+    }
+
+    &-title {
+      margin-bottom: 1rem;
+    }
+
+    &-socialMedia {
+      display: flex;
+      align-items: center;
+      margin-top: 3rem;
+
+      span {
+        color: $grey-700;
+        font-size: 0.8rem;
+      }
+    }
+
+    &-icon {
+      margin-left: 2rem;
+
+      &--svg {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      &--facebook {
+        fill: #3B5998;
+      }
+
+      &--linkedin {
+        fill: #0E76A8;
+      }
+
+      &--email {
+        color: $purple-400;
+        font-size: 2.5rem;
+      }
+    }
+
+    &-updatedAt {
+      font-weight: 300;
+      color: $grey-500;
+    }
+
+    &-backLink {
+      font-size: 1.25rem;
+
+      .material-icons {
+        width: 2rem;
+      }
+
+      a {
+        color: $rainforest-600;
+        text-transform: none;
+        font-family: $headers-font;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+
+      }
+
+      a:hover {
+        color: $rainforest-400;
+      }
+    }
+  }
+
+  .ContentContainer {
+    padding: 2rem 15px;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 2rem 2rem 2rem 15px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin-left: $margin-left-md;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-left: $margin-left-lg;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      margin-left: $margin-left-xl;
+    }
+
+    @media (min-width: $breakpoint-xxl) {
+      margin-left: $margin-left-xxl;
+    }
+
+    .RelatedContents {
+      margin-top: 2rem;
+    }
+  }
+
+  .Sidebar {
+
+    @media (min-width: $breakpoint-md) {
+      flex-shrink: 0;
+      width: 35vw;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      width: 25vw;
+    }
+
+    &--fullHeight {
+
+      @media (min-width: $breakpoint-md) {
+        max-height: 100vh;
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+
+  .Body{
+    padding-bottom: 5rem;
+    position: relative;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+    }
+
+    &-cta {
+      background-color: $grey-900;
+      padding: 0.5rem 1rem;
+      color: $white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: unset;
+      width: 100vw;
+      max-height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: $slide-up;
+      transition: height 0.5s ease-in-out;
+
+      &--fixed {
+        position: fixed;
+      }
+
+      a {
+        font-size: 0.8rem;
+        margin-left: 1rem;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: 1rem;
+          margin-left: 0;
+        }
+      }
+
+      @media (min-width: $breakpoint-md) {
+        height: 15rem;
+        position: relative;
+        max-height: none;
+        width: unset;
+        padding: 2rem;
+        display: block;
+        animation: none;
+      }
+
+      p {
+        font-family: $headers-font;
+      }
+
+      &--open {
+        @media (min-width: $breakpoint-md) {
+          height: 120%;
+        }
+      }
+    }
+  }
+}

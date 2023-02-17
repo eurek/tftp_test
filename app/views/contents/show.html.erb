@@ -1,0 +1,68 @@
+<% content_for :meta_title, @content.meta_title_with_fallback %>
+<% content_for :meta_desc, @content.meta_description_with_fallback %>
+<% content_for :meta_image, content_cover_image(@content, [500, 500]) %>
+<% content_for :navbar_classes, "Navbar--notSticky" %>
+
+<% if @content.id == Content::CONTENT_CHARTER_ID  %>
+  <% content_for :robots, "noindex, nofollow" %>
+<% end %>
+
+<section class="Header">
+  <div class="ContentContainer">
+    <nav class="Header-backLink">
+      <%= link_to contents_path(category: @content.category.slug) do %>
+        <i class="material-icons">arrow_backward</i>
+        <span>
+          <%= t("contents.show.come_back_link") %>
+          <%= @content.category.name %>
+        </span>
+      <% end %>
+    </nav>
+    <h1 class="Base-title Base-title--2 Header-title"><%= raw(@content.title) %></h1>
+    <p class="Header-updatedAt">
+      <%= t("contents.show.published") %>
+      <%= l @content.updated_at.to_date, format: :long %>
+    </p>
+    <div class="Header-socialMedia" data-controller="social-media-sharing">
+      <span class="Button"><%= t("contents.show.share") %></span>
+      <button class="Button" data-action="social-media-sharing#share" data-type="fb" data-text="<%= @content.meta_description %>">
+        <%= embedded_svg 'facebook.svg', class: "Button Header-icon Header-icon--svg Header-icon--facebook" %>
+      </button>
+      <button class="Button" data-action="social-media-sharing#share" data-type="linkedin" data-text="<%= @content.meta_description %>">
+        <%= embedded_svg 'linkedin.svg', class: "Button Header-icon Header-icon--svg Header-icon--linkedin" %>
+      </button>
+      <button class="Button" data-action="social-media-sharing#share" data-type="email" data-text="<%= @content.meta_description %>">
+        <i class="material-icons Header-icon Header-icon--email">email</i>
+      </button>
+    </div>
+  </div>
+
+  <div class="Header-coverImage Sidebar" style='background-image: url("<%= content_cover_image(@content, [500, 500]) %>");'>
+  </div>
+</section>
+
+<section class="Body"
+  data-controller="content-cta"
+  data-content-cta-open-class="Body-cta--open"
+  data-content-cta-fixed-class="Body-cta--fixed"
+  data-action="scroll@window->content-cta#toggleCtaHeight">
+  <div class="ContentContainer CmsContent">
+    <%= @content.body&.html_safe %>
+
+    <%= render "related_contents", related_contents: @content.related_contents unless @content.related_contents.blank? %>
+  </div>
+
+  <div class="Sidebar Sidebar--fullHeight">
+    <% if @content.call_to_action %>
+      <div class="Body-cta Body-cta--open" data-content-cta-target="cta">
+        <p><%= raw(@content.call_to_action.text) %></p>
+        <%= link_to @content.call_to_action.href,
+          class: "Button Button--underlinedLagoon",
+          target: @content.call_to_action.href.include?(root_url) ? "" : "_blank" do %>
+          <%= @content.call_to_action.button_text %>
+          <i class="material-icons">arrow_forward</i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

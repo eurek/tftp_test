@@ -1,0 +1,32 @@
+<% content_for :welcome_title,
+  t('private_space.sign_in.welcome_title')
+%>
+
+<% content_for :welcome_content,
+  raw(t('private_space.sign_in.welcome_message'))
+%>
+
+<% content_for :title do %>
+  <%= t('private_space.sign_in.title.white') %>
+  <span class="Login-title--blue"> <%= t('private_space.sign_in.title.blue') %></span>
+<% end %>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email,
+                as: :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                label: t('private_space.sign_in.password'),
+                required: false,
+                input_html: { autocomplete: "current-password" },
+                hint: sign_in_hint(params["pending"]) %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('private_space.sign_in.cta'), class: "Button Button--box Button--fullWidth" %>
+  </div>
+<% end %>

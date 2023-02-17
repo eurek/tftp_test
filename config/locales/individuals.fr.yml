@@ -1,0 +1,10 @@
+fr:
+  individual:
+    id_card_received_email:
+      subject: "Confirmation réception document d'identité"
+      paragraph_1: "Merci à toi. Nous avons bien reçu ton document d'identité."
+      paragraph_2: "Comme des milliers d'autres citoyen·nes et organisations, tu deviendras ainsi officiellement
+        actionnaire de Time for the Planet lors de notre prochaine augmentation de capital et contribues ainsi à
+        lutter contre le dérèglement climatique."
+      paragraph_3: "A très bientôt !"
+      paragraph_4: "L'équipe Time for the Planet !"

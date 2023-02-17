@@ -1,0 +1,275 @@
+.Navbar {
+  background-color: $black;
+  color: $white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  height: $navbar-mobile;
+
+  @media (min-width: $breakpoint-md) {
+    height: $navbar-desktop;
+  }
+
+  &--notSticky {
+    position: relative;
+  }
+
+  &-mobileMenu {
+    background-color: $grey-800;
+  }
+
+  &-mobileLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    display: none;
+    height: calc(100vh - $navbar-mobile);
+
+    .Navbar-link, .Navbar-cta {
+      margin-top: 2rem;
+      margin-right: 0;
+    }
+
+    .Navbar-link--language {
+      margin-top: 0;
+    }
+
+    .Navbar-link--withMarginBottom {
+      margin-bottom: 2rem;
+    }
+
+    a.Navbar-signinLink {
+      margin-left: 0.8rem;
+      margin-top: 0rem;
+      max-width: 100%;
+
+      span {
+        overflow: visible;
+      }
+    }
+  }
+
+  &-mobileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  &--menuOpen {
+    height: 100vh;
+    overflow-y: auto;
+
+    .Navbar-mobileLinks {
+      display: flex;
+      padding-bottom: 6rem;
+    }
+  }
+
+  &--darkLinks {
+
+    .Navbar-cta {
+      border-color: $grey-900;
+      color: $grey-900;
+
+      &:hover {
+        color: $lagoon-500;
+        border-color: $lagoon-500;
+      }
+    }
+
+    .Navbar-link {
+      color: $grey-700;
+
+      &:hover {
+        color: $lagoon-500;
+        border-color: $lagoon-500;
+      }
+    }
+  }
+
+  &--darkPurple {
+    background-color: $purple-900;
+    color: $white;
+  }
+
+  &--darkGreen {
+    background-color: $rainforest-900;
+    color: $white;
+  }
+
+  &--lightPurple {
+    background-color: $purple-50;
+    color: $black;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $navbar-mobile;
+
+    @media (min-width: $breakpoint-md) {
+      height: $navbar-desktop;
+    }
+  }
+
+  &-logoContainer {
+    font-size: 0.75rem;
+    text-transform: none;
+    font-family: $headers-font;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.5rem;
+      flex-direction: row;
+    }
+  }
+
+  &-logo {
+    height: 1rem;
+    width: 1rem;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $breakpoint-md) {
+      height: 2.25rem;
+      width: 2.25rem;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-right: 1.25rem;
+    }
+  }
+
+  &-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &-linkDesktop {
+    display: none;
+    position: relative;
+
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+
+    &--menuTrigger {
+      @media (min-width: $breakpoint-lg) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+    }
+
+    &--positionRelative{
+      @media (min-width: $breakpoint-lg) {
+        position: relative;
+      }
+    }
+  }
+
+  &-link {
+    color: $grey-200;
+    margin-right: 1rem;
+
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+  }
+
+  &-signinLink {
+    margin-right: 0;
+    margin-left: 1rem;
+    max-width: 2rem;
+    transition: max-width 0.3s ease-in-out;
+
+    span {
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: 0.5rem;
+      color: $grey-200;
+    }
+
+    &:hover {
+      @media (min-width: $breakpoint-lg) {
+        max-width: 12rem;
+      }
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      margin-left: 2rem;
+    }
+  }
+
+  &-arrowDown {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $grey-800;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .Button {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 0.8rem;
+    }
+  }
+
+  .Navbar-link.Navbar-linkMobile {
+    color: $lagoon-500;
+    font-size: 1.25rem;
+  }
+
+  &-hamburger {
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    padding: 0;
+    cursor: pointer;
+
+    i {
+      font-size: 2.5rem;
+
+      &::before {
+        content: "\e5d2";
+      }
+    }
+
+    &--active i::before {
+      content: "\e5cd";
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    top: 0;
+  }
+}

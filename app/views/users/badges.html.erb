@@ -1,0 +1,29 @@
+<h2 class="PrivateSpace-title PrivateSpace-title--purple">
+  <%= raw(t('private_space.roles.title')) %>
+  <%= render "shared/roles_list", shareholder: @individual, scope: :attributable_to_user %>
+</h2>
+
+<h2 class="PrivateSpace-title PrivateSpace-title--purple">
+  <%= raw(t('private_space.badges.title')) %>
+</h2>
+
+<%= render "shared/badge_list", badges: @badges, mode: "light" %>
+
+<% content_for :right_panel do %>
+  <h2 class="PrivateSpace-subtitle">
+    <%= raw(t('private_space.roles.subtitle')) %>
+  </h2>
+  <p class="PrivateSpace-text">
+    <%= raw(t('private_space.roles.explanation')) %>
+  </p>
+  <%= link_to galaxy_path, class: "Button Button--underlined" do %>
+    <%= I18n.t("private_space.roles.link") %>
+    <i class="material-icons">arrow_forward</i>
+  <% end %>
+  <h2 class="PrivateSpace-subtitle">
+    <%= raw(t('private_space.badges.subtitle')) %>
+  </h2>
+  <p class="PrivateSpace-text">
+    <%= raw(t('private_space.badges.explanation')) %>
+  </p>
+<% end %>

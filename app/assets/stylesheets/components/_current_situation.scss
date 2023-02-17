@@ -1,0 +1,116 @@
+.CurrentSituation {
+  color: $white;
+
+  &-title {
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+
+    @media (min-width: $breakpoint-xxl) {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    &--withoutMargin {
+      margin-bottom: 0;
+    }
+  }
+
+  &-subtitle {
+    font-family: $body-font;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+
+    @media (min-width: $breakpoint-xxl) {
+      margin-top: 2rem;
+    }
+
+    &--red {
+      color: $red-300;
+    }
+
+    &--lagoonBlue {
+      color: $lagoon-500;
+    }
+
+    &--green {
+      color: $green-300;
+    }
+
+    &--purple {
+      color: $purple-400;
+    }
+
+    &--yellow {
+      color: $yellow-200;
+    }
+  }
+
+  &-text {
+    color: $grey-200;
+    margin: 0;
+    font-size: 1rem;
+    text-transform: none;
+
+    &--darker {
+      color: $grey-500;
+    }
+  }
+
+  &-row {
+    display: flex;
+    justify-content: space-between;
+
+    &--mobileColumn {
+      flex-direction: column;
+
+      @media (min-width: $breakpoint-sm) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &-lastDone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: $grey-200;
+
+    .CurrentSituation-text--darker {
+      cursor: pointer;
+    }
+
+    .material-icons {
+      margin-right: 1rem;
+    }
+  }
+
+  &-main {
+    flex: 1;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: $breakpoint-xxl) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .Scale {
+    font-family: $body-font;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $white;
+    margin-bottom: 0;
+
+    &-legend {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+
+      &--alignRight {
+        text-align: right;
+      }
+    }
+  }
+}

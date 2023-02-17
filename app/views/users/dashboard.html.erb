@@ -1,0 +1,118 @@
+<h1 class="PrivateSpace-title PrivateSpace-title--purple">
+  <%= @individual.greetings %>
+</h1>
+<p class="PrivateSpace-text PrivateSpace-text--smallMarginTop">
+  <%= raw(t('private_space.dashboard.subtitle')) %>
+</p>
+<div class="PrivateSpace-section">
+  <div class="PrivateSpace-firstColumn">
+    <h2 class="PrivateSpace-subtitle"><%= raw(t('private_space.dashboard.investment.title')) %></h2>
+    <p class="PrivateSpace-text">
+      <%= raw(t('private_space.dashboard.investment.sentence1')) %>
+    </p>
+    <p class="PrivateSpace-title PrivateSpace-title--lagoon PrivateSpace-title--large">
+      <%= @individual.shares_total %>
+    </p>
+    <p class="PrivateSpace-text PrivateSpace-text--noMarginTop">
+      <%= raw(t('private_space.dashboard.investment.sentence2')) %>
+    </p>
+    <% unless @individual.refund_link.nil? %>
+      <%= link_to shares_purchases_path, class: "Button Button--underlined Button--white",
+                                         rel: 'noopener noreferrer',
+                                         target: '_blank' do %>
+          <%= I18n.t("private_space.dashboard.investment.reinvest_link") %>
+          <i class="material-icons">arrow_forward</i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to sponsorship_campaign_dashboard_path, class: "CardDark CardDark--highlighted", target: "_blank" do %>
+  <div>
+    <h2 class="CardDark-title">
+      <%= raw(t('private_space.dashboard.sponsorship_campaign.title')) %>
+    </h2>
+    <p class="CardDark-text">
+      <%= raw(t('private_space.dashboard.sponsorship_campaign.content')) %>
+    </p>
+  </div>
+  <span class="CardDark-cta Button Button--underlined Button--smaller">
+    <%= raw(t('private_space.dashboard.sponsorship_campaign.cta')) %>
+    <i class="material-icons">
+      arrow_forward
+    </i>
+  </span>
+<% end %>
+
+<%= link_to @external_links.offer_shares_form, class: "CardDark CardDark--highlighted", target: "_blank" do %>
+  <div>
+    <h2 class="CardDark-title">
+      <%= raw(t('private_space.dashboard.gift.title')) %>
+    </h2>
+    <p class="CardDark-text">
+      <%= raw(t('private_space.dashboard.gift.content')) %>
+    </p>
+  </div>
+  <span class="CardDark-cta Button Button--underlined Button--smaller">
+    <%= raw(t('private_space.dashboard.gift.cta')) %>
+    <i class="material-icons">
+      arrow_forward
+    </i>
+  </span>
+<% end %>
+
+<%= link_to "https://time-planet.glideapp.io/", class: "CardDark CardDark--highlighted", target: "_blank" do %>
+  <div>
+    <h2 class="CardDark-title">
+      <%= raw(t('private_space.dashboard.application.title')) %>
+    </h2>
+    <p class="CardDark-text">
+      <%= raw(t('private_space.dashboard.application.content')) %>
+    </p>
+  </div>
+  <span class="CardDark-cta Button Button--underlined Button--smaller">
+    <%= raw(t('private_space.dashboard.application.cta')) %>
+    <i class="material-icons">
+      arrow_forward
+    </i>
+  </span>
+<% end %>
+
+<%= link_to @external_links.galaxy_app,
+  class: "CardDark CardDark--highlighted",
+  target: "_blank" do %>
+  <div>
+    <h2 class="CardDark-title">
+      <%= raw(t('private_space.dashboard.galaxy_application.title')) %>
+    </h2>
+    <p class="CardDark-text">
+      <%= raw(t('private_space.dashboard.galaxy_application.content')) %>
+    </p>
+  </div>
+  <span class="CardDark-cta Button Button--underlined Button--smaller">
+    <%= raw(t('private_space.dashboard.galaxy_application.cta')) %>
+    <i class="material-icons">
+      arrow_forward
+    </i>
+  </span>
+<% end %>
+
+<div class="CardDark CardDark--last">
+  <div>
+    <h2 class="CardDark-title">
+      <%= raw(t('private_space.dashboard.planets.title')) %>
+    </h2>
+    <p class="CardDark-text">
+      <%= raw(t('private_space.dashboard.planets.content')) %>
+    </p>
+  </div>
+  <div class="CardDark-cta Tag Tag--lagoon">
+    <%= raw(t('private_space.dashboard.planets.cta')) %>
+  </div>
+</div>
+
+<% content_for :right_panel do %>
+  <%= render partial: "/shared/completion_panel", locals: {
+    individual: @individual,
+  } %>
+<% end %>

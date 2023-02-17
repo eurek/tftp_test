@@ -1,0 +1,21 @@
+en:
+  routes:
+    sponsorship-campaign: sponsorship-campaign
+    new: new
+    create: create
+    dashboard: dashboard
+    about: about
+    add-picture: add-picture
+    offer-shares: offer-shares
+    offer-shares-company: offer-shares-company
+    become-shareholder-company: become-shareholder-company
+    become-shareholder: become-shareholder
+    buy-shares-choice: buy-shares-choice
+    galaxy: galaxy
+    planets: planets
+    planet-leaders: planet-leaders
+    comet-leaders: comet-leaders
+    ambassadors: ambassadors
+    keepers: keepers
+    stars: stars
+    comets: comets

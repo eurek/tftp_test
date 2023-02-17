@@ -1,0 +1,41 @@
+<section class="Section Section--black Section--morePadding AmfRisks" id="amf-risks">
+  <div class="container">
+    <h2 class="Base-title Base-title--3"><%= raw t( "amf_risks.titles.main") %></h2>
+    <table class="AmfRisksTable <%= "AmfRisksTable--#{color}" %>">
+      <thead>
+      <tr>
+        <% %w[risk_name probability extent impact].each do |title| %>
+          <th><%= raw t( "amf_risks.titles.#{title}") %></th>
+        <% end %>
+      </tr>
+      </thead>
+      <tbody data-controller="amf-table">
+      <% %w[no_dividend shareholders_dilution non_liquidity business_model capital_loss legal_form
+              treasury_control financial_situation
+           ].each do |risk| %>
+        <tr class="AmfRisksTable-data">
+          <td class="AmfRisksTable-titleCell" data-action="click->amf-table#toggle"
+              data-risk="<%= risk %>">
+            <i class="material-icons">
+              expand_more
+            </i>
+            <%= raw t( "amf_risks.#{risk}.title") %>
+          </td>
+          <td class="AmfRisksTable-value">
+            <%= raw t( "amf_risks.risk_assessement.#{amf_risks_values[risk.to_sym][:probability]}") %>
+          </td>
+          <td class="AmfRisksTable-value">
+            <%= raw t( "amf_risks.risk_assessement.#{amf_risks_values[risk.to_sym][:extent]}") %>
+          </td>
+          <td class="AmfRisksTable-value">
+            <%= raw t( "amf_risks.risk_assessement.#{amf_risks_values[risk.to_sym][:impact]}") %>
+          </td>
+        </tr>
+        <tr class="AmfRisksTable-description" data-amf-table-target="description" data-risk="<%= risk %>">
+          <td colspan="4" ><%= raw t( "amf_risks.#{risk}.description") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

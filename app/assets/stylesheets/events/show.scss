@@ -1,0 +1,114 @@
+.events-show {
+
+  .EventHeader {
+    background-color: $grey-800;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row;
+    }
+
+    &-content {
+      padding: 2rem 15px;
+
+      @media (min-width: $breakpoint-md) {
+        margin-left: $margin-left-md;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        margin-left: $margin-left-lg;
+        padding-right: 2rem;
+        width: 40%;
+      }
+
+      @media (min-width: $breakpoint-xl) {
+        margin-left: $margin-left-xl;
+      }
+
+      @media (min-width: $breakpoint-xxl) {
+        margin-left: $margin-left-xxl;
+      }
+    }
+
+    &-language {
+      color: $lagoon-200;
+      margin-bottom: 2rem;
+
+      @media (min-width: $breakpoint-md) {
+        margin-bottom: 6rem;
+      }
+    }
+
+    &-image {
+      background-position: center;
+      background-size: contain;
+      position: relative;
+      background-repeat: no-repeat;
+      padding-top: 50%;
+      background-color: $rainforest-900;
+
+      @media (min-width: $breakpoint-lg) {
+        padding-top: 0;
+        height: auto;
+        background-size: cover;
+        width: 60%;
+        background-color: $grey-800;
+      }
+
+      @media (min-width: $breakpoint-xxl) {
+        background-size: contain;
+        background-position: left;
+      }
+
+      &--default {
+        background-size: auto 80%;
+        background-position: center;
+      }
+    }
+
+    &-table {
+      text-align: left;
+    }
+
+    &-questions {
+      font-family: $headers-font;
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: $lagoon-500;
+      padding-bottom: 1rem;
+    }
+
+    &-answers {
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      font-weight: normal;
+      color: $lagoon-100;
+      font-size: 1.125rem;
+    }
+  }
+
+  .HalfSection h2 {
+    margin-top: 0;
+  }
+
+  .EventDescription {
+    color: $lagoon-100;
+  }
+
+  .EventLink {
+    text-align: center;
+
+    .Button {
+      font-size: 1.125rem;
+      border-bottom-color: $black;
+
+      &:hover {
+        color: $rainforest-700;
+        border-bottom-color: $rainforest-700;
+      }
+    }
+  }
+}

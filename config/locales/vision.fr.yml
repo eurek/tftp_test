@@ -1,0 +1,55 @@
+---
+fr:
+  vision:
+    header:
+      title: "Notre vision"
+      subtitle: "Notre constat : l’urgence absolue de la crise environnementale"
+      description: "<strong>Nous considérons que l’Humanité est dans une situation d’urgence vitale absolue.</strong><br /> La dégradation accélérée des espèces animales et végétales, accompagnée d’un réchauffement climatique causé par l’activité humaine, fait courir un risque majeur d’extinction de la Vie sur Terre. Les scientifiques nous alertent depuis 50 ans sur ce sujet. Il est désormais absolument nécessaire d’agir."
+    engagement:
+      -
+        title: "La puissance de l’entrepreneuriat"
+        subtitle: "Nous voulons ajouter les forces de l'entreprenariat pour agir aux côtés de celles et ceux qui 
+          s’engagent activement en tant que citoyen.nes, associations ou politiques."
+        description: "L'entrepreneuriat désigne une capacité de mise en action. Son aptitude à déployer rapidement 
+          des solutions, son indépendance politique et financière et sa culture de l’invention sont des outils devant 
+          résolument être utilisés pour la sauvegarde de la Planète."
+      -
+        title: "Non-lucrativité"
+        subtitle: "Nous nous engageons sans réserve à consacrer tous les moyens humains et financiers dont nous disposons à la résolution de cette crise écologique."
+        description: "Time for the Planet<span class='brand'>®</span> et l’ensemble de ses associé.es renoncent, dans leurs statuts, à partager d’éventuels profits générés. L’intégralité de ceux ci seront consacrés à l’amélioration, à l'accessibilité et au développement des solutions."
+    banner:
+      title: "Création et financement d’entreprises de dimensions mondiales qui luttent contre le dérèglement climatique"
+      subtitle: "Nous définissons notre rôle de la façon suivante&nbsp;:"
+      bullet_points:
+        - "Trouver des inventions pouvant contribuer à résoudre un problème environnemental (ingénierie scientifique)"
+        - "Constituer et former des équipes à mettre en oeuvre et développer ces inventions (ingénierie humaine)"
+        - "Rassembler des fonds pour financer la création d’entreprises et la recherche (ingénierie financière)"
+    values1:
+      -
+        title: "Open Source"
+        subtitle: "Nous nous devons de partager nos recherches, connaissances et expertises."
+        description: "Pour augmenter les chances de développement d’une solution technique, nous utilisons le principe du partage de ces solutions selon les règles de l’open source. N’importe qui dans le monde pourra avoir accès gratuitement à ces solutions et les utiliser."
+      -
+        title: "Intelligence collective"
+        subtitle: "Nous croyons à l’utilité de chacun.e dans cette mission et entendons utiliser l’intelligence collective comme outil indispensable à son accomplissement."
+        description: "Notre action est démultipliée par le fait d’appeler chacun.e à nous aider. Cela s’opère en nous faisant découvrir une invention, en nous proposant des compétences, de l’expertise ou des moyens matériels et financiers."
+    values2:
+      title: "Bienveillance"
+      paragraphs:
+        - "<strong>Notre façon d’impulser l’énergie : franchise, humour et bienveillance.</strong>"
+        - "Nous voulons être entourés de personnes optimistes, travailleuses, persévérantes, et tournées vers le bien commun. Pour cela, nous impulsons une culture basée sur la confiance extrême, la franchise et la dédramatisation des situations. L’humour est une composante importante de notre quotidien."
+        - "Nous sommes extrêmement francs envers nous-même et envers les personnes extérieures qui nous demandent conseils."
+        - "Enfin, la bienveillance est le pilier de notre entreprise. Elle consiste à accorder notre confiance à tout le monde par principe, et la retirer uniquement si des faits objectifs nous y amènent. Nous n’interprétons jamais les paroles des un.es et des autres. Nous partons du principe qu’elles ne sous-entendent rien, et que seul ce qui est dit objectivement doit être pris en compte."
+    values3:
+      -
+        title: "Transparence"
+        subtitle: "Nous revendiquons la nécessité de la transparence dans le monde des entreprises."
+        description: "De par nos engagements, nous nous considérons comme redevables auprès de toutes et tous. 
+          Les salaires et comptes de Time for the Planet<span class='brand'>®</span> sont libres d’accès. De 
+          plus chacun.e peut devenir associé.e pour un euro et participer au vote lors des assemblées générales 
+          (1€ = 1 action = 1 voix)."
+      -
+        title: "Ethique"
+        subtitle: "Nous agissons en cohérence avec le monde plus juste auquel nous croyons."
+        description: "Dans chacunes de nos actions, nous entendons veiller activement à l’égalité femmes-hommes, à la non discrimination, à l’impact de nos activités sur l’environnement, à la lutte contre toutes les formes de harcèlement et contre toutes les formes de traites des êtres humains."
+
