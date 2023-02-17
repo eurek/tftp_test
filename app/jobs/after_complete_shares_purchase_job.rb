@@ -1,8 +1,11 @@
 class AfterCompleteSharesPurchaseJob < ActiveJob::Base
   queue_as :default
 
+  INDIVIDUAL_TYPE = "Individual"
+
   def perform(shares_purchase_id)
     shares_purchase = SharesPurchase.find(shares_purchase_id)
+
     if shares_purchase.completed_status? &&
         shares_purchase.paid_payment? &&
         shares_purchase.subscription_bulletin.attached?
@@ -11,12 +14,15 @@ class AfterCompleteSharesPurchaseJob < ActiveJob::Base
         ZapierNotifier.new.send_confirmation_email(shares_purchase)
       end
 
+      BadgesAssignmentForCategory.new(Badge.categories[:financial], shares_purchase, INDIVIDUAL_TYPE).call
+
       # TODO: Gérer le cas des achats par des entreprises
       shares_purchase.individual.notify_new_shareholder
 
       CommunicationLocaleSetter.new(shares_purchase.individual).set
       if new_shareholder?(shares_purchase.individual)
         user = User.create(individual: shares_purchase.individual)
+
         set_company_admin(shares_purchase.company, user)
       elsif shares_purchase.individual.user.present? && shares_purchase.individual.user.pending
         shares_purchase.individual.user.resend_confirmation_instructions

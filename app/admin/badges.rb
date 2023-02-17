@@ -71,7 +71,7 @@ ActiveAdmin.register Badge do
     f.actions # adds the 'Submit' and 'Cancel' buttons
   end
 
-  # TEST:
+  # TEST: Commented for the technical test
   # controller do
   #   before_action :forbid_edit_french, only: [:edit]
 
