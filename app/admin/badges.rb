@@ -1,7 +1,6 @@
 ActiveAdmin.register Badge do
   menu parent: :shareholders, priority: 5
-  actions :index, :show, :edit, :update
-  permit_params :name, :description, :fun_description, :value
+  permit_params :name, :category, :description, :fun_description, :value
 
   filter :name
   filter :description
@@ -65,6 +64,7 @@ ActiveAdmin.register Badge do
       f.input :name, as: :translatable_string
       f.input :description, as: :translatable_text
       f.input :fun_description, as: :translatable_text
+      f.input :category, as: :radio, collection: Badge.categories
       f.input :value
     end
 
