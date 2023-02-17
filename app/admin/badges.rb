@@ -1,7 +1,7 @@
 ActiveAdmin.register Badge do
   menu parent: :shareholders, priority: 5
   actions :index, :show, :edit, :update
-  permit_params :name, :description, :fun_description
+  permit_params :name, :description, :fun_description, :value
 
   filter :name
   filter :description
@@ -14,6 +14,7 @@ ActiveAdmin.register Badge do
     column_without_fallback :name
     column_without_fallback :description
     column_without_fallback :fun_description
+    column :value
     column :position
     column :category
     column :created_at
@@ -28,6 +29,7 @@ ActiveAdmin.register Badge do
       row_without_fallback :fun_description
       row :position
       row :category
+      row :value
     end
 
     attributes_table title: "Assets" do
@@ -40,8 +42,9 @@ ActiveAdmin.register Badge do
       row :updated_at
     end
 
+    # TEST:
     panel "Users" do
-      index_table_for(resource.users.decorate) do
+      index_table_for(resource.individuals.decorate) do
         id_column
         column :full_name
       end
@@ -62,16 +65,18 @@ ActiveAdmin.register Badge do
       f.input :name, as: :translatable_string
       f.input :description, as: :translatable_text
       f.input :fun_description, as: :translatable_text
+      f.input :value
     end
 
     f.actions # adds the 'Submit' and 'Cancel' buttons
   end
 
-  controller do
-    before_action :forbid_edit_french, only: [:edit]
+  # TEST:
+  # controller do
+  #   before_action :forbid_edit_french, only: [:edit]
 
-    def forbid_edit_french
-      redirect_to admin_badges_path, alert: "French version is controlled in airtable" if params[:locale] == "fr"
-    end
-  end
+  #   def forbid_edit_french
+  #     redirect_to admin_badges_path, alert: "French version is controlled in airtable" if params[:locale] == "fr"
+  #   end
+  # end
 end

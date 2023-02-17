@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_09_102810) do
+ActiveRecord::Schema.define(version: 2023_02_17_160030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2023_02_09_102810) do
     t.jsonb "description_i18n", default: {}
     t.jsonb "fun_description_i18n", default: {}
     t.jsonb "name_i18n", default: {}
+    t.string "value"
     t.index ["external_uid"], name: "index_badges_on_external_uid", unique: true
   end
 
